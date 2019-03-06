@@ -1,0 +1,25 @@
+{
+     "name": "Zenburn2",
+     "comment": "Ported for Terminix Colour Scheme",
+     "use-theme-colors": false,
+     "foreground-color": "#dcdccc",
+     "background-color": "#3a3a3a",
+     "palette": [
+		"#4d4d4d",
+                "#705050",
+                "#98fb98",
+                "#f0dfaf",
+                "#75996b",
+                "#dc8cc3",
+                "#8cd0d3",
+                "#f5deb3",
+                "#709080",
+                "#dca3a3",
+                "#c9ce63",
+                "#e0cf9f",
+                "#91c980",
+                "#ec93d3",
+                "#93e0e3",
+                "#ffffff"
+     ]
+ }
