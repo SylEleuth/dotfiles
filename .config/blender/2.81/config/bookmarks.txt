@@ -1,8 +1,0 @@
-[Bookmarks]
-/home/eleuth/Downloads/
-[Recent]
-/home/eleuth/Downloads/
-/home/eleuth/.config/blender/2.80/scripts/presets/interface_theme/
-/home/eleuth/Downloads/blender_2_8_themes-master/
-/home/eleuth/Temp/anim/
-/home/eleuth/Temp/
