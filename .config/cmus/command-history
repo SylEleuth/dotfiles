@@ -1,0 +1,22 @@
+save
+sae
+add
+a
+add ~/Music
+add Music/
+add /path/to/music
+filter 
+delete
+del
+remove
+mkdir songs
+filter f
+update-cache
+clear
+set lib_sort=albumartist date album discnumber tracknumber title filename play_count
+sort
+save -p ~/.config/cmus/playlist.pl
+save -p
+colorscheme ~/.config/cymus/base16-tommorow
+colorscheme base16-tommorow
+colorscheme

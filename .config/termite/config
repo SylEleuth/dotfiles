@@ -6,7 +6,9 @@ clickable_url = true
 dynamic_title = true
 #font = Roboto Mono Medium for Powerline 10
 #font = Sudo bold 12
-font = Hack Nerd Font bold 10 
+#font = Inconsolata for Powerline bold 12
+#font = Noto Mono for Powerline bold 9
+font = Hack bold 9
 
 #fullscreen = true
 #icon_name = terminal
@@ -41,78 +43,92 @@ scrollback_lines = 10000
 # "off", "left" or "right"
 scrollbar = off
 
+#[colors]
+## If both of these are unset, cursor falls back to the foreground color,
+## and cursor_foreground falls back to the background color.
+##cursor = #dcdccc
+##cursor_foreground = #dcdccc
+#
+## 20% background transparency (requires a compositor)
+##background = rgba(63, 63, 63, 0.8)
+#
+## If unset, will reverse foreground and background
+##highlight = #999999
+#
+## hard contrast: background = #1d2021
+## background = #282828 # hard background
+##background = #32302f
+##foreground = #ebdbb2
+##foreground_bold = #ebdbb2
+#
+## dark0 + gray
+#color0 = #282828
+#color8 = #928374
+#
+## neutral_red + bright_red
+#color1 = #cc241d
+#color9 = #fb4934
+#
+## neutral_green + bright_green
+#color2 = #98971a
+#color10 = #b8bb26
+#
+## neutral_yellow + bright_yellow
+#color3 = #d79921
+#color11 = #fabd2f
+#
+## neutral_blue + bright_blue
+#color4 = #458588
+#color12 = #83a598
+#
+## neutral_purple + bright_purple
+#color5 = #b16286
+#color13 = #d3869b
+#
+## neutral_aqua + faded_aqua
+#color6 = #689d6a
+#color14 = #8ec07c
+#
+## light4 + light1
+#color7 = #a89984
+#color15 = #ebdbb2
+#
+#### deus/mix colors
+#foreground = #d2d2d2
+#foreground_bold = #ffffff
+#background = #2C323B
+
 [colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
 
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
-
-# If unset, will reverse foreground and background
-#highlight = #999999
-
-# hard contrast: background = #1d2021
-# background = #282828 # hard background
-#background = #32302f
-#foreground = #ebdbb2
-#foreground_bold = #ebdbb2
-
-# dark0 + gray
-color0 = #282828
-color8 = #928374
-
-# neutral_red + bright_red
-color1 = #cc241d
-color9 = #fb4934
-
-# neutral_green + bright_green
-color2 = #98971a
-color10 = #b8bb26
-
-# neutral_yellow + bright_yellow
-color3 = #d79921
-color11 = #fabd2f
-
-# neutral_blue + bright_blue
-color4 = #458588
-color12 = #83a598
-
-# neutral_purple + bright_purple
-color5 = #b16286
-color13 = #d3869b
-
-# neutral_aqua + faded_aqua
-color6 = #689d6a
-color14 = #8ec07c
-
-# light4 + light1
-color7 = #a89984
-color15 = #ebdbb2
-
-### deus/mix colors
-foreground = #d2d2d2
-foreground_bold = #ffffff
-background = #2C323B
+# SOLARIZED LIGHT
 
 
-#color0 = #222222
-#color1 = #ff5555
-#color2 = #fcd792
-#color3 = #f0dfaf
-#color4 = #999999
-#color5 = #dc8cc3
-#color6 = #cccccc
-#color7 = #666666
-#color8 = #709080
-#color9 = #dca3a3
-#color10 = #c9ce63
-#color11 = #ffffff
-#color12 = #91c980
-#color13 = #ec93d3
-#color14 = #93e0e3
-#color15 = #ffffff
+foreground = #657b83
+foreground_bold = #073642
+#foreground_dim = #888888
+background = #fdf6e3
+cursor = #586e75
+
+# if unset, will reverse foreground and background
+#highlight = #839496
+
+# colors from color0 to color254 can be set
+color0 = #ccc7b8
+color1 = #dc322f
+color2 = #859900
+color3 = #b58900
+color4 = #88bcbb
+color5 = #d33682
+color6 = #2aa198
+color7 = #eee8d5
+color8 = #002b36
+color9 = #cb4b16
+color10 = #88bcbb
+color11 = #63a6a4
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3
 
 ### zenburn colors
 #foreground = #dcdccc

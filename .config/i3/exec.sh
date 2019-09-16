@@ -1,7 +1,5 @@
 #!/bin/sh
-termite -e vifm & 
-termite -e nvim &
-termite &
-termite &
+termite -e nvim & 
+termite -e vifm &
 termite &
 termite &

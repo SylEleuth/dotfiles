@@ -8,7 +8,6 @@
  *
  */
 
-
 * {
   black:      #000000;
   red:        #eb6e67;
@@ -26,18 +25,18 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "Knack Nerd Font 12";
+  font: "Ubuntu 18";
   text-color: @text;
 }
 
 window {
   transparency: "real";
   fullscreen: true;
-  background-color: #282c34dd;
+  background-color: #282c34cc;
 }
 
 mainbox {
-  padding: 30% 35%;
+  padding: 25% 34%;
 }
 
 inputbar {
@@ -73,7 +72,7 @@ element {
 }
 
 element selected {
-  background-color: @emphasis;
+  background-color: @blue;
   text-color: @text;
 }
 

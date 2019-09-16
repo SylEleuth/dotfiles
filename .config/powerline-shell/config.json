@@ -1,8 +1,6 @@
 {
   "segments": [
     "cwd",
-    "newline",
-    "time", 
     "virtual_env",
     "ssh",
     "git",
@@ -15,5 +13,6 @@
     },
     "vcs": {
         "show_symbol": true
-    }
+    },
+    "theme": "~/.config/powerline-shell/themes/basic.py"
 } 
