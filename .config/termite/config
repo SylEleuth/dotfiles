@@ -4,10 +4,13 @@ allow_bold = true
 #bold_is_bright = true
 clickable_url = true
 dynamic_title = true
-font =Sudo bold 12 
+#font = Roboto Mono Medium for Powerline 10
+#font = Sudo bold 12
+font = Hack Nerd Font bold 10 
+
 #fullscreen = true
 #icon_name = terminal
-mouse_autohide = false
+mouse_autohide = true
 #scroll_on_output = false
 #scroll_on_keystroke = true
 # Length of the scrollback buffer, 0 disabled the scrollback buffer
@@ -44,42 +47,128 @@ scrollbar = off
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
 
-foreground = #dcdccc
-foreground_bold = #ffffff
-background = #3a3a3a
-
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
 
 # If unset, will reverse foreground and background
 #highlight = #999999
 
-color0 = #4d4d4d
-color1 = #705050
-color2 = #fcd792
-color3 = #f0dfaf
-color4 = #75996b
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #f5deb3
-color8 = #709080
-color9 = #dca3a3
-color10 = #c9ce63
-color11 = #e0cf9f
-color12 = #91c980
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
+# hard contrast: background = #1d2021
+# background = #282828 # hard background
+#background = #32302f
+#foreground = #ebdbb2
+#foreground_bold = #ebdbb2
+
+# dark0 + gray
+color0 = #282828
+color8 = #928374
+
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
+
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
+
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
+
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
+
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
+
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
+
+# light4 + light1
+color7 = #a89984
+color15 = #ebdbb2
+
+### deus/mix colors
+foreground = #d2d2d2
+foreground_bold = #ffffff
+background = #2C323B
+
+
+#color0 = #222222
+#color1 = #ff5555
+#color2 = #fcd792
+#color3 = #f0dfaf
+#color4 = #999999
+#color5 = #dc8cc3
+#color6 = #cccccc
+#color7 = #666666
+#color8 = #709080
+#color9 = #dca3a3
+#color10 = #c9ce63
+#color11 = #ffffff
+#color12 = #91c980
+#color13 = #ec93d3
+#color14 = #93e0e3
+#color15 = #ffffff
+
+### zenburn colors
+#foreground = #dcdccc
+#foreground_bold = #ffffff
+#background = #3a3a3a
+
+#color0 = #3c3836
+#color1 = #705050
+#color2 = #fcd792
+#color3 = #f0dfaf
+#color4 = #75996b
+#color5 = #dc8cc3
+#color6 = #8cd0d3
+#color7 = #f5deb3
+#color8 = #709080
+#color9 = #dca3a3
+#color10 = #c9ce63
+#color11 = #e0cf9f
+#color12 = #91c980
+#color13 = #ec93d3
+#color14 = #93e0e3
+#color15 = #ffffff
+
+
+### dracula colors
+
+#foreground = #f8f8f2
+#foreground_bold = #ffffff
+#background = #1e1f29
+
+#color0  = #000000
+#color1  = #ff5555
+#color2  = #50fa7b
+#color3  = #f1fa8c
+#color4  = #bd93f9
+#color5  = #ff79c6
+#color6  = #8be9fd
+#color7  = #bbbbbb
+#color8  = #555555
+#color9  = #ff5555
+#color10 = #50fa7b
+#color11 = #f1fa8c
+#color12 = #bd93f9
+#color13 = #ff79c6
+#color14 = #8be9fd
+#color15 = #ffffff
 
 [hints]
 #font = Monospace 12
 #foreground = #dcdccc
 #background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
+active_foreground = #e68080
+active_background = #3f3f3f
+padding = 2
+border = #3f3f3f
+border_width = 0.5
+roundness = 2.0
 
 # vim: ft=dosini cms=#%s

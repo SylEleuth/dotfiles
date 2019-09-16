@@ -9,13 +9,14 @@ export ZSH="/home/eleuth/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-POWERLEVEL9K_MODE='awesome-fontconfig'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 RANGER_LOAD_DEFAULT_RC="false"
 PAGER="nvim"
 VISUAL="nvim"
 EDITOR="nvim"
+
+TERM=xterm-256color
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 #alias ohmyzsh="nvim ~/.oh-my-zsh"
 
+alias vi="/usr/bin/vim"
 alias vim="nvim"
 alias vi3="nvim ~/.config/i3/config"
 
@@ -122,9 +124,39 @@ alias l="lsd -la"
 alias la="ls -AF ${colorflag}"
 alias ll="ls -lFh ${colorflag}"
 alias lld="ls -l | grep ^d"
+alias weather="curl wttr.in/Preston"
+alias feh1="feh --bg-scale ~/Pictures/Wallpapers/tokyo_street_by_arsenixc.jpg"
+alias feh2="feh --bg-scale ~/Pictures/Wallpapers/tokyo_street_sunset_by_arsenixc.jpg"
+alias feh3="feh --bg-scale ~/Pictures/Wallpapers/tokyo_street_night_by_arsenixc.jpg"
+alias monitors="sh ~/.config/screenlayout/screen.sh" 
+alias monitor1="sh ~/.config/screenlayout/screen1.sh" 
+alias monitor2="sh ~/.config/screenlayout/screen2.sh" 
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable newline time vcs)
+POWERLEVEL9K_MODE='awesome-fontconfig'
+# POWERLEVEL9K_MODE='nerdfont-complete'
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable newline time vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history)
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
 POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '
 POWERLEVEL9K_DIR_PATH_ABSOLUTE="true"
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0B0'
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0B2'
+
+function powerline_precmd() {
+    PS1="$(powerline-shell --shell zsh $?)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi

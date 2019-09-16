@@ -1,6 +1,7 @@
-tilix -e vifm
-tilix -e nvim ~/.config/i3/config.backup
-tilix
-tilix -e htop
-tilix
-tilix 
+#!/bin/sh
+termite -e vifm & 
+termite -e nvim &
+termite &
+termite &
+termite &
+termite &

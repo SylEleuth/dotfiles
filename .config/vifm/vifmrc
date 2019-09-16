@@ -63,13 +63,13 @@ set norunexec
 
 " Selected color scheme
 
-colorscheme zenburn
+colorscheme dracula
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
 " See man date or man strftime for details.
 
-set timefmt=%m/%d\ %H:%M
+set timefmt=%d/%m/%Y\ %H:%M
 
 " Show list of matches on tab completion in command-line mode
 
@@ -203,7 +203,7 @@ filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
         "\ {View using ffplay}
         "\ ffplay -fs %f,
         \ {View using smplayer}
-        \ smplayer %f &,
+        \ smplayer %c %i %f &,
         "\ {View using Dragon}
         "\ dragon %f:p,
         "\ {View using mplayer}
@@ -448,6 +448,8 @@ nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
 nnoremap <Space> :
+nnoremap <c-h> :tabprevious<cr>
+nnoremap <c-l> :tabnext<cr>
 
 " ------------------------------------------------------------------------------
 

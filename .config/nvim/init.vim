@@ -1,64 +1,101 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'scrooloose/nerdtree'
-
-Plugin 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
-
-"Plugin 'terryma/vim-multiple-cursors'
-
-"Plugin 'airblade/vim-gitgutter'
-
-"Plugin 'dracula/vim'
-Plugin 'jnurmine/Zenburn'
-"Plugin 'morhetz/gruvbox'
-"Plugin 'joshdick/onedark.vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-"Plugin 'tpope/vim-fugitive'
-
-"Plugin 'vim-scripts/indentpython.vim'
-
-"Plugin 'Valloric/YouCompleteMe'
-
-"Plugin 'vim-syntastic/syntastic'
-
-Plugin 'rstacruz/vim-closer'
-
-"Plugin 'nvie/vim-flake8'
-
-"Plugin 'Yggdroot/indentLine'
-
-"Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Semantic highlight for Python
-
+Plugin 'scrooloose/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
+Plugin 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
+
+Plugin 'terryma/vim-multiple-cursors'
+
+Plugin 'tpope/vim-eunuch'
+
+Plugin 'rstacruz/vim-closer'
+
+Plugin 'rhysd/clever-f.vim'
+
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'ajh17/VimCompletesMe'
+
+Plugin 'mhinz/vim-startify'
+
+Plugin 'https://gitlab.com/Lenovsky/nuake.git'
+
+Plugin 'ajmwagar/vim-deus'
+
+Plugin 'vim-syntastic/syntastic'
+
+Plugin 'nvie/vim-flake8'
+
+Plugin 'vim-python/python-syntax'
+
+"Plugin 'morhetz/gruvbox'
+"Plugin 'jnurmine/Zenburn'
+"Plugin 'ayu-theme/ayu-vim'
+"Plugin 'gilgigilgil/anderson.vim'
+"Plugin 'dracula/vim'
+"Plugin 'joshdick/onedark.vim'
+
+"Plugin 'Yggdroot/indentLine'
+
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'airblade/vim-gitgutter'
+
+"Plugin 'vim-scripts/indentpython.vim'
+
+"Plugin 'sheerun/vim-polyglot'
+
+"Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Semantic highlight for Python
+
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
+
+"colorscheme gruvbox
+"set background=dark
+"let g:gruvbox_contrast_dark = 'soft'
+
+set termguicolors
+colorscheme deus
+
+set ignorecase " Search case insensitive:
+set smartcase " .. but not when search pattern contains upper case characters	
+set mouse=a " Copy selected text with mouse to system clipboard
+set updatetime=250 " If this many milliseconds nothing is typed the swap file will be written to disk
+set cursorline
+set lazyredraw
+
+" Buffers
+set hidden
+
+" Usable 'Tab'
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+set infercase
+
+" Persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+
+set undolevels=1000
+set undoreload=10000
+
+autocmd VimResized * wincmd =
+
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -66,17 +103,23 @@ augroup numbertoggle
 augroup END
 
 " *** KEYMAPS ***
-map <C-b> :NERDTreeToggle<CR>
+map <F1> :NERDTreeToggle<CR>
+map <F2> :NERDTreeFind<CR>
 nnoremap <Space> :
 " let mapleader = \<Space>"
 
+map j gj
+map k gk
+
 " move between tabs
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Down> :tabprevious<CR>
+nnoremap <C-Up> :tabnext<CR>
 
 " move between buffers
-map <C-Up> <Esc>:bprev<CR>
-map <C-Down> <Esc>:bnext<CR>
+map <C-Right> <Esc>:bnext<CR>
+map <C-Left> <Esc>:bprev<CR>
+
+nnoremap <leader>l :ls<CR>:b<space>
 
 " move lines up and down
 nnoremap <C-j> :m .+1<CR>==
@@ -90,40 +133,48 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
+
 " *** END OF KEYMAPS ***
 
-"syntax on
-"let python_highlight_all=1
+syntax on
 
-colorscheme zenburn
+let g:python_highlight_all=1
 
-" set background=dark
-
-" Python indentations                                                                                                               
-"au BufNewFile,BufRead *.py
-	"\ set tabstop=2 |
-	"\ set softtabstop=2 |
-	"\ set shiftwidth=4 |
-	"\ set textwidth=79 |
-	"\ set expandtab |
-	"\ set autoindent |
-	"\ set fileformat=unix |
-	"\ set cursorline
+" Python indentations
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
 
 "highlight BadWhitespace ctermbg=red guibg=red
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-"let g:ycm_autoclose_preview_window_after_completion=1
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+highlight BadWhitespace ctermbg=red guibg=red
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Airline 
-let g:airline_theme='bubblegum' 
+let g:airline_theme='deus'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_left_sep = ' ❤  '
 "let g:airline_right_sep = ' 🟆  '
-let g:airline#extensions#tabline#formatter = 'jsformatter'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#tabline#fnamemod = ':p:.'
+let g:airline#extensions#tabline#buffer_nr_show = 0
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#buffer_min_count = 1
+"let g:airline#extensions#tabline#fnamecollapse = 1
+
+set showtabline=0
 
 set laststatus=2
 set encoding=UTF-8
@@ -132,11 +183,12 @@ let g:NERDTreeLimitedSyntax = 1
 let g:NERDTreeSyntaxDisableDefaultExtensions = 1
 let g:NERDTreeDisableExactMatchHighlight = 1
 let g:NERDTreeDisablePatternMatchHighlight = 1
-let g:NERDTreeSyntaxEnabledExtensions = ['py']
-
 let g:NERDTreeHighlightCursorline = 0
+let g:NERDTreeWinSize=40
+"let g:NERDTreeSyntaxEnabledExtensions = ['py']
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " autoquit if only nerdtree is open
+autocmd bufenter * if &filetype == "nerdtree" | silent exe substitute(mapcheck("R"), "<CR>", "", "") | endif
 

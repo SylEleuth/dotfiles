@@ -1,0 +1,19 @@
+{
+  "segments": [
+    "cwd",
+    "newline",
+    "time", 
+    "virtual_env",
+    "ssh",
+    "git",
+    "hg",
+    "jobs"
+  ],
+    "cwd": {
+        "max_depth": 10,
+        "full_cwd": true
+    },
+    "vcs": {
+        "show_symbol": true
+    }
+} 
