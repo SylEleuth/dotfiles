@@ -1,0 +1,209 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "window.zoomLevel": 0,
+  "window.titleBarStyle": "custom",
+  "telemetry.enableTelemetry": false,
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "editor.formatOnPaste": true,
+  "editor.snippetSuggestions": "top",
+  "editor.fontSize": 16,
+  "editor.fontWeight": "600",
+  "editor.lineHeight": 18,
+  "editor.fontFamily": "FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, Hasklug Nerd Font, Inconsolata, Source Code Pro, Fira Code, Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, MesloLGL Nerd Font, Hack Nerd Font",
+  "terminal.integrated.shell.linux": "/usr/bin/zsh",
+  "terminal.external.linuxExec": "termite",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "600",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontLigatures": true,
+  "workbench.sideBar.location": "right",
+  "editor.renderControlCharacters": false,
+  "git.confirmSync": false,
+  "editor.renderIndentGuides": false,
+  "editor.formatOnSave": true,
+  "sync.gist": "fb0fecdaa582b34e75c025c62967ac9f",
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "sync.quietSync": false,
+  "sync.askGistName": false,
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#888888",
+    "statusBar.background": "#D96736",
+    "statusBarItem.hoverBackground": "#803c21",
+    "tab.activeBackground": "#D96736",
+    "statusBar.noFolderBackground": "#414141",
+    "statusBar.debuggingBackground": "#5a5a5a",
+    "activityBarBadge.background": "#80CBC4",
+    "list.activeSelectionForeground": "#80CBC4",
+    "list.inactiveSelectionForeground": "#80CBC4",
+    "list.highlightForeground": "#80CBC4",
+    "scrollbarSlider.activeBackground": "#80CBC450",
+    "editorSuggestWidget.highlightForeground": "#80CBC4",
+    "textLink.foreground": "#80CBC4",
+    "progressBar.background": "#80CBC4",
+    "pickerGroup.foreground": "#80CBC4",
+    "tab.activeBorder": "#80CBC4",
+    "terminal.background": "#2b2a2a",
+    "terminal.foreground": "#dddddd",
+    "terminal.ansiBlack": "#414141",
+    "terminal.ansiBlue": "#268bd2",
+    "terminal.ansiBrightBlack": "#586e75",
+    "terminal.ansiBrightBlue": "#839496",
+    "terminal.ansiBrightCyan": "#93a1a1",
+    "terminal.ansiBrightGreen": "#586e75",
+    "terminal.ansiBrightMagenta": "#6c6ec6",
+    "terminal.ansiBrightRed": "#cb4b16",
+    "terminal.ansiBrightWhite": "#fdf6e3",
+    "terminal.ansiBrightYellow": "#657b83",
+    "terminal.ansiCyan": "#2aa198",
+    "terminal.ansiGreen": "#859901",
+    "terminal.ansiMagenta": "#d33682",
+    "terminal.ansiRed": "#dc322f",
+    "terminal.ansiWhite": "#eee8d5",
+    "terminal.ansiYellow": "#b58901"
+  },
+  "material-icon-theme.showUpdateMessage": false,
+  "git.autofetch": true,
+  "files.autoSave": "off",
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  "workbench.statusBar.feedback.visible": false,
+  "breadcrumbs.enabled": true,
+  "editor.renderWhitespace": "boundary",
+  "sync.forceDownload": false,
+  "editor.codeLens": false,
+  "telemetry.enableCrashReporter": false,
+  "terminal.integrated.rendererType": "dom",
+  "python.autoComplete.addBrackets": true,
+  "python.jediEnabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.pythonPath": "/usr/bin/python",
+  "python.formatting.provider": "black",
+  "extensions.ignoreRecommendations": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "vim.useCtrlKeys": false,
+  "vim.debug.silent": true,
+  "vim.cursorStylePerMode.normal": "underline",
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.easymotionMarkerBackgroundColor": "red",
+  "keyboard.dispatch": "keyCode",
+  "vim.leader": " ",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<C>",
+        "r"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "redo",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.files.save",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.closeActiveEditor",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "a"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.files.save",
+          "args": []
+        },
+        {
+          "command": "workbench.action.closeActiveEditor",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "i"
+      ],
+      "after": [
+        "y",
+        "i",
+        "\""
+      ]
+    },
+    {
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "y",
+        "$"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.commentLine",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.colorTheme": "Gruvbox Dark Soft"
+}
