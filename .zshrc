@@ -75,6 +75,7 @@ plugins+=(
 	zsh-autosuggestions
 	zsh-completions
 	k
+    auto-notify
 	)
 
 autoload -U compinit && compinit
@@ -113,6 +114,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias vi="/usr/bin/vim"
 alias vim="nvim"
 alias vi3="nvim ~/.config/i3/config"
+alias vimconfig="nvim ~/.config/nvim/init.vim"
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -124,25 +126,27 @@ alias l="lsd -la"
 alias la="ls -AF ${colorflag}"
 alias ll="ls -lFh ${colorflag}"
 alias lld="ls -l | grep ^d"
+alias rm="rm -i"
 alias weather="curl wttr.in/Preston"
-alias feh1="feh --bg-scale ~/Pictures/Wallpapers/tokyo_street_by_arsenixc.jpg"
-alias feh2="feh --bg-scale ~/Pictures/Wallpapers/tokyo_street_sunset_by_arsenixc.jpg"
-alias feh3="feh --bg-scale ~/Pictures/Wallpapers/tokyo_street_night_by_arsenixc.jpg"
+alias seriale="cd ~/Videos/seriale" 
+alias movies="cd ~/Videos/movies" 
+alias anime="cd ~/Videos/anime" 
+
 alias monitors="sh ~/.config/screenlayout/screen.sh" 
 alias monitor1="sh ~/.config/screenlayout/screen1.sh" 
 alias monitor2="sh ~/.config/screenlayout/screen2.sh" 
 
-POWERLEVEL9K_MODE='awesome-fontconfig'
-# POWERLEVEL9K_MODE='nerdfont-complete'
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable newline time vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history)
+#POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
 # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
 POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '
 POWERLEVEL9K_DIR_PATH_ABSOLUTE="true"
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0B0'
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0B2'
+#POWERLEVEL9K_COLOR_SCHEME='light'
 
 function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"
