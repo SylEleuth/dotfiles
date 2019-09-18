@@ -132,9 +132,9 @@ alias seriale="cd ~/Videos/seriale"
 alias movies="cd ~/Videos/movies" 
 alias anime="cd ~/Videos/anime" 
 
-alias monitors="sh ~/.config/screenlayout/screen.sh" 
-alias monitor1="sh ~/.config/screenlayout/screen1.sh" 
-alias monitor2="sh ~/.config/screenlayout/screen2.sh" 
+alias m="sh ~/.config/screenlayout/screen.sh" 
+alias m1="sh ~/.config/screenlayout/screen1.sh" 
+alias m2="sh ~/.config/screenlayout/screen2.sh" 
 
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_MODE='nerdfont-complete'

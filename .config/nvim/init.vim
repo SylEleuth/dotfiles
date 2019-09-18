@@ -120,7 +120,7 @@ set linespace=8
 
 " Persistent undo
 set undofile
-set undodir=$HOME/.vim/undo
+set undodir=$HOME/Dropbox/.vim/undo
 
 set undolevels=1000
 set undoreload=10000
