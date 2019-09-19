@@ -1,5 +1,5 @@
-.config/Kvantum/
 .config/blender/
+.config/bumblebee-status
 .config/clipit/
 .config/cmus/
 .config/dconf/
@@ -7,6 +7,7 @@
 .config/i3/workspace-1b.json
 .config/i3/workspace-1c.json
 .config/keepassxc/
+.config/Kvantum/
 .config/polybar/config.backup
 .config/powerline-shell/themes/__pycache__/
 .config/powerline-shell/themes/flat.py
