@@ -29,8 +29,19 @@ exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 # font xft:SauceCodePro Nerd Font bold 9
 font xft:Hack Nerd Font bold 9
 
-# Two monitors
-exec_always --no-startup-id sh ~/.config/screenlayout/screen.sh
+# Screen layouts
+exec --no-startup-id sh ~/.config/screenlayout/screen.sh
+
+bindsym $mod+Shift+p mode "$mode_screenlayout"
+set $mode_screenlayout (1) Main, (2) laptop, (~) Full
+mode "$mode_screenlayout" {
+  bindsym $mod+Shift+p mode "default"
+  bindsym Escape mode "default"
+
+  bindsym 1 exec --no-startup-id sh ~/.config/screenlayout/screen1.sh, mode "default"
+  bindsym 2 exec --no-startup-id sh ~/.config/screenlayout/screen2.sh, mode "default"
+  bindsym grave exec --no-startup-id sh ~/.config/screenlayout/screen.sh, mode "default"
+} 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier Mod3
@@ -100,6 +111,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Calculator key
+bindsym XF86Calculator exec --no-startup-id Galculator
+
 # Run at start
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -117,6 +131,7 @@ bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+c exec --no-startup-id doublecmd 
 
 focus_follows_mouse no
 mouse_warping none
@@ -172,7 +187,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+p floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+p focus mode_toggle
+#bindsym $mod+Shift+p focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -313,11 +328,11 @@ assign [class="Termite"] $ws1
 assign [class="kitty"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="firefoxdeveloperedition"] $ws2
-assign [class="Code"] $ws4
 assign [class="krita"] $ws3
 assign [class="Gimp-2.10"] $ws3
 assign [class="Godot"] $ws3
 assign [class="Blender"] $ws3
+assign [class="Code"] $ws4
 assign [class="smplayer"] $ws5
 assign [class="qBittorrent"] $ws7
 assign [class="Double Commander"] $ws6

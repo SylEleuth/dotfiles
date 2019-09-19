@@ -269,3 +269,16 @@ let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
+
+let g:startify_files_number = 40
+let g:startify_lists = [
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ ]
+let g:startify_bookmarks = [ '~/.config/i3/config',
+            \ '~/.zshrc',
+            \ '~/.config/compton.conf',
+            \ '~/.config/nvim/init.vim',
+            \ '~/.config/termite/config'
+            \ ]
+let g:startify_custom_header = 0
