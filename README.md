@@ -1,2 +1,2 @@
 # dotfiles
-My .dontfile configuration and other necessary and unnecessary files.
+My .dotfile configuration and other necessary and unnecessary files.
