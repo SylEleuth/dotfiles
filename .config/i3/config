@@ -118,7 +118,7 @@ bindsym XF86Calculator exec --no-startup-id Galculator
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym Mod3+F1 exec --no-startup-id sh ~/.config/i3/terminals.sh
-bindsym Mod3+F2 exec firefox-developer-edition
+bindsym Mod3+F2 exec firefox
 bindsym Mod3+F3 exec blender
 bindsym Mod3+F4 exec krita
 bindsym Mod3+F5 exec code
@@ -408,7 +408,7 @@ exec --no-startup-id xset r rate 300 100
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id unclutter
 exec --no-startup-id redshift -l 53.757729:-2.703440
-exec --no-startup-id firefox-developer-edition
+exec --no-startup-id firefox
 exec --no-startup-id birdtray
 exec --no-startup-id albert
 #exec --no-startup-id dropbox

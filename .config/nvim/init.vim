@@ -4,83 +4,66 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim' " Plugin manager
+Plugin 'roxma/nvim-yarp' " Remote updates of plugins
 
-Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline' " Cool powerline bars
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree' " A tree explorer plugin <F1>, <F2> for current directory 
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 
-"Plugin 'junegunn/fzf'
+Plugin 'francoiscabrol/ranger.vim' " Run Ranger in vim <F3>
+
+Plugin 'terryma/vim-multiple-cursors' " Multiple selection <C-n>
+
+Plugin 'mhinz/vim-startify' " Starting screen
+
+Plugin 'https://gitlab.com/Lenovsky/nuake.git' " A Quake-style terminal panel for Neovim and Vim <F4>
+
+Plugin 'ncm2/ncm2' " Completion framework
+Plugin 'HansPinckaers/ncm2-jedi' " Fast python completion (use ncm2 if you want type info or snippet support)
+Plugin 'ncm2/ncm2-bufword' " Words in buffer completion
+Plugin 'ncm2/ncm2-path' " Filepath completion
+
+Plugin 'nvie/vim-flake8' " Python linter <F7>
+Plugin 'davidhalter/jedi-vim' " jedi for python
+
+Plugin 'Vimjas/vim-python-pep8-indent' " Python indentations
+
+Plugin 'kh3phr3n/python-syntax' " Python code highlight
+
+Plugin 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
+Plugin 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
+Plugin 'Yggdroot/indentLine' " Disply the indention levels with thin vertical lines and leading spaces 
+
+Plugin 'tpope/vim-commentary' " Comment with 'gcc'
+
+Plugin 'luochen1990/rainbow' " Colored parentheses
+
+Plugin 'morhetz/gruvbox' " theme
+
+"Plugin 'junegunn/fzf' " Fuzzy finder
 "Plugin 'junegunn/fzf.vim'
-"Plugin 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' } " Ultrafast multi-pane file manager for Neovim with fuzzy matching
 
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'rbgrouleff/bclose.vim' " deleting a buffer in Vim without closing the window
 
-Plugin 'tpope/vim-eunuch'
+"Plugin 'vim-syntastic/syntastic' " Syntax checking
 
-Plugin 'rhysd/clever-f.vim'
-
-Plugin 'mhinz/vim-startify'
-
-Plugin 'https://gitlab.com/Lenovsky/nuake.git' " A Quake-style terminal panel for Neovim and Vim
-
-Plugin 'roxma/nvim-yarp'
-Plugin 'ncm2/ncm2'
-" Fast python completion (use ncm2 if you want type info or snippet support)
-Plugin 'HansPinckaers/ncm2-jedi'
-" Words in buffer completion
-Plugin 'ncm2/ncm2-bufword'
-" Filepath completion
-Plugin 'ncm2/ncm2-path'
-
-Plugin 'nvie/vim-flake8'
-Plugin 'davidhalter/jedi-vim'   " jedi for python
-
-Plugin 'Vimjas/vim-python-pep8-indent'
-
-Plugin 'kh3phr3n/python-syntax'
-
-Plugin 'francoiscabrol/ranger.vim'
-Plugin 'rbgrouleff/bclose.vim'
-
-Plugin 'tpope/vim-surround'
-Plugin 'jiangmiao/auto-pairs'
-
-Plugin 'tpope/vim-commentary'
-
-Plugin 'luochen1990/rainbow'
-
-Plugin 'morhetz/gruvbox'
-
-"Plugin 'ajh17/VimCompletesMe'
-
-"Plugin 'vim-syntastic/syntastic'
-
-"Plugin 'vim-python/python-syntax'
-
-"Plugin 'ajmwagar/vim-deus'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'jnurmine/Zenburn'
-"Plugin 'ayu-theme/ayu-vim'
-"Plugin 'gilgigilgil/anderson.vim'
-"Plugin 'dracula/vim'
-"Plugin 'joshdick/onedark.vim'
-"Plugin 'zefei/cake16'
+"Plugin 'ajmwagar/vim-deus' " Theme
+"Plugin 'altercation/vim-colors-solarized' " Theme
+"Plugin 'jnurmine/Zenburn' " Theme
+"Plugin 'ayu-theme/ayu-vim' " Theme
+"Plugin 'gilgigilgil/anderson.vim' " Theme
+"Plugin 'dracula/vim' " Theme
+"Plugin 'joshdick/onedark.vim' " Theme
+"Plugin 'zefei/cake16' " Theme
 
 "Plugin 'rstacruz/vim-closer'
-"Plugin 'Yggdroot/indentLine'
 
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'airblade/vim-gitgutter'
-
-"Plugin 'vim-scripts/indentpython.vim'
-
-"Plugin 'sheerun/vim-polyglot'
-
-"Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Semantic highlight for Python
+"Plugin 'tpope/vim-fugitive' " Git wrapper
+"Plugin 'airblade/vim-gitgutter' " Shows git diff
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -249,13 +232,13 @@ autocmd bufenter * if &filetype == "nerdtree" | silent exe substitute(mapcheck("
 
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 1 
 
 " ncm2 settings
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=menuone,noselect,noinsert
 set shortmess+=c
-inoremap <c-c> <ESC>
+
 " make it fast
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1, 1]]
@@ -270,6 +253,7 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 
+" Startify settings
 let g:startify_files_number = 40
 let g:startify_lists = [
           \ { 'type': 'files',     'header': ['   MRU']            },
@@ -282,3 +266,9 @@ let g:startify_bookmarks = [ '~/.config/i3/config',
             \ '~/.config/termite/config'
             \ ]
 let g:startify_custom_header = 0
+
+" IndentLine settings
+let g:indentLine_char = '│'
+let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = "."

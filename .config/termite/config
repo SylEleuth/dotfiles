@@ -11,7 +11,7 @@ dynamic_title = true
 #font = Hack Nerd Font bold 9
 font = FantasqueSansMono Nerd Font bold 10
 
-cell_height_scale = 1.1
+cell_height_scale = 1.2
 
 #fullscreen = true
 #icon_name = terminal

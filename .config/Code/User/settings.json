@@ -7,10 +7,10 @@
   "editor.wordWrap": "on",
   "editor.formatOnPaste": true,
   "editor.snippetSuggestions": "top",
-  "editor.fontSize": 15,
-  "editor.fontWeight": "600",
-  "editor.lineHeight": 18,
-  "editor.fontFamily": "Cascadia Code, FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, Hasklug Nerd Font, Inconsolata, Source Code Pro, Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "500",
+  "editor.lineHeight": 22,
+  "editor.fontFamily": "FuraCode Nerd Font, Cascadia Code, FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, Hasklug Nerd Font, Inconsolata, Source Code Pro, Consolas, 'Courier New', monospace",
   "terminal.integrated.fontFamily": "FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, MesloLGL Nerd Font, Hack Nerd Font",
   "terminal.integrated.shell.linux": "/usr/bin/zsh",
   "terminal.external.linuxExec": "termite",
@@ -205,5 +205,5 @@
   ],
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "workbench.colorTheme": "Gruvbox Dark Soft"
+  "workbench.colorTheme": "Gruvbox Light Hard"
 }
