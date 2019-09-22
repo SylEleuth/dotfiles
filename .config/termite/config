@@ -128,30 +128,158 @@ scrollbar = off
 #color15 = #fdf6e3
 
 
-###### zenburn colors #######
-foreground = #dcdccc
-foreground_bold = #ffffff
-background = #3a3a3a
+##### GRUVBOX DARKSOFT ######
 
-color0 = #3c3836
-color1 = #705050
-color2 = #fcd792
-color3 = #f0dfaf
-color4 = #75996b
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #f5deb3
-color8 = #709080
-color9 = #dca3a3
-color10 = #c9ce63
-color11 = #e0cf9f
-color12 = #91c980
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
+foreground          = #d5c4a1
+foreground_bold     = #ebdbb2
+cursor              = #ebdbb2
+cursor_foreground   = #32302f
+background          = rgba(50, 48, 47)
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #32302f
+color8  = #665c54
+color7  = #d5c4a1
+color15 = #fbf1c7
+
+# Red
+color1  = #fb4934
+color9  = #fb4934
+
+# Green
+color2  = #b8bb26
+color10 = #b8bb26
+
+# Yellow
+color3  = #fabd2f
+color11 = #fabd2f
+
+# Blue
+color4  = #83a598
+color12 = #83a598
+
+# Purple
+color5  = #d3869b
+color13 = #d3869b
+
+# Teal
+color6  = #8ec07c
+color14 = #8ec07c
+
+# Extra colors
+color16 = #fe8019
+color17 = #d65d0e
+color18 = #3c3836
+color19 = #504945
+color20 = #bdae93
+color21 = #ebdbb2
 
 
-####### dracula colors #######
+# ####### GRUVBOX DARK######
+# # hard contrast: background = #1d2021
+# background = #282828
+# # soft contrast: background = #32302f
+# foreground = #ebdbb2
+# foreground_bold = #ebdbb2
+
+# # dark0 + gray
+# color0 = #282828
+# color8 = #928374
+
+# # neutral_red + bright_red
+# color1 = #cc241d
+# color9 = #fb4934
+
+# # neutral_green + bright_green
+# color2 = #98971a
+# color10 = #b8bb26
+
+# # neutral_yellow + bright_yellow
+# color3 = #d79921
+# color11 = #fabd2f
+
+# # neutral_blue + bright_blue
+# color4 = #458588
+# color12 = #83a598
+
+# # neutral_purple + bright_purple
+# color5 = #b16286
+# color13 = #d3869b
+
+# # neutral_aqua + faded_aqua
+# color6 = #689d6a
+# color14 = #8ec07c
+
+# # light4 + light1
+# color7 = #a89984
+# color15 = #ebdbb2
+
+
+# ##### GRUVBOX LIGHT #####
+# # hard contrast: background = #f9f5d7
+# background = #fbf1c7
+# # soft contrast: background = #f2e5bc
+# foreground = #3c3836
+# foreground_bold = #3c3836
+
+# # light0 + gray
+# color0 = #fbf1c7
+# color8 = #928374
+
+# # neutral_red + faded_red
+# color1 = #cc241d
+# color9 = #9d0006
+
+# # neutral_green + faded_green
+# color2 = #98971a
+# color10 = #79740e
+
+# # neutral_yellow + faded_yellow
+# color3 = #d79921
+# color11 = #b57614
+
+# # neutral_blue + faded_blue
+# color4 = #458588
+# color12 = #076678
+
+# # neutral_purple + faded_purple
+# color5 = #b16286
+# color13 = #8f3f71
+
+# # neutral_aqua + faded_aqua
+# color6 = #689d6a
+# color14 = #427b58
+
+# # dark4 + dark1
+# color7 = #7c6f64
+# color15 = #3c3836
+
+# ###### ZENBURN #######
+# foreground = #dcdccc
+# foreground_bold = #ffffff
+# background = #3a3a3a
+
+# color0 = #3c3836
+# color1 = #705050
+# color2 = #fcd792
+# color3 = #f0dfaf
+# color4 = #75996b
+# color5 = #dc8cc3
+# color6 = #8cd0d3
+# color7 = #f5deb3
+# color8 = #709080
+# color9 = #dca3a3
+# color10 = #c9ce63
+# color11 = #e0cf9f
+# color12 = #91c980
+# color13 = #ec93d3
+# color14 = #93e0e3
+# color15 = #ffffff
+
+
+####### DRACULA #######
 
 #foreground = #f8f8f2
 #foreground_bold = #ffffff

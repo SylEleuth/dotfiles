@@ -197,7 +197,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Airline
-let g:airline_theme='deus'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_left_sep = ' ❤  '
 "let g:airline_right_sep = ' 🟆  '

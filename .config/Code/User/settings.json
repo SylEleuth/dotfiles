@@ -28,8 +28,29 @@
   "sync.autoDownload": false,
   "sync.autoUpload": false,
   "sync.quietSync": false,
-  "sync.askGistName": false,
-  "workbench.colorCustomizations": {
+  "material-icon-theme.showUpdateMessage": false,
+  "git.autofetch": true,
+  "files.autoSave": "off",
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  "workbench.statusBar.feedback.visible": false,
+  "breadcrumbs.enabled": true,
+  "editor.renderWhitespace": "boundary",
+  "sync.forceDownload": false,
+  "editor.codeLens": false,
+  "telemetry.enableCrashReporter": false,
+  "terminal.integrated.rendererType": "dom",
+  "python.autoComplete.addBrackets": true,
+  "python.jediEnabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.pythonPath": "/usr/bin/python",
+  "python.formatting.provider": "black",
+  "extensions.ignoreRecommendations": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.colorTheme": "Gruvbox Dark Soft"
+  /*"workbench.colorCustomizations": {
     "editor.selectionBackground": "#888888",
     "statusBar.background": "#D96736",
     "statusBarItem.hoverBackground": "#803c21",
@@ -64,27 +85,8 @@
     "terminal.ansiRed": "#dc322f",
     "terminal.ansiWhite": "#eee8d5",
     "terminal.ansiYellow": "#b58901"
-  },
-  "material-icon-theme.showUpdateMessage": false,
-  "git.autofetch": true,
-  "files.autoSave": "off",
-  "sync.removeExtensions": true,
-  "sync.syncExtensions": true,
-  "workbench.statusBar.feedback.visible": false,
-  "breadcrumbs.enabled": true,
-  "editor.renderWhitespace": "boundary",
-  "sync.forceDownload": false,
-  "editor.codeLens": false,
-  "telemetry.enableCrashReporter": false,
-  "terminal.integrated.rendererType": "dom",
-  "python.autoComplete.addBrackets": true,
-  "python.jediEnabled": false,
-  "python.linting.pylintEnabled": true,
-  "python.pythonPath": "/usr/bin/python",
-  "python.formatting.provider": "black",
-  "extensions.ignoreRecommendations": true,
-  "extensions.showRecommendationsOnlyOnDemand": true,
-  "vim.useCtrlKeys": false,
+  },*/
+  /*"vim.useCtrlKeys": false,
   "vim.debug.silent": true,
   "vim.cursorStylePerMode.normal": "underline",
   "vim.useSystemClipboard": true,
@@ -202,8 +204,5 @@
         }
       ]
     }
-  ],
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "workbench.colorTheme": "Gruvbox Light Hard"
+  ]*/
 }
