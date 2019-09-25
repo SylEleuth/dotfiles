@@ -10,7 +10,7 @@ Plugin 'roxma/nvim-yarp' " Remote updates of plugins
 Plugin 'vim-airline/vim-airline' " Cool powerline bars
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'scrooloose/nerdtree' " A tree explorer plugin <F1>, <F2> for current directory 
+Plugin 'scrooloose/nerdtree' " A tree explorer plugin <F1>, <F2> for current directory
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 
@@ -31,12 +31,13 @@ Plugin 'nvie/vim-flake8' " Python linter <F7>
 Plugin 'davidhalter/jedi-vim' " jedi for python
 
 Plugin 'Vimjas/vim-python-pep8-indent' " Python indentations
+Plugin 'Chiel92/vim-autoformat' " code formatting
 
 Plugin 'kh3phr3n/python-syntax' " Python code highlight
 
 Plugin 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
 Plugin 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
-Plugin 'Yggdroot/indentLine' " Disply the indention levels with thin vertical lines and leading spaces 
+Plugin 'Yggdroot/indentLine' " Disply the indention levels with thin vertical lines and leading spaces
 
 Plugin 'tpope/vim-commentary' " Comment with 'gcc'
 
@@ -88,7 +89,9 @@ set ignorecase " Search case insensitive:
 set smartcase " .. but not when search pattern contains upper case characters
 set mouse=a " Copy selected text with mouse to system clipboard
 set updatetime=250 " If this many milliseconds nothing is typed the swap file will be written to disk
-set lazyredraw
+set lazyredraw " buffers screen updates instead of updating all the time
+set linebreak " breaks lines by word rather than character
+
 
 " Buffers
 set hidden
@@ -172,20 +175,6 @@ inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " *** END OF KEYMAPS ***
 
-syntax on
-
-let g:python_highlight_all=1
-
-" Python indentations
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
-
 let g:syntastic_python_checkers=['flake8']
 
 "highlight BadWhitespace ctermbg=red guibg=red
@@ -215,7 +204,7 @@ set laststatus=2
 set encoding=UTF-8
 
 "autocmd BufWinLeave *.* mkview
-"autocmd BufWinEnter *.* silent loadview 
+"autocmd BufWinEnter *.* silent loadview
 
 let g:NERDTreeLimitedSyntax = 1
 let g:NERDTreeSyntaxDisableDefaultExtensions = 1
@@ -232,7 +221,24 @@ autocmd bufenter * if &filetype == "nerdtree" | silent exe substitute(mapcheck("
 
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
-let g:rainbow_active = 1 
+let g:rainbow_active = 1
+
+" PYTHON settings
+syntax on
+
+let g:python_highlight_all=1
+
+" Python indentations
+au BufNewFile,BufRead *.py
+            \ set tabstop=4 |
+            \ set softtabstop=4 |
+            \ set shiftwidth=4 |
+            \ set textwidth=79 |
+            \ set wrapmargin=0 |
+            \ set formatoptions+=t |
+            \ set expandtab |
+            \ set autoindent |
+            \ set fileformat=unix
 
 " ncm2 settings
 autocmd BufEnter * call ncm2#enable_for_buffer()
@@ -252,6 +258,13 @@ let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
+
+" autoformat settings
+noremap <F5> :Autoformat<CR>
+au BufWrite * :Autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
 
 " Startify settings
 let g:startify_files_number = 40
