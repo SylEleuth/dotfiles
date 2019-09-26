@@ -31,7 +31,7 @@ Plugin 'nvie/vim-flake8' " Python linter <F7>
 Plugin 'davidhalter/jedi-vim' " jedi for python
 
 Plugin 'Vimjas/vim-python-pep8-indent' " Python indentations
-Plugin 'Chiel92/vim-autoformat' " code formatting
+Plugin 'Chiel92/vim-autoformat' " code formatting <F5>
 
 Plugin 'kh3phr3n/python-syntax' " Python code highlight
 
@@ -42,6 +42,9 @@ Plugin 'Yggdroot/indentLine' " Disply the indention levels with thin vertical li
 Plugin 'tpope/vim-commentary' " Comment with 'gcc'
 
 Plugin 'luochen1990/rainbow' " Colored parentheses
+
+Plugin 'tpope/vim-fugitive' " Git wrapper
+Plugin 'airblade/vim-gitgutter' " Shows git diff
 
 Plugin 'morhetz/gruvbox' " theme
 
@@ -62,9 +65,6 @@ Plugin 'morhetz/gruvbox' " theme
 "Plugin 'zefei/cake16' " Theme
 
 "Plugin 'rstacruz/vim-closer'
-
-"Plugin 'tpope/vim-fugitive' " Git wrapper
-"Plugin 'airblade/vim-gitgutter' " Shows git diff
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -92,7 +92,6 @@ set updatetime=250 " If this many milliseconds nothing is typed the swap file wi
 set lazyredraw " buffers screen updates instead of updating all the time
 set linebreak " breaks lines by word rather than character
 
-
 " Buffers
 set hidden
 
@@ -103,6 +102,11 @@ set softtabstop=4
 set expandtab
 set infercase
 set linespace=8
+
+set showtabline=0
+
+set laststatus=2
+set encoding=UTF-8
 
 " Persistent undo
 set undofile
@@ -175,8 +179,6 @@ inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " *** END OF KEYMAPS ***
 
-let g:syntastic_python_checkers=['flake8']
-
 "highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
@@ -198,14 +200,10 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#buffer_min_count = 1
 "let g:airline#extensions#tabline#fnamecollapse = 1
 
-set showtabline=0
-
-set laststatus=2
-set encoding=UTF-8
-
 "autocmd BufWinLeave *.* mkview
 "autocmd BufWinEnter *.* silent loadview
 
+" NERDTree settings
 let g:NERDTreeLimitedSyntax = 1
 let g:NERDTreeSyntaxDisableDefaultExtensions = 1
 let g:NERDTreeDisableExactMatchHighlight = 1
@@ -221,12 +219,44 @@ autocmd bufenter * if &filetype == "nerdtree" | silent exe substitute(mapcheck("
 
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
-let g:rainbow_active = 1
+let g:rainbow_active = 1 "Color brackets
+
+" autoformat settings
+noremap <F5> :Autoformat<CR>
+au BufWrite * :Autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+
+" Startify settings
+let g:startify_files_number = 40
+let g:startify_lists = [
+            \ { 'type': 'files',     'header': ['   MRU']            },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+            \ ]
+let g:startify_bookmarks = [ '~/.config/i3/config',
+            \ '~/.zshrc',
+            \ '~/.config/compton.conf',
+            \ '~/.config/nvim/init.vim',
+            \ '~/.config/termite/config'
+            \ ]
+let g:startify_custom_header = 0
+
+" IndentLine settings
+let g:indentLine_char = '│'
+let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = "."
+
+" Git settings (fugitive and gitguter)
+set updatetime=100
 
 " PYTHON settings
 syntax on
 
 let g:python_highlight_all=1
+
+let g:syntastic_python_checkers=['flake8']
 
 " Python indentations
 au BufNewFile,BufRead *.py
@@ -259,29 +289,3 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 
-" autoformat settings
-noremap <F5> :Autoformat<CR>
-au BufWrite * :Autoformat
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
-
-" Startify settings
-let g:startify_files_number = 40
-let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   MRU']            },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ ]
-let g:startify_bookmarks = [ '~/.config/i3/config',
-            \ '~/.zshrc',
-            \ '~/.config/compton.conf',
-            \ '~/.config/nvim/init.vim',
-            \ '~/.config/termite/config'
-            \ ]
-let g:startify_custom_header = 0
-
-" IndentLine settings
-let g:indentLine_char = '│'
-let g:indentLine_enabled = 0
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_leadingSpaceChar = "."
