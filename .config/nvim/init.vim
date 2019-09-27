@@ -27,6 +27,11 @@ Plugin 'HansPinckaers/ncm2-jedi' " Fast python completion (use ncm2 if you want 
 Plugin 'ncm2/ncm2-bufword' " Words in buffer completion
 Plugin 'ncm2/ncm2-path' " Filepath completion
 
+" Plugin 'Shougo/neosnippet.vim'
+" Plugin 'ncm2/ncm2-neosnippet'
+" Plugin 'roxma/vim-hug-neovim-rpc'
+" Plugin 'Shougo/neosnippet-snippets'
+
 Plugin 'nvie/vim-flake8' " Python linter <F7>
 Plugin 'davidhalter/jedi-vim' " jedi for python
 
@@ -91,6 +96,7 @@ set mouse=a " Copy selected text with mouse to system clipboard
 set updatetime=250 " If this many milliseconds nothing is typed the swap file will be written to disk
 set lazyredraw " buffers screen updates instead of updating all the time
 set linebreak " breaks lines by word rather than character
+set timeoutlen=500
 
 " Buffers
 set hidden
@@ -177,7 +183,22 @@ vnoremap p "+p
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
 
+" disable arrow keys in normal mode and visual mode
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" disable arrow keys in insert mode
+" inoremap <Up> <Nop>
+" inoremap <Down> <Nop>
+" inoremap <Left> <Nop>
+" inoremap <Right> <Nop>
+
+nmap oo o<Esc>
+
 " *** END OF KEYMAPS ***
+
 
 "highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -186,6 +207,7 @@ highlight BadWhitespace ctermbg=red guibg=red
 
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 " Airline
 let g:airline_theme='gruvbox'
@@ -289,3 +311,25 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 
+"inoremap <silent> <expr> <CR> ncm2_neosnippet#expand_or("\<CR>", 'n')
+"inoremap <silent> <expr> <TAB> ncm2_neosnippet#expand_or("<TAB>", 'n')
+
+"" Plugin key-mappings.
+"" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+"" SuperTab like snippets behavior.
+"" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+""imap <expr><TAB>
+"" \ pumvisible() ? "\<C-n>" :
+"" \ neosnippet#expandable_or_jumpable() ?
+"" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+"" For conceal markers.
+"if has('conceal')
+"  set conceallevel=2 concealcursor=niv
+"endif

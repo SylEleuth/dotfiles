@@ -430,9 +430,9 @@ set $darkgray #282828
 
 # gruvbox theme
 # class                 border   | backgr   | text   | indicator | child_border
-client.focused          $darkgray  $darkgray  $yellow  $purple     $darkgray
-client.focused_inactive $gray      $gray      $yellow  $purple     $gray
-client.unfocused        $gray      $gray      $yellow  $purple     $gray
+client.focused          $darkgray  $darkgray  $yellow  $darkgray     $darkgray
+client.focused_inactive $gray      $gray      $yellow  $darkgray     $gray
+client.unfocused        $gray      $gray      $yellow  $darkgray     $gray
 client.urgent           $red       $red       $white   $red        $red
 
 # Theme colors
