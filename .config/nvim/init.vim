@@ -27,10 +27,10 @@ Plugin 'HansPinckaers/ncm2-jedi' " Fast python completion (use ncm2 if you want 
 Plugin 'ncm2/ncm2-bufword' " Words in buffer completion
 Plugin 'ncm2/ncm2-path' " Filepath completion
 
-" Plugin 'Shougo/neosnippet.vim'
-" Plugin 'ncm2/ncm2-neosnippet'
-" Plugin 'roxma/vim-hug-neovim-rpc'
-" Plugin 'Shougo/neosnippet-snippets'
+Plugin 'Shougo/neosnippet.vim' " Snippets doh!
+Plugin 'ncm2/ncm2-neosnippet'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'Shougo/neosnippet-snippets'
 
 Plugin 'nvie/vim-flake8' " Python linter <F7>
 Plugin 'davidhalter/jedi-vim' " jedi for python
@@ -78,13 +78,7 @@ colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'soft'
 
-set termguicolors
-"colorscheme deus
-
-"set background=light
-"colorscheme solarized
-
-"let g:solarized_termcolors=16
+" set termguicolors
 
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white
@@ -311,8 +305,8 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 
-"inoremap <silent> <expr> <CR> ncm2_neosnippet#expand_or("\<CR>", 'n')
-"inoremap <silent> <expr> <TAB> ncm2_neosnippet#expand_or("<TAB>", 'n')
+inoremap <silent> <expr> <CR> ncm2_neosnippet#expand_or("\<CR>", 'n')
+inoremap <silent> <expr> <TAB> ncm2_neosnippet#expand_or("<TAB>", 'n')
 
 "" Plugin key-mappings.
 "" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
@@ -329,7 +323,7 @@ let g:jedi#show_call_signatures = "1"
 "" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 "" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-"" For conceal markers.
-"if has('conceal')
-"  set conceallevel=2 concealcursor=niv
-"endif
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif

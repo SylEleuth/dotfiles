@@ -124,6 +124,7 @@ bindsym Mod3+F4 exec krita
 bindsym Mod3+F5 exec code
 bindsym Mod3+F6 exec doublecmd
 bindsym Mod3+Shift+F6 exec gksu doublecmd
+bindsym $mod+c exec --no-startup-id doublecmd 
 bindsym $mod+Ctrl+t exec --no-startup-id pkill compton
 bindsym $mod+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -131,7 +132,6 @@ bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+c exec --no-startup-id doublecmd 
 
 focus_follows_mouse no
 mouse_warping none
@@ -343,10 +343,10 @@ assign [class="Lutris"] $ws9
 assign [class="kodi"] $ws9
 
 #for_window [class="Firefox"] focus
-#for_window [class="Double Commander"] focus
+for_window [class="Double Commander"] focus
 #for_window [class="code"] focus
 #for_window [class="krita"] focus
-#for_window [class="smplayer"] focus
+for_window [class="smplayer"] focus
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -535,7 +535,7 @@ bindsym $mod+x bar mode toggle bar-1
 
 # Set inner/outer gaps
 gaps inner 8
-gaps outer 0
+gaps outer -6
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
