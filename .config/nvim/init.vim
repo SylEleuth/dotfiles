@@ -12,7 +12,6 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'scrooloose/nerdtree' " A tree explorer plugin <F1>, <F2> for current directory
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'francoiscabrol/ranger.vim' " Run Ranger in vim <F3>
 
@@ -50,6 +49,8 @@ Plugin 'luochen1990/rainbow' " Colored parentheses
 
 Plugin 'tpope/vim-fugitive' " Git wrapper
 Plugin 'airblade/vim-gitgutter' " Shows git diff
+
+Plugin 'ryanoasis/vim-devicons'
 
 Plugin 'morhetz/gruvbox' " theme
 
@@ -226,7 +227,11 @@ let g:NERDTreeDisableExactMatchHighlight = 1
 let g:NERDTreeDisablePatternMatchHighlight = 1
 let g:NERDTreeHighlightCursorline = 0
 let g:NERDTreeWinSize=40
-"let g:NERDTreeSyntaxEnabledExtensions = ['py']
+let g:indentLine_fileTypeExclude = ["nerdtree"]
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:webdevicons_enable_startify = 1
 
 autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
