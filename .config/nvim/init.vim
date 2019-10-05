@@ -52,8 +52,6 @@ Plugin 'airblade/vim-gitgutter' " Shows git diff
 
 Plugin 'ryanoasis/vim-devicons'
 
-Plugin 'morhetz/gruvbox' " theme
-
 "Plugin 'junegunn/fzf' " Fuzzy finder
 "Plugin 'junegunn/fzf.vim'
 
@@ -61,16 +59,20 @@ Plugin 'morhetz/gruvbox' " theme
 
 "Plugin 'vim-syntastic/syntastic' " Syntax checking
 
-"Plugin 'ajmwagar/vim-deus' " Theme
-"Plugin 'altercation/vim-colors-solarized' " Theme
-"Plugin 'jnurmine/Zenburn' " Theme
-"Plugin 'ayu-theme/ayu-vim' " Theme
-"Plugin 'gilgigilgil/anderson.vim' " Theme
-"Plugin 'dracula/vim' " Theme
-"Plugin 'joshdick/onedark.vim' " Theme
-"Plugin 'zefei/cake16' " Theme
-
 "Plugin 'rstacruz/vim-closer'
+
+" ###### COLOR SCHEMES
+
+Plugin 'morhetz/gruvbox' 
+
+" Plugin 'ajmwagar/vim-deus'
+" Plugin 'altercation/vim-colors-solarized' 
+" Plugin 'jnurmine/Zenburn' 
+" Plugin 'ayu-theme/ayu-vim' 
+" Plugin 'gilgigilgil/anderson.vim' 
+" Plugin 'dracula/vim' 
+" Plugin 'joshdick/onedark.vim' 
+" Plugin 'zefei/cake16' 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -78,8 +80,10 @@ filetype plugin indent on    " required
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_italic=1
 
 " set termguicolors
+" let g:dracula_colorterm = 0
 
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white
@@ -179,16 +183,10 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " disable arrow keys in normal mode and visual mode
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-" disable arrow keys in insert mode
-" inoremap <Up> <Nop>
-" inoremap <Down> <Nop>
-" inoremap <Left> <Nop>
-" inoremap <Right> <Nop>
+" noremap <Up> <Nop>
+" noremap <Down> <Nop>
+" noremap <Left> <Nop>
+" noremap <Right> <Nop>
 
 nmap oo o<Esc>
 
@@ -250,7 +248,7 @@ let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 
 " Startify settings
-let g:startify_files_number = 40
+let g:startify_files_number = 30
 let g:startify_lists = [
             \ { 'type': 'files',     'header': ['   MRU']            },
             \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
@@ -310,8 +308,8 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 
-inoremap <silent> <expr> <CR> ncm2_neosnippet#expand_or("\<CR>", 'n')
-inoremap <silent> <expr> <TAB> ncm2_neosnippet#expand_or("<TAB>", 'n')
+" inoremap <silent> <expr> <CR> ncm2_neosnippet#expand_or("\<CR>", 'n')
+" inoremap <silent> <expr> <TAB> ncm2_neosnippet#expand_or("<TAB>", 'n')
 
 "" Plugin key-mappings.
 "" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
