@@ -420,35 +420,17 @@ bar {
     -p traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pacman.sum="true" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A%e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pulseaudio.percent_change="5%"\
     -t gruvbox-powerline
 
-    #status_command ~/.config/bumblebee-status/bumblebee-status -m title weather traffic sensors cpu memory date time pasink -p traffic.showname="False" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A %e %B %Y %H:%M:%S" date.format="%A%e %B %Y" time.format="%H:%M:%S" pulseaudio.percent_change="5" -t gruvbox-powerline
-
-
-# **** LIGHT THEME ****
-#	colors {
-#		background #fbf1c700
-#		statusline #F9FAF900
-#	    separator  #45494700
-#
-##	 	                    border  backgr. text
-#	    focused_workspace  #ebdbb2dd #ebdbb2dd #444444
-#       	active_workspace   #ebdbb2dd #ebdbb2dd #777777
-#        inactive_workspace #fbf1c700 #fbf1c700 #777777
-#       	binding_mode       #222222 #222222 #F9FAF9
-#        urgent_workspace   #ebdbb2 #ebdbb2 #E5201D
-#	}
-#
-# **** transparent bar ****
 	colors {
-		background #2C323B00
-		statusline #F9FAF900
-	    separator  #45494700
+		background #2C323Baa
+		statusline #F9FAF9aa
+	    separator  #454947aa
 
-#	 	                    border  backgr. text
-	    focused_workspace  #1e232900 #1e232900 #ffffff
-       	active_workspace   #2C323B00 #2C323B00 #888888
-        inactive_workspace #2C323B00 #2C323B00 #888888
-       	binding_mode       #22222200 #22222200 #F9FAF9
-        urgent_workspace   #2c323b00 #2c323b00 #E5201D
+#	 	                    border    backgr.   text
+	    focused_workspace  #2C323Baa #2C323Baa #fbf1c7
+       	active_workspace   #2C323Baa #2C323Baa #7c6f64
+        inactive_workspace #2C323Baa #2C323Baa #7c6f64
+       	binding_mode       #282828aa #282828aa #fbf1c7
+        urgent_workspace   #2c323baa #2c323baa #cc241d
 	}
 	strip_workspace_numbers yes
     bindsym button3 exec --no-startup-id jgmenu_run
@@ -457,26 +439,25 @@ bar {
 bar {
     id bar-2
 	output LVDS1
-	font xft:Inconsolata for Powerline bold 11
+	font xft:Inconsolata for Powerline bold 10
 	position top
 	tray_output none
 	i3bar_command i3bar -t
 	status_command ~/.config/bumblebee-status/bumblebee-status\
     -m title cmus pasink\
-    -p pulseaudio.percent_change="5%"\
     -t gruvbox-powerline
 
 	colors {
-		background #2C323B00
-		statusline #F9FAF900
-	    separator  #45494700
+		background #2C323Baa
+		statusline #F9FAF9aa
+	    separator  #454947aa
 
-#		      	            border  backgr. text
-	    focused_workspace  #1e232900 #1e232900 #ffffff
-       	active_workspace   #2C323B00 #2C323B00 #888888
-        inactive_workspace #2C323B00 #2C323B00 #888888
-       	binding_mode       #22222200 #22222200 #F9FAF9
-        urgent_workspace   #22222200 #22222200 #E5201D
+#		      	            border    backgr.   text
+	    focused_workspace  #2c323baa #2c323baa #fbf1c7
+       	active_workspace   #2C323Baa #2C323Baa #7c6f64
+        inactive_workspace #2C323Baa #2C323Baa #7c6f64
+       	binding_mode       #282828aa #282828aa #fbf1c7
+        urgent_workspace   #2c323baa #2c323baa #cc241d
 	}
 	strip_workspace_numbers yes
     bindsym button3 exec --no-startup-id jgmenu_run
@@ -500,7 +481,7 @@ gaps outer -6
 # gaps outer all plus 5
 
 # Set shut down, restart and locking features
-bindsym $mod+Shift+x --release mode "$mode_system"
+bindsym $mod+Escape --release mode "$mode_system"
 #set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 set $mode_system system options
 mode "$mode_system" {
