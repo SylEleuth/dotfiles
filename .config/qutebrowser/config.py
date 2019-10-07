@@ -12,7 +12,7 @@ c.aliases = {'w': 'session-save',
 
 
 c.editor.encoding = 'utf-8'
-c.fonts.monospace = '"Roboto", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.monospace = '"FantasqueSansmono Nerd Font", "Roboto", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 c.content.autoplay = False
 
@@ -367,9 +367,9 @@ c.backend = 'webengine'
 # # Type: Int
 # c.completion.cmd_history_max_items = 100
 
-# # The height of the completion, in px or as percentage of the window.
-# # Type: PercOrInt
-# c.completion.height = '30%'
+# The height of the completion, in px or as percentage of the window.
+# Type: PercOrInt
+c.completion.height = '30%'
 
 # # Move on to the next part when there's only one possible completion
 # # left.
@@ -703,11 +703,11 @@ c.editor.encoding = 'utf-8'
 
 # # Font used in the completion categories.
 # # Type: Font
-# c.fonts.completion.category = 'bold 10pt monospace'
+# c.fonts.completion.category = 'bold 12pt monospace'
 
-# # Font used in the completion widget.
-# # Type: Font
-# c.fonts.completion.entry = '10pt monospace'
+# Font used in the completion widget.
+# Type: Font
+c.fonts.completion.entry = 'bold 11pt monospace'
 
 # # Font used for the debugging console.
 # # Type: QtFont
@@ -717,13 +717,13 @@ c.editor.encoding = 'utf-8'
 # # Type: Font
 # c.fonts.downloads = '10pt monospace'
 
-# # Font used for the hints.
-# # Type: Font
-# c.fonts.hints = 'bold 12pt monospace'
+# Font used for the hints.
+# Type: Font
+c.fonts.hints = 'bold 12pt monospace'
 
-# # Font used in the keyhint widget.
-# # Type: Font
-# c.fonts.keyhint = '10pt monospace'
+# Font used in the keyhint widget.
+# Type: Font
+c.fonts.keyhint = 'bold 10pt monospace'
 
 # # Font used for error messages.
 # # Type: Font
@@ -737,22 +737,17 @@ c.editor.encoding = 'utf-8'
 # # Type: Font
 # c.fonts.messages.warning = '10pt monospace'
 
-# # Default monospace fonts. Whenever "monospace" is used in a font
-# # setting, it's replaced with the fonts listed here.
-# # Type: Font
-# c.fonts.monospace = '"Monofur for Powerline", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
-
 # # Font used for prompts.
 # # Type: Font
 # c.fonts.prompts = '10pt monospace'
 
-# # Font used in the statusbar.
-# # Type: Font
-# c.fonts.statusbar = '10pt monospace'
+# Font used in the statusbar.
+# Type: Font
+c.fonts.statusbar = 'bold 11pt monospace'
 
-# # Font used in the tab bar.
-# # Type: QtFont
-# c.fonts.tabs = '10pt monospace'
+# Font used in the tab bar.
+# Type: QtFont
+c.fonts.tabs = 'bold 11pt monospace'
 
 # # Font family for cursive fonts.
 # # Type: FontFamily
@@ -1049,7 +1044,7 @@ c.scrolling.smooth = True
 #   - tr-TR: Turkish (Turkey)
 #   - uk-UA: Ukrainian (Ukraine)
 #   - vi-VN: Vietnamese (Viet Nam)
-# c.spellcheck.languages = ["en-US", "pl-PL"]
+# c.spellcheck.languages = ["en-GB", "pl-PL"]
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
@@ -1327,7 +1322,8 @@ config.bind('<Ctrl-Left>', 'tab-prev')
 # config.bind('<Ctrl-Shift-W>', 'close')
 # config.bind('<Ctrl-T>', 'open -t')
 # config.bind('<Ctrl-Tab>', 'tab-focus last')
-# config.bind('D', 'scroll-page 0 -0.5')
+config.bind('d', 'scroll-page 0 -1')
+config.bind('s', 'scroll-page 0 1')
 # config.bind('<Ctrl-V>', 'enter-mode passthrough')
 # config.bind('<Ctrl-W>', 'tab-close')
 # config.bind('<Ctrl-X>', 'navigate decrement')
@@ -1363,7 +1359,7 @@ config.bind('<Ctrl-Left>', 'tab-prev')
 # config.bind('ad', 'download-cancel')
 # config.bind('b', 'set-cmd-text -s :quickmark-load')
 # config.bind('cd', 'download-clear')
-# config.bind('q', 'tab-close')
+config.bind('x', 'tab-close')
 # config.bind('f', 'hint')
 # config.bind('g$', 'tab-focus -1')
 # config.bind('g0', 'tab-focus 1')
@@ -1394,7 +1390,7 @@ config.bind('<Ctrl-Left>', 'tab-prev')
 # config.bind('pp', 'open -- {clipboard}')
 # config.bind('gT', 'back -t')
 # config.bind('gR', 'forward -t')
-# config.bind('h', 'undo')
+config.bind('u', 'undo')
 # config.bind('c', 'enter-mode caret')
 # config.bind('wB', 'set-cmd-text -s :bookmark-load -w')
 # config.bind('wO', 'set-cmd-text :open -w {url:pretty}')
