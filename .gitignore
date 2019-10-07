@@ -15,7 +15,8 @@
 .config/powerline-shell/themes/solarized_dark.py
 .config/powerline-shell/themes/solarized_light.py
 .config/powerline-shell/themes/washed.py
-.config/qutebrowser/
+.config/qutebrowser/bookmarks
+.config/qutebrowser/quickmarks
 .config/rofi/Monokai.rasi
 .config/rofi/arc-red-dark.rasi
 .config/rofi/base16.rasi

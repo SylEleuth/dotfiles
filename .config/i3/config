@@ -35,12 +35,12 @@ exec --no-startup-id sh ~/.config/screenlayout/screen.sh
 bindsym $mod+Shift+p mode "$mode_screenlayout"
 set $mode_screenlayout (1) Main, (2) laptop, (~) Full
 mode "$mode_screenlayout" {
-  bindsym $mod+Shift+p mode "default"
-  bindsym Escape mode "default"
+    bindsym $mod+Shift+p mode "default"
+    bindsym Escape mode "default"
 
-  bindsym 1 exec --no-startup-id sh ~/.config/screenlayout/screen1.sh, mode "default"
-  bindsym 2 exec --no-startup-id sh ~/.config/screenlayout/screen2.sh, mode "default"
-  bindsym grave exec --no-startup-id sh ~/.config/screenlayout/screen.sh, mode "default"
+    bindsym 1 exec --no-startup-id sh ~/.config/screenlayout/screen1.sh, mode "default"
+    bindsym 2 exec --no-startup-id sh ~/.config/screenlayout/screen2.sh, mode "default"
+    bindsym grave exec --no-startup-id sh ~/.config/screenlayout/screen.sh, mode "default"
 } 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -205,11 +205,6 @@ bindsym $mod+Mod1+Left move workspace to output HDMI1
 #bindsym Mod1+Tab workspace next
 #bindsym Mod1+Ctrl+Tab workspace prev
 
-# Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
-
 
 set $ws1 "1: 一 "
 set $ws2 "2: 二 "
@@ -285,6 +280,7 @@ assign [class="Termite"] $ws1
 assign [class="kitty"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="firefoxdeveloperedition"] $ws2
+assign [class="Chromium"] $ws2
 assign [class="krita"] $ws3
 assign [class="Gimp-2.10"] $ws3
 assign [class="Godot"] $ws3
@@ -299,10 +295,10 @@ assign [class="Steam"] $ws9
 assign [class="Lutris"] $ws9
 assign [class="kodi"] $ws9
 
-#for_window [class="Firefox"] focus
+for_window [class="Firefox"] focus
 for_window [class="Double Commander"] focus
-#for_window [class="code"] focus
-#for_window [class="krita"] focus
+for_window [class="code"] focus
+for_window [class="krita"] focus
 for_window [class="smplayer"] focus
 
 # Open specific applications in floating mode
@@ -332,7 +328,6 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
-
 for_window [tiling] border pixel 4
 for_window [floating] border pixel 6
 
@@ -345,9 +340,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
@@ -355,19 +347,13 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 #exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id xset r rate 300 100
-#exec --no-startup-id xset s 600 600
 #exec --no-startup-id blueman-applet
-#exec_always --no-startup-id sbxkb
-#exec --no-startup-id conky_maia
-#exec --no-startup-id start_conky_green
-#exec --no-startup-id conky --config=/home/eleuth/.config/conky/.conkyrc
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id unclutter
 exec --no-startup-id redshift -l 53.757729:-2.703440
 exec --no-startup-id firefox
 exec --no-startup-id birdtray
-# exec --no-startup-id evolution
 exec --no-startup-id albert
 #exec --no-startup-id dropbox
 exec --no-startup-id sh ~/.config/i3/layout.sh
@@ -387,79 +373,64 @@ set $darkgray #282828
 
 # gruvbox theme
 # class                 border   | backgr   | text   | indicator | child_border
-client.focused          $darkgray  $darkgray  $yellow  $darkgray     $darkgray
-client.focused_inactive $gray      $gray      $yellow  $darkgray     $gray
-client.unfocused        $gray      $gray      $yellow  $darkgray     $gray
+client.focused          $darkgray  $darkgray  $yellow  $darkgray   $darkgray
+client.focused_inactive $gray      $gray      $green   $darkgray   $gray
+client.unfocused        $gray      $gray      $green   $darkgray   $gray
 client.urgent           $red       $red       $white   $red        $red
-
-# Theme colors
-# class                 border  backgr. text    indic.   child_border
-#client.focused          #ebdbb2 #ebdbb2 #2C323B #2C323B
-#client.focused_inactive #fbf1c7 #fbf1c7 #2C323B #373e4a
-#client.unfocused        #fbf1c7 #fbf1c7 #2C323B #373e4a
-#client.urgent           #fbf1c7 #900000 #ffffff #111111
-#client.placeholder      #000000 #0c0c0c #ffffff #000000
-
-##DARK THEME
-#client.focused          #2b2b2b #2b2b2b #cccccc #2b2b2b
-#client.focused_inactive #32302f #32302f #cccccc #32302f
-#client.unfocused        #32302f #32302f #cccccc #32302f
-#client.urgent           #2f343a #900000 #ffffff #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 bar {
     id bar-1
-	output HDMI1
-	# font xft:Inconsolata for Powerline bold 12
-	font xft:FantasqueSansmono Nerd Font bold 12
-	position top
-	tray_output HDMI1
-	i3bar_command i3bar -t
-	status_command ~/.config/bumblebee-status/bumblebee-status\
-    -m title weather cpu memory date time pacman pasink\
-    -p traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pacman.sum="true" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A%e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pulseaudio.percent_change="5%"\
+    output HDMI1
+    # font xft:Inconsolata for Powerline bold 12
+    font xft:FantasqueSansmono Nerd Font bold 12
+    position top
+    tray_output HDMI1
+    i3bar_command i3bar
+    status_command ~/.config/bumblebee-status/bumblebee-status\
+    -m title weather cpu memory sensors date time pacman pasink\
+    -p traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pacman.sum="true" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A%e %B %Y %H:%M:%S" date.format="%A%e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pulseaudio.percent_change="5%"\
     -t gruvbox-powerline
 
-	colors {
-		background #2C323Baa
-		statusline #F9FAF9aa
-	    separator  #454947aa
+    colors {
+        background #282828
+        statusline #fbf1c7
+        separator  #504495
 
-#	 	                    border    backgr.   text
-	    focused_workspace  #2C323Baa #2C323Baa #fbf1c7
-       	active_workspace   #2C323Baa #2C323Baa #7c6f64
-        inactive_workspace #2C323Baa #2C323Baa #7c6f64
-       	binding_mode       #282828aa #282828aa #fbf1c7
-        urgent_workspace   #2c323baa #2c323baa #cc241d
+#	 	                    border  backgr. text
+        focused_workspace  #282828 #282828 #fbf1c7
+       	active_workspace   #282828 #282828 #7c6f64
+        inactive_workspace #282828 #282828 #7c6f64
+       	binding_mode       #282828 #282828 #fbf1c7
+        urgent_workspace   #282828 #282828 #cc241d
 	}
-	strip_workspace_numbers yes
+    strip_workspace_numbers yes
     bindsym button3 exec --no-startup-id jgmenu_run
 }
 
 bar {
     id bar-2
-	output LVDS1
-	font xft:Inconsolata for Powerline bold 10
-	position top
-	tray_output none
-	i3bar_command i3bar -t
-	status_command ~/.config/bumblebee-status/bumblebee-status\
+    output LVDS1
+    font xft:Inconsolata for Powerline bold 11
+    position top
+    tray_output none
+    i3bar_command i3bar -t
+    status_command ~/.config/bumblebee-status/bumblebee-status\
     -m title cmus pasink\
     -t gruvbox-powerline
 
 	colors {
-		background #2C323Baa
-		statusline #F9FAF9aa
-	    separator  #454947aa
+        background #28282844
+        statusline #fbf1c744
+        separator  #50449544
 
 #		      	            border    backgr.   text
-	    focused_workspace  #2c323baa #2c323baa #fbf1c7
-       	active_workspace   #2C323Baa #2C323Baa #7c6f64
-        inactive_workspace #2C323Baa #2C323Baa #7c6f64
-       	binding_mode       #282828aa #282828aa #fbf1c7
-        urgent_workspace   #2c323baa #2c323baa #cc241d
+        focused_workspace  #28282844 #28282844 #fbf1c7
+       	active_workspace   #28282844 #28282844 #7c6f64
+        inactive_workspace #28282844 #28282844 #7c6f64
+       	binding_mode       #28282844 #28282844 #fbf1c7
+        urgent_workspace   #28282844 #28282844 #cc241d
 	}
-	strip_workspace_numbers yes
+    strip_workspace_numbers yes
     bindsym button3 exec --no-startup-id jgmenu_run
 }
 
@@ -473,7 +444,7 @@ bindsym $mod+x bar mode toggle bar-1
 
 # Set inner/outer gaps
 gaps inner 8
-gaps outer -6
+gaps outer -4
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -485,17 +456,17 @@ bindsym $mod+Escape --release mode "$mode_system"
 #set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 set $mode_system system options
 mode "$mode_system" {
-	bindsym l exec --no-startup-id i3exit lock, mode "default"
-	bindsym s exec --no-startup-id i3exit suspend, mode "default"
-	bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-	bindsym e exec --no-startup-id i3exit logout, mode "default"
-	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-	bindsym r exec --no-startup-id i3exit reboot, mode "default"
-	bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
-	# exit system mode: "Enter" or "Escape"
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Resize window (you can also use the mouse for that)
@@ -567,47 +538,46 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-
 ###### Gaming and working mode ######
 
 bindsym $mod+Shift+g mode "safe lock"
 mode "safe lock" {
-  bindsym $mod+Shift+g mode "default"
+    bindsym $mod+Shift+g mode "default"
 
-  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-  bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-  bindsym $mod+bracketright exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-  bindsym $mod+bracketleft exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-  bindsym $mod+m exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+    bindsym $mod+bracketright exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+    bindsym $mod+bracketleft exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+    bindsym $mod+m exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-  bindsym --whole-window $mod+Button4 exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-  bindsym --whole-window $mod+Button5 exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-  bindsym --whole-window $mod+Button2 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+    bindsym --whole-window $mod+Button4 exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+    bindsym --whole-window $mod+Button5 exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+    bindsym --whole-window $mod+Button2 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-  bindsym Print exec --no-startup-id i3-scrot
-  bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-  bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+    bindsym Print exec --no-startup-id i3-scrot
+    bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+    bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
-  bindsym $mod+Tab workspace back_and_forth
-  bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+    bindsym $mod+Tab workspace back_and_forth
+    bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
-  bindsym Mod1+Tab workspace next
-  bindsym Mod1+Ctrl+Tab workspace prev
+    bindsym Mod1+Tab workspace next
+    bindsym Mod1+Ctrl+Tab workspace prev
 
-  bindsym $mod+1 workspace $ws1
-  bindsym $mod+2 workspace $ws2
-  bindsym $mod+3 workspace $ws3
-  bindsym $mod+4 workspace $ws4
-  bindsym $mod+5 workspace $ws5
-  bindsym $mod+6 workspace $ws6
-  bindsym $mod+7 workspace $ws7
-  bindsym $mod+8 workspace $ws8
-  bindsym $mod+9 workspace $ws9
-  bindsym $mod+0 workspace $ws0
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace $ws9
+    bindsym $mod+0 workspace $ws0
 
-  bindsym $mod+x bar mode toggle bar-1
+    bindsym $mod+x bar mode toggle bar-1
 
-  bindsym $mod+f fullscreen toggle
+    bindsym $mod+f fullscreen toggle
 }
