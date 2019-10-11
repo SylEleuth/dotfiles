@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo pacman -Syyu
+sudo pacman -Syyu yay
 
 for pacmanNames in $(cat ~/.config/recovery/pacman.txt)
 

@@ -4,6 +4,7 @@
 .config/cmus/
 .config/dconf/
 .config/doublecmd/
+.config/gtk-3.0/
 .config/i3/workspace-1b.json
 .config/i3/workspace-1c.json
 .config/keepassxc/
