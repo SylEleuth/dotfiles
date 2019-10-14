@@ -47,6 +47,8 @@ Plugin 'tpope/vim-commentary' " Comment with 'gcc'
 
 Plugin 'luochen1990/rainbow' " Colored parentheses
 
+Plugin 'kshenoy/vim-signature' " place, toggle and display marks
+
 Plugin 'tpope/vim-fugitive' " Git wrapper
 Plugin 'airblade/vim-gitgutter' " Shows git diff
 

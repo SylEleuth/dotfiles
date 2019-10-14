@@ -82,6 +82,8 @@ autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -122,7 +124,7 @@ alias ...='cd ../..'
 alias ~='cd ~'
 alias cls='clear'
 alias s='sudo'
-alias l="lsd -la"
+alias l="ls -la"
 alias la="ls -AF ${colorflag}"
 alias ll="ls -lFh ${colorflag}"
 alias lld="ls -l | grep ^d"
@@ -131,10 +133,6 @@ alias weather="curl wttr.in/Preston"
 alias seriale="cd ~/Videos/seriale" 
 alias movies="cd ~/Videos/movies" 
 alias anime="cd ~/Videos/anime" 
-
-alias m="sh ~/.config/screenlayout/screen.sh" 
-alias m1="sh ~/.config/screenlayout/screen1.sh" 
-alias m2="sh ~/.config/screenlayout/screen2.sh" 
 
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_MODE='nerdfont-complete'
