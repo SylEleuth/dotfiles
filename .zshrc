@@ -108,10 +108,6 @@ compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="nvim ~/.zshrc"
-#alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 alias vi="/usr/bin/vim"
 alias vim="nvim"
@@ -130,9 +126,10 @@ alias ll="ls -lFh ${colorflag}"
 alias lld="ls -l | grep ^d"
 alias rm="rm -i"
 alias weather="curl wttr.in/Preston"
-alias seriale="cd ~/Videos/seriale" 
-alias movies="cd ~/Videos/movies" 
-alias anime="cd ~/Videos/anime" 
+alias seriale="cd ~//Data/Videos/seriale" 
+alias movies="cd ~/Data/Videos/movies" 
+alias anime="cd ~/Data/Videos/anime" 
+alias videos="cd ~/Data/Videos" 
 
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_MODE='nerdfont-complete'

@@ -9,7 +9,7 @@ set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 4
-default_floating_border pixel 6
+default_floating_border pixel 4
 
 # Hide borders
 hide_edge_borders smart
@@ -368,14 +368,15 @@ set $yellow #d79921
 set $blue #458588
 set $purple #b16286
 set $aqua #689d68
-set $gray #32302f
+set $gray #3A3A3A
 set $darkgray #282828
+set $darkergray #1d2021
 
 # gruvbox theme
 # class                 border   | backgr   | text   | indicator | child_border
-client.focused          $darkgray  $darkgray  $yellow  $darkgray   $darkgray
-client.focused_inactive $gray      $gray      $green   $darkgray   $gray
-client.unfocused        $gray      $gray      $green   $darkgray   $gray
+client.focused          $gray      $gray      $yellow  $gray       $gray
+client.focused_inactive $darkgray  $darkgray  $green   $darkgray   $darkgray
+client.unfocused        $darkgray  $darkgray  $green   $darkgray   $darkgray
 client.urgent           $red       $red       $white   $red        $red
 
 bar {
@@ -387,7 +388,7 @@ bar {
     tray_output HDMI-A-0
     i3bar_command i3bar
     status_command ~/.config/bumblebee-status/bumblebee-status\
-    -m title weather cpu memory sensors date time pacman pasink\
+    -m title weather cpu memory date time pacman pasink\
     -p traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pacman.sum="true" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A%e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pulseaudio.percent_change="5%"\
     -t gruvbox-powerline
 
