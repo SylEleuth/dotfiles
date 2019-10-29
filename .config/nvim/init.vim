@@ -244,7 +244,7 @@ let g:rainbow_active = 1 "Color brackets
 
 " autoformat settings
 noremap <F5> :Autoformat<CR>
-au BufWrite * :Autoformat
+" au BufWrite * :Autoformat
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0

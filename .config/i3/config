@@ -19,6 +19,8 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 4
 bindsym $mod+n border normal
 
+title_align center
+
 # Keys
 # exec_always xmodmap -e "clear lock" #disable caps lock switch
 # exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
@@ -65,7 +67,7 @@ bindsym $mod+q --release kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+space exec --no-startup-id rofi -show drun -modi run -show-icons -config $HOME/.config/rofi/onedark.rasi
+bindsym $mod+Escape exec --no-startup-id rofi -show drun -modi run -show-icons -config $HOME/.config/rofi/onedark.rasi
 
 #launch categerized menu
 #bindsym $mod+z exec --no-startup-id morc_menu
@@ -185,7 +187,7 @@ bindsym $mod+p floating toggle
 bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
-# bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+grave move scratchpad
@@ -199,8 +201,8 @@ bindsym $mod+grave scratchpad show
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-bindsym $mod+Mod1+Right move workspace to output LVDS1
-bindsym $mod+Mod1+Left move workspace to output HDMI1
+# bindsym $mod+Mod1+Right move workspace to output LVDS1
+# bindsym $mod+Mod1+Left move workspace to output HDMI1
 
 #bindsym Mod1+Tab workspace next
 #bindsym Mod1+Ctrl+Tab workspace prev
@@ -215,7 +217,7 @@ set $ws6 "6: 六 "
 set $ws7 "7: 七 "
 set $ws8 "8: 八 "
 set $ws9 "9: 九 "
-set $ws0 "0: 十 "
+# set $ws0 "0: 十 "
 
 #set $ws1 "1:  "
 #set $ws2 "2:  "
@@ -228,16 +230,16 @@ set $ws0 "0: 十 "
 #set $ws9 "9:  "
 #set $ws0 "0:  "
 
-workspace 1 output HDMI1
-workspace 2 output HDMI1
-workspace 3 output HDMI1
-workspace 4 output HDMI1
-workspace 5 output HDMI1
-workspace 6 output HDMI1
-workspace 7 output HDMI1
-workspace 8 output HDMI1
-workspace 9 output HDMI1
-workspace 0 output LVDS1
+# workspace 1 output HDMI1
+# workspace 2 output HDMI1
+# workspace 3 output HDMI1
+# workspace 4 output HDMI1
+# workspace 5 output HDMI1
+# workspace 6 output HDMI1
+# workspace 7 output HDMI1
+# workspace 8 output HDMI1
+# workspace 9 output HDMI1
+# workspace 0 output LVDS1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -249,7 +251,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws0
+# bindsym $mod+0 workspace $ws0
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -261,7 +263,7 @@ bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
-bindsym $mod+Ctrl+0 move container to workspace $ws0
+# bindsym $mod+Ctrl+0 move container to workspace $ws0
 
 # Move workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -273,7 +275,7 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
+# bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 
 # Open applications on specific workspaces
 assign [class="Termite"] $ws1
@@ -283,7 +285,8 @@ assign [class="firefoxdeveloperedition"] $ws2
 assign [class="Chromium"] $ws2
 assign [class="Gimp-2.10"] $ws3
 assign [class="Godot"] $ws3
-assign [class="Blender"] $ws3
+assign [class="KoreApplication"] $ws3
+assign [class="Blender"] $ws4
 assign [class="krita"] $ws4
 assign [class="smplayer"] $ws5
 assign [class="Double Commander"] $ws6
@@ -327,9 +330,10 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [instance="origin.exe"] floating enable
 
 for_window [tiling] border pixel 4
-for_window [floating] border pixel 6
+for_window [floating] border pixel 4
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -368,13 +372,14 @@ set $yellow #d79921
 set $blue #458588
 set $purple #b16286
 set $aqua #689d68
-set $gray #3A3A3A
+set $gray #3c3836
+set $lightgray #504945
 set $darkgray #282828
 set $darkergray #1d2021
 
 # gruvbox theme
-# class                 border   | backgr   | text   | indicator | child_border
-client.focused          $gray      $gray      $yellow  $gray       $gray
+# class                 border    | backgr   | text   | indicator | child_border
+client.focused          $lightgray $lightgray $yellow  $gray       $lightgray
 client.focused_inactive $darkgray  $darkgray  $green   $darkgray   $darkgray
 client.unfocused        $darkgray  $darkgray  $green   $darkgray   $darkgray
 client.urgent           $red       $red       $white   $red        $red
@@ -383,12 +388,12 @@ bar {
     id bar-1
     output HDMI-A-0
     # font xft:Inconsolata for Powerline bold 12
-    font xft:FantasqueSansmono Nerd Font bold 12
+    font xft:FantasqueSansmono Nerd Font bold 10
     position top
     tray_output HDMI-A-0
     i3bar_command i3bar
     status_command ~/.config/bumblebee-status/bumblebee-status\
-    -m title weather cpu memory date time pacman pasink\
+    -m title weather cpu memory sensors traffic date time pacman pasink\
     -p traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pacman.sum="true" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A%e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pulseaudio.percent_change="5%"\
     -t gruvbox-powerline
 
@@ -453,17 +458,17 @@ gaps outer -4
 # gaps outer all plus 5
 
 # Set shut down, restart and locking features
-bindsym $mod+Escape --release mode "$mode_system"
+bindsym $mod+0 --release mode "$mode_system"
 #set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 set $mode_system system options
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    # bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    # bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym Shift+0 exec --no-startup-id i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
