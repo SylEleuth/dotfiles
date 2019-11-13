@@ -126,16 +126,21 @@ bindsym $mod+F4 exec krita
 bindsym $mod+F5 exec code
 bindsym $mod+F6 exec doublecmd
 bindsym $mod+Shift+F6 exec gksu doublecmd
-bindsym $mod+c exec --no-startup-id doublecmd 
+bindsym $mod+d exec --no-startup-id doublecmd 
+bindsym $mod+shift+d exec --no-startup-id pcmanfm 
+bindsym $mod+c exec --no-startup-id google-calendar
+bindsym $mod+g exec --no-startup-id galculator
 bindsym $mod+Ctrl+t exec --no-startup-id pkill compton
 bindsym $mod+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+n --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot -w
 # bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -s
 
 focus_follows_mouse no
 mouse_warping none
+popup_during_fullscreen ignore
+focus_wrapping no
 
 # change focus
 bindsym $mod+h focus left
@@ -283,10 +288,10 @@ assign [class="kitty"] $ws1
 assign [class="firefox"] $ws2
 assign [class="firefoxdeveloperedition"] $ws2
 assign [class="Chromium"] $ws2
-assign [class="Gimp-2.10"] $ws3
+assign [class="Blender"] $ws3
 assign [class="Godot"] $ws3
 assign [class="KoreApplication"] $ws3
-assign [class="Blender"] $ws4
+assign [class="Gimp-2.10"] $ws4
 assign [class="krita"] $ws4
 assign [class="smplayer"] $ws5
 assign [class="Double Commander"] $ws6
@@ -393,8 +398,8 @@ bar {
     tray_output HDMI-A-0
     i3bar_command i3bar
     status_command ~/.config/bumblebee-status/bumblebee-status\
-    -m title weather cpu memory sensors traffic date time pacman pasink\
-    -p traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pacman.sum="true" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A%e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pulseaudio.percent_change="5%"\
+    -m title weather sensors cpu memory traffic date time pacman pasink\
+    -p sensors.match="temp7_input" traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A%e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pulseaudio.percent_change="5%"\
     -t gruvbox-powerline
 
     colors {
