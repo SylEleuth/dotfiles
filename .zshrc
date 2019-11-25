@@ -130,6 +130,7 @@ alias seriale="cd ~//Data/Videos/seriale"
 alias movies="cd ~/Data/Videos/movies" 
 alias anime="cd ~/Data/Videos/anime" 
 alias videos="cd ~/Data/Videos" 
+alias dl="cd ~/Downloads" 
 
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_MODE='nerdfont-complete'
