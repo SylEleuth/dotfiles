@@ -367,7 +367,7 @@ exec --no-startup-id albert
 exec --no-startup-id dropbox
 exec --no-startup-id sh ~/.config/i3/layout.sh
 exec --no-startup-id sh ~/.config/i3/exec.sh
-exec --no-startup-id sh ~/huionkeys.sh
+exec --no-startup-id sh ~/.config/huion/huionkeys.sh
 exec_always --no-startup-id alttab -d 2 -s 2 -font "xft:Hack Nerd Font bold-10" -fg "#aaaaaa" -bg "#373e4a" -frame "#2c323b" -t 128x184 -i 127x64 -vp pointer
 
 # set primary gruvbox colorscheme colors (minor tweaks in gray area)
