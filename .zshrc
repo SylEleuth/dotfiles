@@ -131,6 +131,9 @@ alias movies="cd ~/Data/Videos/movies"
 alias anime="cd ~/Data/Videos/anime" 
 alias videos="cd ~/Data/Videos" 
 alias dl="cd ~/Downloads" 
+alias bl="cd ~/Data/Blender" 
+alias tk="xsetwacom set 9 Area 0 0 50800 28575; notify-send 'tablet cropped'"
+alias tr="xsetwacom set 9 Area 0 0 50800 31750; notify-send 'tablet reset'"
 
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_MODE='nerdfont-complete'
