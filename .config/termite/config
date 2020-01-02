@@ -174,11 +174,11 @@ scrollbar = off
 
 ##### GRUVBOX DARKSOFT ######
 
-foreground          = #d5c4a1
+foreground          = #ebdbb2
 foreground_bold     = #ebdbb2
 cursor              = #ebdbb2
 cursor_foreground   = #32302f
-background          = rgba(50, 48, 47)
+background          = #32302f
 
 # 16 color space
 

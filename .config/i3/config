@@ -68,6 +68,7 @@ bindsym $mod+q --release kill
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Escape exec --no-startup-id rofi -show drun -modi run -show-icons -columns 3 -config $HOME/.config/rofi/onedark.rasi
+bindsym $mod+space exec --no-startup-id rofi -show drun -modi run -show-icons -columns 3 -config $HOME/.config/rofi/onedark.rasi
 
 #launch categerized menu
 #bindsym $mod+z exec --no-startup-id morc_menu
@@ -75,6 +76,7 @@ bindsym $mod+z exec --no-startup-id jgmenu_run
 
 # Lock screen
 # bindsym $mod+Shift+x exec --no-startup-id blurlock
+bindsym $mod+shift+x exec betterlockscreen -l dim
 #bindsym $mod+Shift+x exec --no-startup-id i3exit lock, mode "default"
 # exec i3lock --color "$bg-color"
 
@@ -101,7 +103,7 @@ bindsym $mod+m exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 bindsym --whole-window $mod+Button4 exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
 bindsym --whole-window $mod+Button5 exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym --whole-window $mod+Button2 exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+# bindsym --whole-window $mod+Button2 exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -119,9 +121,10 @@ bindsym XF86Calculator exec --no-startup-id galculator
 # Run at start
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F1 exec --no-startup-id sh ~/.config/i3/terminals.sh
+# bindsym $mod+F1 exec --no-startup-id sh ~/.config/i3/terminals.sh
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec blender
+bindsym $mod+b exec blender
 bindsym $mod+F4 exec krita
 bindsym $mod+F5 exec code
 bindsym $mod+F6 exec doublecmd
@@ -360,13 +363,13 @@ exec --no-startup-id xset r rate 300 100
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id unclutter
 exec --no-startup-id redshift -l 53.757729:-2.703440
-exec --no-startup-id firefox
+# exec --no-startup-id firefox
 exec --no-startup-id Mailspring
 exec --no-startup-id albert
 exec --no-startup-id dropbox
-exec --no-startup-id indicator-kdeconnect
-exec --no-startup-id sh ~/.config/i3/layout.sh
-exec --no-startup-id sh ~/.config/i3/exec.sh
+exec --no-startup-id /usr/bin/kdeconnect-indicator
+# exec --no-startup-id sh ~/.config/i3/layout.sh
+# exec --no-startup-id sh ~/.config/i3/exec.sh
 exec --no-startup-id sh ~/.config/huion/huionkeys.sh
 exec_always --no-startup-id alttab -d 2 -s 2 -font "xft:Hack Nerd Font bold-10" -fg "#aaaaaa" -bg "#373e4a" -frame "#2c323b" -t 128x184 -i 127x64 -vp pointer
 

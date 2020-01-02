@@ -232,8 +232,8 @@ fileviewer *.[1-8] man ./%c | col -b
 
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ {View in gpicview}
-        \ gpicview %c,
+        \ {View in nomacs}
+        \ nomacs %c,
         "\ {View in feh}
 	"\ feh %d &,
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
