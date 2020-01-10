@@ -76,7 +76,7 @@ bindsym $mod+z exec --no-startup-id jgmenu_run
 
 # Lock screen
 # bindsym $mod+Shift+x exec --no-startup-id blurlock
-bindsym $mod+shift+x exec betterlockscreen -l dim
+bindsym $mod+BackSpace exec betterlockscreen -l dim
 #bindsym $mod+Shift+x exec --no-startup-id i3exit lock, mode "default"
 # exec i3lock --color "$bg-color"
 
@@ -137,7 +137,7 @@ bindsym $mod+Ctrl+t exec --no-startup-id pkill compton
 bindsym $mod+t exec --no-startup-id compton -b
 bindsym $mod+n --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+0 exec xset dpms force off
+# bindsym $mod+0 exec xset dpms force off
 # bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -s
 
@@ -401,10 +401,10 @@ bar {
     position top
     tray_output HDMI-A-0
     i3bar_command i3bar
-    status_command ~/.config/bumblebee-status/bumblebee-status\
-    -m title weather sensors cpu memory traffic date time pacman pasink\
-    -p sensors.match="temp7_input" traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pasink.limit="100%" memory.format="{percent:05.02f}%" datetime.format="%A%e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pulseaudio.percent_change="5%"\
-    -t gruvbox-powerline
+    status_command bumblebee-status\
+    -m title weather redshift sensors cpu memory pomodoro pacman date time pasink\
+    -p title.max="120" sensors.match="temp7_input" traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pasink.limit="100%" memory.format="{percent:05.02f}%" pomodoro.notify='notify-send "TIME UP!!!"' pomodoro.work="25" datetime.format="%A %e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pasink.limit="150%" pasink.percent_change="1%" datetime.left-click="google-calendar {instance}" date.left-click="google-calendar {instance}" time.left-click="google-calendar {instance}" pacman.left-click="pamac-manager {instance}" title.wheel-down="pactl set-sink-volume 1 -1%" weather.wheel-down="pactl set-sink-volume 1 -1%" redshift.wheel-down="pactl set-sink-volume 1 -1%" sensors.wheel-down="pactl set-sink-volume 1 -1%" cpu.wheel-down="pactl set-sink-volume 1 -1%" memory.wheel-down="pactl set-sink-volume 1 -1%" datetime.wheel-down="pactl set-sink-volume 1 -1%" date.wheel-down="pactl set-sink-volume 1 -1%" time.wheel-down="pactl set-sink-volume 1 -1%" pacman.wheel-down="pactl set-sink-volume 1 -1%" title.wheel-up="pactl set-sink-volume 1 +1%" weather.wheel-up="pactl set-sink-volume 1 +1%" redshift.wheel-up="pactl set-sink-volume 1 +1%" sensors.wheel-up="pactl set-sink-volume 1 +1%" cpu.wheel-up="pactl set-sink-volume 1 +1%" memory.wheel-up="pactl set-sink-volume 1 +1%" datetime.wheel-down="pactl set-sink-volume 1 +1%" date.wheel-up="pactl set-sink-volume 1 +1%" time.wheel-up="pactl set-sink-volume 1 +1%" pacman.wheel-up="pactl set-sink-volume 1 +1%"\
+    -t .config/bumblebee-status/themes/gruvbox-powerline.json
 
     colors {
         background #282828
@@ -467,7 +467,7 @@ gaps outer -4
 # gaps outer all plus 5
 
 # Set shut down, restart and locking features
-bindsym $mod+0 --release mode "$mode_system"
+bindsym $mod+shift+BackSpace --release mode "$mode_system"
 #set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 set $mode_system system options
 mode "$mode_system" {

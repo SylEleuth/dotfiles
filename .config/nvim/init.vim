@@ -100,6 +100,8 @@ set updatetime=250 " If this many milliseconds nothing is typed the swap file wi
 set lazyredraw " buffers screen updates instead of updating all the time
 set linebreak " breaks lines by word rather than character
 set timeoutlen=500
+let g:vim_json_conceal=0
+set conceallevel=0
 
 " Buffers
 set hidden
