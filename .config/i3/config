@@ -101,6 +101,9 @@ bindsym $mod+bracketright exec --no-startup-id pactl set-sink-volume 1 +5% #incr
 bindsym $mod+bracketleft exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
 bindsym $mod+m exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
+bindsym $mod+Ctrl+Up exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym $mod+Ctrl+Down exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+
 bindsym --whole-window $mod+Button4 exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
 bindsym --whole-window $mod+Button5 exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
 # bindsym --whole-window $mod+Button2 exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
@@ -209,6 +212,8 @@ bindsym $mod+grave scratchpad show
 #bindsym $mod+Tab workspace next
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+l workspace next
+bindsym $mod+Ctrl+h workspace prev
 
 # bindsym $mod+Mod1+Right move workspace to output LVDS1
 # bindsym $mod+Mod1+Left move workspace to output HDMI1
@@ -262,15 +267,15 @@ bindsym $mod+9 workspace $ws9
 # bindsym $mod+0 workspace $ws0
 
 # Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9
+# bindsym $mod+Ctrl+1 move container to workspace $ws1
+# bindsym $mod+Ctrl+2 move container to workspace $ws2
+# bindsym $mod+Ctrl+3 move container to workspace $ws3
+# bindsym $mod+Ctrl+4 move container to workspace $ws4
+# bindsym $mod+Ctrl+5 move container to workspace $ws5
+# bindsym $mod+Ctrl+6 move container to workspace $ws6
+# bindsym $mod+Ctrl+7 move container to workspace $ws7
+# bindsym $mod+Ctrl+8 move container to workspace $ws8
+# bindsym $mod+Ctrl+9 move container to workspace $ws9
 # bindsym $mod+Ctrl+0 move container to workspace $ws0
 
 # Move workspace with focused container
@@ -396,14 +401,13 @@ client.urgent           $red       $red       $white   $red        $red
 bar {
     id bar-1
     output HDMI-A-0
+    tray_output HDMI-A-0
     # font xft:Inconsolata for Powerline bold 12
     font xft:FantasqueSansmono Nerd Font bold 10
     position top
-    tray_output HDMI-A-0
     i3bar_command i3bar
     status_command bumblebee-status\
     -m title weather redshift sensors cpu memory pomodoro pacman date time pasink\
-    -p title.max="120" sensors.match="temp7_input" traffic.showname="False" traffic.exclude="wlp2s0,lo" weather.showcity="false" disk.path="/home/eleuth/" disk.format="{left} {percent:05.02f}%" pasink.limit="100%" memory.format="{percent:05.02f}%" pomodoro.notify='notify-send "TIME UP!!!"' pomodoro.work="25" datetime.format="%A %e %B %Y %H:%M:%S" date.format="%A %e %B %Y" time.format="%H:%M:%S" pacman.sum="true" pasink.limit="150%" pasink.percent_change="1%" datetime.left-click="google-calendar {instance}" date.left-click="google-calendar {instance}" time.left-click="google-calendar {instance}" pacman.left-click="pamac-manager {instance}" title.wheel-down="pactl set-sink-volume 1 -1%" weather.wheel-down="pactl set-sink-volume 1 -1%" redshift.wheel-down="pactl set-sink-volume 1 -1%" sensors.wheel-down="pactl set-sink-volume 1 -1%" cpu.wheel-down="pactl set-sink-volume 1 -1%" memory.wheel-down="pactl set-sink-volume 1 -1%" datetime.wheel-down="pactl set-sink-volume 1 -1%" date.wheel-down="pactl set-sink-volume 1 -1%" time.wheel-down="pactl set-sink-volume 1 -1%" pacman.wheel-down="pactl set-sink-volume 1 -1%" title.wheel-up="pactl set-sink-volume 1 +1%" weather.wheel-up="pactl set-sink-volume 1 +1%" redshift.wheel-up="pactl set-sink-volume 1 +1%" sensors.wheel-up="pactl set-sink-volume 1 +1%" cpu.wheel-up="pactl set-sink-volume 1 +1%" memory.wheel-up="pactl set-sink-volume 1 +1%" datetime.wheel-down="pactl set-sink-volume 1 +1%" date.wheel-up="pactl set-sink-volume 1 +1%" time.wheel-up="pactl set-sink-volume 1 +1%" pacman.wheel-up="pactl set-sink-volume 1 +1%"\
     -t .config/bumblebee-status/themes/gruvbox-powerline.json
 
     colors {

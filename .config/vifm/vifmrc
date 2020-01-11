@@ -233,9 +233,11 @@ fileviewer *.[1-8] man ./%c | col -b
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ {View in nomacs}
-        \ nomacs %c &,
+        \ nomacs %c,
+        "\ {View in gpicview}
+        "\ gpicview %c,
         "\ {View in feh}
-	"\ feh %d &,
+        "\ feh %d &,
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
          \ convert -identify %f -verbose /dev/null
 
