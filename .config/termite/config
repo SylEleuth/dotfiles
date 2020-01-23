@@ -8,8 +8,8 @@ dynamic_title = true
 #font = Sudo bold 12
 #font = Inconsolata for Powerline bold 12
 #font = Noto Mono for Powerline bold 9
-font = Hack Nerd Font bold 9
 # font = FantasqueSansMono Nerd Font bold 11
+font = Hack Nerd Font bold 9
 
 cell_height_scale = 1.3
 

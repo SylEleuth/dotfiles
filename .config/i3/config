@@ -124,7 +124,7 @@ bindsym XF86Calculator exec --no-startup-id galculator
 # Run at start
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-# bindsym $mod+F1 exec --no-startup-id sh ~/.config/i3/terminals.sh
+bindsym $mod+F1 exec --no-startup-id sh ~/.config/i3/terminals.sh
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec blender
 bindsym $mod+b exec blender
@@ -375,7 +375,7 @@ exec --no-startup-id dropbox
 exec --no-startup-id /usr/bin/kdeconnect-indicator
 # exec --no-startup-id sh ~/.config/i3/layout.sh
 # exec --no-startup-id sh ~/.config/i3/exec.sh
-exec --no-startup-id sh ~/.config/huion/huionkeys.sh
+# exec --no-startup-id sh ~/.config/huion/huionkeys.sh
 exec_always --no-startup-id alttab -d 2 -s 2 -font "xft:Hack Nerd Font bold-10" -fg "#aaaaaa" -bg "#373e4a" -frame "#2c323b" -t 128x184 -i 127x64 -vp pointer
 
 # set primary gruvbox colorscheme colors (minor tweaks in grey area)
@@ -400,14 +400,14 @@ client.urgent           $red       $red       $white   $red        $red
 
 bar {
     id bar-1
-    output HDMI-A-0
+    i3bar_command i3bar
     tray_output HDMI-A-0
+    output HDMI-A-0
+    position top
     # font xft:Inconsolata for Powerline bold 12
     font xft:FantasqueSansmono Nerd Font bold 10
-    position top
-    i3bar_command i3bar
     status_command bumblebee-status\
-    -m title weather redshift sensors cpu memory pomodoro pacman date time pasink\
+    -m title weather sensors cpu memory pacman date time pasink\
     -t .config/bumblebee-status/themes/gruvbox-powerline.json
 
     colors {
@@ -477,7 +477,7 @@ set $mode_system system options
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    # bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     # bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"

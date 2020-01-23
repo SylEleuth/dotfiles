@@ -1,5 +1,4 @@
 #!/bin/sh
-xsetwacom set 9 Area 0 0 50800 28575
 xsetwacom --set 'HUION Huion Tablet Pad pad' Button 1 "key +ctrl +z -z -ctrl"
 xsetwacom --set 'HUION Huion Tablet Pad pad' Button 2 "key e"
 xsetwacom --set 'HUION Huion Tablet Pad pad' Button 3 "key b"

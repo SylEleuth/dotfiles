@@ -56,9 +56,9 @@ Krita/Ocio/OcioConfigPath=
 Krita/Ocio/OcioLockColorVisualRepresentation=false
 Krita/Ocio/OcioLutPath=
 Krita/Ocio/UseOcio=false
-LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB b="1" r="1" space="sRGB-elle-V2-srgbtrc.icc" g="1"/>\n</LastBackGroundColor>\n
-LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB b="0" r="0" space="sRGB-elle-V2-srgbtrc.icc" g="0"/>\n</LastForeGroundColor>\n
-LastPreset=Airbrush
+LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB r="1" g="1" space="sRGB-elle-V2-srgbtrc.icc" b="1"/>\n</LastBackGroundColor>\n
+LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB r="0" g="0" space="sRGB-elle-V2-srgbtrc.icc" b="0"/>\n</LastForeGroundColor>\n
+LastPreset=Jackpack_Basic_Sketch
 LastPreset_-1=c)_Pencil-2
 LineSmoothingDelayDistance=22
 LineSmoothingDistance=444.5
@@ -167,7 +167,7 @@ logviewer_enabled=false
 maxSwapSize=4096
 maximumBrushSize=1000
 mdiBackgroundColor=77,77,77
-mdiBackgroundColorXML=<!DOCTYPE color>\n<color channeldepth="U16">\n <RGB g="0.147814139723778" space="sRGB-elle-V2-srgbtrc.icc" b="0.147814139723778" r="0.147814139723778"/>\n</color>\n
+mdiBackgroundColorXML=<!DOCTYPE color>\n<color channeldepth="U16">\n <RGB space="sRGB-elle-V2-srgbtrc.icc" r="0.147814139723778" g="0.147814139723778" b="0.147814139723778"/>\n</color>\n
 mdiBackgroundImage=
 mdi_viewmode=0
 memoryHardLimitPercent=50
@@ -238,7 +238,7 @@ pixelGridDrawingThreshold=24
 pixelGridEnabled=true
 presetChooserViewMode=0
 presetIconSize=51
-presethistory=Jackpack_Basic_Sketch,Airbrush,b)_Basic-2_Opacity,b)_Basic-6_Details,b)Airbrush_Soft,d)_Ink-3_Gpen,2.Bristles: rough3,2.Bristles: sharp,2.Bristles: smooth1,c)_Pencil-2
+presethistory=3.Blocks: texture1,a)_Eraser_Soft,3.Blocks: stripes,3.Blocks: texture2,X1EI - Smudge,f)_Bristles-4_Glaze,X3AF - Ball Smudge,Smudge Tool,e)_Marker_Chisel_Smooth,Jackpack_Basic_Sketch
 renderIntent=0
 rulersTrackMouse=true
 saveSessionOnQuit=false
@@ -260,6 +260,8 @@ switchSelectionCtrlAlt=true
 tabletPressureCurve=0,0;1,1;
 tenbrushes=,None,None,None,None,None,None,None,None,None
 tenbrushesActivatePrev2ndPress=True
+threeslots=None,None,None
+threeslotsSize=None,None,None
 toolbarslider_1=opacity
 toolbarslider_2=size
 toolbarslider_3=flow
@@ -279,12 +281,12 @@ active-profile=
 
 [File Dialogs]
 DontUseNativeFileDialog=false
-OpenDocument=/home/eleuth/Data/Pictures/Wallpapers
+OpenDocument=/home/eleuth/Downloads/FILES FOR VIEWERS
 SaveAs=/home/eleuth/Data/Artsy
 krita_resources=/home/eleuth/Downloads/free-krita-brushes-master/brushes
 
 [KisShortcutsDialog Settings]
-Dialog Size=710,563
+Dialog Size=695,711
 
 [KisToolCrop]
 allowGrow=true
@@ -406,8 +408,8 @@ yPosition=19
 Collapsed=false
 DockArea=2
 Locked=false
-height=253
-width=321
+height=461
+width=640
 xPosition=0
 yPosition=19
 
@@ -469,8 +471,8 @@ yPosition=19
 Collapsed=false
 DockArea=2
 Locked=false
-height=253
-width=321
+height=461
+width=640
 xPosition=0
 yPosition=19
 
@@ -523,8 +525,8 @@ yPosition=19
 Collapsed=false
 DockArea=2
 Locked=false
-height=240
-width=321
+height=461
+width=640
 xPosition=0
 yPosition=19
 
@@ -550,8 +552,8 @@ yPosition=19
 Collapsed=false
 DockArea=2
 Locked=false
-height=236
-width=321
+height=461
+width=640
 xPosition=0
 yPosition=19
 
@@ -559,8 +561,8 @@ yPosition=19
 Collapsed=false
 DockArea=2
 Locked=false
-height=240
-width=321
+height=461
+width=640
 xPosition=0
 yPosition=19
 
@@ -737,6 +739,7 @@ Last Used=<!DOCTYPE params>\n<params version="1">\n <param type="internal" name=
 
 [python]
 enable_assignprofiledialog=true
+enable_threeslots=true
 
 [theme]
 Theme=Gruvbox Dark

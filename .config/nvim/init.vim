@@ -68,6 +68,7 @@ Plugin 'ryanoasis/vim-devicons'
 " ###### COLOR SCHEMES
 
 Plugin 'morhetz/gruvbox' 
+Plugin 'sainnhe/gruvbox-material' 
 
 " Plugin 'ajmwagar/vim-deus'
 " Plugin 'altercation/vim-colors-solarized' 
@@ -81,10 +82,17 @@ Plugin 'morhetz/gruvbox'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme gruvbox
+colorscheme gruvbox-material
 set background=dark
 let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_material_background= 'soft'
 let g:gruvbox_italic=1
+
+let g:gruvbox_material_enable_italic = 1
+
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " set termguicolors
 " let g:dracula_colorterm = 0
@@ -209,7 +217,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 " Airline
-let g:airline_theme='gruvbox'
+let g:airline_theme='gruvbox_material'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_left_sep = ' ❤  '
 "let g:airline_right_sep = ' 🟆  '
