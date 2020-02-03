@@ -67,35 +67,35 @@ Plugin 'ryanoasis/vim-devicons'
 
 " ###### COLOR SCHEMES
 
-Plugin 'morhetz/gruvbox' 
-Plugin 'sainnhe/gruvbox-material' 
+" Plugin 'morhetz/gruvbox' 
+" Plugin 'sainnhe/gruvbox-material' 
 
 " Plugin 'ajmwagar/vim-deus'
 " Plugin 'altercation/vim-colors-solarized' 
 " Plugin 'jnurmine/Zenburn' 
 " Plugin 'ayu-theme/ayu-vim' 
 " Plugin 'gilgigilgil/anderson.vim' 
-" Plugin 'dracula/vim' 
+Plugin 'dracula/vim' 
 " Plugin 'joshdick/onedark.vim' 
 " Plugin 'zefei/cake16' 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme gruvbox-material
-set background=dark
-let g:gruvbox_contrast_dark = 'soft'
-let g:gruvbox_material_background= 'soft'
-let g:gruvbox_italic=1
+colorscheme dracula
+" set background=dark
+" let g:gruvbox_contrast_dark = 'soft'
+" let g:gruvbox_material_background= 'soft'
+" let g:gruvbox_italic=1
 
-let g:gruvbox_material_enable_italic = 1
+" let g:gruvbox_material_enable_italic = 1
 
 if (has("termguicolors"))
   set termguicolors
 endif
 
-" set termguicolors
-" let g:dracula_colorterm = 0
+set termguicolors
+let g:dracula_colorterm = 0
 
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white
@@ -217,7 +217,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 " Airline
-let g:airline_theme='gruvbox_material'
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_left_sep = ' ❤  '
 "let g:airline_right_sep = ' 🟆  '

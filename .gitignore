@@ -19,6 +19,8 @@ laptop_etc/
 .config/powerline-shell/themes/washed.py
 .config/qutebrowser/bookmarks
 .config/qutebrowser/quickmarks
+.config/qutebrowser/dracula
+.config/qutebrowser/config.py.bak
 .config/rofi/Monokai.rasi
 .config/rofi/arc-red-dark.rasi
 .config/rofi/base16.rasi
@@ -31,6 +33,7 @@ laptop_etc/
 .config/rofi/sidetab.rasi
 .config/rofi/solarized-darker.rasi
 .config/smplayer/
+.config/termite/config.bak
 .config/vifm/colors/Default.vifm
 .config/vifm/colors/desert.vifm
 .config/vifm/colors/lucious.vifm
