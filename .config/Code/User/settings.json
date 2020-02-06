@@ -1,15 +1,14 @@
 // Place your settings in this file to overwrite the default settings
 {
   "window.zoomLevel": 0,
-  "window.titleBarStyle": "custom",
   "telemetry.enableTelemetry": false,
   "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
   "editor.formatOnPaste": true,
   "editor.snippetSuggestions": "top",
-  "editor.fontSize": 14,
+  "editor.fontSize": 12,
   "editor.fontWeight": "500",
-  "editor.lineHeight": 22,
+  "editor.lineHeight": 20,
   "editor.fontFamily": "FuraCode Nerd Font, Cascadia Code, FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, Hasklug Nerd Font, Inconsolata, Source Code Pro, Consolas, 'Courier New', monospace",
   "terminal.integrated.fontFamily": "FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, MesloLGL Nerd Font, Hack Nerd Font",
   "terminal.integrated.shell.linux": "/usr/bin/zsh",
@@ -42,14 +41,14 @@
   "terminal.integrated.rendererType": "dom",
   "python.autoComplete.addBrackets": true,
   "python.jediEnabled": false,
-  "python.linting.pylintEnabled": true,
+  "python.linting.pylintEnabled": false,
   "python.pythonPath": "/usr/bin/python",
   "python.formatting.provider": "black",
   "extensions.ignoreRecommendations": true,
   "extensions.showRecommendationsOnlyOnDemand": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "workbench.colorTheme": "Gruvbox Dark Soft",
+  "workbench.colorTheme": "Dracula",
   "peacock.favoriteColors": [
     {
       "name": "Angular Red",
@@ -103,7 +102,9 @@
       "name": "Vue Green",
       "value": "#42b883"
     }
-  ]
+  ],
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true
   /*"workbench.colorCustomizations": {
     "editor.selectionBackground": "#888888",
     "statusBar.background": "#D96736",

@@ -8,6 +8,7 @@ laptop_etc/
 .config/gtk-3.0/
 .config/i3/workspace-1b.json
 .config/i3/workspace-1c.json
+.config/i3/config.bak
 .config/keepassxc/
 .config/Kvantum/
 .config/polybar/config.backup

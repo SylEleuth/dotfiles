@@ -2,6 +2,7 @@
 " Sample configuration file for vifm (last updated: 21 January, 2018)
 " You can edit this file by hand.
 " The " character at the beginning of a line comments out the line.
+
 " Blank lines are ignored.
 " The basic format for each item is shown with an example.
 
@@ -109,7 +110,7 @@ endif
 
 " Set custom status line look
 
-set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+set statusline="  %t%= %-7s %A %5u:%-5g %7a %17d  "
 
 " ------------------------------------------------------------------------------
 
@@ -472,3 +473,5 @@ nnoremap <c-l> :tabnext<cr>
 " nnoremap <left> <nop>
 
 source ~/.config/vifm/scripts/SETUP 
+" source ~/.config/vifm/scripts/Configs.vim
+" source ~/.config/vifm/scripts/Powerline.vim
