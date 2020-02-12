@@ -14,5 +14,5 @@
     "vcs": {
         "show_symbol": true
     },
-    "theme": "~/.config/powerline-shell/themes/basic.py"
+    "theme": "~/.config/powerline-shell/themes/washed.py"
 } 
