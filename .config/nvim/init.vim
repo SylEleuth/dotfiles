@@ -146,6 +146,7 @@ augroup END
 map <F1> :NERDTreeToggle<CR>
 map <F2> :NERDTreeFind<CR>
 nnoremap <Space> :
+nnoremap ; :
 " let mapleader = \<Space>"
 
 nnoremap <C-z> <nop>

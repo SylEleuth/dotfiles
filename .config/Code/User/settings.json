@@ -6,18 +6,18 @@
   "editor.wordWrap": "on",
   "editor.formatOnPaste": true,
   "editor.snippetSuggestions": "top",
-  "editor.fontSize": 12,
+  "editor.fontSize": 14,
   "editor.fontWeight": "500",
   "editor.lineHeight": 20,
-  "editor.fontFamily": "FuraCode Nerd Font, Cascadia Code, FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, Hasklug Nerd Font, Inconsolata, Source Code Pro, Consolas, 'Courier New', monospace",
-  "terminal.integrated.fontFamily": "FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, MesloLGL Nerd Font, Hack Nerd Font",
+  "editor.fontFamily": "FuraCode Nerd Font, FantasqueSansMono Nerd Font, Hack Nerd Font, Sudo, Hasklug Nerd Font, Inconsolata, Source Code Pro, Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "Hack Nerd Font, FantasqueSansMono Nerd Font, Sudo, MesloLGL Nerd Font, Hack Nerd Font",
   "terminal.integrated.shell.linux": "/usr/bin/zsh",
   "terminal.external.linuxExec": "termite",
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 12,
   "terminal.integrated.fontWeight": "600",
-  "workbench.iconTheme": "material-icon-theme",
   "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
   "editor.renderControlCharacters": false,
   "git.confirmSync": false,
@@ -32,7 +32,6 @@
   "files.autoSave": "off",
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
-  "workbench.statusBar.feedback.visible": false,
   "breadcrumbs.enabled": true,
   "editor.renderWhitespace": "boundary",
   "sync.forceDownload": false,
@@ -43,221 +42,47 @@
   "python.jediEnabled": false,
   "python.linting.pylintEnabled": false,
   "python.pythonPath": "/usr/bin/python",
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "autopep8",
   "extensions.ignoreRecommendations": true,
   "extensions.showRecommendationsOnlyOnDemand": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.colorTheme": "Dracula",
-  "peacock.favoriteColors": [
-    {
-      "name": "Angular Red",
-      "value": "#b52e31"
-    },
-    {
-      "name": "Auth0 Orange",
-      "value": "#eb5424"
-    },
-    {
-      "name": "Azure Blue",
-      "value": "#007fff"
-    },
-    {
-      "name": "C# Purple",
-      "value": "#68217A"
-    },
-    {
-      "name": "Gatsby Purple",
-      "value": "#639"
-    },
-    {
-      "name": "Go Cyan",
-      "value": "#5dc9e2"
-    },
-    {
-      "name": "Java Blue-Gray",
-      "value": "#557c9b"
-    },
-    {
-      "name": "JavaScript Yellow",
-      "value": "#f9e64f"
-    },
-    {
-      "name": "Mandalorian Blue",
-      "value": "#1857a4"
-    },
-    {
-      "name": "Node Green",
-      "value": "#215732"
-    },
-    {
-      "name": "React Blue",
-      "value": "#00b3e6"
-    },
-    {
-      "name": "Something Different",
-      "value": "#832561"
-    },
-    {
-      "name": "Vue Green",
-      "value": "#42b883"
-    }
-  ],
   "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true
-  /*"workbench.colorCustomizations": {
-    "editor.selectionBackground": "#888888",
-    "statusBar.background": "#D96736",
-    "statusBarItem.hoverBackground": "#803c21",
-    "tab.activeBackground": "#D96736",
-    "statusBar.noFolderBackground": "#414141",
-    "statusBar.debuggingBackground": "#5a5a5a",
-    "activityBarBadge.background": "#80CBC4",
-    "list.activeSelectionForeground": "#80CBC4",
-    "list.inactiveSelectionForeground": "#80CBC4",
-    "list.highlightForeground": "#80CBC4",
-    "scrollbarSlider.activeBackground": "#80CBC450",
-    "editorSuggestWidget.highlightForeground": "#80CBC4",
-    "textLink.foreground": "#80CBC4",
-    "progressBar.background": "#80CBC4",
-    "pickerGroup.foreground": "#80CBC4",
-    "tab.activeBorder": "#80CBC4",
-    "terminal.background": "#2b2a2a",
-    "terminal.foreground": "#dddddd",
-    "terminal.ansiBlack": "#414141",
-    "terminal.ansiBlue": "#268bd2",
-    "terminal.ansiBrightBlack": "#586e75",
-    "terminal.ansiBrightBlue": "#839496",
-    "terminal.ansiBrightCyan": "#93a1a1",
-    "terminal.ansiBrightGreen": "#586e75",
-    "terminal.ansiBrightMagenta": "#6c6ec6",
-    "terminal.ansiBrightRed": "#cb4b16",
-    "terminal.ansiBrightWhite": "#fdf6e3",
-    "terminal.ansiBrightYellow": "#657b83",
-    "terminal.ansiCyan": "#2aa198",
-    "terminal.ansiGreen": "#859901",
-    "terminal.ansiMagenta": "#d33682",
-    "terminal.ansiRed": "#dc322f",
-    "terminal.ansiWhite": "#eee8d5",
-    "terminal.ansiYellow": "#b58901"
-  },*/
-  /*"vim.useCtrlKeys": false,
-  "vim.debug.silent": true,
-  "vim.cursorStylePerMode.normal": "underline",
-  "vim.useSystemClipboard": true,
-  "vim.easymotion": true,
-  "vim.easymotionMarkerBackgroundColor": "red",
+  "python.linting.enabled": true,
   "keyboard.dispatch": "keyCode",
-  "vim.leader": " ",
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [
-        "<C>",
-        "r"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "redo",
-          "args": []
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.files.save",
-          "args": []
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "q"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.closeActiveEditor",
-          "args": []
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "a"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.files.save",
-          "args": []
-        },
-        {
-          "command": "workbench.action.closeActiveEditor",
-          "args": []
-        }
-      ]
-    },
-    {
-      "before": [
-        "K"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "k"
-      ]
-    },
-    {
-      "before": [
-        "J"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "j"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "i"
-      ],
-      "after": [
-        "y",
-        "i",
-        "\""
-      ]
-    },
-    {
-      "before": [
-        "Y"
-      ],
-      "after": [
-        "y",
-        "$"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "e"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "editor.action.commentLine",
-          "args": []
-        }
-      ]
-    }
-  ]*/
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": false,
+  "vim.hlsearch": true,
+  "vim.autoindent": true,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "/home/eleuth/.vimrc",
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": "#252633",
+  "vim.statusBarColors.insert": "#bd93f9",
+  "vim.statusBarColors.visual": "#B48EAD",
+  "vim.statusBarColors.visualline": "#B48EAD",
+  "vim.statusBarColors.visualblock": "#A3BE8C",
+  "vim.statusBarColors.replace": "#D08770",
+  "vim.statusBarColors.commandlineinprogress": "#ff5555",
+  "vim.statusBarColors.searchinprogressmode": "#007ACC",
+  "vim.statusBarColors.easymotionmode": "#007ACC",
+  "vim.statusBarColors.easymotioninputmode": "#007ACC",
+  "vim.statusBarColors.surroundinputmode": "#007ACC",
+  "vim.handleKeys": {
+    "<C-c>": true,
+    "<C-v>": true,
+    "<C-x>": true,
+    "<C-r>": true
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#252633",
+    "statusBar.noFolderBackground": "#252633",
+    "statusBar.debuggingBackground": "#252633"
+  }
 }
