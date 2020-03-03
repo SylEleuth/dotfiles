@@ -110,6 +110,7 @@ set linebreak " breaks lines by word rather than character
 set timeoutlen=500
 let g:vim_json_conceal=0
 set conceallevel=0
+set clipboard+=unnamedplus
 
 " Buffers
 set hidden

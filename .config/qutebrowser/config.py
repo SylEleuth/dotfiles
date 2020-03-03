@@ -24,7 +24,7 @@ c.aliases = {'w': 'session-save',
 
 
 c.editor.encoding = 'utf-8'
-c.fonts.monospace = '"FantasqueSansmono Nerd Font", "Roboto", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.default_family = '"FantasqueSansmono Nerd Font", "Roboto", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 c.content.autoplay = False
 
@@ -719,7 +719,7 @@ c.editor.encoding = 'utf-8'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = 'bold 11pt monospace'
+c.fonts.completion.entry = 'bold 9pt monospace'
 
 # # Font used for the debugging console.
 # # Type: QtFont
@@ -731,11 +731,11 @@ c.fonts.completion.entry = 'bold 11pt monospace'
 
 # Font used for the hints.
 # Type: Font
-c.fonts.hints = 'bold 12pt monospace'
+c.fonts.hints = 'bold 9pt monospace'
 
 # Font used in the keyhint widget.
 # Type: Font
-c.fonts.keyhint = 'bold 10pt monospace'
+c.fonts.keyhint = 'bold 9pt monospace'
 
 # # Font used for error messages.
 # # Type: Font
@@ -755,11 +755,11 @@ c.fonts.keyhint = 'bold 10pt monospace'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = 'bold 11pt monospace'
+c.fonts.statusbar = 'bold 9pt monospace'
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = 'bold 11pt monospace'
+c.fonts.tabs = 'bold 9pt monospace'
 
 # # Font family for cursive fonts.
 # # Type: FontFamily
@@ -1323,7 +1323,7 @@ c.zoom.mouse_divider = 512
 # config.bind('<Ctrl-F5>', 'reload -f')
 # config.bind('<Ctrl-S>', 'scroll-page 0 1')
 # config.bind('<Ctrl-N>', 'open -w')
-config.bind('w', 'tab-next')
+config.bind('e', 'tab-next')
 config.bind('q', 'tab-prev')
 config.bind('<Ctrl-Right>', 'tab-next')
 config.bind('<Ctrl-Left>', 'tab-prev')
@@ -1334,8 +1334,8 @@ config.bind('<Ctrl-Left>', 'tab-prev')
 # config.bind('<Ctrl-Shift-W>', 'close')
 # config.bind('<Ctrl-T>', 'open -t')
 # config.bind('<Ctrl-Tab>', 'tab-focus last')
-config.bind('d', 'scroll-page 0 -1')
-config.bind('s', 'scroll-page 0 1')
+# config.bind('d', 'scroll-page 0 -1')
+# config.bind('s', 'scroll-page 0 1')
 # config.bind('<Ctrl-V>', 'enter-mode passthrough')
 # config.bind('<Ctrl-W>', 'tab-close')
 # config.bind('<Ctrl-X>', 'navigate decrement')
@@ -1355,8 +1355,8 @@ config.bind('s', 'scroll-page 0 1')
 # config.bind('B', 'set-cmd-text -s :quickmark-load -t')
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
-# config.bind('gt', 'back')
-# config.bind('gr', 'forward')
+config.bind('a', 'back')
+config.bind('d', 'forward')
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
 # config.bind('j', 'set-cmd-text -s :open -t ')
@@ -1392,8 +1392,8 @@ config.bind('x', 'tab-close')
 # config.bind('gu', 'navigate up')
 # config.bind('t', 'scroll left')
 # config.bind('i', 'enter-mode insert')
-# config.bind('s', 'scroll down')
-# config.bind('d', 'scroll up')
+config.bind('s', 'scroll down')
+config.bind('w', 'scroll up')
 # config.bind('r', 'scroll right')
 # config.bind('M', 'quickmark-save')
 # config.bind('n', 'search-next')
