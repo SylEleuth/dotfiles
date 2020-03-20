@@ -453,6 +453,7 @@ nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
 nnoremap <Space> :
+nnoremap <;> :
 nnoremap <c-h> :tabprevious<cr>
 nnoremap <c-l> :tabnext<cr>
 

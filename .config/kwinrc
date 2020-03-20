@@ -1,8 +1,7 @@
 [$Version]
-update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed
 
 [Compositing]
-AnimationSpeed=1
 Backend=OpenGL
 Enabled=true
 GLCore=true
@@ -15,7 +14,7 @@ XRenderSmoothScale=false
 
 [Desktops]
 Id_1=9d80d2e1-2c9b-4558-b4c0-f41d6415525e
-Id_2=60c8d07e-6a92-4027-b006-f7a510c1ede3
+Id_2=0fbcf6b9-f541-4844-b118-60d260fe9543
 Name_1=Net
 Number=2
 Rows=1
@@ -47,7 +46,7 @@ TabBoxAlternative=false
 
 [Effect-PresentWindows]
 BorderActivate=9
-BorderActivateAll=1
+BorderActivateAll=9
 BorderActivateClass=9
 TouchBorderActivate=7
 TouchBorderActivateAll=9
@@ -63,7 +62,7 @@ BottomRight=None
 Left=None
 Right=None
 Top=None
-TopLeft=ApplicationLauncher
+TopLeft=None
 TopRight=None
 
 [MouseBindings]
@@ -144,7 +143,7 @@ screenGapBottom=4
 screenGapLeft=4
 screenGapRight=4
 screenGapTop=4
-tileLayoutGap=6
+tileLayoutGap=4
 
 [Script-max2NewVirtualDesktop]
 trigger=MaximizeOnly
@@ -225,7 +224,7 @@ TitlebarDoubleClickCommand=Maximize
 WindowSnapZone=10
 
 [org.kde.kdecoration2]
-BorderSize=Normal
+BorderSize=None
 BorderSizeAuto=false
 ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
