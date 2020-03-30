@@ -14,9 +14,8 @@ XRenderSmoothScale=false
 
 [Desktops]
 Id_1=9d80d2e1-2c9b-4558-b4c0-f41d6415525e
-Id_2=e03351cb-7055-4ab6-b345-55cbdb446f1b
 Name_1=Net
-Number=2
+Number=1
 Rows=1
 
 [Effect-Blur]
@@ -230,5 +229,3 @@ ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CloseOnDoubleClickOnMenu=false
 ShowToolTips=false
-library=org.kde.breeze
-theme=Breeze

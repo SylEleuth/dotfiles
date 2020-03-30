@@ -1,7 +1,7 @@
 export ZSH="/home/eleuth/.oh-my-zsh"
 
 POWERLEVEL9K_MODE="nerdfont-complete"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 RANGER_LOAD_DEFAULT_RC="false"
 PAGER="nvim"
@@ -49,7 +49,7 @@ alias dl="cd ~/Downloads"
 alias bl="cd ~/Data/Blender" 
 alias rip="youtube-dl" 
 alias ripau="youtube-dl --extract-audio --audio-format mp3" 
-alias logsdel="find ~/Dropbox/.mozilla/firefox/pnlhpvgc.Eleuth/weave/logs/ -name "*.txt" -type f"
+alias logsdel='find ~/Dropbox/.mozilla/firefox/pnlhpvgc.Eleuth/weave/logs/ -name "*.txt" -type f -delete'
 
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
