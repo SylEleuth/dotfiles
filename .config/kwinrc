@@ -5,11 +5,11 @@ update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-
 Backend=OpenGL
 Enabled=true
 GLCore=true
-GLPreferBufferSwap=a
+GLPreferBufferSwap=p
 GLTextureFilter=1
 HiddenPreviews=5
 OpenGLIsUnsafe=false
-WindowsBlockCompositing=true
+WindowsBlockCompositing=false
 XRenderSmoothScale=false
 
 [Desktops]
@@ -52,7 +52,7 @@ TouchBorderActivateAll=9
 TouchBorderActivateClass=9
 
 [Effect-kwin4_effect_translucency]
-MoveResize=95
+MoveResize=100
 
 [ElectricBorders]
 Bottom=None
@@ -134,6 +134,8 @@ enableStairLayout=false
 enableThreeColumnLayout=false
 enableTileLayout=false
 ignoreClass=krunner,yakuake,spectacle,kded5,guake, ksysguard
+layoutPerActivity=true
+layoutPerDesktop=true
 maximizeSoleTile=true
 monocleMaximize=false
 pollMouseXdotool=true

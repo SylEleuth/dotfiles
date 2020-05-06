@@ -4,9 +4,11 @@ switch-to-activity-2efacb1a-282f-4e65-ad08-db11b98d205c=,none,Switch to activity
 switch-to-activity-70475533-8942-4bdd-bed9-6ea1c45e825e=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
-Switch keyboard layout to Polish=,none,Switch keyboard layout to Polish
-Switch to Next Keyboard Layout=,none,Switch to Next Keyboard Layout
-_k_friendly_name=System Settings
+Switch keyboard layout to Japanese=none,none,Switch keyboard layout to Japanese
+Switch keyboard layout to Japanese (Kana)=none,none,Switch keyboard layout to Japanese (Kana)
+Switch keyboard layout to Polish=none,none,Switch keyboard layout to Polish
+Switch to Next Keyboard Layout=none,none,Switch to Next Keyboard Layout
+_k_friendly_name=KDE Daemon
 
 [PlayBar]
 _k_friendly_name=PlayBar
@@ -57,7 +59,7 @@ Lock Session=\t\tScreensaver,Meta+L\tCtrl+Alt+L\tScreensaver,Lock Session
 Log Out=,none,Log Out
 Log Out Without Confirmation=,none,Log Out Without Confirmation
 Reboot Without Confirmation=,none,Reboot Without Confirmation
-_k_friendly_name=ksmserver
+_k_friendly_name=System Settings
 
 [kwin]
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activate Window Demanding Attention
@@ -152,6 +154,7 @@ Switch to Screen 6=,none,Switch to Screen 6
 Switch to Screen 7=,none,Switch to Screen 7
 Toggle=none,none,Toggle Show Paint
 Toggle Night Color=,none,Toggle Night Color
+Toggle Night Colour=none,none,Toggle Night Colour
 Toggle Window Raise/Lower=,none,Toggle Window Raise/Lower
 Walk Through Desktop List=Meta+Tab,none,Walk Through Desktop List
 Walk Through Desktop List (Reverse)=Meta+Shift+Tab,none,Walk Through Desktop List (Reverse)
@@ -284,7 +287,7 @@ Turn Off Screen=,none,Turn Off Screen
 _k_friendly_name=Power Management
 
 [plasmashell]
-_k_friendly_name=Plasma
+_k_friendly_name=Activity switching
 activate task manager entry 1=,Meta+1,Activate Task Manager Entry 1
 activate task manager entry 10=,Meta+0,Activate Task Manager Entry 10
 activate task manager entry 2=,Meta+2,Activate Task Manager Entry 2
@@ -305,8 +308,8 @@ cycleNextAction=,none,Next History Item
 cyclePrevAction=,none,Previous History Item
 edit_clipboard=,none,Edit Contents...
 manage activities=,Meta+Q,Activities...
-next activity=,none,Walk through activities
-previous activity=,none,Walk through activities (Reverse)
+next activity=,Meta+Tab,Walk through activities
+previous activity=,Meta+Shift+Tab,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=,none,Show Barcode...
