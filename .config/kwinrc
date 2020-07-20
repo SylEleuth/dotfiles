@@ -140,11 +140,7 @@ maximizeSoleTile=true
 monocleMaximize=false
 pollMouseXdotool=true
 preventProtrusion=false
-screenGapBottom=4
-screenGapLeft=4
-screenGapRight=4
-screenGapTop=4
-tileLayoutGap=4
+tileLayoutGap=2
 
 [Script-max2NewVirtualDesktop]
 trigger=MaximizeOnly
@@ -165,7 +161,7 @@ DesktopLayout=org.kde.breeze.desktop
 DesktopListLayout=org.kde.breeze.desktop
 DesktopMode=0
 HighlightWindows=false
-LayoutName=thumbnail_grid
+LayoutName=org.kde.breeze.desktop
 MinimizedMode=0
 MultiScreenMode=0
 ShowDesktopMode=0

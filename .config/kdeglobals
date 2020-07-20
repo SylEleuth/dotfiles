@@ -1,111 +1,111 @@
 [$Version]
-update_info=kwin.upd:animation-speed,icons_remove_effects.upd:IconsRemoveEffects
+update_info=kwin.upd:animation-speed,icons_remove_effects.upd:IconsRemoveEffects,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
 
 [ColorEffects:Disabled]
 ChangeSelectionColor=
 Color=56,56,56
 ColorAmount=0
 ColorEffect=0
-ContrastAmount=0.5
+ContrastAmount=0.65000000000000002
 ContrastEffect=1
 Enable=
-IntensityAmount=0
+IntensityAmount=0.10000000000000001
 IntensityEffect=2
 
 [ColorEffects:Inactive]
-ChangeSelectionColor=false
+ChangeSelectionColor=true
 Color=112,111,110
-ColorAmount=0.025
+ColorAmount=0.025000000000000001
 ColorEffect=2
-ContrastAmount=0.1
+ContrastAmount=0.10000000000000001
 ContrastEffect=2
-Enable=false
+Enable=true
 IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=55,56,68
-BackgroundNormal=68,71,90
-DecorationFocus=189,147,249
-DecorationHover=189,147,249
-ForegroundActive=189,147,249
-ForegroundInactive=191,191,191
-ForegroundLink=255,121,198
-ForegroundNegative=255,85,85
-ForegroundNeutral=241,250,140
-ForegroundNormal=248,248,242
-ForegroundPositive=80,250,123
-ForegroundVisited=139,233,253
+BackgroundAlternate=60,56,54
+BackgroundNormal=40,40,40
+DecorationFocus=104,157,106
+DecorationHover=131,165,152
+ForegroundActive=142,192,124
+ForegroundInactive=55,115,117
+ForegroundLink=184,187,38
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
 
 [Colors:Complementary]
-BackgroundAlternate=55,56,68
-BackgroundNormal=40,42,54
-DecorationFocus=189,147,249
-DecorationHover=189,147,249
-ForegroundActive=202,169,250
-ForegroundInactive=191,191,191
-ForegroundLink=255,146,208
-ForegroundNegative=255,110,103
-ForegroundNeutral=244,249,157
-ForegroundNormal=248,248,242
-ForegroundPositive=90,247,142
-ForegroundVisited=154,237,254
+BackgroundAlternate=59,64,69
+BackgroundNormal=49,54,59
+DecorationFocus=30,146,255
+DecorationHover=61,174,230
+ForegroundActive=246,116,0
+ForegroundInactive=175,176,179
+ForegroundLink=61,174,230
+ForegroundNegative=237,21,21
+ForegroundNeutral=201,206,59
+ForegroundNormal=239,240,241
+ForegroundPositive=17,209,22
+ForegroundVisited=61,174,230
 
 [Colors:Selection]
-BackgroundAlternate=202,169,250
-BackgroundNormal=189,147,249
-DecorationFocus=189,147,249
-DecorationHover=189,147,249
-ForegroundActive=80,250,123
-ForegroundInactive=68,71,90
-ForegroundLink=241,250,140
-ForegroundNegative=255,85,85
-ForegroundNeutral=241,250,140
-ForegroundNormal=248,248,242
-ForegroundPositive=80,250,123
-ForegroundVisited=139,233,253
+BackgroundAlternate=142,192,124
+BackgroundNormal=104,157,106
+DecorationFocus=104,157,106
+DecorationHover=131,165,152
+ForegroundActive=252,252,252
+ForegroundInactive=235,219,178
+ForegroundLink=253,188,75
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=189,195,199
 
 [Colors:Tooltip]
-BackgroundAlternate=55,56,68
-BackgroundNormal=68,71,90
-DecorationFocus=189,147,249
-DecorationHover=189,147,249
-ForegroundActive=189,147,249
-ForegroundInactive=191,191,191
-ForegroundLink=255,121,198
-ForegroundNegative=255,85,85
-ForegroundNeutral=241,250,140
-ForegroundNormal=248,248,242
-ForegroundPositive=80,250,123
-ForegroundVisited=139,233,253
+BackgroundAlternate=60,56,54
+BackgroundNormal=40,40,40
+DecorationFocus=104,157,106
+DecorationHover=131,165,152
+ForegroundActive=184,187,38
+ForegroundInactive=55,115,117
+ForegroundLink=142,192,124
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
 
 [Colors:View]
-BackgroundAlternate=40,42,54
-BackgroundNormal=40,42,54
-DecorationFocus=189,147,249
-DecorationHover=189,147,249
-ForegroundActive=189,147,249
-ForegroundInactive=191,191,191
-ForegroundLink=255,121,198
-ForegroundNegative=255,85,85
-ForegroundNeutral=241,250,140
-ForegroundNormal=248,248,242
-ForegroundPositive=80,250,123
-ForegroundVisited=139,233,253
+BackgroundAlternate=60,56,54
+BackgroundNormal=40,40,40
+DecorationFocus=104,157,106
+DecorationHover=131,165,152
+ForegroundActive=184,187,38
+ForegroundInactive=55,115,117
+ForegroundLink=142,192,124
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
 
 [Colors:Window]
-BackgroundAlternate=55,56,68
-BackgroundNormal=40,42,54
-DecorationFocus=189,147,249
-DecorationHover=189,147,249
-ForegroundActive=189,147,249
-ForegroundInactive=191,191,191
-ForegroundLink=255,121,198
-ForegroundNegative=255,85,85
-ForegroundNeutral=241,250,140
-ForegroundNormal=248,248,242
-ForegroundPositive=80,250,123
-ForegroundVisited=139,233,253
+BackgroundAlternate=60,56,54
+BackgroundNormal=40,40,40
+DecorationFocus=104,157,106
+DecorationHover=131,165,152
+ForegroundActive=184,187,38
+ForegroundInactive=55,115,117
+ForegroundLink=142,192,124
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
 
 [DesktopIcons]
 Size=48
@@ -114,30 +114,31 @@ Size=48
 Size=32
 
 [DirSelect Dialog]
-DirSelectDialog Size=851,598
-History Items[$e]=file:$HOME/Downloads,file:$HOME/Data/Blender/davinci,file:$HOME/Downloads,file:$HOME/Data/Videos/seriale/Harley.Quinn,file:$HOME/Data/Videos/seriale/Better.Call.Saul,file:$HOME/Data/Videos/seriale/Better.Call.Saul,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data/Videos/seriale/Feel.Good,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data2,file:$HOME/Data/Videos,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine/Extras/Season 2 Extras,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine/Extras/Season 2 Extras,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine/Extras/Season 1 Extras,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:///usr/bin,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine
+DirSelectDialog Size=854,596
+History Items[$e]=file:$HOME/Data/Videos/seriale/Turn,file:$HOME/Data/Videos/seriale,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/-Homeland,file:$HOME/Data/Videos/seriale/-Homeland,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/seriale/-Bosch,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/-Bosch,file:$HOME/Downloads,file:$HOME/Data/Blender/davinci,file:$HOME/Downloads,file:$HOME/Data/Videos/seriale/Harley.Quinn,file:$HOME/Data/Videos/seriale/Better.Call.Saul,file:$HOME/Data/Videos/seriale/Better.Call.Saul,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data/Videos/seriale/Feel.Good,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data2,file:$HOME/Data/Videos,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine
 
 [General]
 BrowserApplication[$e]=firefox.desktop
-ColorScheme=KloraxDraculaModified
-Name=Klorax. Dracula
+ColorScheme=GruvboxColors
+Name[en_GB]=Breeze Dark
+Name=Breeze Dark
 TerminalApplication[$e]=termite
 XftHintStyle=hintslight
 XftSubPixel=rgb
 dbfile=/home/eleuth/.mozilla/firefox/qstcp00s.default/places.sqlite
 fixed=Hack Nerd Font,9,-1,5,50,0,0,0,0,0,Regular
-font=Roboto,10,-1,5,50,0,0,0,0,0,Regular
-menuFont=Roboto,10,-1,5,50,0,0,0,0,0,Regular
+font=Droid Sans,10,-1,5,50,0,0,0,0,0
+menuFont=Droid Sans,10,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
-smallestReadableFont=Roboto,10,-1,5,50,0,0,0,0,0,Regular
-toolBarFont=Roboto,10,-1,5,50,0,0,0,0,0,Regular
+smallestReadableFont=Droid Sans,10,-1,5,50,0,0,0,0,0
+toolBarFont=Droid Sans,10,-1,5,50,0,0,0,0,0
 
 [Icons]
 Theme=Vimix-Doder-dark
 
 [KDE]
 AnimationDurationFactor=0.250000
-LookAndFeelPackage=klorax.dracula-transparent.desktop
+LookAndFeelPackage=org.kde.breezedark.desktop
 ShowIconsInMenuItems=true
 ShowIconsOnPushButtons=true
 contrast=4
@@ -183,12 +184,12 @@ Size=22
 
 [WM]
 FakeEntryToKeepThisGroup=true
-activeBackground=40,42,54
-activeBlend=248,248,242
-activeFont=Roboto,10,-1,5,50,0,0,0,0,0,Regular
-activeForeground=248,248,242
+activeBackground=39,39,39
+activeBlend=235,219,178
+activeFont=Droid Sans,10,-1,5,50,0,0,0,0,0
+activeForeground=235,219,178
 frame=70,70,90
-inactiveBackground=40,42,54
-inactiveBlend=68,71,90
-inactiveForeground=68,71,90
+inactiveBackground=40,40,40
+inactiveBlend=60,56,54
+inactiveForeground=204,190,155
 inactiveFrame=40,42,54

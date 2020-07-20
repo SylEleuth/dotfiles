@@ -67,22 +67,22 @@ Plugin 'ryanoasis/vim-devicons'
 
 " ###### COLOR SCHEMES
 
-" Plugin 'morhetz/gruvbox' 
-" Plugin 'sainnhe/gruvbox-material' 
+Plugin 'morhetz/gruvbox' 
+Plugin 'sainnhe/gruvbox-material' 
 
 " Plugin 'ajmwagar/vim-deus'
 " Plugin 'altercation/vim-colors-solarized' 
 " Plugin 'jnurmine/Zenburn' 
 " Plugin 'ayu-theme/ayu-vim' 
 " Plugin 'gilgigilgil/anderson.vim' 
-Plugin 'dracula/vim' 
+" Plugin 'dracula/vim' 
 " Plugin 'joshdick/onedark.vim' 
 " Plugin 'zefei/cake16' 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme dracula
+colorscheme gruvbox
 " set background=dark
 " let g:gruvbox_contrast_dark = 'soft'
 " let g:gruvbox_material_background= 'soft'
@@ -219,7 +219,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 " Airline
-let g:airline_theme='dracula'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_left_sep = ' ❤  '
 "let g:airline_right_sep = ' 🟆  '
@@ -264,12 +264,12 @@ let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 
 " Startify settings
-let g:startify_files_number = 30
+let g:startify_files_number = 25
 let g:startify_lists = [
             \ { 'type': 'files',     'header': ['   MRU']            },
             \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
             \ ]
-let g:startify_bookmarks = [ '~/.config/i3/config',
+let g:startify_bookmarks = [
             \ '~/.zshrc',
             \ '~/.config/compton.conf',
             \ '~/.config/nvim/init.vim',

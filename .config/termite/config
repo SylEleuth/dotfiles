@@ -111,42 +111,42 @@ scrollbar = off
 # Code licensed under the MIT license
 
 # special
-foreground      = #f8f8f2
-foreground_bold = #f8f8f2
-cursor          = #f8f8f2
-background      = #282a36
-
-# black
-color0  = #000000
-color8  = #4d4d4d
-
-# red
-color1  = #ff5555
-color9  = #ff6e67
-
-# green
-color2  = #50fa7b
-color10 = #5af78e
-
-# yellow
-color3  = #f1fa8c
-color11 = #f4f99d
-
-# blue
-color4  = #bd93f9
-color12 = #caa9fa
-
-# magenta
-color5  = #ff79c6
-color13 = #ff92d0
-
-# cyan
-color6  = #8be9fd
-color14 = #9aedfe
-
-# white
-color7  = #bfbfbf
-color15 = #e6e6e6
+#foreground      = #f8f8f2
+#foreground_bold = #f8f8f2
+#cursor          = #f8f8f2
+#background      = #282a36
+#
+## black
+#color0  = #000000
+#color8  = #4d4d4d
+#
+## red
+#color1  = #ff5555
+#color9  = #ff6e67
+#
+## green
+#color2  = #50fa7b
+#color10 = #5af78e
+#
+## yellow
+#color3  = #f1fa8c
+#color11 = #f4f99d
+#
+## blue
+#color4  = #bd93f9
+#color12 = #caa9fa
+#
+## magenta
+#color5  = #ff79c6
+#color13 = #ff92d0
+#
+## cyan
+#color6  = #8be9fd
+#color14 = #9aedfe
+#
+## white
+#color7  = #bfbfbf
+#color15 = #e6e6e6
 
 
 ####### SOLARIZED LIGHT #######
@@ -176,51 +176,51 @@ color15 = #e6e6e6
 
 ##### GRUVBOX DARKSOFT ######
 
-# foreground          = #ebdbb2
-# foreground_bold     = #ebdbb2
-# cursor              = #ebdbb2
-# cursor_foreground   = #32302f
-# background          = #32302f
+foreground          = #ebdbb2
+foreground_bold     = #ebdbb2
+cursor              = #ebdbb2
+cursor_foreground   = #32302f
+background          = #32302f
 
-# # 16 color space
+# 16 color space
 
-# # Black, Gray, Silver, White
-# color0  = #32302f
-# color8  = #665c54
-# color7  = #d5c4a1
-# color15 = #fbf1c7
+# Black, Gray, Silver, White
+color0  = #32302f
+color8  = #665c54
+color7  = #d5c4a1
+color15 = #fbf1c7
 
-# # Red
-# color1  = #fb4934
-# color9  = #fb4934
+# Red
+color1  = #fb4934
+color9  = #fb4934
 
-# # Green
-# color2  = #b8bb26
-# color10 = #b8bb26
+# Green
+color2  = #b8bb26
+color10 = #b8bb26
 
-# # Yellow
-# color3  = #fabd2f
-# color11 = #fabd2f
+# Yellow
+color3  = #fabd2f
+color11 = #fabd2f
 
-# # Blue
-# color4  = #83a598
-# color12 = #83a598
+# Blue
+color4  = #83a598
+color12 = #83a598
 
-# # Purple
-# color5  = #d3869b
-# color13 = #d3869b
+# Purple
+color5  = #d3869b
+color13 = #d3869b
 
-# # Teal
-# color6  = #8ec07c
-# color14 = #8ec07c
+# Teal
+color6  = #8ec07c
+color14 = #8ec07c
 
-# # Extra colors
-# color16 = #fe8019
-# color17 = #d65d0e
-# color18 = #3c3836
-# color19 = #504945
-# color20 = #bdae93
-# color21 = #ebdbb2
+# Extra colors
+color16 = #fe8019
+color17 = #d65d0e
+color18 = #3c3836
+color19 = #504945
+color20 = #bdae93
+color21 = #ebdbb2
 
 
 # ####### GRUVBOX DARK######
