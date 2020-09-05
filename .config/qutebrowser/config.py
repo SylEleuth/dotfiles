@@ -759,7 +759,7 @@ c.fonts.statusbar = 'bold 9pt monospace'
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = 'bold 9pt monospace'
+# c.fonts.tabs = 'bold 9pt monospace'
 
 # # Font family for cursive fonts.
 # # Type: FontFamily
@@ -1060,7 +1060,7 @@ c.scrolling.smooth = True
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
-c.statusbar.hide = False
+# c.statusbar.hide = False
 
 # Padding for the statusbar.
 # Type: Padding

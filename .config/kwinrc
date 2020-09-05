@@ -3,7 +3,6 @@ update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-
 
 [Compositing]
 Backend=OpenGL
-Enabled=true
 GLCore=true
 GLPreferBufferSwap=p
 GLTextureFilter=1
@@ -23,7 +22,6 @@ BlurStrength=3
 NoiseStrength=0
 
 [Effect-CoverSwitch]
-TabBox=false
 TabBoxAlternative=false
 zPosition=230
 
@@ -40,7 +38,6 @@ BorderActivate=9
 TouchBorderActivate=9
 
 [Effect-FlipSwitch]
-TabBox=false
 TabBoxAlternative=false
 
 [Effect-PresentWindows]
@@ -51,8 +48,17 @@ TouchBorderActivate=7
 TouchBorderActivateAll=9
 TouchBorderActivateClass=9
 
+[Effect-Slide]
+Duration=500
+HorizontalGap=145
+SlideDocks=true
+VerticalGap=120
+
 [Effect-kwin4_effect_translucency]
+DropdownMenus=40
 MoveResize=100
+PopupMenus=42
+TornOffMenus=43
 
 [ElectricBorders]
 Bottom=None
@@ -89,8 +95,9 @@ LongitudeFixed=-2.7057
 Mode=Location
 
 [Plugins]
+TIL3REnabled=false
 blurEnabled=true
-contrastEnabled=true
+contrastEnabled=false
 coverswitchEnabled=true
 desktopchangeosdEnabled=false
 dynamicVirtualDesktopsEnabled=false
@@ -101,7 +108,7 @@ highlightwindowEnabled=true
 krohnkiteEnabled=true
 kwin-script-tilingEnabled=false
 lattewindowcolorsEnabled=false
-max2NewVirtualDesktopEnabled=true
+max2NewVirtualDesktopEnabled=false
 minimizeallEnabled=false
 quarter-tilingEnabled=false
 quicktile-enhancementsEnabled=false
@@ -113,16 +120,18 @@ videowallEnabled=false
 windowgeometryEnabled=false
 
 [Script-desktopchangeosd]
-PopupHideDelay=1000
+PopupHideDelay=0
 TextOnly=true
 
 [Script-grid-tiling]
 clientNames=inkscape, krita, blender, gimp, kdenlive, kdevelop, guake
 dividerBounds=0.5
 floatingClients=guake
-gap=4
+gap=2
 gridRows=2 , 2
 ignoredClients=wine
+ignoredNames=wine, yakuake, guake
+minSpaceValues=1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2
 
 [Script-krohnkite]
 directionalKeyDwm=false
@@ -148,6 +157,11 @@ trigger=MaximizeOnly
 [Script-minimizeall]
 BorderActivate=9
 
+[Script-quarter-tiling]
+gap=1
+ignoredClients=wine, steam, guake
+maxClients=4
+
 [SubSession: 18ed0e13-00f5-4d2b-b3f6-a4105784d280]
 active=-1
 count=0
@@ -161,7 +175,7 @@ DesktopLayout=org.kde.breeze.desktop
 DesktopListLayout=org.kde.breeze.desktop
 DesktopMode=0
 HighlightWindows=false
-LayoutName=org.kde.breeze.desktop
+LayoutName=thumbnail_grid
 MinimizedMode=0
 MultiScreenMode=0
 ShowDesktopMode=0
@@ -175,7 +189,7 @@ ActivitiesMode=1
 ApplicationsMode=0
 DesktopMode=1
 HighlightWindows=false
-LayoutName=MediumRoundedDark
+LayoutName=thumbnail_grid
 MinimizedMode=0
 MultiScreenMode=0
 ShowDesktopMode=0
@@ -193,7 +207,7 @@ ActiveMouseScreen=false
 AutoRaise=false
 AutoRaiseInterval=750
 BorderSnapZone=10
-BorderlessMaximizedWindows=false
+BorderlessMaximizedWindows=true
 CenterSnapZone=0
 ClickRaise=true
 DelayFocusInterval=200
@@ -227,3 +241,5 @@ ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CloseOnDoubleClickOnMenu=false
 ShowToolTips=false
+library=org.kde.breeze
+theme=Breeze

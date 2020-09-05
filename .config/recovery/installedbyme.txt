@@ -8,7 +8,6 @@ firefox
 vifm
 neovim
 xcape
-xcape
 ttf-font-awesome
 ttf-lato
 vim
@@ -19,7 +18,6 @@ doublecmd-qt5
 i3blocks
 pavucontrol
 pulseeffects
-pavucontrol
 libmpdclient
 polybar
 graphviz
@@ -44,7 +42,6 @@ termite
 gpicview
 cmake
 visual-studio-code-bin
-visual-studio-code-bin
 opera
 graphviz
 nerd-fonts-source-code-pro
@@ -55,7 +52,6 @@ gtkmathview
 cava
 pamac-gtk
 curseradio-git
-blender-2.8-bin
 arc-gtk-theme
 arc-solid-gtk-theme
 deepin-gtk-theme
@@ -93,24 +89,14 @@ qnapi
 google-calendar-nativefier
 crow-translate
 google-keep-desktop
-wine
 firefox-developer-edition
 game-devices-udev
 steam-manjaro
 qt5-webview
-wine
-blender
-blender
-blender
-blender-2.8-bin
-blender
-blender-2.8-bin
 ttf-font-icons
 manjaro-icons
-blender
 lib32-curl
 alttab-git
-blender
 kservice
 oxygen
 breeze-icons
@@ -124,5 +110,4 @@ bumblebee-status
 ttf-font-awesome
 otf-font-awesome
 otf-font-awesome-4
-chromium
 fs-uae-launcher

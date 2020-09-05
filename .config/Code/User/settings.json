@@ -47,7 +47,7 @@
   "extensions.showRecommendationsOnlyOnDemand": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
   "keyboard.dispatch": "keyCode",
@@ -63,12 +63,12 @@
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "/home/eleuth/.vimrc",
   "vim.statusBarColorControl": true,
-  "vim.statusBarColors.normal": "#252633",
-  "vim.statusBarColors.insert": "#bd93f9",
-  "vim.statusBarColors.visual": "#B48EAD",
-  "vim.statusBarColors.visualline": "#B48EAD",
-  "vim.statusBarColors.visualblock": "#A3BE8C",
-  "vim.statusBarColors.replace": "#D08770",
+  "vim.statusBarColors.normal": "#282828",
+  "vim.statusBarColors.insert": "#83a598",
+  "vim.statusBarColors.visual": "#fe8019",
+  "vim.statusBarColors.visualline": "#fe8019",
+  "vim.statusBarColors.visualblock": "#fe8019",
+  "vim.statusBarColors.replace": "#8ec07c",
   "vim.statusBarColors.commandlineinprogress": "#ff5555",
   "vim.statusBarColors.searchinprogressmode": "#007ACC",
   "vim.statusBarColors.easymotionmode": "#007ACC",
@@ -81,8 +81,9 @@
     "<C-r>": true
   },
   "workbench.colorCustomizations": {
-    "statusBar.background": "#252633",
-    "statusBar.noFolderBackground": "#252633",
-    "statusBar.debuggingBackground": "#252633"
-  }
+    "statusBar.background": "#282828",
+    "statusBar.noFolderBackground": "#282828",
+    "statusBar.debuggingBackground": "#282828"
+  },
+  "python.languageServer": "Microsoft"
 }

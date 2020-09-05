@@ -21,23 +21,23 @@ Plugin 'mhinz/vim-startify' " Starting screen
 
 Plugin 'https://gitlab.com/Lenovsky/nuake.git' " A Quake-style terminal panel for Neovim and Vim <F4>
 
-Plugin 'ncm2/ncm2' " Completion framework
-Plugin 'HansPinckaers/ncm2-jedi' " Fast python completion (use ncm2 if you want type info or snippet support)
-Plugin 'ncm2/ncm2-bufword' " Words in buffer completion
-Plugin 'ncm2/ncm2-path' " Filepath completion
+" Plugin 'ncm2/ncm2' " Completion framework
+" Plugin 'HansPinckaers/ncm2-jedi' " Fast python completion (use ncm2 if you want type info or snippet support)
+" Plugin 'ncm2/ncm2-bufword' " Words in buffer completion
+" Plugin 'ncm2/ncm2-path' " Filepath completion
 
-Plugin 'Shougo/neosnippet.vim' " Snippets doh!
-Plugin 'ncm2/ncm2-neosnippet'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'Shougo/neosnippet-snippets'
+" Plugin 'Shougo/neosnippet.vim' " Snippets doh!
+" Plugin 'ncm2/ncm2-neosnippet'
+" Plugin 'roxma/vim-hug-neovim-rpc'
+" Plugin 'Shougo/neosnippet-snippets'
 
-Plugin 'nvie/vim-flake8' " Python linter <F7>
-Plugin 'davidhalter/jedi-vim' " jedi for python
+" Plugin 'nvie/vim-flake8' " Python linter <F7>
+" Plugin 'davidhalter/jedi-vim' " jedi for python
 
-Plugin 'Vimjas/vim-python-pep8-indent' " Python indentations
-Plugin 'Chiel92/vim-autoformat' " code formatting <F5>
+" Plugin 'Vimjas/vim-python-pep8-indent' " Python indentations
+" Plugin 'Chiel92/vim-autoformat' " code formatting <F5>
 
-Plugin 'kh3phr3n/python-syntax' " Python code highlight
+" Plugin 'kh3phr3n/python-syntax' " Python code highlight
 
 Plugin 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
 Plugin 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
@@ -306,15 +306,15 @@ au BufNewFile,BufRead *.py
             \ set fileformat=unix
 
 " ncm2 settings
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=menuone,noselect,noinsert
-set shortmess+=c
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+" set completeopt=menuone,noselect,noinsert
+" set shortmess+=c
 
 " make it fast
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
-" Use new fuzzy based matches
-let g:ncm2#matcher = 'substrfuzzy'
+" let ncm2#popup_delay = 5
+" let ncm2#complete_length = [[1, 1]]
+" " Use new fuzzy based matches
+" let g:ncm2#matcher = 'substrfuzzy'
 
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0

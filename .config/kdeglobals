@@ -38,18 +38,18 @@ ForegroundPositive=39,174,96
 ForegroundVisited=127,140,141
 
 [Colors:Complementary]
-BackgroundAlternate=59,64,69
-BackgroundNormal=49,54,59
-DecorationFocus=30,146,255
-DecorationHover=61,174,230
-ForegroundActive=246,116,0
-ForegroundInactive=175,176,179
-ForegroundLink=61,174,230
-ForegroundNegative=237,21,21
-ForegroundNeutral=201,206,59
-ForegroundNormal=239,240,241
-ForegroundPositive=17,209,22
-ForegroundVisited=61,174,230
+BackgroundAlternate=55,56,68
+BackgroundNormal=40,42,54
+DecorationFocus=189,147,249
+DecorationHover=189,147,249
+ForegroundActive=202,169,250
+ForegroundInactive=191,191,191
+ForegroundLink=255,146,208
+ForegroundNegative=255,110,103
+ForegroundNeutral=244,249,157
+ForegroundNormal=248,248,242
+ForegroundPositive=90,247,142
+ForegroundVisited=154,237,254
 
 [Colors:Selection]
 BackgroundAlternate=142,192,124
@@ -114,8 +114,8 @@ Size=48
 Size=32
 
 [DirSelect Dialog]
-DirSelectDialog Size=854,596
-History Items[$e]=file:$HOME/Data/Videos/seriale/Turn,file:$HOME/Data/Videos/seriale,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/-Homeland,file:$HOME/Data/Videos/seriale/-Homeland,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/seriale/-Bosch,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/-Bosch,file:$HOME/Downloads,file:$HOME/Data/Blender/davinci,file:$HOME/Downloads,file:$HOME/Data/Videos/seriale/Harley.Quinn,file:$HOME/Data/Videos/seriale/Better.Call.Saul,file:$HOME/Data/Videos/seriale/Better.Call.Saul,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data/Videos/seriale/Feel.Good,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data2,file:$HOME/Data/Videos,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine,file:$HOME/Data/Videos/seriale/Star Trek Deep Space Nine
+DirSelectDialog Size=858,594
+History Items[$e]=file:$HOME/Data/Videos/anime/Neon Genesis Evangelion,file:$HOME/Data/Videos/anime/Bokurano,file:$HOME/Data/Videos/anime/Bojack Horseman,file:$HOME/Data/Videos/seriale/Most.Dangerous.Game,file:$HOME/Data/Videos/seriale/Most.Dangerous.Game,file:$HOME/Downloads/[BDMV] 坂本真綾 シングルコレクション+ 「アチコチ」,file:$HOME/Downloads/[BDMV] 坂本真綾 シングルコレクション+ 「アチコチ」,file:$HOME/Downloads/[BDMV] 坂本真綾 シングルコレクション+ 「アチコチ」,file:$HOME/Data/Videos/seriale/A Very English Scandal,file:$HOME/Data/Videos/seriale/Top of the Lake,file:$HOME/Data/Videos/seriale/Lost.in.Space,file:$HOME/Data/Videos/seriale/Lost.in.Space,file:$HOME/Data,file:$HOME/Data/Videos,file:$HOME/Data/Videos/seriale/This.is.Us,file:$HOME/Data/Videos/seriale/The.Umbrella.Academy,file:$HOME/Data/Videos/seriale/The.Umbrella.Academy,file:$HOME/Data/Videos/seriale/This.is.Us,file:$HOME/Data/Videos/seriale/-Ray.Donovan,file:$HOME/Data/Videos/seriale/-Ray.Donovan,file:$HOME/Data/Videos/seriale/Turn,file:$HOME/Data/Videos/seriale,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/The.Expanse,file:$HOME/Data/Videos/seriale/-Homeland,file:$HOME/Data/Videos/seriale/-Homeland,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Data/Videos/seriale/-Bosch,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/Bojack Horseman,file:$HOME/Data/Videos/seriale/-Bosch,file:$HOME/Downloads,file:$HOME/Data/Blender/davinci,file:$HOME/Downloads,file:$HOME/Data/Videos/seriale/Harley.Quinn,file:$HOME/Data/Videos/seriale/Better.Call.Saul,file:$HOME/Data/Videos/seriale/Better.Call.Saul,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data/Videos/seriale/Feel.Good,file:$HOME/Data/Videos/seriale/The.Marvelous.Mrs.Maisel,file:$HOME/Data2,file:$HOME/Data/Videos
 
 [General]
 BrowserApplication[$e]=firefox.desktop
@@ -126,12 +126,12 @@ TerminalApplication[$e]=termite
 XftHintStyle=hintslight
 XftSubPixel=rgb
 dbfile=/home/eleuth/.mozilla/firefox/qstcp00s.default/places.sqlite
-fixed=Hack Nerd Font,9,-1,5,50,0,0,0,0,0,Regular
-font=Droid Sans,10,-1,5,50,0,0,0,0,0
-menuFont=Droid Sans,10,-1,5,50,0,0,0,0,0
+fixed=UbuntuMono Nerd Font,10,-1,5,50,0,0,0,0,0
+font=Ubuntu,10,-1,5,50,0,0,0,0,0
+menuFont=Ubuntu,10,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
-smallestReadableFont=Droid Sans,10,-1,5,50,0,0,0,0,0
-toolBarFont=Droid Sans,10,-1,5,50,0,0,0,0,0
+smallestReadableFont=Ubuntu,8,-1,5,50,0,0,0,0,0
+toolBarFont=Ubuntu,10,-1,5,50,0,0,0,0,0
 
 [Icons]
 Theme=Vimix-Doder-dark
@@ -147,8 +147,8 @@ widgetStyle=Breeze
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
-Breadcrumb Navigation=true
-Decoration position=2
+Breadcrumb Navigation=false
+Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Show Bookmarks=false
@@ -161,7 +161,7 @@ Sort by=Name
 Sort directories first=true
 Sort reversed=false
 Speedbar Width=145
-View Style=DetailTree
+View Style=Detail
 
 [KShortcutsDialog Settings]
 Dialog Size=600,480
@@ -186,7 +186,7 @@ Size=22
 FakeEntryToKeepThisGroup=true
 activeBackground=39,39,39
 activeBlend=235,219,178
-activeFont=Droid Sans,10,-1,5,50,0,0,0,0,0
+activeFont=Ubuntu,10,-1,5,50,0,0,0,0,0
 activeForeground=235,219,178
 frame=70,70,90
 inactiveBackground=40,40,40
