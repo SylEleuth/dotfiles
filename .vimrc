@@ -21,23 +21,23 @@ Plugin 'mhinz/vim-startify' " Starting screen
 
 Plugin 'https://gitlab.com/Lenovsky/nuake.git' " A Quake-style terminal panel for Neovim and Vim <F4>
 
-Plugin 'ncm2/ncm2' " Completion framework
-Plugin 'HansPinckaers/ncm2-jedi' " Fast python completion (use ncm2 if you want type info or snippet support)
-Plugin 'ncm2/ncm2-bufword' " Words in buffer completion
-Plugin 'ncm2/ncm2-path' " Filepath completion
+" Plugin 'ncm2/ncm2' " Completion framework
+" Plugin 'HansPinckaers/ncm2-jedi' " Fast python completion (use ncm2 if you want type info or snippet support)
+" Plugin 'ncm2/ncm2-bufword' " Words in buffer completion
+" Plugin 'ncm2/ncm2-path' " Filepath completion
 
-Plugin 'Shougo/neosnippet.vim' " Snippets doh!
-Plugin 'ncm2/ncm2-neosnippet'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'Shougo/neosnippet-snippets'
+" Plugin 'Shougo/neosnippet.vim' " Snippets doh!
+" Plugin 'ncm2/ncm2-neosnippet'
+" Plugin 'roxma/vim-hug-neovim-rpc'
+" Plugin 'Shougo/neosnippet-snippets'
 
-Plugin 'nvie/vim-flake8' " Python linter <F7>
-Plugin 'davidhalter/jedi-vim' " jedi for python
+" Plugin 'nvie/vim-flake8' " Python linter <F7>
+" Plugin 'davidhalter/jedi-vim' " jedi for python
 
-Plugin 'Vimjas/vim-python-pep8-indent' " Python indentations
-Plugin 'Chiel92/vim-autoformat' " code formatting <F5>
+" Plugin 'Vimjas/vim-python-pep8-indent' " Python indentations
+" Plugin 'Chiel92/vim-autoformat' " code formatting <F5>
 
-Plugin 'kh3phr3n/python-syntax' " Python code highlight
+" Plugin 'kh3phr3n/python-syntax' " Python code highlight
 
 Plugin 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
 Plugin 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
@@ -67,28 +67,28 @@ Plugin 'ryanoasis/vim-devicons'
 
 " ###### COLOR SCHEMES
 
-" Plugin 'morhetz/gruvbox' 
-" Plugin 'sainnhe/gruvbox-material' 
+Plugin 'morhetz/gruvbox' 
+Plugin 'sainnhe/gruvbox-material' 
 
 " Plugin 'ajmwagar/vim-deus'
 " Plugin 'altercation/vim-colors-solarized' 
 " Plugin 'jnurmine/Zenburn' 
 " Plugin 'ayu-theme/ayu-vim' 
 " Plugin 'gilgigilgil/anderson.vim' 
-Plugin 'dracula/vim' 
+" Plugin 'dracula/vim' 
 " Plugin 'joshdick/onedark.vim' 
 " Plugin 'zefei/cake16' 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme dracula
-" set background=dark
-" let g:gruvbox_contrast_dark = 'soft'
-" let g:gruvbox_material_background= 'soft'
-" let g:gruvbox_italic=1
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_material_background= 'soft'
+let g:gruvbox_italic=1
 
-" let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_enable_italic = 1
 
 if (has("termguicolors"))
   set termguicolors
@@ -110,6 +110,7 @@ set linebreak " breaks lines by word rather than character
 set timeoutlen=500
 let g:vim_json_conceal=0
 set conceallevel=0
+set clipboard+=unnamedplus
 
 " Buffers
 set hidden
@@ -218,7 +219,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 " Airline
-let g:airline_theme='dracula'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_left_sep = ' ❤  '
 "let g:airline_right_sep = ' 🟆  '
@@ -263,12 +264,12 @@ let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 
 " Startify settings
-let g:startify_files_number = 30
+let g:startify_files_number = 25
 let g:startify_lists = [
             \ { 'type': 'files',     'header': ['   MRU']            },
             \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
             \ ]
-let g:startify_bookmarks = [ '~/.config/i3/config',
+let g:startify_bookmarks = [
             \ '~/.zshrc',
             \ '~/.config/compton.conf',
             \ '~/.config/nvim/init.vim',
@@ -305,15 +306,15 @@ au BufNewFile,BufRead *.py
             \ set fileformat=unix
 
 " ncm2 settings
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=menuone,noselect,noinsert
-set shortmess+=c
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+" set completeopt=menuone,noselect,noinsert
+" set shortmess+=c
 
 " make it fast
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
-" Use new fuzzy based matches
-let g:ncm2#matcher = 'substrfuzzy'
+" let ncm2#popup_delay = 5
+" let ncm2#complete_length = [[1, 1]]
+" " Use new fuzzy based matches
+" let g:ncm2#matcher = 'substrfuzzy'
 
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
@@ -345,4 +346,3 @@ let g:jedi#show_call_signatures = "1"
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-

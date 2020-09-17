@@ -13,8 +13,9 @@ XRenderSmoothScale=false
 
 [Desktops]
 Id_1=9d80d2e1-2c9b-4558-b4c0-f41d6415525e
+Id_2=2804d854-5191-45cd-a1e0-2bed1c01c7a8
 Name_1=Net
-Number=1
+Number=2
 Rows=1
 
 [Effect-Blur]

@@ -83,12 +83,12 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 colorscheme gruvbox
-" set background=dark
-" let g:gruvbox_contrast_dark = 'soft'
-" let g:gruvbox_material_background= 'soft'
-" let g:gruvbox_italic=1
+set background=dark
+let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_material_background= 'soft'
+let g:gruvbox_italic=1
 
-" let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_enable_italic = 1
 
 if (has("termguicolors"))
   set termguicolors
