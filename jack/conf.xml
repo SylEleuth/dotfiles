@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+JACK settings, as persisted by D-Bus object.
+You probably don't want to edit this because
+it will be overwritten next time jackdbus saves.
+-->
+<!-- Tue Sep 14 00:16:09 2021 -->
+<jack>
+ <engine>
+  <option name="driver">alsa</option>
+  <option name="realtime">true</option>
+  <option name="realtime-priority">10</option>
+  <option name="verbose">false</option>
+  <option name="clock-source">0</option>
+  <option name="port-max">2048</option>
+  <option name="sync">false</option>
+  <option name="self-connect-mode"> </option>
+ </engine>
+ <drivers>
+  <driver name="loopback">
+  </driver>
+  <driver name="netone">
+  </driver>
+  <driver name="alsa">
+   <option name="device">hw:CODEC,0</option>
+   <option name="capture">hw:CODEC,0</option>
+   <option name="playback">hw:CODEC,0</option>
+   <option name="rate">44100</option>
+   <option name="period">256</option>
+   <option name="nperiods">2</option>
+   <option name="hwmeter">false</option>
+   <option name="duplex">true</option>
+   <option name="softmode">false</option>
+   <option name="monitor">false</option>
+   <option name="dither">n</option>
+   <option name="inchannels">2</option>
+   <option name="outchannels">2</option>
+   <option name="shorts">false</option>
+  </driver>
+  <driver name="dummy">
+  </driver>
+  <driver name="alsarawmidi">
+  </driver>
+  <driver name="net">
+  </driver>
+  <driver name="proxy">
+  </driver>
+ </drivers>
+ <internals>
+  <internal name="audioadapter">
+  </internal>
+  <internal name="netmanager">
+  </internal>
+  <internal name="netadapter">
+  </internal>
+  <internal name="profiler">
+  </internal>
+ </internals>
+</jack>

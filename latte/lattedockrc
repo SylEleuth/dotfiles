@@ -1,0 +1,50 @@
+[DownloadDialog Settings]
+HDMI-A-0 Height 1920x1080=783
+HDMI-A-0 Width 1920x1080=1104
+
+[KFileDialog Settings]
+detailViewIconSize=16
+
+[LatteSettingsDialog]
+downloadWindowSize=800,550
+windowSize=700,608
+
+[LatteSettingsDialog][TabLayouts]
+columnWidths=58,69,76,58
+sortColumn=3
+sortOrder=0
+
+[LatteSettingsDialog][ViewsDialog]
+columnWidths=59,256,142,135,131
+sortColumn=2
+sortOrder=0
+windowSize=980,630
+
+[PlasmaThemeExtended]
+outlineWidth=1
+
+[ScreenConnectors]
+10=HDMI-A-0:::0,0 1920x1080
+11=DVI-D-0:::1920,0 1920x1080
+12=HDMI-1:::0,0 1920x1080
+13=DVI-D-1:::1920,0 1920x1080
+
+[UniversalSettings]
+badges3DStyle=false
+canDisableBorders=true
+contextMenuActionsAlwaysShown=
+currentLayout=Eleuth
+downloadWindowSize=800,550
+inAdvancedModeForEditSettings=true
+isAvailableGeometryBroadcastedToPlasma=true
+lastNonAssignedLayout=Eleuth
+launchers=applications:firefox.desktop,applications:firefox-nightly.desktop,applications:chromium.desktop,applications:org.qutebrowser.qutebrowser.desktop,applications:discord.desktop,applications:blender.desktop,applications:org.kde.krita.desktop,applications:gimp.desktop,applications:org.inkscape.Inkscape.desktop,applications:io.github.OpenToonz.desktop,applications:godot.desktop,applications:cantata.desktop,applications:virtualbox.desktop,applications:virt-manager.desktop,applications:fs-uae-launcher.desktop,applications:net.lutris.Lutris.desktop,applications:steam.desktop,applications:com.github.hmlendea.geforcenow-electron.desktop,applications:evelauncher.desktop,applications:visual-studio-code.desktop,applications:emacs.desktop,applications:GitKraken.desktop,applications:typora.desktop,applications:smplayer.desktop,applications:org.kde.kcalc.desktop,applications:org.kde.krusader.desktop,applications:org.kde.dolphin.desktop,applications:kitty.desktop,applications:systemsettings.desktop
+layoutsColumnWidths=110,70,61,78
+layoutsWindowSize=700,561
+memoryUsage=0
+metaPressAndHoldEnabled=false
+mouseSensitivity=0
+screenTrackerInterval=2500
+showInfoWindow=true
+singleModeLayoutName=Eleuth
+version=2

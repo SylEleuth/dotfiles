@@ -1,0 +1,4 @@
+"qdbus org.kde.kglobalaccel /component/kwin invokeShortcut view_zoom_in"
+    alt + b:4
+"qdbus org.kde.kglobalaccel /component/kwin invokeShortcut view_zoom_out"
+    alt + b:5

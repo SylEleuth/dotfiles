@@ -1,0 +1,50 @@
+for f in *.svg;
+do
+echo "Changing color of $f ..."
+sed -i --follow-symlinks 's/#5C616C/#ebdbb2/gI' "$f";
+sed -i --follow-symlinks 's/#5294e2/#458588/gI' "$f";
+sed -i --follow-symlinks 's/#FFFFFF/#ebdbb2/gI' "$f";
+sed -i --follow-symlinks 's/#DA1636/#cc241d/gI' "$f";
+sed -i --follow-symlinks 's/#dd9b44/#d79921/gI' "$f";
+sed -i --follow-symlinks 's/#ad6c16/#b57614/gI' "$f";
+sed -i --follow-symlinks 's/#09D4DF/#83a598/gI' "$f";
+sed -i --follow-symlinks 's/#9269F4/#b16286/gI' "$f";
+sed -i --follow-symlinks 's/#1AD6AB/#8ec07c/gI' "$f";
+sed -i --follow-symlinks 's/#329DB6/#458588/gI' "$f";
+sed -i --follow-symlinks 's/#efefe7/#458588/gI' "$f";
+sed -i --follow-symlinks 's/#8f8f8b/#928374/gI' "$f";
+sed -i --follow-symlinks 's/#00F260/#b8bb26/gI' "$f";
+sed -i --follow-symlinks 's/#0575E6/#076678/gI' "$f";
+sed -i --follow-symlinks 's/#FF8501/#fe8019/gI' "$f";
+sed -i --follow-symlinks 's/#b2ced6/#83a598/gI' "$f";
+sed -i --follow-symlinks 's/#6da5b7/#83a598/gI' "$f";
+sed -i --follow-symlinks 's/#df5940/#fb4934/gI' "$f";
+sed -i --follow-symlinks 's/#d8d15f/#fabd2f/gI' "$f";
+sed -i --follow-symlinks 's/#e9882a/#fe8019/gI' "$f";
+sed -i --follow-symlinks 's/#FFCB01/#fabd2f/gI' "$f";
+sed -i --follow-symlinks 's/#279362/#689d6a/gI' "$f";
+sed -i --follow-symlinks 's/#f618c7/#b16286/gI' "$f";
+sed -i --follow-symlinks 's/#94ffab/#8ec07c/gI' "$f";
+sed -i --follow-symlinks 's/#fbfd54/#fabd2f/gI' "$f";
+sed -i --follow-symlinks 's/#0f83ae/#458588/gI' "$f";
+sed -i --follow-symlinks 's/#0abdc6/#83a598/gI' "$f";
+sed -i --follow-symlinks 's/#ea00d9/#b16286/gI' "$f";
+sed -i --follow-symlinks 's/#6e6e6e/#665c54/gI' "$f";
+sed -i --follow-symlinks 's/#a7a7a7/#a89984/gI' "$f";
+sed -i --follow-symlinks 's/#03CA7A/#8ec07c/gI' "$f";
+sed -i --follow-symlinks 's/#BD2FD0/#b16286/gI' "$f";
+sed -i --follow-symlinks 's/#0896D2/#458588/gI' "$f";
+sed -i --follow-symlinks 's/#b1b1b1/#bdae93/gI' "$f";
+sed -i --follow-symlinks 's/#acacac/#a89984/gI' "$f";
+sed -i --follow-symlinks 's/#c1c1c1/#bdae93/gI' "$f";
+sed -i --follow-symlinks 's/#000000/#282828/gI' "$f";
+sed -i --follow-symlinks 's/#DF2020/#cc241d/gI' "$f";
+sed -i --follow-symlinks 's/#FFD336/#fabd2f/gI' "$f";
+sed -i --follow-symlinks 's/#76C22B/#b8bb26/gI' "$f";
+sed -i --follow-symlinks 's/#BC1938/#BC1938/gI' "$f";
+sed -i --follow-symlinks 's/#F55C0F/#d65d0e/gI' "$f";
+sed -i --follow-symlinks 's/#FAF8F6/#ebdbb2/gI' "$f";
+sed -i --follow-symlinks 's/#00AC98/#689d6a/gI' "$f";
+sed -i --follow-symlinks 's/#ECECEC/#ebdbb2/gI' "$f";
+
+done

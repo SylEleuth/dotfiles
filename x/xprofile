@@ -1,0 +1,2 @@
+gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+export GTK_USE_PORTAL=1

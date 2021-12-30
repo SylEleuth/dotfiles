@@ -1,0 +1,81 @@
+export ZSH="/home/eleuth/.oh-my-zsh"
+
+source ~/.zplug/init.zsh
+
+zplug "plugins/git",   from:oh-my-zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions'
+zplug 'supercrabtree/k'
+zplug 'MichaelAquilina/zsh-auto-notify'
+zplug "changyuheng/fz", defer:1
+zplug "rupa/z", use:z.sh
+
+if ! zplug check; then
+    zplug install
+fi
+
+zplug load
+
+if zplug check b4b4r07/enhancd; then
+    # setting if enhancd is available
+    export ENHANCD_FILTER=fzf-tmux
+fi
+
+# POWERLEVEL9K_MODE="nerdfont-complete"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+RANGER_LOAD_DEFAULT_RC="false"
+PAGER="nvim"
+VISUAL="nvim"
+EDITOR="nvim"
+
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+HISTFILE=$HOME'/.zsh_history'
+
+# TERM=xterm-256color
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+
+autoload -U compinit && compinit
+
+source $ZSH/oh-my-zsh.sh
+
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
+alias vi="/usr/bin/vim"
+alias vim="nvim"
+alias vimconfig="nvim ~/.config/nvim/init.vim"
+
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ~='cd ~'
+alias cls='clear'
+alias s='sudo'
+alias l="ls -la"
+alias la="ls -AF ${colorflag}"
+alias ll="ls -lFh ${colorflag}"
+alias lld="ls -l | grep ^d"
+alias rm="rm -i"
+alias weather="curl wttr.in/Preston"
+alias dl="cd ~/Downloads"
+alias rip="yt-dlp"
+alias ripau="yt-dlp --extract-audio --audio-format mp3"
+alias blmake='make update && rm -rfv ~/Blender/build_linux/bin/*.* && make ccache'
+alias bldir="~/Blender/blender"
+alias bl="~/Blender/build_linux/bin/blender"
+alias doom="~/.emacs.d/bin/doom"
+alias comp="setsid plasmashell --replace"
+alias gs='git status'
+alias fxzip='zip -r ~/Dropbox/firefox.zip ~/.mozilla'
+alias pipup='pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
+alias upd='omz update && zplug update && doom upgrade'
+alias matrix="cmatrix -b -u 8 -C cyan"
+alias colors='~/.scripts/colors/showcolors'
+alias v="~/.config/vifm/scripts/vifmrun ."
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+

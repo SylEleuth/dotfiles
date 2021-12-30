@@ -1,0 +1,41 @@
+[General]
+FreeFloating=true
+HistoryEnabled=true
+RetainPriorSearch=false
+font=Ubuntu,12,-1,5,57,0,0,0,0,0,Medium
+
+[PlasmaRunnerManager]
+migrated=true
+
+[Plugins]
+CharacterRunnerEnabled=true
+DictionaryEnabled=true
+Kill RunnerEnabled=true
+PIM Contacts Search RunnerEnabled=false
+PowerDevilEnabled=true
+Spell CheckerEnabled=false
+appstreamEnabled=false
+baloosearchEnabled=true
+bookmarksEnabled=true
+browserhistoryEnabled=true
+browsertabsEnabled=true
+calculatorEnabled=true
+desktopsessionsEnabled=true
+katesessionsEnabled=true
+konsoleprofilesEnabled=false
+krunner_appstreamEnabled=true
+kwinEnabled=true
+locationsEnabled=true
+org.kde.activitiesEnabled=false
+org.kde.datetimeEnabled=true
+placesEnabled=true
+plasma-desktopEnabled=true
+recentdocumentsEnabled=true
+servicesEnabled=true
+shellEnabled=true
+unitconverterEnabled=true
+webshortcutsEnabled=true
+windowsEnabled=true
+
+[Runners][Dictionary]
+triggerWord=dict
