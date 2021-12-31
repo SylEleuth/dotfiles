@@ -1,4 +1,6 @@
+set nocompatible
 filetype plugin on
+syntax on
 
 call plug#begin()
 
@@ -276,6 +278,8 @@ set showtabline=0
 set laststatus=2
 set encoding=UTF-8
 
+set nofoldenable    " disable folding
+
 " Persistent undo
 set undofile
 set undodir=$HOME/Dropbox/vimundo
@@ -548,6 +552,8 @@ let g:jedi#show_call_signatures = "1"
 autocmd FileType vimwiki set ft=markdown
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+let g:vimwiki_folding = ''
 
 lua << EOF
 require'colorizer'.setup()
