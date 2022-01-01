@@ -27,7 +27,7 @@ BundleAuthorEmail=
 BundleAuthorName=
 BundleLicense=CC-BY-SA
 BundleWebsite=http://
-BunleExportLocation=/home/eleuth
+BunleExportLocation=$HOME
 CanvasOnlyActive=false
 CanvasSize/ConstrainProportions=false
 CanvasSize/KeepAspectRatio=false
@@ -71,8 +71,8 @@ LineSmoothingType=3
 LineSmoothingUseDelayDistance=true
 NumberOfLayersForNewImage=2
 OpenGLFilterMode=3
-ResourceCacheDbDirectory=/home/eleuth/.local/share/krita
-ResourceDirectory=/home/eleuth/.local/share/krita
+ResourceCacheDbDirectory=$HOME/.local/share/krita
+ResourceDirectory=$HOME/.local/share/krita
 ShowGlobalSelection=false
 ShowOutlineWhilePainting=true
 ShowRootLayer=false
@@ -304,9 +304,9 @@ active-profile=
 
 [File Dialogs]
 DontUseNativeFileDialog=false
-OpenDocument=/home/eleuth/Downloads
-SaveAs=/home/eleuth/Downloads
-krita_resources=/home/eleuth/Downloads
+OpenDocument=$HOME/Downloads
+SaveAs=$HOME/Downloads
+krita_resources=$HOME/Downloads
 
 [FileDialogSize]
 HDMI-A-0 Height 1920x1080=821
