@@ -10,6 +10,7 @@ zplug 'supercrabtree/k'
 zplug 'MichaelAquilina/zsh-auto-notify'
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh
+zplug "jeffreytse/zsh-vi-mode"
 
 if ! zplug check; then
     zplug install
@@ -25,11 +26,6 @@ fi
 # POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-RANGER_LOAD_DEFAULT_RC="false"
-PAGER="nvim"
-VISUAL="nvim"
-EDITOR="nvim"
-
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 HISTFILE=$HOME'/.zsh_history'
@@ -43,7 +39,17 @@ source $ZSH/oh-my-zsh.sh
 
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
-alias vi=vim
+bindkey -v
+
+# Vim settings
+
+PAGER="nvim"
+VISUAL="nvim"
+EDITOR="nvim"
+
+ZVM_VI_HIGHLIGHT_BACKGROUND=#504945
+
+alias vi=nvim
 alias vim=nvim
 
 alias cd..='cd ..'
