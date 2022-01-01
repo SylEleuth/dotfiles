@@ -12,7 +12,7 @@ let R_T=""
 
 " USER COLORS "
 """""""""""""""
-highlight User1  ctermbg=66      ctermfg=235    cterm=none
+highlight User1  ctermbg=4      ctermfg=235    cterm=none
 highlight User2  ctermbg=237     ctermfg=66     cterm=bold
 highlight User5  ctermbg=7       ctermfg=235    cterm=bold
 highlight User6  ctermbg=239     ctermfg=7      cterm=none

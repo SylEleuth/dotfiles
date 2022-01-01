@@ -31,5 +31,5 @@ highlight Device     cterm=none  ctermfg=214        ctermbg=default
 highlight Fifo       cterm=none  ctermfg=214        ctermbg=235
 highlight Executable cterm=none  ctermfg=142        ctermbg=default
 
-highlight JobLine    cterm=none  ctermfg=208        ctermbg=237
+highlight JobLine    cterm=none  ctermfg=208        ctermbg=default
 highlight OtherLine  cterm=none  ctermfg=default    ctermbg=235
