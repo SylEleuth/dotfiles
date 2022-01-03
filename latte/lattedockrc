@@ -3,11 +3,14 @@ HDMI-A-0 Height 1920x1080=783
 HDMI-A-0 Width 1920x1080=1104
 
 [KFileDialog Settings]
+Recent Files[$e]=Eleuth.layout.latte,file:$HOME/.config/latte/Eleuth.layout.latte
+Recent URLs[$e]=file:$HOME/.config/latte/
 detailViewIconSize=16
+iconViewIconSize=43
 
 [LatteSettingsDialog]
 downloadWindowSize=800,550
-windowSize=700,608
+windowSize=700,619
 
 [LatteSettingsDialog][TabLayouts]
 columnWidths=58,69,76,58
@@ -38,7 +41,7 @@ downloadWindowSize=800,550
 inAdvancedModeForEditSettings=true
 isAvailableGeometryBroadcastedToPlasma=true
 lastNonAssignedLayout=Eleuth
-launchers=applications:firefox.desktop,applications:firefox-nightly.desktop,applications:chromium.desktop,applications:org.qutebrowser.qutebrowser.desktop,applications:discord.desktop,applications:blender.desktop,applications:org.kde.krita.desktop,applications:gimp.desktop,applications:org.inkscape.Inkscape.desktop,applications:io.github.OpenToonz.desktop,applications:godot.desktop,applications:cantata.desktop,applications:virtualbox.desktop,applications:virt-manager.desktop,applications:fs-uae-launcher.desktop,applications:net.lutris.Lutris.desktop,applications:steam.desktop,applications:com.github.hmlendea.geforcenow-electron.desktop,applications:evelauncher.desktop,applications:visual-studio-code.desktop,applications:emacs.desktop,applications:GitKraken.desktop,applications:typora.desktop,applications:smplayer.desktop,applications:org.kde.kcalc.desktop,applications:org.kde.krusader.desktop,applications:org.kde.dolphin.desktop,applications:kitty.desktop,applications:systemsettings.desktop
+launchers=applications:firefox.desktop,applications:firefox-nightly.desktop,applications:chromium.desktop,applications:org.qutebrowser.qutebrowser.desktop,applications:discord.desktop,applications:blender.desktop,applications:gimp.desktop,applications:org.inkscape.Inkscape.desktop,applications:io.github.OpenToonz.desktop,applications:godot.desktop,applications:cantata.desktop,applications:virtualbox.desktop,applications:virt-manager.desktop,applications:fs-uae-launcher.desktop,applications:net.lutris.Lutris.desktop,applications:steam.desktop,applications:com.github.hmlendea.geforcenow-electron.desktop,applications:evelauncher.desktop,applications:visual-studio-code.desktop,applications:emacs.desktop,applications:GitKraken.desktop,applications:typora.desktop,applications:smplayer.desktop,applications:org.kde.kcalc.desktop,applications:org.kde.krusader.desktop,applications:org.kde.dolphin.desktop,applications:kitty.desktop,applications:systemsettings.desktop
 layoutsColumnWidths=110,70,61,78
 layoutsWindowSize=700,561
 memoryUsage=0
