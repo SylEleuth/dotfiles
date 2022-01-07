@@ -1,0 +1,120 @@
+{
+    // list
+    "list.indicator": ">",
+    "list.selectedSignText": " ",
+    // autoformat
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python",
+        "java"
+    ],
+    "coc.preferences.colorSupport": true,
+    "diagnostic.checkCurrentLine": true,
+    // python config
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.analysis.stubPath": "typings",
+    "python.analysis.typeshedPaths": [],
+    "python.analysis.diagnosticSeverityOverrides": {},
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.pythonPath": "python",
+    "python.venvPath": "",
+    "python.formatting.blackPath": "black",
+    "python.formatting.blackArgs": [],
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Path": "autopep8",
+    "python.formatting.autopep8Args": [],
+    "python.formatting.yapfPath": "yapf",
+    "python.formatting.yapfArgs": [],
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.banditEnabled": false,
+    "python.linting.mypyEnabled": false,
+    "python.linting.pytypeEnabled": false,
+    "python.linting.prospectorEnabled": false,
+    "python.linting.pydocstyleEnabled": false,
+    "python.linting.pylamaEnabled": false,
+    "python.linting.pylintEnabled": false,
+    "pyright.disableCompletion": false,
+    // C/C++ config
+    "coc.preferences.semanticTokensHighlights": false,
+    // explorer config
+    "explorer.sources": [
+        {
+            "name": "buffer",
+            "expand": false
+        },
+        {
+            "name": "file",
+            "expand": true
+        }
+    ],
+    "explorer.keyMappings.global": {
+        "<space>": "toggleSelection",
+        "L": [
+            "expandable?",
+            [
+                "expanded?",
+                "cd",
+                "expand"
+            ],
+            [
+                "collapse",
+                "cd"
+            ]
+        ]
+    },
+    "explorer.presets": {
+        "floating": {
+            "position": "floating",
+            "open-action-strategy": "sourceWindow"
+        }
+    },
+    "explorer.buffer.tabOnly": true,
+    "explorer.file.reveal.whenOpen": false,
+    "explorer.file.reveal.filter": {
+        "literals": [
+            "node_modules"
+        ]
+    },
+    "explorer.width": 40,
+    "explorer.file.root.template": "[icon] [git] [hidden & 1][root]",
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.source": "nvim-web-devicons",
+    "explorer.previewAction.onHover": "content",
+    "explorer.file.showHiddenFiles": true,
+    "explorer.quitOnOpen": true,
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
+}
