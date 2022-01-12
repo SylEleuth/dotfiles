@@ -13,7 +13,6 @@ zplug "plugins/git",   from:oh-my-zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
-zplug 'supercrabtree/k'
 zplug "zpm-zsh/ls"
 zplug "b4b4r07/enhancd", use:init.sh
 zplug 'MichaelAquilina/zsh-auto-notify'
@@ -62,12 +61,13 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
+# export MANPAGER="vim -M +MANPAGER -"
 
 # Vim settings
 
 bindkey -v
 
-PAGER="nvim"
+# PAGER="nvim"
 VISUAL="nvim"
 EDITOR="nvim"
 
@@ -83,8 +83,11 @@ alias ~='cd ~'
 alias cls='clear'
 alias s='sudo'
 alias l="ls -la"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lFh ${colorflag}"
+alias la="exa --icons -la"
+alias ll="exa --icons -ll"
+alias ls="exa --icons -ls"
+alias l="exa --icons -l"
+alias exa="exa --icons"
 alias lld="ls -l | grep ^d"
 alias rm="rm -i"
 alias weather="curl wttr.in/Preston"
