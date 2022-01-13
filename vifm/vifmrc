@@ -220,7 +220,7 @@ fileviewer <audio/*>
 " Video
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.ogg,
          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-         \*.as[fx]
+         \*.as[fx],*.rmvb
         "\ {View using ffplay}
         "\ ffplay -fs %f,
         \ {View using smplayer}
@@ -262,7 +262,7 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg,*.svgz
         \ {View in nomacs}
         \ nomacs %c %i &,
         "\ {View in gpicview}
@@ -519,4 +519,3 @@ nnoremap yf :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:
 
 source ~/.config/vifm/scripts/Icons 
 source ~/.config/vifm/scripts/Powerline.vim
-" source ~/.config/vifm/scripts/Configs.vim
