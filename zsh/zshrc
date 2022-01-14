@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 source ~/.zplug/init.zsh
 
-zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
@@ -18,8 +18,9 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug 'MichaelAquilina/zsh-auto-notify'
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh                                  # jump around
-# zplug "jeffreytse/zsh-vi-mode"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug 'ellie/atuin'                                       # shell history
+# zplug "jeffreytse/zsh-vi-mode"
 
 if ! zplug check; then
     zplug install
@@ -66,6 +67,7 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 # Vim settings
 
 bindkey -v
+# bindkey '^r' history-incremental-search-backward
 
 # PAGER="nvim"
 VISUAL="nvim"
@@ -73,22 +75,30 @@ EDITOR="nvim"
 
 ZVM_VI_HIGHLIGHT_BACKGROUND=#504945
 
+# Atuin settings
+
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+
+bindkey '^r' _atuin_search_widget
+
+# depends on terminal mode
+bindkey '^[[A' _atuin_search_widget
+bindkey '^[OA' _atuin_search_widget
+
+
 alias vi=nvim
 alias vim=nvim
 
-alias cd..='cd ..'
-alias ..='cd ..'
+# alias cd..='cd ..'
+# alias ..='cd ..'
 alias ...='cd ../..'
 alias ~='cd ~'
-alias cls='clear'
 alias s='sudo'
-alias l="ls -la"
+alias l="exa --icons -l"
 alias la="exa --icons -la"
 alias ll="exa --icons -ll"
 alias ls="exa --icons -ls"
-alias l="exa --icons -l"
-alias exa="exa --icons"
-alias lld="ls -l | grep ^d"
 alias rm="rm -i"
 alias weather="curl wttr.in/Preston"
 alias dl="cd ~/Downloads"
