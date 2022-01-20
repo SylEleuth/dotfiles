@@ -504,7 +504,7 @@ c.content.headers.do_not_track = True
 # Valid values:
 #   - always: Always send the Referer.
 #   - never: Never send the Referer. This is not recommended, as some sites may break.
-#   - same-domain: Only send the Referer for the same domain. This will still protect your privacy, but shouldn't break any sites.
+#   - same-domain: Only send the Referer for the same domain. This will stooill protect your privacy, but shouldn't break any sites.
 # c.content.headers.referer = 'same-domain'
 
 # User agent to send. Unset to send the default.
@@ -513,15 +513,33 @@ c.content.headers.do_not_track = True
 
 # Whether host blocking is enabled.
 # Type: Bool
-# c.content.host_blocking.enabled = True
+c.content.blocking.enabled = True
+
+c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
+c.content.blocking.method = 'both'
 
 # List of URLs of lists which contain hosts to block.  The file can be
 # in one of the following formats:  - An `/etc/hosts`-like file - One
 # host per line - A zip-file of any of the above, with either only one
 # file, or a file named   `hosts` (with any extension).
 # Type: List of Url
-# c.content.host_blocking.lists = ['https://www.malwaredomainlist.com/hostslist/hosts.txt', 'http://someonewhocares.org/hosts/hosts', 'http://winhelp2002.mvps.org/hosts.zip',
-                                 # 'http://malwaredomains.lehigh.edu/files/justdomains.zip', 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext']
+c.content.blocking.adblock.lists = [ \
+        "https://easylist.to/easylist/easylist.txt", \
+        "https://easylist.to/easylist/easyprivacy.txt", \
+        "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt", \
+        "https://easylist.to/easylist/fanboy-annoyance.txt", \
+        'https://easylist-downloads.adblockplus.org/easylistdutch.txt', \
+        'https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt', \
+        "https://secure.fanboy.co.nz/fanboy-annoyance.txt", \
+        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt", \
+        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt", \
+        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt", \
+        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt", \
+        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt", \
+        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt" \
+        'https://www.i-dont-care-about-cookies.eu/abp/', \
+        'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt' \
+        ]
 
 # List of domains that should always be loaded, despite being ad-
 # blocked. Domains may contain * and ? wildcards and are otherwise
