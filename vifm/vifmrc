@@ -434,6 +434,8 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " ------------------------------------------------------------------------------
 
+set dotfiles
+
 " Sample mappings
 
 " Start shell in current directory
@@ -484,18 +486,16 @@ nnoremap ; :
 nnoremap qw :tabprevious<CR>
 nnoremap qe :tabnext<CR>
 nnoremap qq :tabclose<CR>
-nnoremap t :tabnew<CR>
+nnoremap qt :tabnew<CR>
 
 nnoremap <Space> t
 
 nnoremap <Tab> <C-w>w
 
 " fzf finder
-command! FZFlocate :set noquickview | :execute 'goto' fnameescape(term('locate $HOME | fzf --height 30 2>/dev/tty'))
 command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('find | fzf --height 30 2>/dev/tty'))
 
-nnoremap <c-g> :FZFlocate<cr>
-nnoremap <c-f> :FZFfind<cr>
+nnoremap f :FZFfind<cr>
 
 nnoremap qh :history d<cr>
 
