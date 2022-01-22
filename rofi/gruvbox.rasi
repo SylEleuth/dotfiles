@@ -9,20 +9,20 @@
  */
 
 * {
-  black:      #000000;
-  red:        #eb6e67;
-  green:      #95ee8f;
-  yellow:     #f8c456;
-  blue:       #6eaafb;
-  mangenta:   #d886f3;
-  cyan:       #6cdcf7;
-  orange:     #d65d0e;
-  grey:       #d5c4a111;
-  emphasis:   #50536b;
-  text:       #dfdfdf;
-  text-alt:   #b2b2b2;
-  fg:         #abb2bf;
-  bg:         #282c34;
+  black:      #1d2021;
+  red:        #cc241d;
+  aqua:       #8ec07c;
+  yellow:     #fabd2f;
+  blue:       #83a598;
+  mangenta:   #d3869b;
+  green:      #b8bb26;
+  orange:     #fe8019;
+  grey:       #d5c4a1;
+  emphasis:   #504945;
+  text:       #ebdbb2;
+  text-alt:   #fbf1c7;
+  fg:         #ebdbb2;
+  bg:         #282828;
 
   spacing: 0;
   background-color: transparent;
@@ -34,7 +34,7 @@
 window {
   transparency: "real";
   fullscreen: true;
-  background-color: #282c34cc;
+  background-color: @bg;
 }
 
 mainbox {
@@ -72,7 +72,7 @@ listview {
 element {
   padding: 5px 5px 8px 5px;
   text-color: @text-alt;
-  highlight: bold #95ee8f; /* green */
+  highlight: bold @aqua;
   border-radius: 10px;
 }
 
@@ -94,7 +94,7 @@ message {
   border-radius: 3px;
   background-color: @emphasis;
   border: 1px;
-  border-color: @cyan;
+  border-color: @green;
 }
 
 button selected {
