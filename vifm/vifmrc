@@ -488,7 +488,12 @@ nnoremap qe :tabnext<CR>
 nnoremap qq :tabclose<CR>
 nnoremap qt :tabnew<CR>
 
-nnoremap <Space> t
+noremap qx :trash<cr>
+noremap <silent> qc :lstrash<cr>
+noremap <silent> qv :trash<cr>
+
+" calculate size of the directory, select it and move one line down
+nnoremap <Space> gAtj
 
 nnoremap <Tab> <C-w>w
 
@@ -503,7 +508,7 @@ nnoremap H :histprev<cr>
 nnoremap L :histnext<cr>
 
 nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
-nnoremap yf :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+nnoremap yf :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "name is yanked to clipboard"<cr>
 
 " ------------------------------------------------------------------------------
 
