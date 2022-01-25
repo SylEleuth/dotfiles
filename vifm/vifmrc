@@ -220,7 +220,7 @@ fileviewer <audio/*>
 " Video
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.ogg,
          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-         \*.as[fx],*.rmvb
+         \*.as[fx],*.rmvb,*.ogm
         "\ {View using ffplay}
         "\ ffplay -fs %f,
         \ {View using smplayer}
@@ -488,9 +488,9 @@ nnoremap qe :tabnext<CR>
 nnoremap qq :tabclose<CR>
 nnoremap qt :tabnew<CR>
 
-noremap qx :trash<cr>
-noremap <silent> qc :lstrash<cr>
-noremap <silent> qv :trash<cr>
+noremap `x :empty<cr>
+noremap <silent> `c :lstrash<cr>
+noremap <silent> `v :trashes<cr>
 
 " calculate size of the directory, select it and move one line down
 nnoremap <Space> gAtj
