@@ -45,11 +45,14 @@ Plug 'kshenoy/vim-signature' " place, toggle and display marks
 Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'rbong/vim-flog' " Git branch viewer
 Plug 'airblade/vim-gitgutter' " Shows git diff
+Plug 'tveskag/nvim-blame-line'
 
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 
 Plug 'pechorin/any-jump.vim' " Jump to any definition and references (leader-j)
+
+Plug 'kevinhwang91/nvim-hlslens'
 
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
@@ -333,6 +336,10 @@ nmap <Leader>r- :Tabularize /-\zs<CR>
 vmap <Leader>r- :Tabularize /-\zs<CR>
 
 nnoremap <leader>h :History<CR>
+
+nnoremap <silent> <leader>cc :ToggleBlameLine<CR>
+" Show blame info below the statusline instead of using virtual text
+" let g:blameLineUseVirtualText = 0
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>e  <cmd>Telescope find_files<cr>
