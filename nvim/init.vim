@@ -34,11 +34,15 @@ Plug 'vifm/vifm.vim'
 Plug 'mhinz/vim-startify' " Starting screen
 
 Plug 'Lenovsky/nuake' " A Quake-style terminal panel for Neovim and Vim <F4>
+Plug 'voldikss/vim-floaterm'
+Plug 'akinsho/toggleterm.nvim'
 
 Plug 'nvie/vim-flake8' " Python linter <F7>
 
 " Plug 'sheerun/vim-polyglot'
 Plug 'vim-python/python-syntax'
+
+Plug 'peterhoeg/vim-qml'
 
 Plug 'kshenoy/vim-signature' " place, toggle and display marks
 
@@ -341,6 +345,12 @@ nnoremap <silent> <leader>cc :ToggleBlameLine<CR>
 " Show blame info below the statusline instead of using virtual text
 " let g:blameLineUseVirtualText = 0
 
+" Configuration example
+let g:floaterm_keymap_toggle = '<leader>t'
+" let g:floaterm_keymap_new    = '<F7>'
+" let g:floaterm_keymap_prev   = '<F8>'
+" let g:floaterm_keymap_next   = '<F9>'
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>e  <cmd>Telescope find_files<cr>
 nnoremap <leader>er <cmd>Telescope live_grep<cr>
@@ -475,6 +485,10 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext = 0
 let g:vimwiki_folding = ''
+
+let g:floaterm_height = 0.8
+let g:floaterm_width = 0.8
+let g:floaterm_title = 0
 
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
