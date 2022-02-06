@@ -22,6 +22,8 @@ Plug 'terryma/vim-multiple-cursors' " Multiple selection <C-n>
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
 Plug 'psliwka/vim-smoothie'
 
+Plug 'kdheepak/lazygit.nvim'
+
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -351,6 +353,8 @@ let g:floaterm_keymap_toggle = '<leader>t'
 " let g:floaterm_keymap_prev   = '<F8>'
 " let g:floaterm_keymap_next   = '<F9>'
 
+nnoremap <silent> <leader>gg :LazyGit<CR>
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>e  <cmd>Telescope find_files<cr>
 nnoremap <leader>er <cmd>Telescope live_grep<cr>
@@ -376,6 +380,13 @@ function! EditConfig()
         endif
     endfor
 endfunction
+
+" Lazygit settings
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
+let g:lazygit_floating_window_corner_chars = ['', '', '', ''] " customize lazygit popup window corner characters
+let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
+let g:lazygit_use_neovim_remote = 0 " fallback to 0 if neovim-remote is not installed
 
 "highlight BadWhitespace ctermbg=red guibg=red
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
