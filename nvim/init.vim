@@ -22,6 +22,11 @@ Plug 'terryma/vim-multiple-cursors' " Multiple selection <C-n>
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
 Plug 'psliwka/vim-smoothie'
 
+Plug 'sudormrfbin/cheatsheet.nvim' " A searchable cheatsheet for neovim from within the editor (requirements below)
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'tami5/sqlite.lua'
 Plug 'kdheepak/lazygit.nvim'
 
 Plug 'ryanoasis/vim-devicons'
