@@ -20,6 +20,7 @@ Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'luochen1990/rainbow' " Colored parentheses
 Plug 'terryma/vim-multiple-cursors' " Multiple selection <C-n>
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
+Plug 'RRethy/vim-illuminate' " Automatically highlighting other uses of the word under the cursor
 Plug 'psliwka/vim-smoothie'
 
 Plug 'sudormrfbin/cheatsheet.nvim' " A searchable cheatsheet for neovim from within the editor (requirements below)
@@ -270,6 +271,10 @@ let g:lsp_cxx_hl_use_text_props = 1
 " END of COC config
 
 autocmd VimResized * wincmd =
+
+" Overwrite illuminate background color
+autocmd VimEnter * hi illuminatedWord guibg=#3c3836
+let g:Illuminate_highlightUnderCursor = 0
 
 augroup numbertoggle
     autocmd!
