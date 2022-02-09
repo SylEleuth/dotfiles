@@ -22,6 +22,7 @@ Plug 'terryma/vim-multiple-cursors' " Multiple selection <C-n>
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
 Plug 'RRethy/vim-illuminate' " Automatically highlighting other uses of the word under the cursor
 Plug 'psliwka/vim-smoothie'
+Plug 'lambdalisue/suda.vim'
 
 Plug 'sudormrfbin/cheatsheet.nvim' " A searchable cheatsheet for neovim from within the editor (requirements below)
 Plug 'nvim-lua/popup.nvim'
@@ -511,5 +512,12 @@ let g:floaterm_height = 0.8
 let g:floaterm_width = 0.8
 let g:floaterm_title = 0
 
+let g:suda_smart_edit = 1
+
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
+lua << EOF
+
+local map = vim.api.nvim_set_keymap
+
+EOF
