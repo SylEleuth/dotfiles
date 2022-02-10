@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary' " Comment with 'gcc'
 Plug 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
 " Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
 Plug 'raimondi/delimitmate' " Insert or delete brackets, parens, quotes in pair
+Plug 'lukas-reineke/indent-blankline.nvim' " Disply the indention levels with thin vertical lines and leading spaces
 Plug 'preservim/tagbar' " Displays tags in a window, ordered by scope
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
 Plug 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
@@ -520,4 +521,29 @@ lua << EOF
 
 local map = vim.api.nvim_set_keymap
 
+
+-- Indent blankline
+require("indent_blankline").setup {
+    show_end_of_line = true,
+    space_char_blankline = " ",
+    show_current_context_start = true,
+    char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+        "IndentBlanklineIndent3",
+        "IndentBlanklineIndent4",
+        "IndentBlanklineIndent5",
+        "IndentBlanklineIndent6",
+        }
+    }
+vim.opt.list = true
+--vim.opt.listchars:append("space:⋅")
+--vim.opt.listchars:append("eol:↴")
+vim.opt.termguicolors = true
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#D65D0E gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guifg=#FABD2F gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guifg=#8EC07C gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guifg=#83A598 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent5 guifg=#458588 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent6 guifg=#B16286 gui=nocombine]]
 EOF
