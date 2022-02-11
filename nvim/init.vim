@@ -8,6 +8,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'neovim/nvim-lsp' " nvim-lsp
 
+Plug 'phaazon/hop.nvim'
+
 Plug 'mbbill/undotree' " Undo history visualizer (F5)
 Plug 'tpope/vim-commentary' " Comment with 'gcc'
 Plug 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
@@ -521,6 +523,16 @@ lua << EOF
 
 local map = vim.api.nvim_set_keymap
 
+-- Hop motion
+require('hop').setup()
+map('n', '<leader>f', "<cmd>lua require'hop'.hint_char1()<cr>", {noremap=true})
+map('n', '<leader>s', "<cmd>lua require'hop'.hint_char2()<cr>", {noremap=true})
+map('n', '<leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {noremap=true})
+map('n', '<leader>l', "<cmd>lua require'hop'.hint_lines()<cr>", {noremap=true})
+vim.cmd('highlight HopNextKey guibg=none guifg=#fe8019')
+vim.cmd('highlight HopNextKey1 guibg=none guifg=#fe8019')
+vim.cmd('highlight HopNextKey2 guibg=none guifg=#fe8019')
+vim.cmd('highlight HopUnmatched guibg=none guifg=#504945')
 
 -- Indent blankline
 require("indent_blankline").setup {
