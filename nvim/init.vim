@@ -30,6 +30,7 @@ Plug 'lambdalisue/suda.vim'
 Plug 'sudormrfbin/cheatsheet.nvim' " A searchable cheatsheet for neovim from within the editor (requirements below)
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'tami5/sqlite.lua'
 Plug 'kdheepak/lazygit.nvim'
@@ -522,6 +523,16 @@ let g:suda_smart_edit = 1
 lua << EOF
 
 local map = vim.api.nvim_set_keymap
+
+require('telescope').setup {
+   defaults = {
+       dynamic_preview_title = true,
+       }
+   }
+map('n', '<leader>c', '<cmd>lua require"telescope".extensions.neoclip.default()<cr>',            {noremap=true})
+
+map('n', '<a-n>',     '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>',              {noremap=true})
+map('n', '<a-p>',     '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>', {noremap=true})
 
 -- Hop motion
 require('hop').setup()
