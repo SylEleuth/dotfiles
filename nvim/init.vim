@@ -26,12 +26,14 @@ Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories be
 Plug 'RRethy/vim-illuminate' " Automatically highlighting other uses of the word under the cursor
 Plug 'psliwka/vim-smoothie'
 Plug 'lambdalisue/suda.vim'
+Plug 'nacro90/numb.nvim' " Peek lines just when you intend
 
 Plug 'sudormrfbin/cheatsheet.nvim' " A searchable cheatsheet for neovim from within the editor (requirements below)
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'AckslD/nvim-neoclip.lua'
 Plug 'tami5/sqlite.lua'
 Plug 'kdheepak/lazygit.nvim'
 
@@ -523,6 +525,32 @@ let g:suda_smart_edit = 1
 lua << EOF
 
 local map = vim.api.nvim_set_keymap
+
+require('neoclip').setup({
+    history = 1000,
+    enable_persistant_history = true,
+    db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",
+    filter = nil,
+    preview = true,
+    default_register = '"',
+    default_register_macros = 'q',
+    enable_macro_history = true,
+    content_spec_column = false,
+    on_paste = {
+        set_reg = false,
+    },
+    on_replay = {
+        set_reg = false,
+    },
+})
+
+-- Line peeker
+require('numb').setup{
+   show_numbers = true, -- Enable 'number' for the window while peeking
+   show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+   number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
+}
+
 
 require('telescope').setup {
    defaults = {
