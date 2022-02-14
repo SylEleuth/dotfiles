@@ -16,6 +16,8 @@ Plug 'tpope/vim-surround' " Surround words and phrases with parentheses, bracket
 " Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
 Plug 'raimondi/delimitmate' " Insert or delete brackets, parens, quotes in pair
 Plug 'lukas-reineke/indent-blankline.nvim' " Disply the indention levels with thin vertical lines and leading spaces
+" Plug 'yamatsum/nvim-cursorline' " Highlight words and lines on the cursor for Neovim
+Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'preservim/tagbar' " Displays tags in a window, ordered by scope
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
 Plug 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
@@ -525,6 +527,8 @@ let g:suda_smart_edit = 1
 lua << EOF
 
 local map = vim.api.nvim_set_keymap
+
+require('colorizer').setup()
 
 require('neoclip').setup({
     history = 1000,
