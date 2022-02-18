@@ -10,14 +10,13 @@ Plug 'neovim/nvim-lsp' " nvim-lsp
 
 Plug 'phaazon/hop.nvim'
 
-Plug 'mbbill/undotree' " Undo history visualizer (F5)
+Plug 'mbbill/undotree' " Undo history visualizer (F6)
 Plug 'tpope/vim-commentary' " Comment with 'gcc'
 Plug 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
 " Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
 Plug 'raimondi/delimitmate' " Insert or delete brackets, parens, quotes in pair
 Plug 'lukas-reineke/indent-blankline.nvim' " Disply the indention levels with thin vertical lines and leading spaces
 Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
-Plug 'preservim/tagbar' " Displays tags in a window, ordered by scope
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
 Plug 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment 
@@ -38,6 +37,11 @@ Plug 'AckslD/nvim-neoclip.lua'
 Plug 'tami5/sqlite.lua'
 Plug 'kdheepak/lazygit.nvim'
 
+" Plug 'preservim/tagbar' " Displays tags in a window, ordered by scope
+Plug 'liuchengxu/vista.vim'
+
+Plug 'sidebar-nvim/sidebar.nvim'
+
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -51,7 +55,6 @@ Plug 'mhinz/vim-startify' " Starting screen
 
 Plug 'Lenovsky/nuake' " A Quake-style terminal panel for Neovim and Vim <F4>
 Plug 'voldikss/vim-floaterm'
-Plug 'akinsho/toggleterm.nvim'
 
 Plug 'nvie/vim-flake8' " Python linter <F7>
 
@@ -317,7 +320,9 @@ nnoremap <F4> :Nuake<CR>
 inoremap <F4> <C-\><C-n>:Nuake<CR>
 tnoremap <F4> <C-\><C-n>:Nuake<CR>
 
-nmap <F3> :TagbarToggle<CR>
+" nmap <F3> :TagbarToggle<CR>
+nmap <silent> <F3> :Vista!!<CR>
+nmap <silent> <leader>g :Vista finder coc<CR>
 
 vnoremap y "+y
 vnoremap p "+p
@@ -349,7 +354,7 @@ nmap <F1> <Cmd>CocCommand explorer<CR>
 
 nnoremap <Leader>q :Bdelete<CR>
 
-nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <F6> :UndotreeToggle<CR>
 
 vmap <leader>rr :Tabularize spaces<CR>
 nmap <Leader>r= :Tabularize /=<CR>
@@ -387,6 +392,8 @@ noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
             \<Cmd>lua require('hlslens').start()<CR>
 noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
             \<Cmd>lua require('hlslens').start()<CR>
+
+nnoremap <F5> :SidebarNvimToggle<CR>
 
 " *** END OF KEYMAPS ***
 
@@ -428,8 +435,8 @@ augroup remember_folds
 augroup END
 
 " Tagbar
-let g:tagbar_width     = max([40, winwidth(0) / 5])
-let g:tagbar_autofocus = 1
+" let g:tagbar_width     = max([40, winwidth(0) / 5])
+" let g:tagbar_autofocus = 1
 
 let g:rainbow_active = 1 "Color brackets
 
@@ -521,17 +528,59 @@ let g:floaterm_title = 0
 
 let g:suda_smart_edit = 1
 
+let g:vista_sidebar_width = 40
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#enable_kind = 1
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+let g:vista#renderer#ctags = 'kind'
+let g:vista_default_executive = 'ctags'
+let g:vista_close_on_jump = 1
+
+
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
 lua << EOF
 
 local map = vim.api.nvim_set_keymap
 
+require("sidebar-nvim").setup({
+    disable_default_keybindings = 0,
+    bindings = nil,
+    open = false,
+    side = "left",
+    initial_width = 35,
+    hide_statusline = false,
+    update_interval = 1000,
+    sections = { "buffers", "symbols", "git", "diagnostics" },
+    section_separator = {"", "-----", ""},
+    containers = {
+        attach_shell = "/bin/sh", show_all = true, interval = 5000,
+    },
+    datetime = { format = "%a %b %d, %H:%M", clocks = { { name = "local" } } },
+    todos = { ignored_paths = { "~" } },
+    disable_closing_prompt = false,
+    buffers = {
+        icon = "",
+        ignored_buffers = {} -- ignore buffers by regex
+    },
+    files = {
+        icon = "",
+        show_hidden = false,
+        ignored_paths = {"%.git$"}
+    },
+    symbols = {
+        icon = "ƒ",
+    }
+})
+
 require('colorizer').setup()
 
 require('neoclip').setup({
     history = 1000,
-    enable_persistant_history = true,
+    enable_persistent_history = true,
     db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",
     filter = nil,
     preview = true,
@@ -553,7 +602,6 @@ require('numb').setup{
    show_cursorline = true, -- Enable 'cursorline' for the window while peeking
    number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
 }
-
 
 require('telescope').setup {
    defaults = {
