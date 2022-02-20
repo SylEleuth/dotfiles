@@ -64,8 +64,6 @@ Plug 'vim-python/python-syntax'
 
 Plug 'peterhoeg/vim-qml'
 
-Plug 'kshenoy/vim-signature' " place, toggle and display marks
-
 Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'rbong/vim-flog' " Git branch viewer
 Plug 'airblade/vim-gitgutter' " Shows git diff
@@ -476,12 +474,6 @@ let g:startify_bookmarks = [
 
 let g:startify_custom_header = 0
 " let g:startify_enable_special = 0
-
-" IndentLine settings
-let g:indentLine_char                = '│'
-let g:indentLine_enabled             = 1
-let g:indentLine_leadingSpaceChar    = "."
-let g:indentLine_leadingSpaceEnabled = 1
 
 " PYTHON settings
 let g:python_host_prog  = '/usr/bin/python'
