@@ -21,6 +21,7 @@ Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
 Plug 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment 
+Plug 'ervandew/supertab'
 Plug 'luochen1990/rainbow' " Colored parentheses
 Plug 'terryma/vim-multiple-cursors' " Multiple selection <C-n>
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
@@ -335,8 +336,8 @@ vnoremap <C-j> :m      '>+1<CR>gv=gv
 vnoremap <C-k> :m      '<-2<CR>gv=gv
 
 " for the autocomplete suggest menu
-inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
+" inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
+" inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " TAB in general mode will move to text buffer
 nnoremap <silent> <TAB> :bnext<CR>
@@ -500,6 +501,9 @@ au BufNewFile,BufRead *.py
             \ set nofoldenable |
             \ set foldlevel=2 |
 
+au BufNewFile,BufRead *.cpp
+            \ set shiftwidth=2
+
 let g:jedi#auto_initialization    = 1
 let g:jedi#completions_enabled    = 0
 let g:jedi#auto_vim_configuration = 0
@@ -534,6 +538,8 @@ let g:vista_default_executive = 'ctags'
 let g:vista_close_on_jump = 1
 
 let g:undotree_SplitWidth = 35
+
+let g:SuperTabDefaultCompletionType = "<Tab>"
 
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
@@ -595,14 +601,14 @@ require('neoclip').setup({
 
 -- Line peeker
 require('numb').setup{
-   show_numbers = true, -- Enable 'number' for the window while peeking
-   show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-   number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
+    show_numbers = true, -- Enable 'number' for the window while peeking
+    show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+    number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
 }
 
 require('telescope').setup {
-   defaults = {
-       dynamic_preview_title = true,
+    defaults = {
+        dynamic_preview_title = true,
        }
    }
 map('n', '<leader>c', '<cmd>lua require"telescope".extensions.neoclip.default()<cr>',            {noremap=true})
@@ -626,6 +632,7 @@ require("indent_blankline").setup {
     show_end_of_line = true,
     space_char_blankline = " ",
     show_current_context_start = true,
+    show_first_indent_level = false,
     char_highlight_list = {
         "IndentBlanklineIndent1",
         "IndentBlanklineIndent2",
