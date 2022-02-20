@@ -73,6 +73,8 @@ Plug 'tveskag/nvim-blame-line'
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 
+Plug 'rhysd/devdocs.vim'
+
 Plug 'pechorin/any-jump.vim' " Jump to any definition and references (leader-j)
 
 Plug 'kevinhwang91/nvim-hlslens'
@@ -394,6 +396,8 @@ noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
             \<Cmd>lua require('hlslens').start()<CR>
 
 nnoremap <F4> :SidebarNvimToggle<CR>
+
+nmap <leader>d <Plug>(devdocs-under-cursor)
 
 " *** END OF KEYMAPS ***
 

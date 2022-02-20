@@ -8,7 +8,7 @@ set font "JetBrainsMono Bold 10"
 
 #zoom settings
 set zoom-min 10
-set guioptions ""
+# set guioptions ""
 
 # Gruvbox colors
 

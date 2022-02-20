@@ -12,7 +12,9 @@
         "yaml",
         "json",
         "python",
-        "java"
+        "java",
+        "c",
+        "cpp"
     ],
     "coc.preferences.colorSupport": true,
     "diagnostic.checkCurrentLine": true,
@@ -45,6 +47,7 @@
     "python.linting.pylintEnabled": false,
     "pyright.disableCompletion": false,
     // C/C++ config
+    "clangd.semanticHighlighting": true,
     "coc.preferences.semanticTokensHighlights": false,
     // explorer config
     "explorer.sources": [
@@ -91,30 +94,5 @@
     "explorer.icon.source": "nvim-web-devicons",
     "explorer.previewAction.onHover": "content",
     "explorer.file.showHiddenFiles": true,
-    "explorer.quitOnOpen": true,
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "c",
-                "cc",
-                "cpp",
-                "c++",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
-        }
-    }
+    "explorer.quitOnOpen": true
 }

@@ -11,16 +11,18 @@ source ~/.zplug/init.zsh
 
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/pass", from:oh-my-zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug 'zsh-users/zsh-autosuggestions'
-zplug 'zsh-users/zsh-completions'
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
 zplug "zpm-zsh/ls"
 zplug "b4b4r07/enhancd", use:init.sh
-zplug 'MichaelAquilina/zsh-auto-notify'
-zplug "changyuheng/fz", defer:1
-zplug "rupa/z", use:z.sh                                  # jump around
+zplug "MichaelAquilina/zsh-auto-notify"
+zplug "junegunn/fzf"
+zplug "clvv/fasd"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug 'ellie/atuin'                                       # shell history
+zplug "ellie/atuin"                                       # shell history
+# zplug "rupa/z", use:z.sh                                  # jump around
+# zplug "changyuheng/fz", defer:1
 # zplug "jeffreytse/zsh-vi-mode"
 
 if ! zplug check; then
@@ -87,15 +89,15 @@ bindkey '^r' _atuin_search_widget
 bindkey '^[[A' _atuin_search_widget
 bindkey '^[OA' _atuin_search_widget
 
+# fasd settings
+eval "$(fasd --init auto)"
 
 alias vi=nvim
 alias vim=nvim
 
-# alias cd..='cd ..'
-# alias ..='cd ..'
+alias ..='cd ..'
 alias ...='cd ../..'
 alias ~='cd ~'
-alias s='sudo'
 alias l="exa --icons -l"
 alias la="exa --icons -la"
 alias ll="exa --icons -ll"
@@ -104,9 +106,9 @@ alias weather="curl wttr.in/Preston"
 alias dl="cd ~/Downloads"
 alias rip="yt-dlp"
 alias ripau="yt-dlp --extract-audio --audio-format mp3"
-alias blmake='make update && rm -rfv ~/Blender/build_linux/bin/*.* && make ccache'
-alias bldir="~/Blender/blender"
-alias bl="~/Blender/build_linux/bin/blender"
+alias blmake='make update && rm -rfv ~/Data/Blender/build_linux/bin/*.* && make ccache'
+alias bldir="~/Data/Blender/blender"
+alias bl="~/Data/Blender/build_linux/bin/blender"
 alias doom="~/.emacs.d/bin/doom"
 alias comp="setsid plasmashell --replace"
 alias gs='git status'

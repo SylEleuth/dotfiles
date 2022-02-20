@@ -239,5 +239,6 @@
         "statusBar.foreground": "#ebdbb2",
         "statusBar.debuggingForeground": "#ebdbb2"
     },
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "tabnine.experimentalAutoImports": true
 }
