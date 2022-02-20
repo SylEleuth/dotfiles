@@ -7,6 +7,7 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'neovim/nvim-lsp' " nvim-lsp
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 Plug 'phaazon/hop.nvim'
 
@@ -53,8 +54,8 @@ Plug 'vifm/vifm.vim'
 
 Plug 'mhinz/vim-startify' " Starting screen
 
-Plug 'Lenovsky/nuake' " A Quake-style terminal panel for Neovim and Vim <F4>
-Plug 'voldikss/vim-floaterm'
+" Plug 'Lenovsky/nuake' " A Quake-style terminal panel for Neovim and Vim <F4>
+" Plug 'voldikss/vim-floaterm'
 
 Plug 'nvie/vim-flake8' " Python linter <F7>
 
@@ -316,9 +317,9 @@ nnoremap <C-z> <nop>
 map <S-Right> <Esc>:bnext<CR>
 map <S-Left>  <Esc>:bprevious<CR>
 
-nnoremap <F4> :Nuake<CR>
-inoremap <F4> <C-\><C-n>:Nuake<CR>
-tnoremap <F4> <C-\><C-n>:Nuake<CR>
+" nnoremap <F4> :Nuake<CR>
+" inoremap <F4> <C-\><C-n>:Nuake<CR>
+" tnoremap <F4> <C-\><C-n>:Nuake<CR>
 
 " nmap <F3> :TagbarToggle<CR>
 nmap <silent> <F3> :Vista!!<CR>
@@ -354,7 +355,7 @@ nmap <F1> <Cmd>CocCommand explorer<CR>
 
 nnoremap <Leader>q :Bdelete<CR>
 
-nnoremap <F6> :UndotreeToggle<CR>
+nnoremap <F5> :UndotreeToggle<CR>
 
 vmap <leader>rr :Tabularize spaces<CR>
 nmap <Leader>r= :Tabularize /=<CR>
@@ -371,7 +372,7 @@ nnoremap <silent> <leader>cc :ToggleBlameLine<CR>
 " let g:blameLineUseVirtualText = 0
 
 " Configuration example
-let g:floaterm_keymap_toggle = '<leader>t'
+" let g:floaterm_keymap_toggle = '<leader>t'
 " let g:floaterm_keymap_new    = '<F7>'
 " let g:floaterm_keymap_prev   = '<F8>'
 " let g:floaterm_keymap_next   = '<F9>'
@@ -393,7 +394,7 @@ noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
 noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
             \<Cmd>lua require('hlslens').start()<CR>
 
-nnoremap <F5> :SidebarNvimToggle<CR>
+nnoremap <F4> :SidebarNvimToggle<CR>
 
 " *** END OF KEYMAPS ***
 
@@ -522,9 +523,9 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
 let g:vimwiki_global_ext = 0
 let g:vimwiki_folding = ''
 
-let g:floaterm_height = 0.8
-let g:floaterm_width = 0.8
-let g:floaterm_title = 0
+" let g:floaterm_height = 0.8
+" let g:floaterm_width = 0.8
+" let g:floaterm_title = 0
 
 let g:suda_smart_edit = 1
 
