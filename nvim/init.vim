@@ -5,7 +5,7 @@ syntax on
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets' " no Ultisnips required, coc-snippets is the engine
 Plug 'neovim/nvim-lsp' " nvim-lsp
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 
@@ -536,16 +536,22 @@ let g:vista#renderer#icons = {
 \   "function": "\uf794",
 \   "variable": "\uf71b",
 \  }
+let g:vista_icon_indent = ["╰─ ", "├─ "]
 let g:vista#renderer#ctags = 'kind'
 let g:vista_default_executive = 'ctags'
 let g:vista_close_on_jump = 1
 
+let g:undotree_SplitWidth = 35
 
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
 lua << EOF
 
 local map = vim.api.nvim_set_keymap
+
+require('colorizer').setup()
+
+require'lspconfig'.clangd.setup{}
 
 require("sidebar-nvim").setup({
     disable_default_keybindings = 0,
@@ -576,8 +582,6 @@ require("sidebar-nvim").setup({
         icon = "ƒ",
     }
 })
-
-require('colorizer').setup()
 
 require('neoclip').setup({
     history = 1000,
