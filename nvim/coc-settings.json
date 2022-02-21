@@ -46,9 +46,6 @@
     "python.linting.pylamaEnabled": false,
     "python.linting.pylintEnabled": false,
     "pyright.disableCompletion": false,
-    // C/C++ config
-    "clangd.semanticHighlighting": true,
-    "coc.preferences.semanticTokensHighlights": false,
     // explorer config
     "explorer.sources": [
         {
