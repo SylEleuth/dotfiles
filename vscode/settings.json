@@ -1,0 +1,244 @@
+{
+    "editor.wordWrap": "on",
+    "editor.formatOnPaste": true,
+    "editor.snippetSuggestions": "top",
+    "editor.fontWeight": "600",
+    "editor.lineHeight": 20,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "JetBrains Mono Nerd Font, FuraCode Nerd Font, Hack Nerd Font, FantasqueSansMono Nerd Font, Hasklug Nerd Font, Inconsolata, Source Code Pro, Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "JetBrains Mono Nerd Font, FuraCode Nerd Font, Hack Nerd Font, FantasqueSansMono Nerd Font",
+    "customizeUI.font.regular": "Ubuntu",
+    "customizeUI.fontSizeMap": {
+        "13px": "15px",
+        "12px": "12px",
+        "tab-title": "14px",
+        "monospace": "10.5px"
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontWeight": "600",
+    "editor.fontLigatures": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.renderControlCharacters": true,
+    "git.confirmSync": false,
+    "editor.formatOnSave": true,
+    "material-icon-theme.showUpdateMessage": false,
+    "git.autofetch": true,
+    "files.autoSave": "off",
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.codeLens": false,
+    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "/usr/bin/python",
+    "extensions.ignoreRecommendations": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "python.linting.flake8Enabled": false,
+    "python.linting.enabled": true,
+    "keyboard.dispatch": "keyCode",
+    "python.languageServer": "Pylance",
+    "workbench.panel.defaultLocation": "right",
+    "editor.scrollBeyondLastLine": false,
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "colorize.languages": [
+        "json",
+        "jsonc",
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "postcss",
+        "sss",
+        "stylus",
+        "xml",
+        "svg"
+    ],
+    "colorize.include": [
+        "**/*.json",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "**/*.styl"
+    ],
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "entity.name.type.class",
+                    "keyword",
+                    "constant",
+                    "storage.modifier",
+                    "storage.type.class.js",
+                    "entity.name.method.js",
+                    "entity.name.class.js",
+                    "entity.name.tag.doctype",
+                    "entity.other.attribute-name",
+                    "entity.other.attribute-name.tag.jade",
+                    "entity.other.attribute-name.tag.pug"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": [
+                    "invalid",
+                    "keyword.operator",
+                    "constant.numeric.css",
+                    "keyword.other.unit.px.css",
+                    "constant.numeric.decimal.js",
+                    "constant.numeric.json"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": [
+        "#3c3836",
+        "#ebdbb2"
+    ],
+    "vim.statusBarColors.insert": "#458588",
+    "vim.statusBarColors.visual": "#B16286",
+    "vim.statusBarColors.visualline": "#B16286",
+    "vim.statusBarColors.visualblock": "#D3869B",
+    "vim.statusBarColors.replace": "#8EC07C",
+    "vim.statusBarColors.commandlineinprogress": "#458588",
+    "vim.statusBarColors.searchinprogressmode": "#458588",
+    "vim.statusBarColors.easymotionmode": "#458588",
+    "vim.statusBarColors.easymotioninputmode": "#458588",
+    "vim.statusBarColors.surroundinputmode": "#458588",
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ";"
+            ],
+            "after": [
+                ":"
+            ]
+        },
+        {
+            "before": [
+                "space"
+            ],
+            "after": [
+                ":"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "[<C-k>, <C-t>]"
+            ],
+            "after": [
+                "workbench.action.selectTheme"
+            ]
+        },
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                "undo"
+            ]
+        },
+        {
+            "before": [
+                "C-r"
+            ],
+            "commands": [
+                "redo"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                ":"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                "undo"
+            ]
+        },
+        {
+            "before": [
+                "C-r"
+            ],
+            "commands": [
+                "redo"
+            ]
+        }
+    ],
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+    "python.analysis.completeFunctionParens": true,
+    "workbench.sideBar.location": "right",
+    "editor.cursorBlinking": "phase",
+    "python.showStartPage": false,
+    "svg.preview.mode": "svg",
+    "editor.minimap.maxColumn": 80,
+    "terminal.integrated.tabs.enabled": true,
+    "editor.minimap.showSlider": "always",
+    "editor.bracketPairColorization.enabled": true,
+    "cSpell.language": "en,en-GB",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#3c3836",
+        "statusBar.noFolderBackground": "#3c3836",
+        "statusBar.debuggingBackground": "#3c3836",
+        "statusBar.foreground": "#ebdbb2",
+        "statusBar.debuggingForeground": "#ebdbb2"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "tabnine.experimentalAutoImports": true
+}
