@@ -16,7 +16,7 @@
         "c",
         "cpp"
     ],
-    "coc.preferences.colorSupport": true,
+    "coc.preferences.extensionUpdateCheck": "daily",
     "diagnostic.checkCurrentLine": true,
     // python config
     "python.analysis.autoImportCompletions": true,
