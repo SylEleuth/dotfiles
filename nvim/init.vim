@@ -7,7 +7,7 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets' " no Ultisnips required, coc-snippets is the engine
 Plug 'neovim/nvim-lsp' " nvim-lsp
-Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'bfrg/vim-cpp-modern'
 
 Plug 'phaazon/hop.nvim'
 
@@ -34,7 +34,7 @@ Plug 'sudormrfbin/cheatsheet.nvim' " A searchable cheatsheet for neovim from wit
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'AckslD/nvim-neoclip.lua'
 Plug 'tami5/sqlite.lua'
 Plug 'kdheepak/lazygit.nvim'
@@ -279,8 +279,6 @@ imap <C-h> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
-let g:lsp_cxx_hl_use_text_props = 1
-
 " END of COC config
 
 autocmd VimResized * wincmd =
@@ -399,6 +397,8 @@ nnoremap <F4> :SidebarNvimToggle<CR>
 
 nmap <leader>d <Plug>(devdocs-under-cursor)
 
+nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
+
 " *** END OF KEYMAPS ***
 
 " Open config file
@@ -507,14 +507,6 @@ au BufNewFile,BufRead *.py
 
 au BufNewFile,BufRead *.cpp
             \ set shiftwidth=2
-
-let g:jedi#auto_initialization    = 1
-let g:jedi#completions_enabled    = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings    = 0
-let g:jedi#popup_on_dot           = 0
-let g:jedi#completions_command    = ""
-let g:jedi#show_call_signatures   = "1"
 
 " VimWiki
 autocmd FileType vimwiki set ft=markdown
