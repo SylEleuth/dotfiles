@@ -14,8 +14,7 @@ Plug 'phaazon/hop.nvim'
 Plug 'mbbill/undotree' " Undo history visualizer (F6)
 Plug 'tpope/vim-commentary' " Comment with 'gcc'
 Plug 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
-" Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
-Plug 'raimondi/delimitmate' " Insert or delete brackets, parens, quotes in pair
+Plug 'raimondi/delimitmate' " Automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'lukas-reineke/indent-blankline.nvim' " Disply the indention levels with thin vertical lines and leading spaces
 Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
@@ -29,6 +28,7 @@ Plug 'RRethy/vim-illuminate' " Automatically highlighting other uses of the word
 Plug 'psliwka/vim-smoothie'
 Plug 'lambdalisue/suda.vim'
 Plug 'nacro90/numb.nvim' " Peek lines just when you intend
+Plug 'rcarriga/nvim-notify'
 
 Plug 'sudormrfbin/cheatsheet.nvim' " A searchable cheatsheet for neovim from within the editor (requirements below)
 Plug 'nvim-lua/popup.nvim'
@@ -39,7 +39,6 @@ Plug 'AckslD/nvim-neoclip.lua'
 Plug 'tami5/sqlite.lua'
 Plug 'kdheepak/lazygit.nvim'
 
-" Plug 'preservim/tagbar' " Displays tags in a window, ordered by scope
 Plug 'liuchengxu/vista.vim'
 
 Plug 'sidebar-nvim/sidebar.nvim'
@@ -49,18 +48,13 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'vim-airline/vim-airline' " Cool powerline bars
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 
 Plug 'vifm/vifm.vim'
 
 Plug 'mhinz/vim-startify' " Starting screen
 
-" Plug 'Lenovsky/nuake' " A Quake-style terminal panel for Neovim and Vim <F4>
-" Plug 'voldikss/vim-floaterm'
-
 Plug 'nvie/vim-flake8' " Python linter <F7>
 
-" Plug 'sheerun/vim-polyglot'
 Plug 'vim-python/python-syntax'
 
 Plug 'peterhoeg/vim-qml'
@@ -79,11 +73,7 @@ Plug 'pechorin/any-jump.vim' " Jump to any definition and references (leader-j)
 
 Plug 'kevinhwang91/nvim-hlslens'
 
-" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-
 Plug 'gruvbox-community/gruvbox'
-" Plug 'sainnhe/gruvbox-material'
-" Plug 'morhetz/gruvbox'
 " Plug 'dracula/vim'
 " Plug 'drewtempelmeyer/palenight.vim' " similar to dracula
 
@@ -96,24 +86,12 @@ endif
 
 set t_Co=256
 
-" Grubox material settings
-" let g:gruvbox_material_background = 'medium'
-" set background                    = dark
-" let g:gruvbox_contrast_dark       = 'soft'
-
-" let g:gruvbox_material_enable_italic             = 1
-" let g:gruvbox_material_enable_bold               = 1
-" let g:gruvbox_material_diagnostic_text_highlight = 1
-" let g:gruvbox_material_diagnostic_line_highlight = 1
-" let g:gruvbox_material_diagnostic_virtual_text   = 'colored'
-" let g:gruvbox_material_current_word              = 'bold'
-
 let g:gruvbox_italic             = 1
 let g:gruvbox_bold               = 1
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italicize_strings  = 1
 let g:gruvbox_contrast_dark      = 'medium'
-
+let g:gruvbox_contrast_light     = 'medium'
 
 if &diff
     colorscheme gruvbox
@@ -133,7 +111,7 @@ set lazyredraw " buffers screen updates instead of updating all the time
 set linebreak " breaks lines by word rather than character
 set timeoutlen=500
 let g:vim_json_conceal=0
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 set hidden " Buffers
 set nobackup
 set nowritebackup
@@ -294,7 +272,6 @@ augroup numbertoggle
 augroup END
 
 " *** KEYMAPS ***
-" nnoremap <Space> :
 nnoremap ; :
 
 nmap oo o<Esc>
@@ -316,16 +293,13 @@ nnoremap <C-z> <nop>
 map <S-Right> <Esc>:bnext<CR>
 map <S-Left>  <Esc>:bprevious<CR>
 
-" nnoremap <F4> :Nuake<CR>
-" inoremap <F4> <C-\><C-n>:Nuake<CR>
-" tnoremap <F4> <C-\><C-n>:Nuake<CR>
-
-" nmap <F3> :TagbarToggle<CR>
 nmap <silent> <F3> :Vista!!<CR>
 nmap <silent> <leader>g :Vista finder coc<CR>
 
 vnoremap y "+y
-vnoremap p "+p
+" vnoremap p "+p
+" Don't put pasted-over content into the clipboard.
+vnoremap p "_c<C-r><C-o>+<Esc>
 
 " move lines up and down
 nnoremap <C-j> :m      .+1<CR>==
@@ -369,12 +343,6 @@ nnoremap <leader>h :History<CR>
 nnoremap <silent> <leader>cc :ToggleBlameLine<CR>
 " Show blame info below the statusline instead of using virtual text
 " let g:blameLineUseVirtualText = 0
-
-" Configuration example
-" let g:floaterm_keymap_toggle = '<leader>t'
-" let g:floaterm_keymap_new    = '<F7>'
-" let g:floaterm_keymap_prev   = '<F8>'
-" let g:floaterm_keymap_next   = '<F9>'
 
 nnoremap <silent> <leader>gg :LazyGit<CR>
 
@@ -438,10 +406,6 @@ augroup remember_folds
   autocmd BufWinEnter *.* silent! loadview
 augroup END
 
-" Tagbar
-" let g:tagbar_width     = max([40, winwidth(0) / 5])
-" let g:tagbar_autofocus = 1
-
 let g:rainbow_active = 1 "Color brackets
 
 " Startify settings
@@ -450,32 +414,28 @@ function! StartifyEntryFormat()
 endfunction
 
 let g:startify_files_number           = 20
-let g:startify_session_autoload       = 1
+let g:startify_session_autoload       = 0
+let g:startify_session_persistence    = 1
 let g:startify_session_delete_buffers = 1
 let g:startify_change_to_vcs_root     = 1
 let g:startify_fortune_use_unicode    = 1
-let g:startify_session_persistence    = 1
 
-let g:startify_session_dir = '~/.config/nvim/session'
-
-let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   Files']                        },
-          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
-          \ { 'type': 'sessions',  'header': ['   Sessions']                     },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
-          \ ]
+let g:startify_session_dir = '~/Dropbox/vimsession'
 
 let g:startify_lists = [
-            \ { 'type': 'files',     'header': ['   MRU']            },
-            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-            \ ]
+                \ { 'type': 'files',     'header': ['   Files']                        },
+                \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
+                \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+                \ { 'type': 'sessions',  'header': ['   Sessions']                     },
+                \ ]
 
 let g:startify_bookmarks = [
-            \ '~/.config/nvim/init.vim',
-            \ '~/.zshrc',
-            \ '~/.p10k.zsh',
-            \ '~/.config/kitty/kitty.conf'
-            \ ]
+                \ '~/.config/nvim/init.vim',
+                \ '~/.zshrc',
+                \ '~/.p10k.zsh',
+                \ '~/.config/kitty/kitty.conf'
+                \ ]
+
 
 let g:startify_custom_header = 0
 " let g:startify_enable_special = 0
@@ -506,7 +466,7 @@ au BufNewFile,BufRead *.py
             \ set foldlevel=2 |
 
 au BufNewFile,BufRead *.cpp
-            \ set shiftwidth=2
+            \ set shiftwidth=4
 
 " VimWiki
 autocmd FileType vimwiki set ft=markdown
@@ -618,6 +578,9 @@ require('numb').setup{
     show_cursorline = true, -- Enable 'cursorline' for the window while peeking
     number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
 }
+
+require("notify").setup()
+require("telescope").load_extension("notify")
 
 require('telescope').setup {
     defaults = {
