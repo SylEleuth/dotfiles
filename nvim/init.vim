@@ -6,7 +6,6 @@ call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets' " no Ultisnips required, coc-snippets is the engine
-Plug 'neovim/nvim-lsp' " nvim-lsp
 Plug 'bfrg/vim-cpp-modern'
 
 Plug 'phaazon/hop.nvim'
@@ -447,8 +446,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 syntax on
 let g:python_highlight_all = 1
 
-" let g:syntastic_python_checkers=['flake8']
-
 " Python indentations
 au BufNewFile,BufRead *.py
             \ set tabstop=4 |
@@ -504,8 +501,6 @@ lua << EOF
 local map = vim.api.nvim_set_keymap
 
 require('colorizer').setup()
-
-require'lspconfig'.clangd.setup{}
 
 require("sidebar-nvim").setup({
     disable_default_keybindings = 0,
