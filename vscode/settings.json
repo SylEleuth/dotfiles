@@ -5,7 +5,7 @@
     "editor.fontWeight": "600",
     "editor.lineHeight": 20,
     "editor.fontSize": 14,
-    "editor.fontFamily": "JetBrains Mono Nerd Font, FuraCode Nerd Font, Hack Nerd Font, FantasqueSansMono Nerd Font, Hasklug Nerd Font, Inconsolata, Source Code Pro, Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "JetBrains Mono Nerd Font, FuraCode Nerd Font, Hack Nerd Font, FantasqueSansMono Nerd Font, monospace",
     "terminal.integrated.fontFamily": "JetBrains Mono Nerd Font, FuraCode Nerd Font, Hack Nerd Font, FantasqueSansMono Nerd Font",
     "customizeUI.font.regular": "Ubuntu",
     "customizeUI.fontSizeMap": {
@@ -240,5 +240,8 @@
         "statusBar.debuggingForeground": "#ebdbb2"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "tabnine.experimentalAutoImports": true
+    "tabnine.experimentalAutoImports": true,
+    "cSpell.enableFiletypes": [
+        "!python"
+    ]
 }
