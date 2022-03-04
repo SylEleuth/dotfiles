@@ -465,6 +465,12 @@ au BufNewFile,BufRead *.py
 au BufNewFile,BufRead *.cpp
             \ set shiftwidth=4
 
+aug python
+    au!
+    autocmd BufWritePre *.py Isort
+    autocmd BufWritePre *.py Black
+aug END
+
 " VimWiki
 autocmd FileType vimwiki set ft=markdown
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',

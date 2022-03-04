@@ -11,7 +11,6 @@
         "html",
         "yaml",
         "json",
-        "python",
         "java",
         "c",
         "cpp"
@@ -29,15 +28,17 @@
     "python.analysis.useLibraryCodeForTypes": true,
     "python.pythonPath": "python",
     "python.venvPath": "",
+    "coc.preferences.willSaveHandlerTimeout": 1000,
+    "python.formatting.provider": "black",
     "python.formatting.blackPath": "black",
     "python.formatting.blackArgs": [],
-    "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Path": "autopep8",
     "python.formatting.autopep8Args": [],
     "python.formatting.yapfPath": "yapf",
     "python.formatting.yapfArgs": [],
     "python.linting.enabled": true,
-    "python.linting.flake8Enabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "flake8",
     "python.linting.banditEnabled": false,
     "python.linting.mypyEnabled": false,
     "python.linting.pytypeEnabled": false,
@@ -46,6 +47,8 @@
     "python.linting.pylamaEnabled": false,
     "python.linting.pylintEnabled": false,
     "pyright.disableCompletion": false,
+    "coc.source.around.firstMatch": false,
+    "pyright.enable": true,
     // explorer config
     "explorer.sources": [
         {
