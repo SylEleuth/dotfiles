@@ -18,6 +18,7 @@
     "coc.preferences.extensionUpdateCheck": "daily",
     "diagnostic.checkCurrentLine": true,
     // python config
+    "python.sortImports.path": "isort",
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.diagnosticMode": "openFilesOnly",

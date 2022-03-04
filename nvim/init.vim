@@ -52,9 +52,10 @@ Plug 'vifm/vifm.vim'
 
 Plug 'mhinz/vim-startify' " Starting screen
 
-Plug 'nvie/vim-flake8' " Python linter <F7>
-
 Plug 'vim-python/python-syntax'
+
+Plug 'psf/black', { 'branch': 'main' }
+Plug 'fisadev/vim-isort'
 
 Plug 'peterhoeg/vim-qml'
 
