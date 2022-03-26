@@ -1,9 +1,8 @@
+# pyright: reportUndefinedVariable=false
+
+# Load existing settings made via :set
 config.load_autoconfig(False)
-
 # import dracula.draw
-
-# # Load existing settings made via :set
-# config.load_autoconfig()
 
 # dracula.draw.blood(c, {
 #     'spacing': {
@@ -12,20 +11,20 @@ config.load_autoconfig(False)
 #     }
 # })
 
-c.aliases = {'w': 'session-save',
-             'q': 'quit',
-             'wq': 'quit --save',
-             'ff': 'spawn firefox {url}',
-             'tor': 'config-cycle -p content.proxy socks://localhost:9050/ system',
-             'toroff': 'set content.proxy system',
-             'toron': 'set content.proxy socks://localhost:9050',
-             'zotero': 'spawn --userscript zotero',
-             'zotero_link': 'hint links userscript zotero'
-             }
+c.aliases = {
+    "w": "session-save",
+    "q": "quit",
+    "wq": "quit --save",
+    "ff": "spawn firefox {url}",
+    "tor": "config-cycle -p content.proxy socks://localhost:9050/ system",
+    "toroff": "set content.proxy system",
+    "toron": "set content.proxy socks://localhost:9050",
+    "zotero": "spawn --userscript zotero",
+    "zotero_link": "hint links userscript zotero",
+}
 
-
-c.editor.encoding = 'utf-8'
-c.fonts.default_family = '"Hack Nerd Font", "FantasqueSansmono Nerd Font", "Roboto", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.editor.encoding = "utf-8"
+c.fonts.default_family = 'Ubuntu, "Hack Nerd Font", monospace'
 
 c.content.autoplay = False
 
@@ -42,7 +41,7 @@ c.auto_save.session = True
 
 #   - webengine: Use QtWebEngine (based on Chromium)
 #   - webkit: Use QtWebKit (based on WebKit, similar to Safari)
-c.backend = 'webengine'
+c.backend = "webengine"
 
 # # Type: Dict
 # c.bindings.key_mappings = {'<Ctrl-[>': '<Escape>', '<Ctrl-6>': '<Ctrl-^>', '<Ctrl-M>': '<Return>', '<Ctrl-J>': '<Return>',
@@ -382,7 +381,7 @@ c.backend = 'webengine'
 
 # The height of the completion, in px or as percentage of the window.
 # Type: PercOrInt
-c.completion.height = '30%'
+c.completion.height = "30%"
 
 # # Move on to the next part when there's only one possible completion
 # # left.
@@ -403,7 +402,7 @@ c.completion.height = '30%'
 #   - always: Whenever a completion is available.
 #   - auto: Whenever a completion is requested.
 #   - never: Never.
-c.completion.show = 'auto'
+c.completion.show = "auto"
 
 # Shrink the completion to be smaller than the configured size if there
 # are no scrollbars.
@@ -426,7 +425,7 @@ c.completion.web_history.max_items = -1
 #   - multiple-tabs: Show a confirmation if multiple tabs are opened.
 #   - downloads: Show a confirmation if downloads are running
 #   - never: Never show a confirmation.
-c.confirm_quit = ['always']
+c.confirm_quit = ["always"]
 
 # Whether support for the HTML 5 web application cache feature is
 # enabled. An application cache acts like an HTTP cache in some sense.
@@ -455,7 +454,7 @@ c.confirm_quit = ['always']
 #   - no-3rdparty: Accept cookies from the same origin only.
 #   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain.
 #   - never: Don't accept cookies at all.
-c.content.cookies.accept = 'no-3rdparty'
+c.content.cookies.accept = "no-3rdparty"
 
 # Store cookies. Note this option needs a restart with QtWebEngine on Qt
 # < 5.9.
@@ -465,7 +464,7 @@ c.content.cookies.accept = 'no-3rdparty'
 # Default encoding to use for websites. The encoding must be a string
 # describing an encoding such as _utf-8_, _iso-8859-1_, etc.
 # Type: String
-c.content.default_encoding = 'utf-8'
+c.content.default_encoding = "utf-8"
 
 # Try to pre-fetch DNS entries to speed up browsing.
 # Type: Bool
@@ -486,7 +485,7 @@ c.content.geolocation = False
 
 # Value to send in the `Accept-Language` header.
 # Type: String
-c.content.headers.accept_language = 'en-US,en'
+c.content.headers.accept_language = "en-US,en"
 
 # Set custom headers for qutebrowser HTTP requests.
 # Type: Dict
@@ -515,31 +514,32 @@ c.content.headers.do_not_track = True
 # Type: Bool
 c.content.blocking.enabled = True
 
-c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
-c.content.blocking.method = 'both'
+c.content.blocking.hosts.lists = [
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+]
+c.content.blocking.method = "both"
 
 # List of URLs of lists which contain hosts to block.  The file can be
 # in one of the following formats:  - An `/etc/hosts`-like file - One
 # host per line - A zip-file of any of the above, with either only one
 # file, or a file named   `hosts` (with any extension).
 # Type: List of Url
-c.content.blocking.adblock.lists = [ \
-        "https://easylist.to/easylist/easylist.txt", \
-        "https://easylist.to/easylist/easyprivacy.txt", \
-        "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt", \
-        "https://easylist.to/easylist/fanboy-annoyance.txt", \
-        'https://easylist-downloads.adblockplus.org/easylistdutch.txt', \
-        'https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt', \
-        "https://secure.fanboy.co.nz/fanboy-annoyance.txt", \
-        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt", \
-        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt", \
-        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt", \
-        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt", \
-        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt", \
-        # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt" \
-        'https://www.i-dont-care-about-cookies.eu/abp/', \
-        'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt' \
-        ]
+c.content.blocking.adblock.lists = [
+    "https://easylist.to/easylist/easylist.txt",
+    "https://easylist.to/easylist/easyprivacy.txt",
+    "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
+    "https://easylist.to/easylist/fanboy-annoyance.txt",
+    "https://easylist-downloads.adblockplus.org/easylistdutch.txt",
+    "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt",
+    "https://secure.fanboy.co.nz/fanboy-annoyance.txt",  # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt", \
+    # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt", \
+    # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt", \
+    # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt", \
+    # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt", \
+    # "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt" \
+    "https://www.i-dont-care-about-cookies.eu/abp/",
+    "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
+]
 
 # List of domains that should always be loaded, despite being ad-
 # blocked. Domains may contain * and ? wildcards and are otherwise
@@ -583,8 +583,12 @@ c.content.javascript.enabled = True
 # logged, the corresponding dictionary value selects the qutebrowser
 # logger to use. On QtWebKit, the "unknown" setting is always used.
 # Type: Dict
-c.content.javascript.log = {'unknown': 'debug',
-                            'info': 'debug', 'warning': 'debug', 'error': 'debug'}
+c.content.javascript.log = {
+    "unknown": "debug",
+    "info": "debug",
+    "warning": "debug",
+    "error": "debug",
+}
 
 # Use the standard JavaScript modal dialog for `alert()` and `confirm()`
 # Type: Bool
@@ -626,7 +630,7 @@ c.content.netrc_file = None
 #   - true
 #   - false
 #   - ask
-c.content.notifications.enabled = 'ask'
+c.content.notifications.enabled = "ask"
 
 # Enable pdf.js to view PDF files in the browser. Note that the files
 # can still be downloaded by clicking the download button in the pdf.js
@@ -654,7 +658,7 @@ c.content.private_browsing = False
 # Valid values:
 #   - system: Use the system wide proxy.
 #   - none: Don't use any proxy
-c.content.proxy = 'system'
+c.content.proxy = "system"
 
 # Send DNS requests over the configured proxy.
 # Type: Bool
@@ -686,7 +690,7 @@ c.content.xss_auditing = True
 # The directory to save downloads to. If unset, a sensible os-specific
 # default is used.
 # Type: Directory
-c.downloads.location.directory = '~/Downloads'
+c.downloads.location.directory = "~/Downloads"
 
 # Prompt the user for the download location. If set to false,
 # `downloads.location.directory` will be used.
@@ -703,7 +707,7 @@ c.downloads.location.remember = True
 #   - path: Show only the download path.
 #   - filename: Show only download filename.
 #   - both: Show download path and filename.
-c.downloads.location.suggestion = 'path'
+c.downloads.location.suggestion = "path"
 
 # The default program used to open downloads. If null, the default
 # internal handler is used. Any `{}` in the string will be expanded to
@@ -716,7 +720,7 @@ c.downloads.open_dispatcher = None
 # Valid values:
 #   - top
 #   - bottom
-c.downloads.position = 'top'
+c.downloads.position = "top"
 
 # Number of milliseconds to wait before removing finished downloads. If
 # set to -1, downloads are never removed.
@@ -726,11 +730,11 @@ c.downloads.remove_finished = 1000
 # The editor (and arguments) to use for the `open-editor` command. `{}`
 # gets replaced by the filename of the file to be edited.
 # Type: ShellCommand
-c.editor.command = ['termite',  '-e', "vim '{}'"]
+c.editor.command = ["termite", "-e", "vim '{}'"]
 
 # Encoding to use for the editor.
 # Type: Encoding
-c.editor.encoding = 'utf-8'
+c.editor.encoding = "utf-8"
 
 # # Font used in the completion categories.
 # # Type: Font
@@ -738,7 +742,7 @@ c.editor.encoding = 'utf-8'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = 'bold 10pt monospace'
+c.fonts.completion.entry = 'bold 10pt "Ubuntu"'
 
 # # Font used for the debugging console.
 # # Type: QtFont
@@ -750,11 +754,11 @@ c.fonts.completion.entry = 'bold 10pt monospace'
 
 # Font used for the hints.
 # Type: Font
-c.fonts.hints = 'bold 10pt monospace'
+c.fonts.hints = 'bold 10pt "Ubuntu"'
 
 # Font used in the keyhint widget.
 # Type: Font
-c.fonts.keyhint = 'bold 10pt monospace'
+c.fonts.keyhint = 'bold 10pt "Ubuntu"'
 
 # # Font used for error messages.
 # # Type: Font
@@ -774,7 +778,7 @@ c.fonts.keyhint = 'bold 10pt monospace'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = 'bold 10pt monospace'
+c.fonts.statusbar = 'bold 10pt "Ubuntu"'
 
 c.fonts.tabs.selected = 'bold 10pt "Ubuntu"'
 c.fonts.tabs.unselected = '10pt "Ubuntu"'
@@ -1077,18 +1081,16 @@ c.scrolling.smooth = True
 #   - tr-TR: Turkish (Turkey)
 #   - uk-UA: Ukrainian (Ukraine)
 #   - vi-VN: Vietnamese (Viet Nam)
-# c.spellcheck.languages = ["en-GB", "pl-PL"]
+c.spellcheck.languages = ["en-GB", "pl-PL"]
 
-# Hide the statusbar unless a message is shown.
-# Type: Bool
-# c.statusbar.hide = False
+c.statusbar.show = "in-mode"
 
 # The position of the status bar.
 # Type: VerticalPosition
 # Valid values:
 #   - top
 #   - bottom
-c.statusbar.position = 'bottom'
+c.statusbar.position = "bottom"
 
 # Open new tabs (middleclick/ctrl+click) in the background.
 # Type: Bool
@@ -1100,7 +1102,7 @@ c.tabs.background = True
 #   - right: Close tabs on right-click.
 #   - middle: Close tabs on middle-click.
 #   - none: Don't close tabs using the mouse.
-c.tabs.close_mouse_button = 'middle'
+c.tabs.close_mouse_button = "middle"
 
 # Scaling for favicons in the tab bar. The tab size is unchanged, so big
 # favicons also require extra `tabs.padding`.
@@ -1109,11 +1111,11 @@ c.tabs.favicons.scale = 1
 
 # Show favicons in the tab bar.
 # Type: Bool
-c.tabs.favicons.show = 'always'
+c.tabs.favicons.show = "always"
 
 # Padding for tab indicators
 # Type: Padding
-c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
+c.tabs.indicator.padding = {"top": 2, "bottom": 2, "left": 0, "right": 4}
 
 # Behavior when the last tab is closed.
 # Type: String
@@ -1123,7 +1125,7 @@ c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
 #   - startpage: Load the start page.
 #   - default-page: Load the default page.
 #   - close: Close the window.
-c.tabs.last_close = 'ignore'
+c.tabs.last_close = "ignore"
 
 # Switch between tabs using the mouse wheel.
 # Type: Bool
@@ -1136,7 +1138,7 @@ c.tabs.mousewheel_switching = True
 #   - next: After the current tab.
 #   - first: At the beginning.
 #   - last: At the end.
-c.tabs.new_position.related = 'next'
+c.tabs.new_position.related = "next"
 
 # How new tabs which aren't opened from another tab are positioned.
 # Type: NewTabPosition
@@ -1145,11 +1147,11 @@ c.tabs.new_position.related = 'next'
 #   - next: After the current tab.
 #   - first: At the beginning.
 #   - last: At the end.
-c.tabs.new_position.unrelated = 'next'
+c.tabs.new_position.unrelated = "next"
 
 # Padding around text for tabs
 # Type: Padding
-c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 5, 'right': 5}
+c.tabs.padding = {"top": 2, "bottom": 2, "left": 5, "right": 5}
 
 # The position of the tab bar.
 # Type: Position
@@ -1158,7 +1160,7 @@ c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 5, 'right': 5}
 #   - bottom
 #   - left
 #   - right
-c.tabs.position = 'top'
+c.tabs.position = "top"
 
 # Which tab to select when the focused tab is removed.
 # Type: SelectOnRemove
@@ -1166,7 +1168,7 @@ c.tabs.position = 'top'
 #   - prev: Select the tab which came before the closed one (left in horizontal, above in vertical).
 #   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
 #   - last-used: Select the previously selected tab.
-c.tabs.select_on_remove = 'last-used'
+c.tabs.select_on_remove = "last-used"
 
 # When to show the tab bar.
 # Type: String
@@ -1175,7 +1177,7 @@ c.tabs.select_on_remove = 'last-used'
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'always'
+c.tabs.show = "switching"
 
 # Time to show the tab bar before hiding it when tabs.show is set to
 # 'switching'.
@@ -1192,7 +1194,7 @@ c.tabs.tabs_are_windows = False
 #   - left
 #   - right
 #   - center
-c.tabs.title.alignment = 'center'
+c.tabs.title.alignment = "center"
 
 # The format to use for the tab title. The following placeholders are
 # defined:  * `{perc}`: The percentage as a string like `[10%]`. *
@@ -1204,17 +1206,17 @@ c.tabs.title.alignment = 'center'
 # Either ''webkit'' or ''webengine'' * `{private}` : Indicates when
 # private mode is enabled.
 # Type: FormatString
-c.tabs.title.format = '{current_title}'
+c.tabs.title.format = "{current_title}"
 
 # The format to use for the tab title for pinned tabs. The same
 # placeholders like for `tabs.title.format` are defined.
 # Type: FormatString
-c.tabs.title.format_pinned = ''
+c.tabs.title.format_pinned = ""
 
 # The width of the tab bar if it's vertical, in px or as percentage of
 # the window.
 # Type: PercOrInt
-c.tabs.width = '10%'
+c.tabs.width = "10%"
 
 # Width of the progress indicator (0 to disable).
 # Type: Int
@@ -1230,12 +1232,13 @@ c.tabs.wrap = True
 #   - naive: Use simple/naive check.
 #   - dns: Use DNS requests (might be slow!).
 #   - never: Never search automatically.
-c.url.auto_search = 'naive'
+c.url.auto_search = "naive"
 
 # The page to open if :open -t/-b/-w is used without URL. Use
 # `about:blank` for a blank page.
 # Type: FuzzyUrl
-c.url.default_page = 'https://google.com/'
+c.url.default_page = "https://web.tabliss.io/"
+
 
 # The URL segments where `:navigate increment/decrement` will search for
 # a number.
@@ -1245,7 +1248,7 @@ c.url.default_page = 'https://google.com/'
 #   - path
 #   - query
 #   - anchor
-c.url.incdec_segments = ['path', 'query']
+c.url.incdec_segments = ["path", "query"]
 
 # Definitions of search engines which can be used via the address bar.
 # Maps a searchengine name (such as `DEFAULT`, or `ddg`) to a URL with a
@@ -1256,16 +1259,39 @@ c.url.incdec_segments = ['path', 'query']
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://google.com/?q={}'}
+c.url.searchengines = {
+    "DEFAULT": "https://duckduckgo.com/?q={}",
+    "w": "https://www.wikipedia.org/w/index.php?title=Special:Search&search={}",
+    "g": "https://www.google.com/search?q=%{}",
+    "y": "https://www.youtube.com/results?search_query={}",
+    "m": "https://www.google.com/maps?q={}",
+    "i": "https://www.imdb.com/find?s=all&q={}",
+    "t": "https://twitter.com/search?q={}&f=user",
+    "s": "https://stackexchange.com/search?q={}",
+    "gh": "https://github.com/search?q={}",
+    "r": "https://www.reddit.com/search/?q={}",
+    "au": "https://aur.archlinux.org/packages/?O=0&K={}",
+    "ar": "https://www.archlinux.org/packages/?sort=&q={}",
+    "en": "https://translate.google.com/u/0/?sl=en&tl=pl&text={}%0A&op=translate",
+    "pl": "https://translate.google.com/u/0/?sl=pl&tl=en&text={}%0A&op=translate",
+    "wh": "https://www.wowhead.com/search?q={}",
+    "e": "https://www.ebay.co.uk/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw={}",
+}
 
 # The page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'https://google.com'
+c.url.start_pages = "https://web.tabliss.io/"
 
 # The URL parameters to strip with `:yank url`.
 # Type: List of String
 c.url.yank_ignored_parameters = [
-    'ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+    "ref",
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+]
 
 # Hide the window decoration when using wayland (requires restart)
 # Type: Bool
@@ -1280,16 +1306,32 @@ c.window.hide_decoration = False
 # the current web page. * `{backend}`: Either ''webkit'' or
 # ''webengine'' * `{private}` : Indicates when private mode is enabled.
 # Type: FormatString
-c.window.title_format = '{perc}{current_title}{title_sep}qutebrowser'
+c.window.title_format = "{perc}{current_title}{title_sep}qutebrowser"
 
 # The default zoom level.
 # Type: Perc
-c.zoom.default = '100%'
+c.zoom.default = "100%"
 
 # The available zoom levels.
 # Type: List of Perc
-c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '90%', '100%',
-                 '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
+c.zoom.levels = [
+    "25%",
+    "33%",
+    "50%",
+    "67%",
+    "75%",
+    "90%",
+    "100%",
+    "110%",
+    "125%",
+    "150%",
+    "175%",
+    "200%",
+    "250%",
+    "300%",
+    "400%",
+    "500%",
+]
 
 # How much to divide the mouse wheel movements to translate them into
 # zoom increments.
@@ -1301,7 +1343,7 @@ c.zoom.mouse_divider = 512
 # Type: Bool
 # c.zoom.text_only = False
 
-config.bind(';', 'set-cmd-text :')
+config.bind(";", "set-cmd-text :")
 
 # Bindings for normal mode
 # config.bind("P", 'spawn mpv {url}')
@@ -1342,11 +1384,11 @@ config.bind(';', 'set-cmd-text :')
 # config.bind('<Ctrl-F5>', 'reload -f')
 # config.bind('<Ctrl-S>', 'scroll-page 0 1')
 # config.bind('<Ctrl-N>', 'open -w')
-config.bind('e', 'tab-next')
-config.bind('q', 'tab-prev')
-config.bind('<Ctrl-Right>', 'tab-next')
-config.bind('<Ctrl-Left>', 'tab-prev')
-config.bind('<Ctrl-Q>', 'quit')
+config.bind("e", "tab-next")
+config.bind("q", "tab-prev")
+config.bind("<Ctrl-Right>", "tab-next")
+config.bind("<Ctrl-Left>", "tab-prev")
+config.bind("<Ctrl-Q>", "quit")
 # config.bind('<Ctrl-Return>', 'follow-selected -t')
 # config.bind('<Ctrl-Shift-N>', 'open -p')
 # config.bind('<Ctrl-Shift-T>', 'undo')
@@ -1374,8 +1416,8 @@ config.bind('<Ctrl-Q>', 'quit')
 # config.bind('B', 'set-cmd-text -s :quickmark-load -t')
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
-config.bind('a', 'back')
-config.bind('d', 'forward')
+config.bind("a", "back")
+config.bind("d", "forward")
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
 # config.bind('j', 'set-cmd-text -s :open -t ')
@@ -1390,7 +1432,7 @@ config.bind('d', 'forward')
 # config.bind('ad', 'download-cancel')
 # config.bind('b', 'set-cmd-text -s :quickmark-load')
 # config.bind('cd', 'download-clear')
-config.bind('x', 'tab-close')
+config.bind("x", "tab-close")
 # config.bind('f', 'hint')
 # config.bind('g$', 'tab-focus -1')
 # config.bind('g0', 'tab-focus 1')
@@ -1411,8 +1453,8 @@ config.bind('x', 'tab-close')
 # config.bind('gu', 'navigate up')
 # config.bind('t', 'scroll left')
 # config.bind('i', 'enter-mode insert')
-config.bind('s', 'scroll down')
-config.bind('w', 'scroll up')
+config.bind("s", "scroll down")
+config.bind("w", "scroll up")
 # config.bind('r', 'scroll right')
 # config.bind('M', 'quickmark-save')
 # config.bind('n', 'search-next')
@@ -1421,7 +1463,7 @@ config.bind('w', 'scroll up')
 # config.bind('pp', 'open -- {clipboard}')
 # config.bind('gT', 'back -t')
 # config.bind('gR', 'forward -t')
-config.bind('u', 'undo')
+config.bind("u", "undo")
 # config.bind('c', 'enter-mode caret')
 # config.bind('wB', 'set-cmd-text -s :bookmark-load -w')
 # config.bind('wO', 'set-cmd-text :open -w {url:pretty}')
@@ -1612,7 +1654,7 @@ c.colors.completion.item.selected.border.top = base0F
 c.colors.completion.item.selected.border.bottom = base0F
 
 # Foreground color of the matched text in the selected completion item.
-c.colors.completion.item.selected.match.fg = base08
+c.colors.completion.item.selected.match.fg = base0B
 
 # Foreground color of the matched text in the completion.
 c.colors.completion.match.fg = base0B
