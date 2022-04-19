@@ -36,8 +36,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'AckslD/nvim-neoclip.lua'
 Plug 'tami5/sqlite.lua'
-Plug 'kdheepak/lazygit.nvim'
-
 Plug 'liuchengxu/vista.vim'
 
 Plug 'sidebar-nvim/sidebar.nvim'
@@ -63,6 +61,7 @@ Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'rbong/vim-flog' " Git branch viewer
 Plug 'airblade/vim-gitgutter' " Shows git diff
 Plug 'tveskag/nvim-blame-line'
+Plug 'kdheepak/lazygit.nvim'
 
 Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
