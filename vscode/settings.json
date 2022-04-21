@@ -243,5 +243,9 @@
     "tabnine.experimentalAutoImports": true,
     "cSpell.enableFiletypes": [
         "!python"
-    ]
+    ],
+    "security.workspace.trust.banner": "never",
+    "security.workspace.trust.emptyWindow": false,
+    "security.workspace.trust.enabled": false,
+    "security.workspace.trust.startupPrompt": "never"
 }
