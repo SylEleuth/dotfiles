@@ -114,8 +114,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=127,140,141
 
 [DirSelect Dialog]
-DirSelectDialog Size=898,1039
-History Items[$e]=file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
+DirSelectDialog Size=836,594
+History Items[$e]=file:$HOME/Temp,file:$HOME/Temp,file:$HOME,file:$HOME/Git/gruvbox-plus-icon-pack,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
 
 [General]
 BrowserApplication=userapp-Firefox-RSEK80.desktop
@@ -152,7 +152,7 @@ widgetStyle=Breeze
 Allow Expansion=true
 Automatically select filename extension=true
 Breadcrumb Navigation=true
-Decoration position=2
+Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Preview Width=406
@@ -166,7 +166,7 @@ Sort by=Name
 Sort directories first=true
 Sort reversed=false
 Speedbar Width=124
-View Style=Simple
+View Style=DetailTree
 
 [KShortcutsDialog Settings]
 Dialog Size=695,909
