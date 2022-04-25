@@ -112,8 +112,9 @@ alias bl="~/Data/Blender/build_linux/bin/blender"
 alias doom="~/.emacs.d/bin/doom"
 alias comp="setsid plasmashell --replace"
 alias gs='git status --column'
-alias gsm='git ls-files -m'
-alias gsu='git ls-files . --exclude-standard --others'
+alias gsm="git status --short | grep '^\s.'"
+alias gsu="git status --short | grep '^??'"
+alias gss="git status --short | grep '^[MARCD]'"
 alias fxzip='zip -r ~/Dropbox/firefox.zip ~/.mozilla'
 alias pipup='pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
 alias upd='omz update && zplug update && doom upgrade'
