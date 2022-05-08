@@ -196,6 +196,14 @@ fileviewer *.djvu
         \ %pc
         \ vifmimg clear
 
+" Cbr
+" filextype *.cbr zathura %c %i &
+filextype *.cbr
+        \ {View in zathura}
+        \ zathura %c %i &,
+        " \ {View in apvlv}
+        " \ apvlv %f,
+
 " Epub
 fileviewer *.epub
         \ vifmimg epub %px %py %pw %ph %c
@@ -206,7 +214,7 @@ fileviewer *.epub
 filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
        "\ {Play using ffplay}
        "\ ffplay -nodisp %c ,
-       "\ {Play using MPlayer}
+       \ {Play using SMPlayer}
        \ smplayer %f &,
        "\ {Play using vlc}
        "\ vlc %c,
