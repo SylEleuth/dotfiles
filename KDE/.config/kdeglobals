@@ -45,17 +45,39 @@ DecorationHover=131,165,152
 ForegroundActive=131,165,152
 ForegroundInactive=168,153,132
 ForegroundLink=69,133,136
+ForegroundNegative[$d]
+ForegroundNeutral[$d]
 ForegroundNormal=235,219,178
 ForegroundPositive=69,133,136
 ForegroundVisited=69,133,136
 
 [Colors:Header]
+BackgroundAlternate[$d]
+BackgroundNormal[$d]
 DecorationFocus=254,128,25
 DecorationHover=254,128,25
+ForegroundActive[$d]
 ForegroundInactive=7,102,120
+ForegroundLink[$d]
 ForegroundNegative=204,36,29
+ForegroundNeutral[$d]
+ForegroundNormal[$d]
 ForegroundPositive=66,123,88
 ForegroundVisited=69,133,136
+
+[Colors:Header][Inactive]
+BackgroundAlternate[$d]
+BackgroundNormal[$d]
+DecorationFocus[$d]
+DecorationHover[$d]
+ForegroundActive[$d]
+ForegroundInactive[$d]
+ForegroundLink[$d]
+ForegroundNegative[$d]
+ForegroundNeutral[$d]
+ForegroundNormal[$d]
+ForegroundPositive[$d]
+ForegroundVisited[$d]
 
 [Colors:Selection]
 BackgroundAlternate=254,128,25
@@ -114,10 +136,11 @@ ForegroundPositive=39,174,96
 ForegroundVisited=127,140,141
 
 [DirSelect Dialog]
-DirSelectDialog Size=836,594
-History Items[$e]=file:$HOME/Temp,file:$HOME/Temp,file:$HOME,file:$HOME/Git/gruvbox-plus-icon-pack,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
+DirSelectDialog Size=836,590
+History Items[$e]=file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME,file:$HOME/Temp,file:$HOME/Temp,file:$HOME,file:$HOME/Git/gruvbox-plus-icon-pack,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
 
 [General]
+AllowKDEAppsToRememberWindowPositions=false
 BrowserApplication=userapp-Firefox-RSEK80.desktop
 ColorSchemeHash=cdf9f5b4e03449975de580e7d21a00d374078a7a
 Name[en_GB]=Breeze Dark
@@ -127,7 +150,7 @@ TerminalService=kitty.desktop
 XftAntialias=true
 XftHintStyle=hintslight
 XftSubPixel=rgb
-fixed=JetBrainsMono Nerd Font,9,-1,5,75,0,0,0,0,0,Bold
+fixed=UbuntuMono NF,9,-1,5,75,0,0,0,0,0,Bold
 font=Ubuntu,9,-1,5,57,0,0,0,0,0,Medium
 menuFont=Ubuntu,9,-1,5,57,0,0,0,0,0,Medium
 shadeSortColumn=true
@@ -135,7 +158,7 @@ smallestReadableFont=Ubuntu,8,-1,5,57,0,0,0,0,0,Medium
 toolBarFont=Ubuntu,9,-1,5,57,0,0,0,0,0,Medium
 
 [Icons]
-Theme=GruvboxPlus
+Theme=gruvbox-plus-icon-pack
 
 [KDE]
 AnimationDurationFactor=0.17677669529663687
@@ -178,6 +201,7 @@ MaximumRemoteSize=0
 AboutApp=
 AboutKDE=
 Clear=
+Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
 Donate=
