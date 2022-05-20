@@ -137,7 +137,7 @@ ForegroundVisited=127,140,141
 
 [DirSelect Dialog]
 DirSelectDialog Size=836,590
-History Items[$e]=file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME,file:$HOME/Temp,file:$HOME/Temp,file:$HOME,file:$HOME/Git/gruvbox-plus-icon-pack,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
+History Items[$e]=file:$HOME/Data/Videos/seriale/-Stargate.SG1/7,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME,file:$HOME/Temp,file:$HOME/Temp,file:$HOME,file:$HOME/Git/gruvbox-plus-icon-pack,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
 
 [General]
 AllowKDEAppsToRememberWindowPositions=false
