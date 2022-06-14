@@ -140,7 +140,7 @@ DirSelectDialog Size=836,590
 History Items[$e]=file:$HOME/Data/Videos/seriale/-Stargate.SG1/7,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME,file:$HOME/Temp,file:$HOME/Temp,file:$HOME,file:$HOME/Git/gruvbox-plus-icon-pack,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
 
 [General]
-AllowKDEAppsToRememberWindowPositions=false
+AllowKDEAppsToRememberWindowPositions=true
 BrowserApplication=userapp-Firefox-RSEK80.desktop
 ColorSchemeHash=cdf9f5b4e03449975de580e7d21a00d374078a7a
 Name[en_GB]=Breeze Dark
@@ -151,7 +151,7 @@ XftAntialias=true
 XftHintStyle=hintslight
 XftSubPixel=rgb
 fixed=UbuntuMono NF,9,-1,5,75,0,0,0,0,0,Bold
-font=Ubuntu,9,-1,5,57,0,0,0,0,0,Medium
+font=Ubuntu,9,-1,5,63,0,0,0,0,0,Medium
 menuFont=Ubuntu,9,-1,5,57,0,0,0,0,0,Medium
 shadeSortColumn=true
 smallestReadableFont=Ubuntu,8,-1,5,57,0,0,0,0,0,Medium
@@ -165,6 +165,7 @@ AnimationDurationFactor=0.17677669529663687
 DoubleClickInterval=400
 LookAndFeelPackage=GruvboxPlus
 ShowDeleteCommand=true
+SingleClick=false
 StartDragDist=4
 StartDragTime=500
 WheelScrollLines=4
