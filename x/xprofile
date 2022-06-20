@@ -1,3 +1,6 @@
 gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 export GTK_USE_PORTAL=1
 export XDG_CONFIG_HOME="$HOME/.config"
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
