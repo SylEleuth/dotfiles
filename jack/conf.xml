@@ -4,11 +4,12 @@ JACK settings, as persisted by D-Bus object.
 You probably don't want to edit this because
 it will be overwritten next time jackdbus saves.
 -->
-<!-- Sun May 15 22:07:39 2022 -->
+<!-- Wed May 25 11:51:37 2022 -->
 <jack>
  <engine>
   <option name="driver">alsa</option>
   <option name="realtime-priority">99</option>
+  <option name="port-max">256</option>
  </engine>
  <drivers>
   <driver name="loopback">
@@ -23,6 +24,8 @@ it will be overwritten next time jackdbus saves.
   </driver>
   <driver name="alsa">
    <option name="device">hw:CODEC,0</option>
+   <option name="period">256</option>
+   <option name="nperiods">2</option>
    <option name="inchannels">2</option>
    <option name="outchannels">2</option>
   </driver>

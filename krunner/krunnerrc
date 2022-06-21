@@ -25,6 +25,7 @@ katesessionsEnabled=false
 konsoleprofilesEnabled=false
 krunner_appmenuEnabled=true
 krunner_appstreamEnabled=true
+krunner_spellcheckEnabled=true
 krunner_systemsettingsEnabled=true
 kwinEnabled=true
 locationsEnabled=true

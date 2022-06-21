@@ -15,6 +15,7 @@ prev_track=none,none,Previous track
 stop=none,none,Stop
 
 [KDE Keyboard Layout Switcher]
+Switch keyboard layout to Japanese=none,none,Switch keyboard layout to Japanese
 Switch keyboard layout to Polish=none,none,Switch keyboard layout to Polish
 Switch to Next Keyboard Layout=none,Ctrl+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
@@ -106,14 +107,14 @@ mute=Volume Mute,Volume Mute,Mute
 
 [ksmserver]
 Halt Without Confirmation=none,,Halt Without Confirmation
-Lock Session=Ctrl+Alt+L\tScreensaver,Meta+L\tCtrl+Alt+L\tScreensaver,Lock Session
+Lock Session=Ctrl+Alt+L\tScreensaver,Meta+L\tScreensaver,Lock Session
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Log Out
 Log Out Without Confirmation=none,,Log Out Without Confirmation
 Reboot Without Confirmation=none,,Reboot Without Confirmation
 _k_friendly_name=Session Management
 
 [kwin]
-Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activate Window Demanding Attention
+Activate Window Demanding Attention=Ctrl+Alt+A,Meta+Ctrl+A,Activate Window Demanding Attention
 ClearLastMouseMark=Meta+Shift+F12\tMeta+U,Meta+Shift+F12,Clear Last Mouse Mark
 ClearMouseMarks=Meta+Shift+F11\tMeta+Y,Meta+Shift+F11,Clear Mouse Marks
 Cube=Ctrl+F11,Ctrl+F11,Desktop Cube
@@ -126,7 +127,7 @@ FlipSwitchAll=none,none,Toggle Flip Switch (All desktops)
 FlipSwitchCurrent=none,none,Toggle Flip Switch (Current desktop)
 Increase Opacity=none,,Increase Opacity of Active Window by 5 %
 Invert Screen Colors=none,,Invert Screen Colours
-Kill Window=Meta+Alt+Q,Ctrl+Alt+Esc,Kill Window
+Kill Window=Meta+Alt+Q,Meta+Ctrl+Esc,Kill Window
 Krohnkite: Cycle Layout=none,none,
 Krohnkite: Decrease=none,none,
 Krohnkite: Down/Next=Meta+J,none,
@@ -162,10 +163,11 @@ MoveZoomDown=none,none,Move Zoomed Area Downwards
 MoveZoomLeft=none,none,Move Zoomed Area to Left
 MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
+Overview=none,Meta+W,Toggle Overview
 Parachute=none,none,Parachute
 Setup Window Shortcut=none,,Setup Window Shortcut
 Show Desktop=Meta+D,Meta+D,Show Desktop
-ShowDesktopGrid=Alt+`,Ctrl+F8,Show Desktop Grid
+ShowDesktopGrid=Alt+`,Meta+F8,Show Desktop Grid
 Sphere=none,none,Desktop Sphere
 Suspend Compositing=Alt+Shift+F12,Alt+Shift+F12,Suspend Compositing
 Switch One Desktop Down=none,Meta+Ctrl+Down,Switch One Desktop Down
@@ -330,7 +332,7 @@ removeCurrentDesktop=Meta+Num+/,,Virtual Desktop Bar - Remove Current Desktop
 removeLastDesktop=Meta+Num+-,,Virtual Desktop Bar - Remove Last Desktop
 renameCurrentDesktop=none,,Virtual Desktop Bar - Rename Current Desktop
 switchToRecentDesktop=none,,Virtual Desktop Bar - Switch to Recent Desktop
-view_actual_size=Meta+0,Meta+0,Actual Size
+view_actual_size=Meta+0,Meta+0,Zoom to Actual Size
 view_zoom_in=Meta+=,Meta+=,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
 
@@ -450,22 +452,25 @@ activate widget 22=none,none,Activate Event Calendar Widget
 activate widget 26=none,none,Activate Event Calendar Widget
 activate widget 3=Alt+F1,none,Activate Application Launcher Widget
 activate widget 31=none,none,Activate Colour Picker Widget
-activate widget 34=Meta+R,none,Activate Advanced Radio Player Widget
-activate widget 35=Meta+B,none,Activate Colour Picker Widget
-activate widget 36=Meta+X,none,Activate Toggle Panel Button Widget
+activate widget 34=none,none,Activate Advanced Radio Player Widget
+activate widget 35=none,none,Activate Colour Picker Widget
+activate widget 36=none,none,Activate Toggle Panel Button Widget
 activate widget 4=none,none,Activate Application Launcher Widget
-activate widget 44=none,none,Activate Toggle Panel Button Widget
-activate widget 59=none,none,Activate Advanced Radio Player Widget
+activate widget 44=none,none,Activate Weather Widget Widget
+activate widget 48=Meta+B,none,Activate Colour Picker Widget
+activate widget 51=Meta+X,none,Activate Toggle Panel Button Widget
+activate widget 59=Meta+R,none,Activate Advanced Radio Player Widget
 activate widget 7=none,none,Activate System Tray Widget
 clear-history=none,none,Clear Clipboard History
-clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
+clipboard_action=Ctrl+Alt+X,Meta+Ctrl+X,Automatic Action Popup Menu
+cycle-panels=Meta+Alt+P,Meta+Alt+P,Move keyboard focus between panels
 cycleNextAction=none,none,Next History Item
 cyclePrevAction=none,none,Previous History Item
 edit_clipboard=none,none,Edit Contents…
 manage activities=none,Meta+Q,Show Activity Switcher
 next activity=none,Meta+Tab,Walk through activities
 previous activity=none,Meta+Shift+Tab,Walk through activities (Reverse)
-repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
+repeat_action=Ctrl+Alt+R,Meta+Ctrl+R,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=none,none,Show Barcode…
 show-on-mouse-pos=Meta+V,Meta+V,Open Klipper at Mouse Position
@@ -473,6 +478,17 @@ stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
+
+[plasmawindowed]
+_k_friendly_name=plasmawindowed
+clear-history=none,none,Clear Clipboard History
+clipboard_action=none,Meta+Ctrl+X,Automatic Action Popup Menu
+cycleNextAction=none,none,Next History Item
+cyclePrevAction=none,none,Previous History Item
+edit_clipboard=none,none,Edit Contents…
+repeat_action=Meta+Ctrl+R,Meta+Ctrl+R,Manually Invoke Action on Current Clipboard
+show-barcode=none,none,Show Barcode…
+show-on-mouse-pos=none,Meta+V,Open Klipper at Mouse Position
 
 [systemsettings.desktop]
 _k_friendly_name=System Settings
