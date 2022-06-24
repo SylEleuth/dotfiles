@@ -103,8 +103,8 @@ ForegroundPositive=142,192,124
 ForegroundVisited=131,165,152
 
 [General]
-ColorScheme=Gruvbox+
-Name=Gruvbox+
+ColorScheme=GruvboxPlus
+Name=GruvboxPlus
 shadeSortColumn=true
 
 [KDE]
