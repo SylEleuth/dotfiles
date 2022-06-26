@@ -136,12 +136,13 @@ ForegroundPositive=39,174,96
 ForegroundVisited=127,140,141
 
 [DirSelect Dialog]
-DirSelectDialog Size=836,590
-History Items[$e]=file:$HOME/Data/Videos/seriale/-Stargate.SG1/7,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME,file:$HOME/Temp,file:$HOME/Temp,file:$HOME,file:$HOME/Git/gruvbox-plus-icon-pack,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
+DirSelectDialog Size=836,594
+History Items[$e]=file:$HOME/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft/_retail_,file:$HOME/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft,file:$HOME/Games,file:$HOME/Games,file:$HOME/Games,file:$HOME/Games2,file:$HOME/Games,file:$HOME/Games2,file:$HOME/Data/Videos/seriale/-Stargate.SG1/7,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME,file:$HOME/Temp,file:$HOME/Temp,file:$HOME,file:$HOME/Git/gruvbox-plus-icon-pack,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Dropbox/recovery,file:$HOME/Dropbox/dotfiles,file:$HOME/Downloads,file:$HOME/Pictures,file:$HOME/Data/Videos,file:$HOME/Media
 
 [General]
 AllowKDEAppsToRememberWindowPositions=true
 BrowserApplication=userapp-Firefox-RSEK80.desktop
+ColorScheme=GruvboxPlus
 ColorSchemeHash=cdf9f5b4e03449975de580e7d21a00d374078a7a
 Name[en_GB]=Breeze Dark
 Name=Breeze Dark
@@ -150,6 +151,7 @@ TerminalService=kitty.desktop
 XftAntialias=true
 XftHintStyle=hintslight
 XftSubPixel=rgb
+accentColorFromWallpaper=false
 fixed=Ubuntu Mono,9,-1,5,63,0,0,0,0,0,Medium
 font=Ubuntu,9,-1,5,63,0,0,0,0,0,Medium
 menuFont=Ubuntu,9,-1,5,63,0,0,0,0,0,Medium
