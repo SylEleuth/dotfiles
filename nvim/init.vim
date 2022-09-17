@@ -52,7 +52,8 @@ Plug 'mhinz/vim-startify' " Starting screen
 
 Plug 'vim-python/python-syntax'
 
-Plug 'psf/black', { 'branch': 'main' }
+let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
+Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'fisadev/vim-isort'
 
 Plug 'peterhoeg/vim-qml'
