@@ -10,7 +10,7 @@ Plug 'bfrg/vim-cpp-modern'
 
 Plug 'phaazon/hop.nvim'
 
-Plug 'mbbill/undotree' " Undo history visualizer (F6)
+Plug 'mbbill/undotree' " Undo history visualizer (F5)
 Plug 'tpope/vim-commentary' " Comment with 'gcc'
 Plug 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
 Plug 'raimondi/delimitmate' " Automatic closing of quotes, parenthesis, brackets, etc.
@@ -36,9 +36,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'AckslD/nvim-neoclip.lua'
 Plug 'tami5/sqlite.lua'
-Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim' " Viewer & Finder for LSP symbols and tags (F3 for bar, leader-g for telescope)
 
-Plug 'sidebar-nvim/sidebar.nvim'
+Plug 'sidebar-nvim/sidebar.nvim' " (F4)
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
