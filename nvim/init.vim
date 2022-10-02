@@ -71,7 +71,9 @@ Plug 'rhysd/devdocs.vim'
 
 Plug 'pechorin/any-jump.vim' " Jump to any definition and references (leader-j)
 
-Plug 'kevinhwang91/nvim-hlslens'
+Plug 'kevinhwang91/nvim-hlslens' " Jump between matched instances
+
+Plug 'TaDaa/vimade' " Fades inactive window
 
 Plug 'gruvbox-community/gruvbox'
 " Plug 'dracula/vim'
@@ -513,6 +515,11 @@ let g:vista_close_on_jump = 1
 let g:undotree_SplitWidth = 35
 
 let g:SuperTabDefaultCompletionType = "<Tab>"
+
+let g:vimade = {}
+let g:vimade.fadelevel = 0.8
+let g:vimade.enablesigns = 1
+let g:vimade.enabletreesitter = 1
 
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
