@@ -75,6 +75,8 @@ Plug 'kevinhwang91/nvim-hlslens' " Jump between matched instances
 
 Plug 'TaDaa/vimade' " Fades inactive window
 
+Plug 'habamax/vim-godot'
+
 Plug 'gruvbox-community/gruvbox'
 " Plug 'dracula/vim'
 " Plug 'drewtempelmeyer/palenight.vim' " similar to dracula
