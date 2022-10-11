@@ -95,5 +95,14 @@
     "explorer.icon.source": "nvim-web-devicons",
     "explorer.previewAction.onHover": "content",
     "explorer.file.showHiddenFiles": true,
-    "explorer.quitOnOpen": true
+    "explorer.quitOnOpen": true,
+    "languageserver": {
+        "godot": {
+            "host": "127.0.0.1",
+            "filetypes": [
+                "gdscript"
+            ],
+            "port": 6008
+        }
+    }
 }
