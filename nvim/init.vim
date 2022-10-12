@@ -19,7 +19,7 @@ Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
 Plug 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment 
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab' " Use <Tab> for all your insert completion 
 Plug 'luochen1990/rainbow' " Colored parentheses
 Plug 'terryma/vim-multiple-cursors' " Multiple selection <C-n>
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
@@ -52,7 +52,6 @@ Plug 'mhinz/vim-startify' " Starting screen
 
 Plug 'vim-python/python-syntax'
 
-let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
 Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'fisadev/vim-isort'
 
@@ -147,31 +146,36 @@ set undoreload=10000
 
 " COC config
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" function! CheckBackspace() abort
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<tab>"
 
-hi CocSearch ctermfg=0 guifg=#d65d0e
+" Use <c-space> to trigger completion.
+if has('nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+hi CocSearch  ctermfg=0 guifg=#d65d0e
 hi CocMenuSel ctermbg=0 guibg=#fe8019
 hi CocFloating guibg=#32302f
 
@@ -187,7 +191,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -198,7 +202,7 @@ function! ShowDocumentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -280,6 +284,9 @@ xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " END of COC config
 
+" Transparency when terminal allows it
+hi Normal guibg=NONE ctermbg=NONE
+
 autocmd VimResized * wincmd =
 
 " Overwrite illuminate background color
@@ -296,7 +303,7 @@ augroup END
 nnoremap ; :
 
 nmap oo o<Esc>
-nmap Oo O<Esc>
+nmap OO O<Esc>
 
 map j gj
 map k gk
@@ -469,7 +476,7 @@ au BufNewFile,BufRead *.py
             \ set tabstop=4 |
             \ set softtabstop=4 |
             \ set shiftwidth=4 |
-            \ set textwidth=79 |
+            \ set textwidth=88 |
             \ set wrapmargin=0 |
             \ set formatoptions+=t |
             \ set expandtab |
@@ -516,7 +523,7 @@ let g:vista_close_on_jump = 1
 
 let g:undotree_SplitWidth = 35
 
-let g:SuperTabDefaultCompletionType = "<Tab>"
+" let g:SuperTabDefaultCompletionType = "<Tab>"
 
 let g:vimade = {}
 let g:vimade.fadelevel = 0.8
