@@ -2,6 +2,7 @@ set nocompatible
 filetype plugin on
 syntax on
 
+" Plugins
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -102,6 +103,7 @@ else
     colorscheme gruvbox
 endif
 
+" General settings
 set cursorline
 hi  CursorLine   ctermbg=236 ctermfg=0 guibg=#32302f
 set cursorcolumn
@@ -134,8 +136,6 @@ set showtabline=0
 
 set laststatus=2
 set encoding=UTF-8
-
-" set nofoldenable    " disable folding
 
 " Persistent undo
 set undofile
@@ -380,16 +380,13 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nmap <silent> <leader>v :call EditConfig()<CR>
 nmap <silent> <leader>V :so $MYVIMRC<CR>
 
-noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-
 nnoremap <F4> :SidebarNvimToggle<CR>
 
 nmap <leader>d <Plug>(devdocs-under-cursor)
 
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
+
+nnoremap <space> za
 
 " *** END OF KEYMAPS ***
 
@@ -409,9 +406,6 @@ let g:lazygit_floating_window_corner_chars = ['', '', '', ''] " customize lazygi
 let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
 let g:lazygit_use_neovim_remote = 0 " fallback to 0 if neovim-remote is not installed
 
-"highlight BadWhitespace ctermbg=red guibg=red
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
 " Airline
 let  g:airline_theme                               = 'gruvbox'
 let  g:airline#extensions#tabline#enabled          = 1
@@ -429,8 +423,6 @@ augroup remember_folds
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* silent! loadview
 augroup END
-
-let g:rainbow_active = 1 "Color brackets
 
 " Startify settings
 function! StartifyEntryFormat()
@@ -460,7 +452,6 @@ let g:startify_bookmarks = [
                 \ '~/.config/kitty/kitty.conf'
                 \ ]
 
-
 let g:startify_custom_header = 0
 " let g:startify_enable_special = 0
 
@@ -485,7 +476,7 @@ au BufNewFile,BufRead *.py
             \ set foldmethod=indent |
             \ set foldnestmax=10 |
             \ set nofoldenable |
-            \ set foldlevel=2 |
+            \ set foldlevel=99 |
 
 au BufNewFile,BufRead *.cpp
             \ set shiftwidth=4
@@ -503,12 +494,7 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
 let g:vimwiki_global_ext = 0
 let g:vimwiki_folding = ''
 
-" let g:floaterm_height = 0.8
-" let g:floaterm_width = 0.8
-" let g:floaterm_title = 0
-
-let g:suda_smart_edit = 1
-
+" Vista
 let g:vista_sidebar_width = 40
 let g:vista#renderer#enable_icon = 1
 let g:vista#renderer#enable_kind = 1
@@ -521,20 +507,47 @@ let g:vista#renderer#ctags = 'kind'
 let g:vista_default_executive = 'ctags'
 let g:vista_close_on_jump = 1
 
-let g:undotree_SplitWidth = 35
-
-" let g:SuperTabDefaultCompletionType = "<Tab>"
-
+" Vimade
 let g:vimade = {}
 let g:vimade.fadelevel = 0.8
 let g:vimade.enablesigns = 1
 let g:vimade.enabletreesitter = 1
+
+"highlight BadWhitespace ctermbg=red guibg=red
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" let g:SuperTabDefaultCompletionType = "<Tab>"
+
+let g:rainbow_active = 1 "Color brackets
+
+let g:suda_smart_edit = 1
+
+let g:undotree_SplitWidth = 35
 
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
 lua << EOF
 
 local map = vim.api.nvim_set_keymap
+
+-- hlslens config
+
+require('hlslens').setup()
+
+local kopts = {noremap = true, silent = true}
+
+vim.api.nvim_set_keymap('n', 'n',
+    [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    kopts)
+vim.api.nvim_set_keymap('n', 'N',
+    [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    kopts)
+vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+
+vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
 
 require('colorizer').setup()
 
