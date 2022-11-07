@@ -48,7 +48,8 @@
     "python.linting.pylamaEnabled": false,
     "python.linting.pylintEnabled": false,
     "pyright.disableCompletion": false,
-    "coc.source.around.firstMatch": false,
+    "pyright.inlayHints.functionReturnTypes": true,
+    "pyright.inlayHints.variableTypes": true,
     "pyright.enable": true,
     // explorer config
     "explorer.sources": [
