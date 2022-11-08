@@ -30,13 +30,13 @@
     "breadcrumbs.enabled": true,
     "editor.renderWhitespace": "boundary",
     "editor.codeLens": false,
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "python.pythonPath": "/usr/bin/python",
     "extensions.ignoreRecommendations": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.colorTheme": "Gruvbox Dark Medium",
-    "python.linting.flake8Enabled": false,
+    "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "keyboard.dispatch": "keyCode",
     "python.languageServer": "Pylance",
@@ -247,5 +247,7 @@
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.emptyWindow": false,
     "security.workspace.trust.enabled": false,
-    "security.workspace.trust.startupPrompt": "never"
+    "security.workspace.trust.startupPrompt": "never",
+    "python.linting.mypyEnabled": false,
+    "python.formatting.provider": "black"
 }
