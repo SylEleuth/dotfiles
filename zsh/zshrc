@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 source ~/.zplug/init.zsh
 
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/pass", from:oh-my-zsh
+# zplug "plugins/pass", from:oh-my-zsh
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
