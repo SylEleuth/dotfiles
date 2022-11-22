@@ -54,7 +54,7 @@ Plug 'mhinz/vim-startify' " Starting screen
 Plug 'vim-python/python-syntax'
 
 Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'fisadev/vim-isort'
+Plug 'fisadev/vim-isort' " Sort python imports
 
 Plug 'peterhoeg/vim-qml'
 
