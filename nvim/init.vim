@@ -16,7 +16,7 @@ Plug 'tpope/vim-commentary' " Comment with 'gcc'
 Plug 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
 Plug 'raimondi/delimitmate' " Automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'lukas-reineke/indent-blankline.nvim' " Disply the indention levels with thin vertical lines and leading spaces
-Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
+" Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
 Plug 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment 
@@ -53,8 +53,8 @@ Plug 'mhinz/vim-startify' " Starting screen
 
 Plug 'vim-python/python-syntax'
 
-Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'fisadev/vim-isort' " Sort python imports
+" Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+" Plug 'fisadev/vim-isort' " Sort python imports
 
 Plug 'peterhoeg/vim-qml'
 
@@ -483,7 +483,8 @@ au BufNewFile,BufRead *.cpp
 
 aug python
     au!
-    autocmd BufWritePre *.py Isort
+    " autocmd BufWritePre *.py isort
+    autocmd BufWritePre *.py silent! :call CocAction('runCommand', 'python.sortImports')
     autocmd BufWritePre *.py Black
 aug END
 
@@ -549,7 +550,7 @@ vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]]
 
 vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
 
-require('colorizer').setup()
+-- require('colorizer').setup()
 
 require("sidebar-nvim").setup({
     disable_default_keybindings = 0,
