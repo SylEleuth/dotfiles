@@ -348,7 +348,7 @@ nmap <silent> <leader>[ 0
 nmap <silent> <leader>' :Startify<CR>
 
 " nmap <leader>e <Cmd>CocCommand explorer<CR>
-nmap <F1> <Cmd>CocCommand explorer<CR>
+nmap <F1> <Cmd>CocCommand explorer --root-strategies reveal<CR>
 
 nnoremap <Leader>q :Bdelete<CR>
 

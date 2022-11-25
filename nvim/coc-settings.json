@@ -56,11 +56,10 @@
     "pyright.inlayHints.functionReturnTypes": true,
     "pyright.inlayHints.variableTypes": true,
     "pyright.enable": true,
-    // explorer config
     "explorer.sources": [
         {
             "name": "buffer",
-            "expand": false
+            "expand": true
         },
         {
             "name": "file",
@@ -89,7 +88,7 @@
         }
     },
     "explorer.buffer.tabOnly": true,
-    "explorer.file.reveal.whenOpen": false,
+    "explorer.file.reveal.whenOpen": true,
     "explorer.file.reveal.filter": {
         "literals": [
             "node_modules"
