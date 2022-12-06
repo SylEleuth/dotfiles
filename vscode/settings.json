@@ -249,5 +249,6 @@
     "security.workspace.trust.enabled": false,
     "security.workspace.trust.startupPrompt": "never",
     "python.linting.mypyEnabled": false,
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "window.zoomLevel": 1
 }
