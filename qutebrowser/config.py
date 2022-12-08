@@ -1,4 +1,5 @@
 # pyright: reportUndefinedVariable=false
+# type: ignore
 
 # Load existing settings made via :set
 config.load_autoconfig(False)
@@ -1177,7 +1178,7 @@ c.tabs.select_on_remove = "last-used"
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = "switching"
+c.tabs.show = "always"
 
 # Time to show the tab bar before hiding it when tabs.show is set to
 # 'switching'.
