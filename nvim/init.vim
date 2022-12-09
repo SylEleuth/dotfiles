@@ -75,6 +75,18 @@ Plug 'kevinhwang91/nvim-hlslens' " Jump between matched instances
 
 Plug 'TaDaa/vimade' " Fades inactive window
 
+if has('nvim')
+  function! UpdateRemotePlugins(...)
+    " Needed to refresh runtime files
+    let &rtp=&rtp
+    UpdateRemotePlugins
+  endfunction
+
+  Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
+else
+  Plug 'gelguy/wilder.nvim'
+endif
+
 Plug 'habamax/vim-godot'
 
 Plug 'gruvbox-community/gruvbox'
@@ -388,6 +400,9 @@ nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
 
 nnoremap <space> za
 
+" toggle wilder
+nnoremap <Leader>wd :call wilder#toggle()<CR>
+
 " *** END OF KEYMAPS ***
 
 " Open config file
@@ -524,6 +539,40 @@ let g:rainbow_active = 1 "Color brackets
 let g:suda_smart_edit = 1
 
 let g:undotree_SplitWidth = 35
+
+call wilder#setup({
+    \ 'modes': [':', '/', '?'],
+    \ 'next_key': '<Tab>',
+    \ 'previous_key': '<S-Tab>',
+    \ 'accept_key': '<Down>',
+    \ 'reject_key': '<Up>',
+    \ })
+
+call wilder#set_option(
+    \ 'renderer',
+    \     wilder#popupmenu_renderer(
+    \         wilder#popupmenu_palette_theme({
+    \             'border': 'rounded',
+    \             'left': [
+    \                 ' ',
+    \                 wilder#popupmenu_devicons(),
+    \                 wilder#popupmenu_buffer_flags(),
+    \             ],
+    \             'right': [
+    \                 ' ', wilder#popupmenu_scrollbar(),
+    \             ],
+    \             'highlighter': wilder#basic_highlighter(),
+    \             'highlights': {
+    \             'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#d65d0e'}]),
+    \             },
+    \         })
+    \         ),
+    \ 'pipeline',
+    \     wilder#branch(
+    \         wilder#cmdline_pipeline({'language': has('nvim') ? 'python' : 'vim'}),
+    \         wilder#python_search_pipeline(),
+    \     ),
+    \ )
 
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
