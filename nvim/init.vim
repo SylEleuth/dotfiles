@@ -174,10 +174,10 @@ set undoreload=10000
 "     return !col || getline('.')[col - 1]  =~# '\s'
 " endfunction
 
-" Make <CR> to accept selected completion item or notify coc.nvim to format
+" Make <cr> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
 inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<tab>"
 
 " Use <c-space> to trigger completion.
@@ -203,7 +203,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
+nnoremap <silent> K :call ShowDocumentation()<cr>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -325,16 +325,16 @@ nnoremap <C-Down>  <C-W>j
 nnoremap <C-Up>    <C-W>k
 nnoremap <C-Right> <C-W>l
 
-map <F2> :Vifm<CR>
+map <F2> :Vifm<cr>
 
 nnoremap <C-z> <nop>
 
 " move between buffers
-map <S-Right> <Esc>:bnext<CR>
-map <S-Left>  <Esc>:bprevious<CR>
+map <S-Right> <Esc>:bnext<cr>
+map <S-Left>  <Esc>:bprevious<cr>
 
-nmap <silent> <F3> :Vista!!<CR>
-nmap <silent> <leader>g :Vista finder coc<CR>
+nmap <silent> <F3> :Vista!!<cr>
+nmap <silent> <leader>g :Vista finder coc<cr>
 
 vnoremap y "+y
 " vnoremap p "+p
@@ -342,45 +342,45 @@ vnoremap y "+y
 vnoremap p "_c<C-r><C-o>+<Esc>
 
 " move lines up and down
-nnoremap <C-j> :m      .+1<CR>==
-nnoremap <C-k> :m      .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m      '>+1<CR>gv=gv
-vnoremap <C-k> :m      '<-2<CR>gv=gv
+nnoremap <C-j> :m      .+1<cr>==
+nnoremap <C-k> :m      .-2<cr>==
+inoremap <C-j> <Esc>:m .+1<cr>==gi
+inoremap <C-k> <Esc>:m .-2<cr>==gi
+vnoremap <C-j> :m      '>+1<cr>gv=gv
+vnoremap <C-k> :m      '<-2<cr>gv=gv
 
 " TAB in general mode will move to text buffer
-nnoremap <silent> <TAB> :bnext<CR>
+nnoremap <silent> <TAB> :bnext<cr>
 " SHIFT-TAB will go back
-nnoremap <silent> <S-TAB> :bprevious<CR>
+nnoremap <silent> <S-TAB> :bprevious<cr>
 
 nmap <silent> <leader>] $
 nmap <silent> <leader>[ 0
 
-nmap <silent> <leader>' :Startify<CR>
+nmap <silent> <leader>' :Startify<cr>
 
-" nmap <leader>e <Cmd>CocCommand explorer<CR>
-nmap <F1> <Cmd>CocCommand explorer --root-strategies reveal<CR>
+" nmap <leader>e <Cmd>CocCommand explorer<cr>
+nmap <F1> <Cmd>CocCommand explorer --root-strategies reveal<cr>
 
-nnoremap <Leader>q :Bdelete<CR>
+nnoremap <Leader>q :Bdelete<cr>
 
-nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <F5> :UndotreeToggle<cr>
 
-vmap <leader>rr :Tabularize spaces<CR>
-nmap <Leader>r= :Tabularize /=<CR>
-vmap <Leader>r= :Tabularize /=<CR>
-nmap <Leader>r: :Tabularize /:\zs<CR>
-vmap <Leader>r: :Tabularize /:\zs<CR>
-nmap <Leader>r- :Tabularize /-\zs<CR>
-vmap <Leader>r- :Tabularize /-\zs<CR>
+vmap <leader>rr :Tabularize spaces<cr>
+nmap <Leader>r= :Tabularize /=<cr>
+vmap <Leader>r= :Tabularize /=<cr>
+nmap <Leader>r: :Tabularize /:\zs<cr>
+vmap <Leader>r: :Tabularize /:\zs<cr>
+nmap <Leader>r- :Tabularize /-\zs<cr>
+vmap <Leader>r- :Tabularize /-\zs<cr>
 
-nnoremap <leader>h :History<CR>
+nnoremap <leader>h :History<cr>
 
-nnoremap <silent> <leader>cc :ToggleBlameLine<CR>
+nnoremap <silent> <leader>cc :ToggleBlameLine<cr>
 " Show blame info below the statusline instead of using virtual text
 " let g:blameLineUseVirtualText = 0
 
-nnoremap <silent> <leader>gg :LazyGit<CR>
+nnoremap <silent> <leader>gg :LazyGit<cr>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>e  <cmd>Telescope find_files<cr>
@@ -389,10 +389,10 @@ nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Open, reload config
-nmap <silent> <leader>v :call EditConfig()<CR>
-nmap <silent> <leader>V :so $MYVIMRC<CR>
+nmap <silent> <leader>v :call EditConfig()<cr>
+nmap <silent> <leader>V :so $MYVIMRC<cr>
 
-nnoremap <F4> :SidebarNvimToggle<CR>
+nnoremap <F4> :SidebarNvimToggle<cr>
 
 nmap <leader>d <Plug>(devdocs-under-cursor)
 
@@ -401,7 +401,9 @@ nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
 nnoremap <space> za
 
 " toggle wilder
-nnoremap <Leader>wd :call wilder#toggle()<CR>
+nnoremap <Leader>wd :call wilder#toggle()<cr>
+
+nnoremap <Leader>uu :PlugUpdate<cr>
 
 " *** END OF KEYMAPS ***
 
@@ -553,6 +555,12 @@ call wilder#set_option(
     \     wilder#popupmenu_renderer(
     \         wilder#popupmenu_palette_theme({
     \             'border': 'rounded',
+    \             'max_height': '50%',
+    \             'min_height': '30%',
+    \             'max_width': '50%',
+    \             'min_width': '30%',
+    \             'prompt_position': 'bottom',
+    \             'reverse': 0,
     \             'left': [
     \                 ' ',
     \                 wilder#popupmenu_devicons(),
@@ -587,17 +595,17 @@ require('hlslens').setup()
 local kopts = {noremap = true, silent = true}
 
 vim.api.nvim_set_keymap('n', 'n',
-    [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    [[<Cmd>execute('normal! ' . v:count1 . 'n')<cr><Cmd>lua require('hlslens').start()<cr>]],
     kopts)
 vim.api.nvim_set_keymap('n', 'N',
-    [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    [[<Cmd>execute('normal! ' . v:count1 . 'N')<cr><Cmd>lua require('hlslens').start()<cr>]],
     kopts)
-vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<cr>]], kopts)
+vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<cr>]], kopts)
+vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<cr>]], kopts)
+vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<cr>]], kopts)
 
-vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
+vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<cr>', kopts)
 
 -- require('colorizer').setup()
 
