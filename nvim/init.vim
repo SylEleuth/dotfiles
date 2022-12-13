@@ -18,11 +18,10 @@ Plug 'raimondi/delimitmate' " Automatic closing of quotes, parenthesis, brackets
 Plug 'lukas-reineke/indent-blankline.nvim' " Disply the indention levels with thin vertical lines and leading spaces
 " Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
-Plug 'moll/vim-bbye' " Delete buffers and close files in Vim without closing your windows
 Plug 'godlygeek/tabular' " Vim script for text filtering and alignment 
 " Plug 'ervandew/supertab' " Use <Tab> for all your insert completion 
 Plug 'luochen1990/rainbow' " Colored parentheses
-Plug 'terryma/vim-multiple-cursors' " Multiple selection <C-n>
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multiple selection <C-n>
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
 Plug 'RRethy/vim-illuminate' " Automatically highlighting other uses of the word under the cursor
 Plug 'psliwka/vim-smoothie'
