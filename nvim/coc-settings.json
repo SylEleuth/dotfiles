@@ -20,8 +20,8 @@
     "diagnostic.checkCurrentLine": true,
     // python config
     "python.sortImports.path": "isort",
-    "python.analysis.autoImportCompletions": true,
     "pyright.organizeimports.provider": "isort",
+    "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.stubPath": "typings",
@@ -55,6 +55,7 @@
     "pyright.disableCompletion": false,
     "pyright.inlayHints.functionReturnTypes": true,
     "pyright.inlayHints.variableTypes": true,
+    "pyright.disableDiagnostics": false,
     "pyright.enable": true,
     "explorer.sources": [
         {
