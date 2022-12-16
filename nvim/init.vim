@@ -52,9 +52,6 @@ Plug 'mhinz/vim-startify' " Starting screen
 
 Plug 'vim-python/python-syntax'
 
-" Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
-" Plug 'fisadev/vim-isort' " Sort python imports
-
 Plug 'peterhoeg/vim-qml'
 
 Plug 'tpope/vim-fugitive' " Git wrapper
@@ -373,8 +370,6 @@ vmap <Leader>r: :Tabularize /:\zs<cr>
 nmap <Leader>r- :Tabularize /-\zs<cr>
 vmap <Leader>r- :Tabularize /-\zs<cr>
 
-nnoremap <leader>h :History<cr>
-
 nnoremap <silent> <leader>cc :ToggleBlameLine<cr>
 " Show blame info below the statusline instead of using virtual text
 " let g:blameLineUseVirtualText = 0
@@ -403,6 +398,10 @@ nnoremap <space> za
 nnoremap <Leader>wd :call wilder#toggle()<cr>
 
 nnoremap <Leader>uu :PlugUpdate<cr>
+
+" Mutli select config
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-c>'           " replace C-n
 
 " *** END OF KEYMAPS ***
 
@@ -580,6 +579,8 @@ call wilder#set_option(
     \         wilder#python_search_pipeline(),
     \     ),
     \ )
+
+let g:VM_default_mappings = 0
 
 " let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
