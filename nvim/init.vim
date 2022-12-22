@@ -276,7 +276,7 @@ command! -nargs=0 OR   :call CocActionAsync('runCommand', 'editor.action.organiz
 imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-h> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
+" vmap <C-j> <Plug>(coc-snippets-select)
 
 " Use <C-h> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<c-l>'
