@@ -11,9 +11,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 source ~/.zplug/init.zsh
 
-zplug "plugins/git", from:oh-my-zsh
-# zplug "plugins/pass", from:oh-my-zsh
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
+# zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/git-extras", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zpm-zsh/ls"
@@ -23,9 +23,7 @@ zplug "junegunn/fzf"
 zplug "clvv/fasd"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "ellie/atuin"                                       # shell history
-# zplug "rupa/z", use:z.sh                                  # jump around
-# zplug "changyuheng/fz", defer:1
-# zplug "jeffreytse/zsh-vi-mode"
+zplug 'wfxr/forgit'
 
 if ! zplug check; then
     zplug install
@@ -99,7 +97,9 @@ bindkey '^[OA' _atuin_search_widget
 eval "$(fasd --init auto)"
 
 alias vi=nvim
-alias vim=nvim
+# alias vim=nvim
+alias vim="nvim -u $HOME/.config/nvim/init1.vim"
+alias viml="nvim -u $HOME/.config/nvim/init.lua"
 
 alias ..='cd ..'
 alias ...='cd ../..'
