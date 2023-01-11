@@ -11,34 +11,24 @@ Plug 'bfrg/vim-cpp-modern'
 
 Plug 'phaazon/hop.nvim'
 
-Plug 'mbbill/undotree' " Undo history visualizer (F5)
 Plug 'tpope/vim-commentary' " Comment with 'gcc'
 Plug 'tpope/vim-surround' " Surround words and phrases with parentheses, brackets, quotes, XML tags, and more
-Plug 'raimondi/delimitmate' " Automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'lukas-reineke/indent-blankline.nvim' " Disply the indention levels with thin vertical lines and leading spaces
-" Plug 'norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'famiu/bufdelete.nvim' " Deleting a buffer in Vim without closing the window
-Plug 'godlygeek/tabular' " Vim script for text filtering and alignment 
-" Plug 'ervandew/supertab' " Use <Tab> for all your insert completion 
+Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
+" Plug 'ervandew/supertab' " Use <Tab> for all your insert completion
 Plug 'luochen1990/rainbow' " Colored parentheses
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multiple selection <C-n>
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
-Plug 'RRethy/vim-illuminate' " Automatically highlighting other uses of the word under the cursor
 Plug 'psliwka/vim-smoothie'
 Plug 'lambdalisue/suda.vim'
-Plug 'nacro90/numb.nvim' " Peek lines just when you intend
 Plug 'rcarriga/nvim-notify'
 
-Plug 'sudormrfbin/cheatsheet.nvim' " A searchable cheatsheet for neovim from within the editor (requirements below)
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'AckslD/nvim-neoclip.lua'
-Plug 'tami5/sqlite.lua'
+Plug 'kkharji/sqlite.lua'
 Plug 'liuchengxu/vista.vim' " Viewer & Finder for LSP symbols and tags (F3 for bar, leader-g for telescope)
-
-Plug 'sidebar-nvim/sidebar.nvim' " (F4)
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -50,26 +40,24 @@ Plug 'vifm/vifm.vim'
 
 Plug 'mhinz/vim-startify' " Starting screen
 
-Plug 'vim-python/python-syntax'
-
-Plug 'peterhoeg/vim-qml'
+" Plug 'vim-python/python-syntax'
 
 Plug 'tpope/vim-fugitive' " Git wrapper
-Plug 'rbong/vim-flog' " Git branch viewer
 Plug 'airblade/vim-gitgutter' " Shows git diff
-Plug 'tveskag/nvim-blame-line'
-Plug 'kdheepak/lazygit.nvim'
 
 Plug 'vimwiki/vimwiki'
-Plug 'plasticboy/vim-markdown'
 
 Plug 'rhysd/devdocs.vim'
 
-Plug 'pechorin/any-jump.vim' " Jump to any definition and references (leader-j)
+" Plug 'pechorin/any-jump.vim' " Jump to any definition and references (leader-j)
 
 Plug 'kevinhwang91/nvim-hlslens' " Jump between matched instances
 
 Plug 'TaDaa/vimade' " Fades inactive window
+
+Plug 'norcalli/nvim-colorizer.lua'
+
+Plug 'dominikduda/vim_current_word'
 
 if has('nvim')
   function! UpdateRemotePlugins(...)
@@ -83,7 +71,7 @@ else
   Plug 'gelguy/wilder.nvim'
 endif
 
-Plug 'habamax/vim-godot'
+" Plug 'habamax/vim-godot'
 
 Plug 'gruvbox-community/gruvbox'
 " Plug 'dracula/vim'
@@ -103,7 +91,7 @@ let g:gruvbox_bold               = 1
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italicize_strings  = 1
 let g:gruvbox_contrast_dark      = 'medium'
-let g:gruvbox_contrast_light     = 'medium'
+let g:gruvbox_contrast_light     = 'soft'
 
 if &diff
     colorscheme gruvbox
@@ -128,9 +116,9 @@ set clipboard=unnamedplus
 set hidden " Buffers
 set nobackup
 set nowritebackup
-set updatetime=300
 set shortmess+=c
 set signcolumn=auto
+set nofoldenable
 
 " Usable 'Tab'
 set shiftwidth=4
@@ -152,6 +140,8 @@ set undodir=$HOME/Dropbox/vimundo
 set undolevels=1000
 set undoreload=10000
 
+" set pumblend=20
+
 " COC config
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -171,10 +161,14 @@ set undoreload=10000
 " endfunction
 
 " Make <cr> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<tab>"
+" " <C-g>u breaks current undo, please make your own choice.
+" inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
+"                               \: "\<C-g>u\<cr>\<c-r>=coc#on_enter()\<cr>"
+" inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<tab>"
+
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -210,7 +204,7 @@ function! ShowDocumentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -297,10 +291,6 @@ hi Normal guibg=NONE ctermbg=NONE
 
 autocmd VimResized * wincmd =
 
-" Overwrite illuminate background color
-autocmd VimEnter * hi illuminatedWord guibg=#3c3836
-let g:Illuminate_highlightUnderCursor = 0
-
 augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -360,7 +350,7 @@ nmap <F1> <Cmd>CocCommand explorer --root-strategies reveal<cr>
 
 nnoremap <Leader>q :Bdelete<cr>
 
-nnoremap <F5> :UndotreeToggle<cr>
+" nmap <leader>m <Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>
 
 vmap <leader>rr :Tabularize spaces<cr>
 nmap <Leader>r= :Tabularize /=<cr>
@@ -386,13 +376,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nmap <silent> <leader>v :call EditConfig()<cr>
 nmap <silent> <leader>V :so $MYVIMRC<cr>
 
-nnoremap <F4> :SidebarNvimToggle<cr>
-
 nmap <leader>d <Plug>(devdocs-under-cursor)
-
-nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
-
-nnoremap <space> za
 
 " toggle wilder
 nnoremap <Leader>wd :call wilder#toggle()<cr>
@@ -401,7 +385,7 @@ nnoremap <Leader>uu :PlugUpdate<cr>
 
 " Mutli select config
 let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<C-c>'           " replace C-n
+let g:VM_maps['Find Under'] = '<C-c>' " replace C-n
 
 " *** END OF KEYMAPS ***
 
@@ -413,13 +397,6 @@ function! EditConfig()
         endif
     endfor
 endfunction
-
-" Lazygit settings
-let g:lazygit_floating_window_winblend = 0 " transparency of floating window
-let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
-let g:lazygit_floating_window_corner_chars = ['', '', '', ''] " customize lazygit popup window corner characters
-let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
-let g:lazygit_use_neovim_remote = 0 " fallback to 0 if neovim-remote is not installed
 
 " Airline
 let  g:airline_theme                               = 'gruvbox'
@@ -433,11 +410,11 @@ let  g:airline#extensions#tabline#buffer_min_count = 1
 "let g:airline#extensions#tabline#fnamecollapse    = 1
 
 " save folds and such when close file
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave *.* mkview
-  autocmd BufWinEnter *.* silent! loadview
-augroup END
+" augroup remember_folds
+"   autocmd!
+"   autocmd BufWinLeave *.* mkview
+"   autocmd BufWinEnter *.* silent! loadview
+" augroup END
 
 " Startify settings
 function! StartifyEntryFormat()
@@ -464,7 +441,8 @@ let g:startify_bookmarks = [
                 \ '~/.config/nvim/init.vim',
                 \ '~/.zshrc',
                 \ '~/.p10k.zsh',
-                \ '~/.config/kitty/kitty.conf'
+                \ '~/.config/kitty/kitty.conf',
+                \ '~/.config/vifm/vifmrc'
                 \ ]
 
 let g:startify_custom_header = 0
@@ -500,7 +478,7 @@ aug python
     au!
     " autocmd BufWritePre *.py isort
     autocmd BufWritePre *.py silent! :call CocAction('runCommand', 'python.sortImports')
-    autocmd BufWritePre *.py Black
+    autocmd BufWritePre *.py :call CocAction('format')
 aug END
 
 " VimWiki
@@ -521,7 +499,7 @@ let g:vista#renderer#icons = {
 let g:vista_icon_indent = ["╰─ ", "├─ "]
 let g:vista#renderer#ctags = 'kind'
 let g:vista_default_executive = 'ctags'
-let g:vista_close_on_jump = 1
+let g:vista_close_on_jump = 0
 
 " Vimade
 let g:vimade = {}
@@ -529,64 +507,66 @@ let g:vimade.fadelevel = 0.8
 let g:vimade.enablesigns = 1
 let g:vimade.enabletreesitter = 1
 
-"highlight BadWhitespace ctermbg=red guibg=red
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
-" let g:SuperTabDefaultCompletionType = "<Tab>"
+" current word highlight config
+let g:vim_current_word#highlight_delay = 0
+let g:vim_current_word#highlight_current_word = 0
+let g:vim_current_word#highlight_only_in_focused_window = 1
+hi CurrentWordTwins guibg=#504945 ctermbg=239
+hi CurrentWord guibg=#504945 ctermbg=239
 
 let g:rainbow_active = 1 "Color brackets
 
 let g:suda_smart_edit = 1
 
-let g:undotree_SplitWidth = 35
-
-call wilder#setup({
-    \ 'modes': [':', '/', '?'],
-    \ 'next_key': '<Tab>',
-    \ 'previous_key': '<S-Tab>',
-    \ 'accept_key': '<Down>',
-    \ 'reject_key': '<Up>',
-    \ })
-
-call wilder#set_option(
-    \ 'renderer',
-    \     wilder#popupmenu_renderer(
-    \         wilder#popupmenu_palette_theme({
-    \             'border': 'rounded',
-    \             'max_height': '50%',
-    \             'min_height': '30%',
-    \             'max_width': '50%',
-    \             'min_width': '30%',
-    \             'prompt_position': 'bottom',
-    \             'reverse': 0,
-    \             'left': [
-    \                 ' ',
-    \                 wilder#popupmenu_devicons(),
-    \                 wilder#popupmenu_buffer_flags(),
-    \             ],
-    \             'right': [
-    \                 ' ', wilder#popupmenu_scrollbar(),
-    \             ],
-    \             'highlighter': wilder#basic_highlighter(),
-    \             'highlights': {
-    \             'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#d65d0e'}]),
-    \             },
-    \         })
-    \         ),
-    \ 'pipeline',
-    \     wilder#branch(
-    \         wilder#cmdline_pipeline({'language': has('nvim') ? 'python' : 'vim'}),
-    \         wilder#python_search_pipeline(),
-    \     ),
-    \ )
-
 let g:VM_default_mappings = 0
-
-" let g:vifm_exec = expand('$HOME/.config/vifm/vifmrun')
 
 lua << EOF
 
 local map = vim.api.nvim_set_keymap
+
+-- wilder config
+local wilder = require('wilder')
+wilder.setup({modes = {':', '/', '?'}})
+
+wilder.set_option('pipeline', {
+  wilder.branch(
+  wilder.python_file_finder_pipeline({
+      file_command = {'find', '.', '-type', 'f', '-printf', '%P\n'},
+      dir_command = {'find', '.', '-type', 'd', '-printf', '%P\n'},
+      filters = {'fuzzy_filter', 'difflib_sorter'},
+    }),
+    wilder.cmdline_pipeline(),
+    wilder.python_search_pipeline(),
+    wilder.cmdline_pipeline({
+      language = 'python',
+      fuzzy = 1,
+    }),
+    wilder.python_search_pipeline({
+      pattern = wilder.python_fuzzy_pattern(),
+      sorter = wilder.python_difflib_sorter(),
+      engine = 're',
+    })
+  ),
+})
+
+local highlighters = {
+  wilder.pcre2_highlighter(),
+  wilder.basic_highlighter(),
+}
+
+wilder.set_option('renderer', wilder.popupmenu_renderer({
+  highlighter = wilder.basic_highlighter(),
+  highlights = {
+    accent = wilder.make_hl('WilderAccent', 'Pmenu', {{a = 1}, {a = 1}, {foreground = '#fe8019'}}),
+  },
+  left = {' ', wilder.popupmenu_devicons()},
+  right = {' ', wilder.popupmenu_scrollbar()},
+  pumblend = 20,
+}))
+
+-- colorizer config
+
+require('colorizer').setup()
 
 -- hlslens config
 
@@ -609,78 +589,6 @@ vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<cr>', kopts)
 
 -- require('colorizer').setup()
 
-require("sidebar-nvim").setup({
-    disable_default_keybindings = 0,
-    bindings = nil,
-    open = false,
-    side = "left",
-    initial_width = 35,
-    hide_statusline = false,
-    update_interval = 1000,
-    sections = { "buffers", "symbols", "git", "diagnostics" },
-    section_separator = {"", "-----", ""},
-    containers = {
-        attach_shell = "/bin/sh", show_all = true, interval = 5000,
-    },
-    datetime = { format = "%a %b %d, %H:%M", clocks = { { name = "local" } } },
-    todos = { ignored_paths = { "~" } },
-    disable_closing_prompt = false,
-    buffers = {
-        icon = "",
-        ignored_buffers = {} -- ignore buffers by regex
-    },
-    files = {
-        icon = "",
-        show_hidden = false,
-        ignored_paths = {"%.git$"}
-    },
-    symbols = {
-        icon = "ƒ",
-    }
-})
-
--- Neoclip config
-
-local function is_whitespace(line)
-  return vim.fn.match(line, [[^\s*$]]) ~= -1
-end
-
-local function all(tbl, check)
-  for _, entry in ipairs(tbl) do
-    if not check(entry) then
-      return false
-    end
-  end
-  return true
-end
-
-require('neoclip').setup({
-    history = 1000,
-    enable_persistent_history = true,
-    db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",
-    preview = true,
-    default_register = '"',
-    default_register_macros = 'q',
-    enable_macro_history = true,
-    content_spec_column = false,
-    on_paste = {
-      set_reg = false,
-    },
-    on_replay = {
-        set_reg = false,
-    },
-    filter = function(data)
-        return not all(data.event.regcontents, is_whitespace)
-    end,
-})
-
--- Line peeker
-require('numb').setup{
-    show_numbers = true, -- Enable 'number' for the window while peeking
-    show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-    number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
-}
-
 require("notify").setup()
 require("telescope").load_extension("notify")
 
@@ -689,10 +597,6 @@ require('telescope').setup {
         dynamic_preview_title = true,
        }
    }
-map('n', '<leader>c', '<cmd>lua require"telescope".extensions.neoclip.default()<cr>',            {noremap=true})
-
-map('n', '<a-n>',     '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>',              {noremap=true})
-map('n', '<a-p>',     '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>', {noremap=true})
 
 -- Hop motion
 require('hop').setup()
@@ -721,7 +625,7 @@ require("indent_blankline").setup {
         }
     }
 vim.opt.list = true
---vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("space:⋅")
 --vim.opt.listchars:append("eol:↴")
 vim.opt.termguicolors = true
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#D65D0E gui=nocombine]]
