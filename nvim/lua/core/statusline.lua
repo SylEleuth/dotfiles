@@ -11,11 +11,11 @@ if not status_ok then
   return
 end
 
-function stats()
-  row = vim.api.nvim_win_get_cursor(0)[1]
-  col = vim.api.nvim_win_get_cursor(0)[2]
-  max = vim.api.nvim_buf_line_count(vim.fn.winbufnr(vim.g.statusline_winid))
-  line = "%p" .. "%% :" .. row .. "/" .. max .. "☰ ℅:" .. col
+local function stats()
+  local row = vim.api.nvim_win_get_cursor(0)[1]
+  local col = vim.api.nvim_win_get_cursor(0)[2]
+  local max = vim.api.nvim_buf_line_count(vim.fn.winbufnr(vim.g.statusline_winid))
+  local line = "%p" .. "%% :" .. row .. "/" .. max .. "☰ ℅:" .. col
   return line
 end
 
