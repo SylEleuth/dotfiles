@@ -30,7 +30,7 @@ dashboard.section.buttons.val = {
 local function footer()
   local version = vim.version()
   local print_version = "v" .. version.major .. '.' .. version.minor .. '.' .. version.patch
-  local datetime = os.date('%Y/%m/%d %H:%M:%S')
+  local datetime = os.date('%A, %e %B %Y  %H:%M:%S')
 
   return print_version .. ' - ' .. datetime
 end
