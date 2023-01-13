@@ -1,6 +1,9 @@
 -----------------------------------------------------------
--- Illuminate configuration file
+-- Murmur configuration file
 -----------------------------------------------------------
+
+-- https://github.com/nyngwang/murmur.lua
+
 
 local status_ok, murmur = pcall(require, 'murmur')
 if not status_ok then
