@@ -63,14 +63,6 @@ opt.undodir = vim.fn.expand('$HOME/Dropbox/vimundo')
 -- Custom
 -----------------------------------------------------------
 
-cmd[[
-    let g:vim_current_word#highlight_delay = 0
-    let g:vim_current_word#highlight_current_word = 0
-    let g:vim_current_word#highlight_only_in_focused_window = 1
-    hi CurrentWordTwins guibg=#504945 ctermbg=239
-    hi CurrentWord guibg=#504945 ctermbg=239
-]]
-
 -----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------
