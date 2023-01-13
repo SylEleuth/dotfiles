@@ -55,7 +55,7 @@ return packer.startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-context'
   use 'nvim-treesitter/nvim-treesitter-refactor'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'p00f/nvim-ts-rainbow'
+  use 'mrjones2014/nvim-ts-rainbow'
 
   -- Telescope
   use {
@@ -106,6 +106,7 @@ return packer.startup(function(use)
 
   -- Color schemes
   use "ellisonleao/gruvbox.nvim"
+  use 'sainnhe/gruvbox-material'
 
   -- Statusline
   use {
