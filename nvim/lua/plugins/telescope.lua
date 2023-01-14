@@ -63,12 +63,23 @@ end
 telescope.setup {
   defaults = {
     layout_config = {
+      layout_strategy = "horizontal",
+      horizontal = {
+        prompt_position = "bottom",
+        preview_width = 0.55,
+        results_width = 0.8,
+      },
+      vertical = {
+        mirror = false,
+      },
+      width = 0.87,
+      height = 0.80,
       preview_cutoff = 120,
     },
     dynamic_preview_title = true,
 
-    prompt_prefix = "  ",
-    selection_caret = " ",
+    prompt_prefix = "  ",
+    selection_caret = "➜ ",
     path_display = { "absolute" },
 
     mappings = {
