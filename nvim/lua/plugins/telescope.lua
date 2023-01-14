@@ -62,8 +62,8 @@ end
 
 telescope.setup {
   defaults = {
+    layout_strategy = "horizontal",
     layout_config = {
-      layout_strategy = "horizontal",
       horizontal = {
         prompt_position = "bottom",
         preview_width = 0.55,
