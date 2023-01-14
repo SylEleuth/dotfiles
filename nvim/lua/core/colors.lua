@@ -37,5 +37,5 @@ color_scheme.setup({
 })
 vim.cmd("colorscheme gruvbox")
 
-vim.cmd [[highlight CursorLine guibg=#32302f ctermbg=236 ctermfg=0]]
-vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]
+-- vim.cmd [[highlight CursorLine guibg=#32302f ctermbg=236 ctermfg=0]]
+-- vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]
