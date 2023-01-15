@@ -60,14 +60,16 @@ return packer.startup(function(use)
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'},
-                 {'debugloop/telescope-undo.nvim'}}
+    requires = { 'nvim-lua/plenary.nvim' }
   }
   use 'nvim-lua/plenary.nvim'
   use 'rcarriga/nvim-notify'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'fannheyward/telescope-coc.nvim'
   use 'nvim-lua/popup.nvim'
+  use 'natecraddock/telescope-zf-native.nvim'
+  use 'debugloop/telescope-undo.nvim'
+
 
   use({
     "kylechui/nvim-surround",
@@ -151,7 +153,7 @@ return packer.startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
   }
 
-  -- Rainbow Parentheses 
+  -- Rainbow Parentheses
   use 'luochen1990/rainbow'
 
   -- Automatically set up your configuration after cloning packer.nvim
