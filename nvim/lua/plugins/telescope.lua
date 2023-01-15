@@ -178,7 +178,7 @@ telescope.setup {
     },
     },
     find_files = {
-      cwd = '%:p:h',
+      -- cwd = '%:p:h',
     },
   },
   extensions = {
@@ -209,19 +209,30 @@ telescope.setup {
     },
     coc = {
         theme = 'ivy',
-        prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
+        prefer_locations = true,
     },
     aerial = {
         show_nesting = {
-            ['_'] = false, -- This key will be the default
-            json = true,   -- You can set the option for specific filetypes
+            ['_'] = false,
+            json = true,
             yaml = true,
         }
+    },
+    ["zf-native"] = {
+      file = {
+        enable = true,
+        highlight_results = true,
+        match_filename = true,
+      },
+      generic = {
+        enable = true,
+        highlight_results = true,
+        match_filename = false,
+      },
     },
     ["ui-select"] = {
       require("telescope.themes").get_dropdown {
         previewer = false,
-        -- even more opts
       },
     },
   },
@@ -234,6 +245,7 @@ require("telescope").load_extension("file_browser")
 require("telescope").load_extension("undo")
 require('telescope').load_extension('coc')
 require('telescope').load_extension('aerial')
+require("telescope").load_extension("zf-native")
 
 local builtin = require('telescope.builtin')
 local extension = require "telescope".extensions
