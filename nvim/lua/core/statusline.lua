@@ -7,6 +7,7 @@
 
 
 local status_ok, lualine = pcall(require, 'lualine')
+local status_ok, cokeline = pcall(require, 'cokeline')
 if not status_ok then
   return
 end
@@ -103,7 +104,7 @@ local mod = "#83a598"
 
 vim.cmd [[highlight TabLineFill guibg=dark]] -- background of the top bar
 
-require("cokeline").setup(
+cokeline.setup(
   {
     default_hl = {
       fg = function(buffer)
