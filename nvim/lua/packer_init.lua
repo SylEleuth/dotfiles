@@ -58,10 +58,7 @@ return packer.startup(function(use)
   use 'mrjones2014/nvim-ts-rainbow'
 
   -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
   use 'nvim-lua/plenary.nvim'
   use 'rcarriga/nvim-notify'
   use 'nvim-telescope/telescope-file-browser.nvim'
@@ -69,8 +66,12 @@ return packer.startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'natecraddock/telescope-zf-native.nvim'
   use 'debugloop/telescope-undo.nvim'
+  use 'paopaol/telescope-git-diffs.nvim'
 
+  -- Diffview
+  use 'sindrets/diffview.nvim'
 
+  -- Nvim-surround
   use({
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -111,27 +112,13 @@ return packer.startup(function(use)
   use 'sainnhe/gruvbox-material'
 
   -- Statusline
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
+  use 'nvim-lualine/lualine.nvim'
 
   -- Buffers
-  use({
-    'noib3/nvim-cokeline',
-    requires = 'nvim-tree/nvim-web-devicons', -- If you want devicons
-    config = function()
-        require('cokeline').setup()
-    end
-  })
+  use 'noib3/nvim-cokeline'
 
   -- File explorer
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-  }
+  use 'nvim-tree/nvim-tree.lua'
 
   -- Vifm - file manager
   use 'vifm/vifm.vim'
@@ -140,18 +127,12 @@ return packer.startup(function(use)
   use 'nyngwang/murmur.lua'
 
   -- Dashboard (start screen)
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-  }
+  use 'goolord/alpha-nvim'
 
   use {"shortcuts/no-neck-pain.nvim", tag = "*" }
 
   -- git labels
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-  }
+  use 'lewis6991/gitsigns.nvim'
 
   -- Rainbow Parentheses
   use 'luochen1990/rainbow'
