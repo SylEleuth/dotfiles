@@ -246,6 +246,7 @@ require("telescope").load_extension("undo")
 require('telescope').load_extension('coc')
 require('telescope').load_extension('aerial')
 require("telescope").load_extension("zf-native")
+require('telescope').load_extension('git_diffs')
 
 local builtin = require('telescope.builtin')
 local extension = require "telescope".extensions
@@ -263,3 +264,4 @@ vim.keymap.set('n', '<leader>e', extension.file_browser.file_browser, {})
 vim.keymap.set('n', '<leader>u', extension.undo.undo, {})
 vim.keymap.set('n', '<leader>c', extension.coc.coc, {})
 vim.keymap.set('n', '<leader>g', extension.aerial.aerial, {})
+vim.keymap.set('n', '<leader>d', extension.git_diffs.diff_commits, {})
