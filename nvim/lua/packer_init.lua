@@ -68,6 +68,9 @@ return packer.startup(function(use)
   use 'debugloop/telescope-undo.nvim'
   use 'paopaol/telescope-git-diffs.nvim'
 
+  -- Markid - highlight same-name identifiers with the same color
+  use 'David-Kunz/markid'
+
   -- Diffview
   use 'sindrets/diffview.nvim'
 
