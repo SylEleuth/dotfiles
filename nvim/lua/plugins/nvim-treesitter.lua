@@ -7,6 +7,7 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter-context
 -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 -- https://github.com/p00f/nvim-ts-rainbow
+-- https://github.com/David-Kunz/markid (not treesitter extension, only works with it)
 
 local status_ok, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
 if not status_ok then
@@ -93,6 +94,7 @@ nvim_treesitter.setup {
       include_surrounding_whitespace = true,
     },
   },
+  markid = { enable = true },
 }
 
 require'treesitter-context'.setup{
