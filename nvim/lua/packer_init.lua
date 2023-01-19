@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use 'natecraddock/telescope-zf-native.nvim'
   use 'debugloop/telescope-undo.nvim'
   use 'paopaol/telescope-git-diffs.nvim'
+  use 'nvim-telescope/telescope-frecency.nvim'
 
   -- Markid - highlight same-name identifiers with the same color
   use 'David-Kunz/markid'
