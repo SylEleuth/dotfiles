@@ -474,6 +474,9 @@ au BufNewFile,BufRead *.py
 au BufNewFile,BufRead *.cpp
             \ set shiftwidth=4
 
+au BufNewFile,BufRead *.lua
+            \ set shiftwidth=2
+
 aug python
     au!
     " autocmd BufWritePre *.py isort
