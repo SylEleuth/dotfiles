@@ -44,7 +44,7 @@ return packer.startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
 
   -- Tag viewer
-  -- use 'liuchengxu/vista.vim'
+  use 'liuchengxu/vista.vim'
   use 'stevearc/aerial.nvim'
 
   -- Treesitter interface
@@ -67,7 +67,7 @@ return packer.startup(function(use)
   use 'natecraddock/telescope-zf-native.nvim'
   use 'debugloop/telescope-undo.nvim'
   use 'paopaol/telescope-git-diffs.nvim'
-  use 'nvim-telescope/telescope-frecency.nvim'
+  use 'smartpde/telescope-recent-files'
 
   -- Markid - highlight same-name identifiers with the same color
   use 'David-Kunz/markid'
