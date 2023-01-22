@@ -183,7 +183,6 @@ telescope.setup {
   },
   extensions = {
     file_browser = {
-      -- theme = "ivy",
       hidden = true,
       grouped = true,
       select_buffer = true,
@@ -208,7 +207,6 @@ telescope.setup {
         entry_format = "state #$ID, $STAT, $TIME",
     },
     coc = {
-        theme = 'ivy',
         prefer_locations = true,
     },
     aerial = {
@@ -247,7 +245,7 @@ require('telescope').load_extension('coc')
 require('telescope').load_extension('aerial')
 require("telescope").load_extension("zf-native")
 require('telescope').load_extension('git_diffs')
-require('telescope').load_extension('frecency')
+require('telescope').load_extension('recent_files')
 
 local builtin = require('telescope.builtin')
 local extension = require "telescope".extensions
@@ -256,7 +254,7 @@ vim.keymap.set('n', '<leader>ee', builtin.find_files, {})
 vim.keymap.set('n', '<leader>er', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
--- vim.keymap.set('n', "<leader>'", builtin.oldfiles, {})
+vim.keymap.set('n', "<leader>'", builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>h', builtin.commands, {})
 vim.keymap.set('n', '<leader>hc', builtin.command_history, {})
 vim.keymap.set('n', '<leader>hs', builtin.search_history, {})
@@ -266,4 +264,4 @@ vim.keymap.set('n', '<leader>u', extension.undo.undo, {})
 vim.keymap.set('n', '<leader>c', extension.coc.coc, {})
 vim.keymap.set('n', '<leader>g', extension.aerial.aerial, {})
 vim.keymap.set('n', '<leader>d', extension.git_diffs.diff_commits, {})
-vim.keymap.set('n', "<leader>\\", extension.frecency.frecency, {})
+vim.keymap.set('n', '<leader>\\', extension.recent_files.pick, {})
