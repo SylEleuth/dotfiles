@@ -35,7 +35,7 @@ map('n', '<S-Left>',  '<Esc>:bprevious<cr>')
 map('n', '<F1>', ':CocCommand explorer --root-strategies reveal<cr>')
 map('n', '<F1>', ':NvimTreeFindFileToggle<cr>')
 map('n', '<F2>', ':Vifm<cr>')
-map('n', '<F3>', ':AerialToggle<CR>')
+map('n', '<F3>', ':Vista!!<CR>')
 
 map('n', '<C-j>', ':m .+1<cr>==')
 map('n', '<C-k>', ':m .-2<cr>==')
