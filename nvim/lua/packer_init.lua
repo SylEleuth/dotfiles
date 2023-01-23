@@ -125,7 +125,7 @@ return packer.startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
 
   -- Vifm - file manager
-  use 'vifm/vifm.vim'
+  -- use 'vifm/vifm.vim'
 
   -- Murmur - automatically highlighting other uses of the word under the cursor
   use 'nyngwang/murmur.lua'
