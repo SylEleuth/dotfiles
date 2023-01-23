@@ -60,7 +60,7 @@ lualine.setup {
         shorting_target = 20,
       }
     },
-    lualine_x = {},
+    lualine_x = { 'aerial' },
     lualine_y = {
       {'filetype',
         colored = false,
@@ -82,7 +82,7 @@ lualine.setup {
   inactive_winbar = {},
   extensions = {
     'nvim-tree',
-    'aerial',
+    'aerial'
   }
 }
 

@@ -188,7 +188,6 @@ keyset("n", "<leader>p", ":<C-u>CocListResume<cr>", opts)
 
 vim.keymap.set('n', '<leader>m', ':<Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>')
 
-
-vim.cmd [[highlight CocSearch guifg=#D65D0E ctermfg=0]]
+vim.cmd [[highlight CocSearch guifg=#83a598 ctermfg=0]]
 vim.cmd [[highlight CocMenuSel guifg=#fe8019 ctermbg=0]]
 vim.cmd [[highlight CocFloating guibg=#32302f]]
