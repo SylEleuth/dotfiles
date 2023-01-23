@@ -63,6 +63,34 @@ opt.undodir = vim.fn.expand('$HOME/Dropbox/vimundo')
 -- Custom
 -----------------------------------------------------------
 
+-- Vista
+
+vim.cmd [[
+  let g:vista_sidebar_width = 40
+  let g:vista#renderer#enable_icon = 1
+  let g:vista#renderer#enable_kind = 1
+  let g:vista#renderer#icons = {
+  \   "function": "\uf794 ",
+  \   "variable": "\uf71b ",
+  \  }
+  let g:vista_icon_indent = ["╰─ ", "├─ "]
+  let g:vista#renderer#ctags = 'kind'
+  let g:vista_default_executive = 'ctags'
+  let g:vista_close_on_jump = 0
+
+  highlight VistaParenthesis guifg=#d3869b
+  highlight VistaScope guifg=#b16286
+  highlight VistaTag guifg=#83a598
+  " highlight VistaKind guifg=#cc241d
+  " highlight VistaScopeKind guifg=#cc241d
+  highlight VistaLineNr guifg=#928374
+  highlight VistaColon guifg=#d5c4a1
+  highlight VistaIcon guifg=#fabd2f
+  " highlight VistaArgs guifg=#cc241d
+
+]]
+
+
 -----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------
