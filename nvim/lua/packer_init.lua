@@ -109,6 +109,7 @@ return packer.startup(function(use)
   -- Bufdelete
   use 'famiu/bufdelete.nvim'
 
+  -- Window separator
   use 'nvim-zh/colorful-winsep.nvim'
 
   -- Color schemes
@@ -140,6 +141,9 @@ return packer.startup(function(use)
 
   -- Rainbow Parentheses
   use 'luochen1990/rainbow'
+
+  -- Vim kitty navigator for seamless navigation between kitty panes and vim splits
+  use 'knubie/vim-kitty-navigator'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
