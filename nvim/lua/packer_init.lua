@@ -66,7 +66,6 @@ return packer.startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'natecraddock/telescope-zf-native.nvim'
   use 'debugloop/telescope-undo.nvim'
-  use 'paopaol/telescope-git-diffs.nvim'
   use 'smartpde/telescope-recent-files'
 
   -- Markid - highlight same-name identifiers with the same color
@@ -127,9 +126,6 @@ return packer.startup(function(use)
 
   -- Vifm - file manager
   -- use 'vifm/vifm.vim'
-
-  -- Murmur - automatically highlighting other uses of the word under the cursor
-  use 'nyngwang/murmur.lua'
 
   -- Dashboard (start screen)
   use 'goolord/alpha-nvim'
