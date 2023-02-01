@@ -136,9 +136,6 @@ return packer.startup(function(use)
   -- git labels
   use 'lewis6991/gitsigns.nvim'
 
-  -- Rainbow Parentheses
-  use 'luochen1990/rainbow'
-
   -- Vim kitty navigator for seamless navigation between kitty panes and vim splits
   use 'knubie/vim-kitty-navigator'
 
