@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use 'natecraddock/telescope-zf-native.nvim'
   use 'debugloop/telescope-undo.nvim'
   use 'smartpde/telescope-recent-files'
+  use 'danielfalk/smart-open.nvim'
 
   -- Markid - highlight same-name identifiers with the same color
   use 'David-Kunz/markid'
@@ -140,6 +141,9 @@ return packer.startup(function(use)
 
   -- Vim kitty navigator for seamless navigation between kitty panes and vim splits
   use 'knubie/vim-kitty-navigator'
+
+  -- Boole.nvim - toggling booleans and more
+  use 'nat-418/boole.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
