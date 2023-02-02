@@ -185,7 +185,7 @@ require('telescope').load_extension('smart_open')
 local builtin = require('telescope.builtin')
 local extension = require "telescope".extensions
 
-vim.keymap.set('n', '<leader>ee', builtin.find_files, {})
+-- vim.keymap.set('n', '<leader>ee', builtin.find_files, {})
 vim.keymap.set('n', '<leader>er', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>h', builtin.builtin, {})
