@@ -23,7 +23,7 @@ opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
 -----------------------------------------------------------
 opt.number = true           -- Show line number
 opt.showmatch = true        -- Highlight matching parenthesis
-opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
+-- opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
 -- opt.colorcolumn = '80'      -- Line lenght marker at 80 columns
 opt.splitright = true       -- Vertical split to the right
 opt.splitbelow = true       -- Horizontal split to the bottom
@@ -63,9 +63,9 @@ opt.undodir = vim.fn.expand('$HOME/Dropbox/vimundo')
 -- Custom
 -----------------------------------------------------------
 
--- Vista
-
 vim.cmd [[
+
+  " Vista
   let g:vista_sidebar_width = 40
   let g:vista#renderer#enable_icon = 1
   let g:vista#renderer#enable_kind = 1
@@ -87,6 +87,9 @@ vim.cmd [[
   highlight VistaColon guifg=#d5c4a1
   highlight VistaIcon guifg=#fabd2f
   " highlight VistaArgs guifg=#cc241d
+
+  " Kitty navigator
+  let g:kitty_navigator_no_mappings = 1
 
 ]]
 
