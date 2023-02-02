@@ -32,6 +32,17 @@ if not status_ok then
   return
 end
 
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+  git = {
+    clone_timeout = 300, -- Timeout, in seconds, for git clones
+  },
+}
+
 -- Install plugins
 return packer.startup(function(use)
   -- Add you plugins here:
