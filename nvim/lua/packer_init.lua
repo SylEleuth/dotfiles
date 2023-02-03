@@ -32,6 +32,7 @@ if not status_ok then
   return
 end
 
+-- Packer in flaoting window
 packer.init {
   display = {
     open_fn = function()
@@ -152,6 +153,9 @@ return packer.startup(function(use)
 
   -- Boole.nvim - toggling booleans and more
   use 'nat-418/boole.nvim'
+
+  -- Move.nvim - move lines and blocks and auto-indent them
+  use 'fedepujol/move.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
