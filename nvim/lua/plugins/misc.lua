@@ -26,7 +26,7 @@ require("colorful-winsep").setup({
 
 no_neck_pain.setup({
   width = 100,
-  toggleMapping = "<Leader>np",
+  toggleMapping = "<F5>",
   buffers = {
     backgroundColor = "#1d2021",
   },
