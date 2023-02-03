@@ -8,93 +8,110 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+local action_state = require("telescope.actions.state")
+
+local multiopen = { -- my mappings
+  ["<CR>"] = function(pb)
+    local picker = action_state.get_current_picker(pb)
+    local multi = picker:get_multi_selection()
+    actions.select_default(pb) -- the normal enter behaviour
+    for _, j in pairs(multi) do
+      if j.path ~= nil then -- is it a file -> open it as well:
+        vim.cmd(string.format("%s %s", "edit", j.path))
+      end
+    end
+  end,
+}
 
 telescope.setup {
   defaults = {
-    layout_strategy = "horizontal",
+    layout_strategy = "flex",
     layout_config = {
       horizontal = {
         prompt_position = "bottom",
         preview_width = 0.55,
-        results_width = 0.8,
+        width = 0.87,
+        height = 0.80,
+        preview_cutoff = 140,
       },
       vertical = {
-        mirror = false,
+        preview_height = 0.7,
+        width = 0.9,
+        preview_cutoff = 20,
       },
-      width = 0.87,
-      height = 0.80,
-      preview_cutoff = 140,
+      flex = {
+        flip_columns = 120,
+      },
     },
     dynamic_preview_title = true,
-
     prompt_prefix = "  ",
     selection_caret = "➜ ",
     path_display = { "absolute" },
-
-    mappings = {
-      i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
-
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-
-        ["<C-c>"] = actions.close,
-
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
-
-        ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
-
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
-
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
-
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-        ["<C-l>"] = actions.complete_tag,
-        ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
-      },
-
-      n = {
-        ["<esc>"] = actions.close,
-        ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
-
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-
-        ["j"] = actions.move_selection_next,
-        ["k"] = actions.move_selection_previous,
-        ["H"] = actions.move_to_top,
-        ["M"] = actions.move_to_middle,
-        ["L"] = actions.move_to_bottom,
-
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
-        ["gg"] = actions.move_to_top,
-        ["G"] = actions.move_to_bottom,
-
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
-
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
-
-        ["?"] = actions.which_key,
-      },
-    },
+    mappings = { i = multiopen,  n = multiopen },
+    -- mappings = {
+    --   i = {
+    --     ["<C-n>"] = actions.cycle_history_next,
+    --     ["<C-p>"] = actions.cycle_history_prev,
+    --
+    --     ["<C-j>"] = actions.move_selection_next,
+    --     ["<C-k>"] = actions.move_selection_previous,
+    --
+    --     ["<C-c>"] = actions.close,
+    --
+    --     ["<Down>"] = actions.move_selection_next,
+    --     ["<Up>"] = actions.move_selection_previous,
+    --
+    --     ["<CR>"] = actions.select_default,
+    --     ["<C-x>"] = actions.select_horizontal,
+    --     ["<C-v>"] = actions.select_vertical,
+    --     ["<C-t>"] = actions.select_tab,
+    --
+    --     ["<C-u>"] = actions.preview_scrolling_up,
+    --     ["<C-d>"] = actions.preview_scrolling_down,
+    --
+    --     ["<PageUp>"] = actions.results_scrolling_up,
+    --     ["<PageDown>"] = actions.results_scrolling_down,
+    --
+    --     ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+    --     ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+    --     ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+    --     ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+    --     ["<C-l>"] = actions.complete_tag,
+    --     ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+    --   },
+    --
+    --   n = {
+    --     ["<esc>"] = actions.close,
+    --     ["<CR>"] = actions.select_default,
+    --     ["<C-x>"] = actions.select_horizontal,
+    --     ["<C-v>"] = actions.select_vertical,
+    --     ["<C-t>"] = actions.select_tab,
+    --
+    --     ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+    --     ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+    --     ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+    --     ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+    --
+    --     ["j"] = actions.move_selection_next,
+    --     ["k"] = actions.move_selection_previous,
+    --     ["H"] = actions.move_to_top,
+    --     ["M"] = actions.move_to_middle,
+    --     ["L"] = actions.move_to_bottom,
+    --
+    --     ["<Down>"] = actions.move_selection_next,
+    --     ["<Up>"] = actions.move_selection_previous,
+    --     ["gg"] = actions.move_to_top,
+    --     ["G"] = actions.move_to_bottom,
+    --
+    --     ["<C-u>"] = actions.preview_scrolling_up,
+    --     ["<C-d>"] = actions.preview_scrolling_down,
+    --
+    --     ["<PageUp>"] = actions.results_scrolling_up,
+    --     ["<PageDown>"] = actions.results_scrolling_down,
+    --
+    --     ["?"] = actions.which_key,
+    --   },
+    -- },
   },
   pickers = {
     select = {
@@ -110,10 +127,13 @@ telescope.setup {
       sort_mru = true,
     },
     live_grep = {
-      grep_open_files = true,
+      cwd = '%:p:h',
+    },
+    grep_string = {
+      cwd = '%:p:h',
     },
     find_files = {
-      -- cwd = '%:p:h',
+      cwd = '%:p:h',
     },
   },
   extensions = {
@@ -136,10 +156,11 @@ telescope.setup {
       },
     },
     undo = {
-        use_delta = true,
-        side_by_side = true,
-        diff_context_lines = vim.o.scrolloff,
-        entry_format = "state #$ID, $STAT, $TIME",
+      use_delta = false,
+      side_by_side = false,
+      diff_context_lines = vim.o.scrolloff,
+      entry_format = "state #$ID, $STAT, $TIME",
+      layout_strategy = "vertical",
     },
     coc = {
         prefer_locations = true,
@@ -185,18 +206,21 @@ require('telescope').load_extension('smart_open')
 local builtin = require('telescope.builtin')
 local extension = require "telescope".extensions
 
--- vim.keymap.set('n', '<leader>ee', builtin.find_files, {})
-vim.keymap.set('n', '<leader>er', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-vim.keymap.set('n', '<leader>h', builtin.builtin, {})
--- vim.keymap.set('n', "<leader>'", builtin.oldfiles, {})
-vim.keymap.set('n', '<leader>fh', builtin.commands, {})
-vim.keymap.set('n', '<leader>hc', builtin.command_history, {})
-vim.keymap.set('n', '<leader>hs', builtin.search_history, {})
-vim.keymap.set('n', '<leader>v', builtin.treesitter, {})
-vim.keymap.set('n', '<leader>e', extension.file_browser.file_browser, {})
-vim.keymap.set('n', '<leader>u', extension.undo.undo, {})
-vim.keymap.set('n', '<leader>c', extension.coc.coc, {})
-vim.keymap.set('n', '<leader>g', extension.aerial.aerial, {})
-vim.keymap.set('n', '<leader>\\', extension.recent_files.pick, {})
-vim.keymap.set('n', "<leader>'", extension.smart_open.smart_open, {})
+vim.keymap.set('n', '<leader>gg', builtin.grep_string, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>g',  builtin.live_grep, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>ee', builtin.find_files, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>b',  builtin.buffers, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>bb', builtin.current_buffer_fuzzy_find, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>ss', builtin.spell_suggest, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>h',  builtin.builtin, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>t',  builtin.colorscheme, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>fh', builtin.commands, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>hc', builtin.command_history, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>hs', builtin.search_history, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>v',  builtin.treesitter, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>e',  extension.file_browser.file_browser, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>u',  extension.undo.undo, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>c',  extension.coc.coc, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>r',  extension.aerial.aerial, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>\\', extension.recent_files.pick, {noremap = true, silent = true})
+vim.keymap.set('n', "<leader>'",  extension.smart_open.smart_open, {noremap = true, silent = true})
