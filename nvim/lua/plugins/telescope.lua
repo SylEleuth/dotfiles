@@ -10,17 +10,28 @@ end
 local actions = require "telescope.actions"
 local action_state = require("telescope.actions.state")
 
-local multiopen = { -- my mappings
+local multiopen = {
   ["<CR>"] = function(pb)
     local picker = action_state.get_current_picker(pb)
     local multi = picker:get_multi_selection()
-    actions.select_default(pb) -- the normal enter behaviour
+    actions.select_default(pb)
     for _, j in pairs(multi) do
-      if j.path ~= nil then -- is it a file -> open it as well:
+      if j.path ~= nil then
         vim.cmd(string.format("%s %s", "edit", j.path))
       end
     end
   end,
+}
+
+local dropdown_configs = {
+  layout_strategy = "center",
+  -- layout_config = {
+  --   prompt_position = "top",
+  --   vertical = {
+  --     width = 0.6,
+  --     height = 20,
+  --   },
+  -- },
 }
 
 telescope.setup {
@@ -142,10 +153,6 @@ telescope.setup {
       grouped = true,
       select_buffer = true,
       cwd = '%:p:h',
-      require("telescope.themes").get_dropdown {
-        previewer = false,
-        -- even more opts
-      },
       mappings = {
         ["i"] = {
           -- your custom insert mode mappings
@@ -185,14 +192,13 @@ telescope.setup {
       },
     },
     ["ui-select"] = {
-      require("telescope.themes").get_dropdown {
-        previewer = false,
-      },
+      require("telescope.themes").get_dropdown(dropdown_configs),
     },
   },
 }
 
 require("notify").setup()
+require("urlview").setup()
 
 require("telescope").load_extension("notify")
 require("telescope").load_extension("file_browser")
@@ -202,6 +208,7 @@ require('telescope').load_extension('aerial')
 require("telescope").load_extension("zf-native")
 require('telescope').load_extension('recent_files')
 require('telescope').load_extension('smart_open')
+require('telescope').load_extension('ui-select')
 
 local builtin = require('telescope.builtin')
 local extension = require "telescope".extensions
@@ -209,9 +216,9 @@ local extension = require "telescope".extensions
 vim.keymap.set('n', '<leader>gg', builtin.grep_string, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>g',  builtin.live_grep, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>ee', builtin.find_files, {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>b',  builtin.buffers, {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>bb', builtin.current_buffer_fuzzy_find, {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>ss', builtin.spell_suggest, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>bb',  builtin.buffers, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>b', builtin.current_buffer_fuzzy_find, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>s', builtin.spell_suggest, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>h',  builtin.builtin, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>t',  builtin.colorscheme, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>fh', builtin.commands, {noremap = true, silent = true})
@@ -221,6 +228,9 @@ vim.keymap.set('n', '<leader>v',  builtin.treesitter, {noremap = true, silent = 
 vim.keymap.set('n', '<leader>e',  extension.file_browser.file_browser, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>u',  extension.undo.undo, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>c',  extension.coc.coc, {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>r',  extension.aerial.aerial, {noremap = true, silent = true})
+-- vim.keymap.set('n', '<leader>r',  extension.aerial.aerial, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>\\', extension.recent_files.pick, {noremap = true, silent = true})
 vim.keymap.set('n', "<leader>'",  extension.smart_open.smart_open, {noremap = true, silent = true})
+
+vim.keymap.set("n", "<leader>/",  "<Cmd>UrlView<CR>", { desc = "view buffer URLs" })
+vim.keymap.set("n", "<leader>//", "<Cmd>UrlView packer<CR>", { desc = "view plugin URLs" })
