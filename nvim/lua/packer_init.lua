@@ -65,12 +65,11 @@ return packer.startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
   use 'nvim-treesitter/nvim-treesitter-context'
-  use 'nvim-treesitter/nvim-treesitter-refactor'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'mrjones2014/nvim-ts-rainbow'
 
   -- Telescope
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.1' }
   use 'nvim-lua/plenary.nvim'
   use 'rcarriga/nvim-notify'
   use 'nvim-telescope/telescope-file-browser.nvim'
@@ -80,6 +79,10 @@ return packer.startup(function(use)
   use 'debugloop/telescope-undo.nvim'
   use 'smartpde/telescope-recent-files'
   use 'danielfalk/smart-open.nvim'
+  use 'nvim-telescope/telescope-ui-select.nvim'
+
+  -- UrlView - viewing all the URLs in a buffer
+  use 'axieax/urlview.nvim'
 
   -- Markid - highlight same-name identifiers with the same color
   use 'David-Kunz/markid'
