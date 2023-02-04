@@ -93,20 +93,24 @@ local is_picking_close = require("cokeline/mappings").is_picking_close
 local get_hex = require("cokeline/utils").get_hex
 
 
-local red = "#cc241d"
-local yellow = "#fabd2f"
+local red = vim.g.terminal_color_1
+local yellow = vim.g.terminal_color_11
 local space = {text = " "}
-local dark = "#282828"
+local dark = vim.g.terminal_color_0
 local text = get_hex("Comment", "fg")
 local grey = "#32302f"
 local light = get_hex("Comment", "fg")
-local high = "#a89984"
-local mod = "#83a598"
+local high = vim.g.terminal_color_7
+local mod = vim.g.terminal_color_12
 
-vim.cmd [[highlight TabLineFill guibg=dark]] -- background of the top bar
+vim.cmd [[highlight TabLineFill guibg=#282828]] -- background of the top bar
 
 cokeline.setup(
   {
+    show_if_buffers_are_at_least = 2,
+    buffers = {
+      new_buffers_position = "next",
+    },
     default_hl = {
       fg = function(buffer)
         if buffer.is_focused then
@@ -197,3 +201,8 @@ cokeline.setup(
     }
   }
 )
+
+vim.keymap.set('n', '<S-Left>',  '<Plug>(cokeline-focus-prev)', {})
+vim.keymap.set('n', '<S-Right>', '<Plug>(cokeline-focus-next)', {})
+vim.keymap.set('n', '<C-,>',    '<Plug>(cokeline-switch-prev)', {})
+vim.keymap.set('n', '<C-.>',    '<Plug>(cokeline-switch-next)', {})
