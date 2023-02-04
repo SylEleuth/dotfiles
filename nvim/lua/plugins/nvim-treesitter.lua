@@ -7,9 +7,9 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter-context
 -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 -- https://github.com/p00f/nvim-ts-rainbow
--- https://github.com/David-Kunz/markid (not treesitter extension, only works with it)
 
 local status_ok, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
+local status_ok, nvim_treesitter_context = pcall(require, 'treesitter-context')
 if not status_ok then
   return
 end
@@ -23,19 +23,6 @@ nvim_treesitter.setup {
   highlight = {
     enable = true,
     disable = {},
-  },
-  refactor = {
-    highlight_definitions = {
-      enable = true,
-      -- Set to false if you have an `updatetime` of ~100.
-      clear_on_cursor_move = true,
-    },
-      smart_rename = {
-      enable = true,
-      keymaps = {
-        smart_rename = "grr",
-      },
-    },
   },
   navigation = {
     enable = true,
@@ -57,10 +44,8 @@ nvim_treesitter.setup {
   textobjects = {
     select = {
       enable = true,
-
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
-
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
         ["af"] = "@function.outer",
@@ -95,9 +80,18 @@ nvim_treesitter.setup {
     },
   },
   markid = { enable = true },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<CR>", -- set to `false` to disable one of the mappings
+      node_incremental = "<CR>",
+      scope_incremental = "grc",
+      node_decremental = "<S-CR>",
+    },
+  },
 }
 
-require'treesitter-context'.setup{
+nvim_treesitter_context.setup{
     enable = true,
     max_lines = 0,
     trim_scope = 'outer',
