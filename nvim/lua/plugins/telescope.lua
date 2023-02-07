@@ -37,17 +37,21 @@ local dropdown_configs = {
 telescope.setup {
   defaults = {
     layout_strategy = "flex",
+    sorting_strategy = 'ascending',
     layout_config = {
       horizontal = {
-        prompt_position = "bottom",
+        prompt_position = "top",
         preview_width = 0.55,
         width = 0.87,
         height = 0.80,
         preview_cutoff = 140,
       },
       vertical = {
-        preview_height = 0.7,
+        prompt_position = "top",
+        -- preview_height = 0.7,
         width = 0.9,
+        preview_height = 0.5,
+        mirror = true,
         preview_cutoff = 20,
       },
       flex = {
