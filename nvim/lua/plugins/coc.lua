@@ -179,6 +179,6 @@ local opts = {silent = true, nowait = true}
 
 -- vim.keymap.set('n', '<leader>m', ':<Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>')
 
-vim.cmd [[highlight CocSearch guifg=#83a598 ctermfg=0]]
-vim.cmd [[highlight CocMenuSel guifg=#fe8019 ctermbg=0]]
-vim.cmd [[highlight CocFloating guibg=#282828]]
+vim.cmd [[highlight CocSearch guifg=#83a598 guibg=#282828]]
+vim.cmd [[highlight CocMenuSel guifg=#fe8019 guibg=#3c3836]]
+vim.cmd [[highlight CocFloating guifg=#ebdbb2]]
