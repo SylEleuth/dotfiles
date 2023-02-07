@@ -164,3 +164,6 @@ nvim_treesitter_context.setup{
     mode = 'cursor',
     separator = nil,
 }
+
+vim.cmd [[highlight TreesitterContext       guibg=#32302f]]
+vim.cmd [[highlight TreesitterContextBottom guibg=#3c3836]]
