@@ -1,11 +1,7 @@
 -----------------------------------------------------------
 -- File manager configuration file
 -----------------------------------------------------------
-
--- Plugin: nvim-tree
 -- url: https://github.com/nvim-tree//nvim-tree.lua
-
--- Keybindings are defined in `core/keymaps.lua`:
 -- https://github.com/nvim-tree/nvim-tree.lua#keybindings
 
 local status_ok, nvim_tree = pcall(require, 'nvim-tree')
@@ -226,4 +222,5 @@ nvim_tree.setup {
       watcher = false,
     },
   },
-} -- END_OPTS
+}
+
