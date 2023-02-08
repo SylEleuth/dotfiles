@@ -173,10 +173,7 @@ command! reload :write | restart
 
 " Pdf
 filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
-fileviewer *.pdf
-        \ vifmimg pdf %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+filetype *.pdf open -a Preview %f &
 
 " PostScript
 filextype *.ps,*.eps,*.ps.gz
@@ -191,10 +188,6 @@ filextype *.djvu
         \ zathura %f &,
         \ {View in apvlv}
         \ apvlv %f,
-fileviewer *.djvu
-        \ vifmimg djvu %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
 
 " Cbr
 " filextype *.cbr zathura %c %i &
@@ -204,12 +197,6 @@ filextype *.cbr
         " \ {View in apvlv}
         " \ apvlv %f,
 
-" Epub
-fileviewer *.epub
-        \ vifmimg epub %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
 " Audio
 filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
        "\ {Play using ffplay}
@@ -218,12 +205,8 @@ filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
        \ smplayer %f &,
        "\ {Play using vlc}
        "\ vlc %c,
-" fileviewer *.mp3 mp3info
+fileviewer *.mp3 mp3info
 " fileviewer *.flac soxi
-fileviewer <audio/*>
-        \ vifmimg audio %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
 
 " Video
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.ogg,
@@ -240,17 +223,11 @@ filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.ogg,
 " fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.ogg,
 "           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
 "           \*.as[fx]
-"          \ ffprobe -pretty %c 2>&1
-fileviewer <video/*>
-        \ vifmimg video %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-" Font
-fileviewer <font/*>
-        \ vifmimg font %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+"           \ ffprobe -pretty %c 2>&1
+" fileviewer *.gif,*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx]
+"             \ tput cup %py %px > /dev/tty && ffmpeg -y -hide_banner -loglevel panic -i %c -ss 00:00:01.000 -vframes 1 /tmp/tempfile.jpg > /dev/null && kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py /tmp/tempfile.jpg %N
+"             \ %pc
+"             \ kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py --clear %N
 
 " Web
 filextype *.html,*.htm
@@ -277,12 +254,11 @@ filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg,*.svgz
         "\ gpicview %c &,
         "\ {View in feh}
         "\ feh %d &,
-" fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-"          \ convert -identify %f -verbose /dev/null
-fileviewer <image/*>
-        \ vifmimg draw %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+filetype *.bmp,*.jpg,*.jpeg,*.png,*.xpm open -a Preview %f &
+" fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
+"     \ kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py %c %N
+"     \ %pc
+"     \ kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py --clear %N
 
 " OpenRaster
 filextype *.ora
@@ -490,10 +466,10 @@ nnoremap <f8> :delete<cr>
 
 " nnoremap <Space> :
 nnoremap ; :
-nnoremap qw :tabprevious<CR>
-nnoremap qe :tabnext<CR>
-nnoremap qq :tabclose<CR>
-nnoremap qt :tabnew<CR>
+nnoremap W :tabprevious<CR>
+nnoremap E :tabnext<CR>
+nnoremap T :tabnew<CR>
+nnoremap QQ :tabclose<CR>
 
 noremap `x :empty<cr>
 noremap <silent> `c :lstrash<cr>
@@ -535,5 +511,5 @@ nnoremap yf :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') 
 "
 " nnoremap <left> <nop>
 
-source ~/.config/vifm/scripts/Icons 
+source ~/.config/vifm/scripts/Icons
 source ~/.config/vifm/scripts/Powerline.vim
