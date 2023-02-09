@@ -27,7 +27,7 @@ nvim_tree.setup {
   view = {
     adaptive_size = false,
     centralize_selection = false,
-    width = 50,
+    width = 40,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -224,3 +224,4 @@ nvim_tree.setup {
   },
 }
 
+vim.cmd [[highlight NvimTreeNormal guibg=#1d2021]]
