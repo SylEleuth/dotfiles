@@ -23,8 +23,6 @@ opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
 -----------------------------------------------------------
 opt.number = true           -- Show line number
 opt.showmatch = true        -- Highlight matching parenthesis
--- opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
--- opt.colorcolumn = '80'      -- Line lenght marker at 80 columns
 opt.splitright = true       -- Vertical split to the right
 opt.splitbelow = true       -- Horizontal split to the bottom
 opt.ignorecase = true       -- Ignore case letters when search
@@ -37,6 +35,7 @@ opt.cursorcolumn = true
 opt.wrap = false            -- display lines as one long line
 opt.sidescrolloff = 8
 opt.scrolloff = 1
+opt.shada = "!,'300,<50,s10,h"
 
 -----------------------------------------------------------
 -- Tabs, indent
