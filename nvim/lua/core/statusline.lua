@@ -22,7 +22,8 @@ end
 
 local custom_gruvbox = require'lualine.themes.gruvbox'
 
-custom_gruvbox.normal.c.bg = '#32302f'
+custom_gruvbox.normal.c.bg = '#282828'
+custom_gruvbox.normal.b.bg = '#3c3836'
 
 lualine.setup {
   options = {
@@ -47,14 +48,15 @@ lualine.setup {
     lualine_a = {'mode'},
     lualine_b = {'branch',
       {'diff',
-        -- colored = false,
-      }},
-    lualine_c = {
+        symbols = {added = ' ', modified = ' ', removed = ' '},
+      },
       {'diagnostics',
         sources = { 'nvim_diagnostic', 'coc' },
         sections = { 'error', 'warn', 'info', 'hint' },
         -- colored = false,
       },
+    },
+    lualine_c = {
       {'filename',
         path = 1,
         shorting_target = 20,
