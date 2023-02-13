@@ -171,7 +171,7 @@ telescope.setup {
       side_by_side = false,
       diff_context_lines = vim.o.scrolloff,
       entry_format = "state #$ID, $STAT, $TIME",
-      layout_strategy = "vertical",
+      layout_strategy = "flex",
     },
     coc = {
         prefer_locations = true,
