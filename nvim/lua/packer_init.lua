@@ -125,7 +125,7 @@ return packer.startup(function(use)
   use 'famiu/bufdelete.nvim'
 
   -- Window separator
-  use 'nvim-zh/colorful-winsep.nvim'
+  -- use 'nvim-zh/colorful-winsep.nvim'
 
   -- Color schemes
   use "ellisonleao/gruvbox.nvim"
@@ -159,6 +159,12 @@ return packer.startup(function(use)
 
   -- Move.nvim - move lines and blocks and auto-indent them
   use 'fedepujol/move.nvim'
+
+  -- Dim inactive windows
+  use "levouh/tint.nvim"
+
+  -- Highlight only the screen line of the cursor in the currently active window
+  use 'tummetott/reticle.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
