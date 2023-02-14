@@ -70,6 +70,8 @@ vim.api.nvim_create_autocmd("CursorHold", {
 
 -- Symbol renaming
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
+keyset("n", "<leader>re", "<Plug>(coc-refactor)", { silent = true })
+keyset("n", "<leader>rr", ":CocCommand document.renameCurrentWord<cr>", {silent = true})
 
 -- Formatting selected code
 -- keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
@@ -184,3 +186,4 @@ vim.cmd [[highlight CocMenuSel guifg=#fe8019 guibg=#282828]]
 vim.cmd [[highlight CocFloating guifg=#ebdbb2 guibg=#1d2021]]
 vim.cmd [[highlight CocExplorerNormalFloat guibg=#32302f]]
 vim.cmd [[highlight CocExplorerNormalFloatBorder guifg=#504945]]
+vim.cmd [[highlight CocCursorRange guibg=#b16286 guifg=#ebdbb2]]
