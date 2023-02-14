@@ -2,10 +2,6 @@
 -- General Neovim settings and configuration
 -----------------------------------------------------------
 
--- Default options are not included
--- See: https://neovim.io/doc/user/vim_diff.html
--- [2] Defaults - *nvim-defaults*
-
 local g = vim.g       -- Global variables
 local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 local cmd = vim.cmd   -- For vimscript options
