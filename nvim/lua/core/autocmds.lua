@@ -17,12 +17,6 @@ autocmd('BufWritePre', {
   command = ":%s/\\s\\+$//e"
 })
 
--- Don't auto commenting new lines
-autocmd('BufEnter', {
-  pattern = '',
-  command = 'set fo-=c fo-=r fo-=o'
-})
-
 
 -- Settings for filetypes:
 --------------------------
@@ -88,7 +82,7 @@ autocmd(
 -- Automatically jump to the last place you’ve visited in a file before exiting
 -------------------------------------------------------------------------------
 
-vim.api.nvim_create_autocmd('BufReadPost', {
+autocmd('BufReadPost', {
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
     local lcount = vim.api.nvim_buf_line_count(0)
