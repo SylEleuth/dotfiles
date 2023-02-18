@@ -22,7 +22,6 @@ color_scheme.setup({
   inverse = true,
   contrast = "",
   palette_overrides = {},
-  overrides = {},
   dim_inactive = false,
   transparent_mode = true,
   overrides = {

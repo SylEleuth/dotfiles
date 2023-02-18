@@ -49,10 +49,10 @@ autocmd('BufWritePre', {
 	end,
 })
 
-autocmd('BufWritePre', {
-  pattern = '*.py',
-  command = ":call CocAction('runCommand', 'python.sortImports')"
-})
+-- autocmd('BufWritePre', {
+--   pattern = '*.py',
+--   command = ":call CocAction('runCommand', 'python.sortImports')"
+-- })
 
 
 -- Autotoggle relative numbers:
