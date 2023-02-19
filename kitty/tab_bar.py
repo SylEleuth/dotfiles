@@ -4,6 +4,7 @@ import json
 import subprocess
 from collections import defaultdict
 
+import dbus
 from kitty.boss import get_boss
 from kitty.fast_data_types import Screen, add_timer
 from kitty.tab_bar import (
@@ -17,6 +18,7 @@ from kitty.tab_bar import (
 )
 
 timer_id = None
+screen_width = None
 
 
 def draw_tab(
@@ -30,6 +32,8 @@ def draw_tab(
     extra_data: ExtraData,
 ) -> int:
     global timer_id
+    global screen_width
+    screen_width = screen.columns
 
     if timer_id is None:
         timer_id = add_timer(_redraw_tab_bar, 2.0, True)
@@ -77,34 +81,35 @@ def draw_right_status(draw_data: DrawData, screen: Screen) -> None:
 def create_cells() -> list[str]:
     now = datetime.datetime.now()
     return [
-        # currently_playing(),
+        currently_playing(),
         now.strftime("%a %d %b"),
         now.strftime("%H:%M"),
     ]
 
 
-STATE = defaultdict(lambda: "", {"Paused": "", "Playing": ""})
-
-
 def currently_playing():
-    # TODO: Work out how to add python libraries so that I can query dbus directly
-    # For now, implemented in a separate python project: dbus-player-status
-    status = " "
-    data = {}
-    try:
-        data = json.loads(subprocess.getoutput("dbus-player-status"))
-    except ValueError:
-        pass
-    if data:
-        if "state" in data:
-            status = f"{status} {STATE[data['state']]}"
-        if "title" in data:
-            status = f"{status} {data['title']}"
-        if "artist" in data:
-            status = f"{status} - {data['artist']}"
-    else:
-        status = ""
-    return status
+    bus = dbus.SessionBus()
+    for service in bus.list_names():
+        if service.startswith("org.mpris.MediaPlayer2."):
+            player = dbus.SessionBus().get_object(service, "/org/mpris/MediaPlayer2")
+            status = player.Get(
+                "org.mpris.MediaPlayer2.Player",
+                "PlaybackStatus",
+                dbus_interface="org.freedesktop.DBus.Properties",
+            )
+
+            metadata = player.Get(
+                "org.mpris.MediaPlayer2.Player",
+                "Metadata",
+                dbus_interface="org.freedesktop.DBus.Properties",
+            )
+
+            for key, value in metadata.items():
+                if key == "xesam:title" and status == "Playing":
+                    width = int(screen_width * 0.3)
+                    return f"  {value[:width]}"
+
+    return " "
 
 
 def _redraw_tab_bar(timer_id):
