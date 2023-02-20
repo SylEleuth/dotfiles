@@ -49,6 +49,7 @@ return packer.startup(function(use)
   -- Add you plugins here:
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
+  -- Lsp
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'honza/vim-snippets'
 
@@ -81,16 +82,16 @@ return packer.startup(function(use)
   use 'danielfalk/smart-open.nvim'
   use 'nvim-telescope/telescope-ui-select.nvim'
 
-  -- UrlView - viewing all the URLs in a buffer
+  -- Viewing all the URLs in a buffer
   use 'axieax/urlview.nvim'
 
-  -- Markid - highlight same-name identifiers with the same color
+  -- Highlight same-name identifiers with the same color
   use 'David-Kunz/markid'
 
   -- Diffview
   use 'sindrets/diffview.nvim'
 
-  -- Nvim-surround
+  -- Add/change/delete surrounding delimiter pairs
   use({
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -115,13 +116,13 @@ return packer.startup(function(use)
   -- Comment
   use 'numToStr/Comment.nvim'
 
-  -- HLSlens - better searching
+  -- Better searching
   use 'kevinhwang91/nvim-hlslens'
 
-  -- Indent-blankline
+  -- Indent guides
   use 'lukas-reineke/indent-blankline.nvim'
 
-  -- Bufdelete
+  -- Delete Neovim buffers without losing window layout
   use 'famiu/bufdelete.nvim'
 
   -- Window separator
@@ -134,7 +135,7 @@ return packer.startup(function(use)
   -- Statusline
   use 'nvim-lualine/lualine.nvim'
 
-  -- Buffers
+  -- Bufferline
   use 'noib3/nvim-cokeline'
 
   -- File explorer
@@ -146,18 +147,19 @@ return packer.startup(function(use)
   -- Dashboard (start screen)
   use 'goolord/alpha-nvim'
 
+  -- Center the currently focused buffer to the middle of the screen
   use {"shortcuts/no-neck-pain.nvim", tag = "*" }
 
-  -- git labels
+  -- Git labels
   use 'lewis6991/gitsigns.nvim'
 
   -- Vim kitty navigator for seamless navigation between kitty panes and vim splits
   use 'knubie/vim-kitty-navigator'
 
-  -- Boole.nvim - toggling booleans and more
+  -- Toggling booleans and more
   use 'nat-418/boole.nvim'
 
-  -- Move.nvim - move lines and blocks and auto-indent them
+  -- Move lines and blocks and auto-indent them
   use 'fedepujol/move.nvim'
 
   -- Dim inactive windows
