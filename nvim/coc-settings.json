@@ -7,6 +7,8 @@
     "coc.preferences.formatOnType": true,
     "coc.preferences.messageLevel": "error",
     "diagnostic.checkCurrentLine": true,
+    "diagnostic.showUnused": false,
+    "diagnostic.level": "information",
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
@@ -39,15 +41,13 @@
         "default": "\uf29c"
     },
     "signature.preferShownAbove": false,
-    "python.sortImports.path": "isort",
-    "pyright.organizeimports.provider": "isort",
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.stubPath": "typings",
     "python.analysis.typeshedPaths": [],
     "python.analysis.diagnosticSeverityOverrides": {},
-    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.typeCheckingMode": "off",
     "python.analysis.useLibraryCodeForTypes": true,
     "python.analysis.extraPaths": [
         "~/Code/",
@@ -66,6 +66,8 @@
     "python.linting.flake8Enabled": false,
     "python.linting.flake8Path": "flake8",
     "python.linting.pyflakesEnabled": true,
+    "python.linting.pyflakesPath": "pyflakes",
+    "python.linting.ruffEnabled": false,
     "python.linting.banditEnabled": false,
     "python.linting.mypyEnabled": true,
     "python.linting.mypyPath": "mypy",
@@ -79,6 +81,7 @@
     "pyright.inlayHints.variableTypes": true,
     "pyright.disableDiagnostics": false,
     "pyright.enable": true,
+    "ruff.enable": false,
     "explorer.sources": [
         {
             "name": "buffer",
@@ -133,4 +136,5 @@
             "port": 6008
         }
     },
+    "markdown-preview-enhanced.liveUpdate": true,
 }
