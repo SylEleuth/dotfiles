@@ -5,8 +5,8 @@
 -- Define autocommands with Lua APIs
 -- See: h:api-autocmd, h:augroup
 
-local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
-local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
+local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
+local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- General settings:
 --------------------
@@ -37,22 +37,17 @@ autocmd('Filetype', {
 })
 
 
--- Format on save with coc
---------------------------
+-- Format on save
+-----------------
 
 autocmd('BufWritePre', {
   group = augroup('black_on_save', { clear = true }),
-	callback = function (opts)
-		if vim.bo[opts.buf].filetype == 'python' then
-			vim.cmd ":call CocAction('format')"
-		end
-	end,
+  callback = function(opts)
+    if vim.bo[opts.buf].filetype == 'python' then
+      vim.cmd ":call CocAction('format')"
+    end
+  end,
 })
-
--- autocmd('BufWritePre', {
---   pattern = '*.py',
---   command = ":call CocAction('runCommand', 'python.sortImports')"
--- })
 
 
 -- Autotoggle relative numbers:
@@ -60,23 +55,23 @@ autocmd('BufWritePre', {
 
 local numbertogglegroup = augroup("numbertoggle", {})
 autocmd(
-    {"BufEnter", "FocusGained", "InsertLeave"},
-    {
-        pattern = '*',
-        callback = function()
-            vim.wo.relativenumber = true
-        end,
-        group = numbertogglegroup
-    })
+  { "BufEnter", "FocusGained", "InsertLeave" },
+  {
+    pattern = '*',
+    callback = function()
+      vim.wo.relativenumber = true
+    end,
+    group = numbertogglegroup
+  })
 autocmd(
-    {"BufLeave","FocusLost","InsertEnter"},
-    {
-        pattern = '*',
-        callback = function()
-            vim.wo.relativenumber = false
-        end,
-        group = numbertogglegroup
-    })
+  { "BufLeave", "FocusLost", "InsertEnter" },
+  {
+    pattern = '*',
+    callback = function()
+      vim.wo.relativenumber = false
+    end,
+    group = numbertogglegroup
+  })
 
 
 -- Automatically jump to the last place you’ve visited in a file before exiting
@@ -91,4 +86,3 @@ autocmd('BufReadPost', {
     end
   end,
 })
-
