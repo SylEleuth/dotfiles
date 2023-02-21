@@ -22,12 +22,12 @@ highlight User20 ctermbg=9       ctermfg=0      cterm=none
 " highlight User1  ctermbg=4       ctermfg=0      cterm=none
 " highlight User2  ctermbg=237     ctermfg=4      cterm=none
 " highlight User3  ctermbg=237     ctermfg=10     cterm=none
-" highlight User4  ctermbg=0       ctermfg=237    cterm=bold
-" highlight User5  ctermbg=7       ctermfg=0      cterm=bold
+" highlight User4  ctermbg=0       ctermfg=237    cterm=none
+" highlight User5  ctermbg=7       ctermfg=0      cterm=none
 " highlight User6  ctermbg=237     ctermfg=7      cterm=none
-" highlight User7  ctermbg=237     ctermfg=15     cterm=bold
-" highlight User8  ctermbg=237     ctermfg=237    cterm=bold
-" highlight User9  ctermbg=0       ctermfg=7      cterm=bold
+" highlight User7  ctermbg=237     ctermfg=15     cterm=none
+" highlight User8  ctermbg=237     ctermfg=237    cterm=none
+" highlight User9  ctermbg=0       ctermfg=7      cterm=none
 
 " LEFT SEGMENT "
 """"""""""""""""
@@ -45,9 +45,9 @@ let $SEPARATOR="%="                      " middle separator
 
 " RIGHT SEGMENT "
 """""""""""""""""
-" let $SIZE="%A (%o)"                        " file attributes
+" let $SIZE="%A (%o)"                      " file attributes
 " let $ATTR=" %4*%2* %E "                 " file size
-let $SPACE="%4*%6* %E  %a "                 " free space
+let $SPACE="%4*%6* %E %8* %6*%a "      " free space
 let $DATE="%6*%5* %d "                  " date
 " let $DATE="%6*%5* %d "                  " date
 
