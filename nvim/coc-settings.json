@@ -57,31 +57,22 @@
     "coc.preferences.willSaveHandlerTimeout": 1000,
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "black",
-    "python.formatting.blackArgs": [],
-    "python.formatting.autopep8Path": "autopep8",
-    "python.formatting.autopep8Args": [],
-    "python.formatting.yapfPath": "yapf",
-    "python.formatting.yapfArgs": [],
+    "python.formatting.blackArgs": [
+        "--preview"
+    ],
     "python.linting.enabled": true,
-    "python.linting.flake8Enabled": false,
-    "python.linting.flake8Path": "flake8",
     "python.linting.pyflakesEnabled": true,
     "python.linting.pyflakesPath": "pyflakes",
-    "python.linting.ruffEnabled": false,
-    "python.linting.banditEnabled": false,
     "python.linting.mypyEnabled": true,
     "python.linting.mypyPath": "mypy",
-    "python.linting.pytypeEnabled": false,
-    "python.linting.prospectorEnabled": false,
-    "python.linting.pydocstyleEnabled": false,
-    "python.linting.pylamaEnabled": false,
-    "python.linting.pylintEnabled": false,
+    "python.linting.mypyArgs": [
+        "--check-untyped-defs"
+    ],
     "pyright.disableCompletion": false,
     "pyright.inlayHints.functionReturnTypes": true,
     "pyright.inlayHints.variableTypes": true,
     "pyright.disableDiagnostics": false,
     "pyright.enable": true,
-    "ruff.enable": false,
     "explorer.sources": [
         {
             "name": "buffer",
