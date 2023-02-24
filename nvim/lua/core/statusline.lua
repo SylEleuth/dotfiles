@@ -20,7 +20,7 @@ local function stats()
   return line
 end
 
-local custom_gruvbox = require'lualine.themes.gruvbox'
+local custom_gruvbox = require 'lualine.themes.gruvbox'
 
 custom_gruvbox.normal.c.bg = '#282828'
 custom_gruvbox.normal.b.bg = '#3c3836'
@@ -29,8 +29,8 @@ lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'gruvbox',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -45,35 +45,35 @@ lualine.setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch',
-      {'diff',
-        symbols = {added = ' ', modified = ' ', removed = ' '},
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch',
+      { 'diff',
+        symbols = { added = ' ', modified = ' ', removed = ' ' },
       },
-      {'diagnostics',
+      { 'diagnostics',
         sources = { 'nvim_diagnostic', 'coc' },
         sections = { 'error', 'warn', 'info', 'hint' },
         -- colored = false,
       },
     },
     lualine_c = {
-      {'filename',
+      { 'filename',
         path = 1,
         shorting_target = 20,
       }
     },
     lualine_x = { 'aerial' },
     lualine_y = {
-      {'filetype',
+      { 'filetype',
         colored = false,
-      }},
-    lualine_z = {stats}
+      } },
+    lualine_z = { stats }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {},
-    lualine_x = {'location'},
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },
@@ -97,15 +97,21 @@ local get_hex = require("cokeline/utils").get_hex
 
 local red = vim.g.terminal_color_1
 local yellow = vim.g.terminal_color_11
-local space = {text = " "}
+local space = { text = " " }
 local dark = vim.g.terminal_color_0
 local text = get_hex("Comment", "fg")
-local grey = "#3c3836"
+-- local grey = "#3c3836"
 local light = get_hex("Comment", "fg")
 local high = vim.g.terminal_color_7
 local mod = vim.g.terminal_color_12
 
 vim.cmd [[highlight TabLineFill guibg=#282828]] -- background of the top bar
+
+if theme == "gruvbox-dark" then
+  local grey = "#cc241d"
+else
+  local grey = "#fe8019"
+end
 
 cokeline.setup(
   {
@@ -204,7 +210,7 @@ cokeline.setup(
   }
 )
 
-vim.keymap.set('n', '<S-Left>',  '<Plug>(cokeline-focus-prev)', {})
+vim.keymap.set('n', '<S-Left>', '<Plug>(cokeline-focus-prev)', {})
 vim.keymap.set('n', '<S-Right>', '<Plug>(cokeline-focus-next)', {})
-vim.keymap.set('n', '<C-,>',    '<Plug>(cokeline-switch-prev)', {})
-vim.keymap.set('n', '<C-.>',    '<Plug>(cokeline-switch-next)', {})
+vim.keymap.set('n', '<C-,>', '<Plug>(cokeline-switch-prev)', {})
+vim.keymap.set('n', '<C-.>', '<Plug>(cokeline-switch-next)', {})
