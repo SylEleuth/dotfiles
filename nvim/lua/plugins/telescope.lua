@@ -172,6 +172,13 @@ telescope.setup {
       diff_context_lines = vim.o.scrolloff,
       entry_format = "state #$ID, $STAT, $TIME",
       layout_strategy = "flex",
+      mappings = {
+        i = {
+          ["<cr>"] = require("telescope-undo.actions").yank_additions,
+          ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+          ["<C-cr>"] = require("telescope-undo.actions").restore,
+        },
+      },
     },
     coc = {
       prefer_locations = true,
