@@ -1,5 +1,6 @@
 # pyright: reportMissingImports=false
 import datetime
+
 import dbus
 
 from kitty.boss import get_boss
