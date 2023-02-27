@@ -100,18 +100,12 @@ local yellow = vim.g.terminal_color_11
 local space = { text = " " }
 local dark = vim.g.terminal_color_0
 local text = get_hex("Comment", "fg")
--- local grey = "#3c3836"
+local grey = "#3c3836"
 local light = get_hex("Comment", "fg")
 local high = vim.g.terminal_color_7
 local mod = vim.g.terminal_color_12
 
 vim.cmd [[highlight TabLineFill guibg=#282828]] -- background of the top bar
-
-if theme == "gruvbox-dark" then
-  local grey = "#cc241d"
-else
-  local grey = "#fe8019"
-end
 
 cokeline.setup(
   {
