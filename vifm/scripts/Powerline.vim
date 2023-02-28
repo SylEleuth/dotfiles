@@ -5,30 +5,6 @@ let L_T=""
 let R_B=""
 let R_T=""
 
-" USER COLORS "
-"""""""""""""""
-highlight User1  ctermbg=237     ctermfg=5      cterm=italic
-highlight User2  ctermbg=237     ctermfg=4      cterm=none
-highlight User3  ctermbg=237     ctermfg=10     cterm=none
-highlight User4  ctermbg=0       ctermfg=237    cterm=none
-highlight User5  ctermbg=7       ctermfg=0      cterm=none
-highlight User6  ctermbg=237     ctermfg=7      cterm=none
-highlight User7  ctermbg=237     ctermfg=15     cterm=none
-highlight User8  ctermbg=237     ctermfg=0      cterm=none
-highlight User9  ctermbg=0       ctermfg=7      cterm=none
-highlight User20 ctermbg=9       ctermfg=0      cterm=none
-
-" more colors for statusline only
-" highlight User1  ctermbg=4       ctermfg=0      cterm=none
-" highlight User2  ctermbg=237     ctermfg=4      cterm=none
-" highlight User3  ctermbg=237     ctermfg=10     cterm=none
-" highlight User4  ctermbg=0       ctermfg=237    cterm=none
-" highlight User5  ctermbg=7       ctermfg=0      cterm=none
-" highlight User6  ctermbg=237     ctermfg=7      cterm=none
-" highlight User7  ctermbg=237     ctermfg=15     cterm=none
-" highlight User8  ctermbg=237     ctermfg=237    cterm=none
-" highlight User9  ctermbg=0       ctermfg=7      cterm=none
-
 " LEFT SEGMENT "
 """"""""""""""""
 let $CUR_DIR="%5* %t %6*"               " current dir
