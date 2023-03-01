@@ -12,6 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 source ~/.zplug/init.zsh
 
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 # zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions"
@@ -24,6 +25,7 @@ zplug "clvv/fasd"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "ellie/atuin"                                       # shell history
 zplug 'wfxr/forgit'
+zplug 'xPMo/zsh-ls-colors'
 
 if ! zplug check; then
     zplug install
@@ -42,6 +44,8 @@ ENHANCD_DIR=$HOME/.zplug/repos/b4b4r07/enhancd/
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+ZLE_RPROMPT_INDENT=0
+
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 HISTFILE=$HOME'/.zsh_history'
@@ -56,7 +60,6 @@ source $ZSH/oh-my-zsh.sh
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
 # NPM packages
-
 NPM_PACKAGES="${HOME}/.npm/packages"
 
 export PATH="$PATH:$NPM_PACKAGES/bin"
@@ -66,8 +69,10 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # PIP packages
-
 export PATH="$PATH:$HOME/.local/bin"
+
+# Rust Cargo binaries
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # export MANPAGER="vim -M +MANPAGER -"
 
@@ -82,12 +87,31 @@ EDITOR="nvim"
 
 ZVM_VI_HIGHLIGHT_BACKGROUND=#504945
 
-# Atuin settings
+# exa settings
+export EXA_ICON_SPACING=2
+source $HOME/.config/zsh/lscolors.sh
+# export EXA_COLORS="*.py=38;5;12:*.pdf=38;5;13:*.mp3=38;5;6:*.html=38;5;2:*.bak=38;5;7"
+# export LS_COLORS='fi=00:mi=00:mh=00:ln=01;36:or=01;31:di=01;34:ow=04;01;34:st=34:tw=04;34:'
+# LS_COLORS+='pi=01;33:so=01;33:do=01;33:bd=01;33:cd=01;33:su=01;35:sg=01;35:ca=01;35:ex=01;32'
+# export LSCOLORS='ExGxDxDxCxDxDxFxFxexEx'
 
+# [ -z $LS_COLORS ] && eval `dircolors -b ~/.gruvbox.dir_colors`
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+function nvim {
+  BACKGROUND=$(xtermcontrol --get-bg)
+
+  # if [[ "$BACKGROUND" == "rgb:ebeb/dbdb/b2b2" ]]; then
+  if [[ "$BACKGROUND" == "rgb:2828/2828/2828" ]]; then
+    env nvim --cmd "let theme = 'gruvbox-dark'" $@
+  else
+    env nvim --cmd "let theme = 'gruvbox-light'" $@
+  fi
+}
+
+# Atuin settings
 export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
-
-bindkey '^r' _atuin_search_widget
 
 # depends on terminal mode
 bindkey '^[[A' _atuin_search_widget
@@ -96,19 +120,24 @@ bindkey '^[OA' _atuin_search_widget
 # fasd settings
 eval "$(fasd --init auto)"
 
+# BAT
+export BAT_THEME="gruvbox-dark"
+
+# Aliases
 alias vi=nvim
 # alias vim=nvim
-alias v="nvim -u $HOME/.config/nvim/init1.vim"
-alias vv="nvim -u $HOME/.config/nvim/init.lua"
+alias vv="nvim --listen /tmp/nvimsocket"
+alias v="nvim"
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ~='cd ~'
-alias l="exa --icons -l"
-alias la="exa --icons -la"
-alias ll="exa --icons -ll"
+alias l="exa --icons -lh --git --sort=type --time-style=long-iso"
+alias ll="exa --icons -lah --git --sort=type --time-style=long-iso"
+alias ls="exa --icons --git"
 alias rm="rm -i"
 alias dl="cd ~/Downloads"
+alias co="cd ~/Code"
 alias rip="yt-dlp"
 alias ripau="yt-dlp --progress --verbose --extract-audio --audio-format mp3"
 alias doom="~/.emacs.d/bin/doom"
@@ -117,11 +146,12 @@ alias gs='git status --column'
 alias gsm="git status --short | grep '^\s.'"
 alias gsu="git status --short | grep '^??'"
 alias gss="git status --short | grep '^[MARCD]'"
+alias gcm="git commit -m"
 alias fxzip='zip -r ~/Dropbox/firefox.zip ~/.mozilla'
-alias pipup='pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
-alias upd='omz update && zplug update && doom upgrade'
+alias pipup='pip freeze --user | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install --user -U'
+alias upd='zplug update && omz update'
 alias matrix="cmatrix -b -u 8 -C cyan"
-alias colors='~/.scripts/colors/showcolors'
+alias colors='~/Git/dotfiles/scripts/colors/showcolors'
 alias st="speedtest --no-upload --single"
 # alias v="~/.config/vifm/scripts/vifmrun ."
 
