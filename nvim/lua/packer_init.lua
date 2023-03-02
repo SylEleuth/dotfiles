@@ -50,7 +50,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
   -- Lsp
-  use {'neoclide/coc.nvim', branch = 'release'}
+  use { 'neoclide/coc.nvim', branch = 'release' }
   use 'honza/vim-snippets'
 
   -- Icons
@@ -102,8 +102,8 @@ return packer.startup(function(use)
   })
 
   -- Yank and clipboard
-  use ({
-   'gbprod/yanky.nvim',
+  use({
+    'gbprod/yanky.nvim',
     requires = { 'kkharji/sqlite.lua' }
   })
 
@@ -148,7 +148,7 @@ return packer.startup(function(use)
   use 'goolord/alpha-nvim'
 
   -- Center the currently focused buffer to the middle of the screen
-  use {"shortcuts/no-neck-pain.nvim", tag = "*" }
+  use { "shortcuts/no-neck-pain.nvim", tag = "*" }
 
   -- Git labels
   use 'lewis6991/gitsigns.nvim'
@@ -167,6 +167,9 @@ return packer.startup(function(use)
 
   -- Highlight only the screen line of the cursor in the currently active window
   use 'tummetott/reticle.nvim'
+
+  -- Motion plugin for moving around in the visible area
+  use 'ggandor/leap.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
