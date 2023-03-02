@@ -38,13 +38,17 @@ vim.cmd("colorscheme gruvbox")
 
 
 -- Markid config colors
-vim.api.nvim_set_hl(0, 'markid1',  { fg = '#d79921'})
-vim.api.nvim_set_hl(0, 'markid2',  { fg = '#98971a'})
-vim.api.nvim_set_hl(0, 'markid3',  { fg = '#458588'})
-vim.api.nvim_set_hl(0, 'markid4',  { fg = '#83a598'})
-vim.api.nvim_set_hl(0, 'markid5',  { fg = '#b8bb26'})
-vim.api.nvim_set_hl(0, 'markid6',  { fg = '#fabd2f'})
-vim.api.nvim_set_hl(0, 'markid7',  { fg = '#d3869b'})
-vim.api.nvim_set_hl(0, 'markid8',  { fg = '#427b58'})
-vim.api.nvim_set_hl(0, 'markid9',  { fg = '#689d6a'})
-vim.api.nvim_set_hl(0, 'markid10', { fg = '#8ec07c'})
+vim.api.nvim_set_hl(0, 'markid1', { fg = '#d79921' })
+vim.api.nvim_set_hl(0, 'markid2', { fg = '#98971a' })
+vim.api.nvim_set_hl(0, 'markid3', { fg = '#458588' })
+vim.api.nvim_set_hl(0, 'markid4', { fg = '#83a598' })
+vim.api.nvim_set_hl(0, 'markid5', { fg = '#b8bb26' })
+vim.api.nvim_set_hl(0, 'markid6', { fg = '#fabd2f' })
+vim.api.nvim_set_hl(0, 'markid7', { fg = '#d3869b' })
+vim.api.nvim_set_hl(0, 'markid8', { fg = '#427b58' })
+vim.api.nvim_set_hl(0, 'markid9', { fg = '#689d6a' })
+vim.api.nvim_set_hl(0, 'markid10', { fg = '#8ec07c' })
+
+vim.cmd [[highlight LeapLabelPrimary guifg=#282828 guibg=#fe8019]]
+vim.cmd [[highlight LeapLabelSecondary guifg=#282828 guibg=#d65d0e]]
+vim.cmd [[highlight LeapLabelSelected guifg=#282828 guibg=#d3869b]]
