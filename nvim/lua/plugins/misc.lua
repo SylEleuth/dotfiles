@@ -10,6 +10,7 @@ local status_ok, no_neck_pain = pcall(require, "no-neck-pain")
 local status_ok, boole = pcall(require, "boole")
 local status_ok, tint = pcall(require, "tint")
 local status_ok, reticle = pcall(require, "reticle")
+local status_ok, leap = pcall(require, "leap")
 if not status_ok then
   return
 end
@@ -64,3 +65,5 @@ tint.setup({
 })
 
 reticle.setup {}
+
+leap.add_default_mappings()
