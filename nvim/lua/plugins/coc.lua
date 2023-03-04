@@ -32,9 +32,17 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
 -- Use <c-j> to trigger snippets
--- keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
+keyset("i", "<c-s>", "<Plug>(coc-snippets-expand-jump)")
 -- Use <c-space> to trigger completion
 keyset("i", "<c-space>", "coc#refresh()", { silent = true, expr = true })
+-- Use <C-l> for trigger snippet expand.
+keyset("i", "<c-s>", "<Plug>(coc-snippets-expand)", { silent = true, expr = true })
+-- Use <C-j> for select text for visual placeholder of snippet.
+keyset("i", "<c-j>", "<Plug>(coc-snippets-select)", { silent = true, expr = true })
+-- Use <C-j> for jump to next placeholder, it's default of coc.nvim
+keyset("i", "<c-j>", "<Plug>coc#refresh()", { silent = true, expr = true })
+-- Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+keyset("i", "<c-j>", "<Plug>coc#refresh()", { silent = true, expr = true })
 
 -- Use `[g` and `]g` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
@@ -45,7 +53,7 @@ keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
 keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
 keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
 keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
-keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
+-- keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
 
 -- Use K to show documentation in preview window
 function _G.show_docs()
@@ -142,8 +150,8 @@ local opts = { silent = true, nowait = true, expr = true }
 
 -- Use CTRL-S for selections ranges
 -- Requires 'textDocument/selectionRange' support of language server
-keyset("n", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
-keyset("x", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
+-- keyset("n", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
+-- keyset("x", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
 
 -- Add `:Format` command to format current buffer
 vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
