@@ -51,7 +51,6 @@ return packer.startup(function(use)
 
   -- Lsp
   use { 'neoclide/coc.nvim', branch = 'release' }
-  use 'honza/vim-snippets'
 
   -- Icons
   use 'nvim-tree/nvim-web-devicons'
