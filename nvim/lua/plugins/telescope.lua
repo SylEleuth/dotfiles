@@ -7,6 +7,7 @@ if not status_ok then
   return
 end
 
+local keyset = vim.keymap.set
 local actions = require "telescope.actions"
 local action_state = require("telescope.actions.state")
 
@@ -224,24 +225,24 @@ require('telescope').load_extension('ui-select')
 local builtin = require('telescope.builtin')
 local extension = require "telescope".extensions
 
-vim.keymap.set('n', '<leader>gg', builtin.grep_string, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>g', builtin.live_grep, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>ee', builtin.find_files, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>bb', builtin.buffers, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>b', builtin.current_buffer_fuzzy_find, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>s', builtin.spell_suggest, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>h', builtin.builtin, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>t', builtin.colorscheme, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>fh', builtin.commands, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>hc', builtin.command_history, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>hs', builtin.search_history, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>v', builtin.treesitter, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>e', extension.file_browser.file_browser, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>u', extension.undo.undo, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>c', extension.coc.coc, { noremap = true, silent = true })
--- vim.keymap.set('n', '<leader>r',  extension.aerial.aerial, {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>\\', extension.recent_files.pick, { noremap = true, silent = true })
-vim.keymap.set('n', "<leader>'", extension.smart_open.smart_open, { noremap = true, silent = true })
+keyset('n', '<leader>gg', builtin.grep_string, { noremap = true, silent = true })
+keyset('n', '<leader>gr', builtin.live_grep, { noremap = true, silent = true })
+keyset('n', '<leader>ee', builtin.find_files, { noremap = true, silent = true })
+keyset('n', '<leader>bb', builtin.buffers, { noremap = true, silent = true })
+keyset('n', '<leader>b', builtin.current_buffer_fuzzy_find, { noremap = true, silent = true })
+keyset('n', '<leader>s', builtin.spell_suggest, { noremap = true, silent = true })
+keyset('n', '<leader>hh', builtin.builtin, { noremap = true, silent = true })
+keyset('n', '<leader>t', builtin.colorscheme, { noremap = true, silent = true })
+keyset('n', '<leader>fh', builtin.commands, { noremap = true, silent = true })
+keyset('n', '<leader>hc', builtin.command_history, { noremap = true, silent = true })
+keyset('n', '<leader>hs', builtin.search_history, { noremap = true, silent = true })
+keyset('n', '<leader>v', builtin.treesitter, { noremap = true, silent = true })
+keyset('n', '<leader>e', extension.file_browser.file_browser, { noremap = true, silent = true })
+keyset('n', '<leader>u', extension.undo.undo, { noremap = true, silent = true })
+keyset('n', '<leader>c', extension.coc.coc, { noremap = true, silent = true })
+-- keyset('n', '<leader>r',  extension.aerial.aerial, {noremap = true, silent = true})
+keyset('n', '<leader>\\', extension.recent_files.pick, { noremap = true, silent = true })
+keyset('n', "<leader>'", extension.smart_open.smart_open, { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>/", "<Cmd>UrlView<CR>", { desc = "view buffer URLs" })
-vim.keymap.set("n", "<leader>//", "<Cmd>UrlView packer<CR>", { desc = "view plugin URLs" })
+keyset("n", "<leader>/", "<Cmd>UrlView<CR>", { desc = "view buffer URLs" })
+keyset("n", "<leader>//", "<Cmd>UrlView packer<CR>", { desc = "view plugin URLs" })
