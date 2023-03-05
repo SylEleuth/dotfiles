@@ -30,9 +30,8 @@ hlslens.setup()
 
 no_neck_pain.setup({
   width = 100,
-  toggleMapping = "<F5>",
-  buffers = {
-    backgroundColor = "#1d2021",
+  mappings = {
+    toggle = "<F5>"
   },
   integrations = {
     NvimTree = {
