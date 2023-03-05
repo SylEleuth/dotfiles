@@ -13,6 +13,7 @@ notify.setup({
   background_colour = "#282828",
   stages = "slide",
   minimum_width = 50,
+  timeout = 1000,
 })
 
 
