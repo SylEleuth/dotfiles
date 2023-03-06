@@ -109,8 +109,14 @@ return packer.startup(function(use)
   -- Smoooth scrolling
   use 'karb94/neoscroll.nvim'
 
-  -- Wilder
-  use 'gelguy/wilder.nvim'
+  -- A more adventurous wildmenu
+  -- use 'gelguy/wilder.nvim'
+
+  -- Replacement for the UI for messages, cmdline and the popupmenu
+  use({
+    "folke/noice.nvim",
+    "MunifTanjim/nui.nvim",
+  })
 
   -- Comment
   use 'numToStr/Comment.nvim'
@@ -129,7 +135,7 @@ return packer.startup(function(use)
 
   -- Color schemes
   use "ellisonleao/gruvbox.nvim"
-  use 'sainnhe/gruvbox-material'
+  -- use 'sainnhe/gruvbox-material'
 
   -- Statusline
   use 'nvim-lualine/lualine.nvim'
