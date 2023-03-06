@@ -62,7 +62,13 @@ lualine.setup {
         shorting_target = 20,
       }
     },
-    lualine_x = { 'aerial' },
+    lualine_x = { { 'aerial' },
+      {
+        require("noice").api.statusline.mode.get,
+        cond = require("noice").api.statusline.mode.has,
+        color = { fg = "#fe8019" },
+      },
+    },
     lualine_y = {
       { 'filetype',
         colored = false,
