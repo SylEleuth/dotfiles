@@ -221,6 +221,7 @@ require("telescope").load_extension("zf-native")
 require('telescope').load_extension('recent_files')
 require('telescope').load_extension('smart_open')
 require('telescope').load_extension('ui-select')
+require('telescope').load_extension('notify')
 
 local builtin = require('telescope.builtin')
 local extension = require "telescope".extensions
@@ -240,7 +241,8 @@ keyset('n', '<leader>v', builtin.treesitter, { noremap = true, silent = true })
 keyset('n', '<leader>e', extension.file_browser.file_browser, { noremap = true, silent = true })
 keyset('n', '<leader>u', extension.undo.undo, { noremap = true, silent = true })
 keyset('n', '<leader>c', extension.coc.coc, { noremap = true, silent = true })
--- keyset('n', '<leader>r',  extension.aerial.aerial, {noremap = true, silent = true})
+keyset('n', '<leader>a', extension.aerial.aerial, { noremap = true, silent = true })
+keyset('n', '<leader>n', extension.notify.notify, { noremap = true, silent = true })
 keyset('n', '<leader>\\', extension.recent_files.pick, { noremap = true, silent = true })
 keyset('n', "<leader>'", extension.smart_open.smart_open, { noremap = true, silent = true })
 
