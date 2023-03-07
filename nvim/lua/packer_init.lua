@@ -66,7 +66,7 @@ return packer.startup(function(use)
   }
   use 'nvim-treesitter/nvim-treesitter-context'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'mrjones2014/nvim-ts-rainbow'
+  use 'HiPhish/nvim-ts-rainbow2'
 
   -- Telescope
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.1' }
