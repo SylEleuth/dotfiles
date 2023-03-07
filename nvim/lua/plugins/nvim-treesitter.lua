@@ -6,7 +6,7 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter-refactor
 -- https://github.com/nvim-treesitter/nvim-treesitter-context
 -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
--- https://github.com/p00f/nvim-ts-rainbow
+-- https://github.com/HiPhish/nvim-ts-rainbow2
 
 local status_ok, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
 local status_ok, nvim_treesitter_context = pcall(require, 'treesitter-context')
@@ -36,10 +36,18 @@ nvim_treesitter.setup {
   },
   rainbow = {
     enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
+    query = {
+      'rainbow-parens'
+    },
+    hlgroups = {
+      'TSRainbowOrange',
+      'TSRainbowCyan',
+      'TSRainbowRed',
+      'TSRainbowYellow',
+      'TSRainbowBlue',
+      'TSRainbowGreen',
+      'TSRainbowViolet',
+    },
   },
   textobjects = {
     select = {
@@ -91,79 +99,86 @@ nvim_treesitter.setup {
   },
 }
 
-nvim_treesitter_context.setup{
-    enable = true,
-    max_lines = 0,
-    trim_scope = 'outer',
-    min_window_height = 0,
-    patterns = {
-        default = {
-            'class',
-            'function',
-            'method',
-            'for',
-            'while',
-            'if',
-            'switch',
-            'case',
-            'interface',
-            'struct',
-            'enum',
-        },
-        tex = {
-            'chapter',
-            'section',
-            'subsection',
-            'subsubsection',
-        },
-        haskell = {
-            'adt'
-        },
-        rust = {
-            'impl_item',
-
-        },
-        terraform = {
-            'block',
-            'object_elem',
-            'attribute',
-        },
-        scala = {
-            'object_definition',
-        },
-        vhdl = {
-            'process_statement',
-            'architecture_body',
-            'entity_declaration',
-        },
-        markdown = {
-            'section',
-        },
-        elixir = {
-            'anonymous_function',
-            'arguments',
-            'block',
-            'do_block',
-            'list',
-            'map',
-            'tuple',
-            'quoted_content',
-        },
-        json = {
-            'pair',
-        },
-        typescript = {
-            'export_statement',
-        },
-        yaml = {
-            'block_mapping_pair',
-        },
+nvim_treesitter_context.setup {
+  enable = true,
+  max_lines = 0,
+  trim_scope = 'outer',
+  min_window_height = 0,
+  patterns = {
+    default = {
+      'class',
+      'function',
+      'method',
+      'for',
+      'while',
+      'if',
+      'switch',
+      'case',
+      'interface',
+      'struct',
+      'enum',
     },
+    tex = {
+      'chapter',
+      'section',
+      'subsection',
+      'subsubsection',
+    },
+    haskell = {
+      'adt'
+    },
+    rust = {
+      'impl_item',
 
-    zindex = 20,
-    mode = 'cursor',
-    separator = nil,
+    },
+    terraform = {
+      'block',
+      'object_elem',
+      'attribute',
+    },
+    scala = {
+      'object_definition',
+    },
+    vhdl = {
+      'process_statement',
+      'architecture_body',
+      'entity_declaration',
+    },
+    markdown = {
+      'section',
+    },
+    elixir = {
+      'anonymous_function',
+      'arguments',
+      'block',
+      'do_block',
+      'list',
+      'map',
+      'tuple',
+      'quoted_content',
+    },
+    json = {
+      'pair',
+    },
+    typescript = {
+      'export_statement',
+    },
+    yaml = {
+      'block_mapping_pair',
+    },
+  },
+
+  zindex = 20,
+  mode = 'cursor',
+  separator = nil,
 }
 
 vim.cmd [[highlight TreesitterContext       guibg=#32302f]]
 vim.cmd [[highlight TreesitterContextBottom guibg=#3c3836]]
+vim.cmd [[highlight TSRainbowRed            guifg=#cc241d]]
+vim.cmd [[highlight TSRainbowYellow         guifg=#d79921]]
+vim.cmd [[highlight TSRainbowBlue           guifg=#458588]]
+vim.cmd [[highlight TSRainbowOrange         guifg=#fe8019]]
+vim.cmd [[highlight TSRainbowGreen          guifg=#98971a]]
+vim.cmd [[highlight TSRainbowViolet         guifg=#b16286]]
+vim.cmd [[highlight TSRainbowCyan           guifg=#689d6a]]
