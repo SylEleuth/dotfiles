@@ -41,6 +41,7 @@
         "default": "\uf29c"
     },
     "signature.preferShownAbove": false,
+    "Lua.diagnostics.enable": false,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.diagnosticMode": "openFilesOnly",
