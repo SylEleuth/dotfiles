@@ -16,7 +16,7 @@ local function stats()
   local row = vim.api.nvim_win_get_cursor(0)[1]
   local col = vim.api.nvim_win_get_cursor(0)[2]
   local max = vim.api.nvim_buf_line_count(vim.fn.winbufnr(vim.g.statusline_winid))
-  local line = "%p" .. "%% :" .. row .. "/" .. max .. "☰ ℅:" .. col
+  local line = "%p" .. "%% :" .. row .. "/" .. max .. "☰ ℅:" .. col + 1
   return line
 end
 
