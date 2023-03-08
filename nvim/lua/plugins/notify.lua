@@ -12,8 +12,10 @@ end
 notify.setup({
   background_colour = "#282828",
   stages = "slide",
+  render = "compact",
   minimum_width = 50,
   timeout = 1000,
+  top_down = false,
 })
 
 
