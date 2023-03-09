@@ -123,6 +123,33 @@ eval "$(fasd --init auto)"
 # BAT
 export BAT_THEME="gruvbox-dark"
 
+# Pacman TUI function
+# credits to https://github.com/IBArbitrary/dotfiles/blob/master/.config/fish/config.fish#L72-L78
+#Search repos with 'fzf'
+function pacs {
+    pacman -Slq | fzf --prompt 'pacman> ' \
+        --header 'Install packages.
+        <c-p>: pacman, <c-a>: aur' \
+        --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
+        --bind 'ctrl-a:change-prompt(aur> )+reload(yay -Slq)' \
+        --multi --black --height=100% --preview 'yay -Si {1}' \
+        --preview-window right --layout=reverse | xargs -ro yay -S
+    pacman -Qqe >~/.config/pac-kages.txt
+}
+
+#Search and remove locally installed packages with 'fzf'
+function pacr {
+    pacman -Qq | fzf --prompt 'all> ' \
+        --header='Remove packages.
+        <c-a>: all, <c-e>: explicit, <c-y>: aur-explicit' \
+        --bind 'ctrl-a:change-prompt(all> )+reload(pacman -Qq)' \
+        --bind 'ctrl-e:change-prompt(exp> )+reload(pacman -Qe)' \
+        --bind 'ctrl-y:change-prompt(aur> )+reload(pacman -Qm)' \
+        --multi --black --height=100% --preview 'yay -Si {1}' \
+        --preview-window right --layout=reverse | xargs -ro sudo pacman -Rsn
+    pacman -Qqe >~/.config/pac-kages.txt
+}
+
 # Aliases
 alias vi=nvim
 # alias vim=nvim
