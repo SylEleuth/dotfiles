@@ -174,7 +174,7 @@ nvim_treesitter_context.setup {
 }
 
 vim.cmd [[highlight TreesitterContext       guibg=#32302f]]
-vim.cmd [[highlight TreesitterContextBottom guibg=#3c3836]]
+vim.cmd [[highlight TreesitterContextBottom guibg=#1d2021]]
 vim.cmd [[highlight TSRainbowRed            guifg=#cc241d]]
 vim.cmd [[highlight TSRainbowYellow         guifg=#d79921]]
 vim.cmd [[highlight TSRainbowBlue           guifg=#458588]]
