@@ -28,7 +28,7 @@ aerial.setup ({
     -- options will open the window in the other direction *if* there is a
     -- different buffer in the way of the preferred direction
     -- Enum: prefer_right, prefer_left, right, left, float
-    default_direction = "right",
+    default_direction = "prefer_right",
 
     -- Determines where the aerial window will be opened
     --   edge   - open aerial at the far right/left of the editor
@@ -129,7 +129,7 @@ aerial.setup ({
   highlight_closest = true,
 
   -- Highlight the symbol in the source buffer when cursor is in the aerial win
-  highlight_on_hover = false,
+  highlight_on_hover = true,
 
   -- When jumping to a symbol, highlight the line for this many ms.
   -- Set to false to disable
