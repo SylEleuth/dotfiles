@@ -1,7 +1,7 @@
 -----------------------------------------------------------
--- File manager configuration file
+-- Nvim-tree configuration file
 -----------------------------------------------------------
--- url: https://github.com/nvim-tree//nvim-tree.lua
+-- url: https://github.com/nvim-tree/nvim-tree.lua
 -- https://github.com/nvim-tree/nvim-tree.lua#keybindings
 
 local status_ok, nvim_tree = pcall(require, 'nvim-tree')
