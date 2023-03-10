@@ -26,19 +26,11 @@ map('n', '<Tab>', 'n')
 map('n', '<S-Tab>', 'N')
 map('n', '<Del>', ':nohlsearch<cr>')
 
--- map('n', '<S-Right>', '<Esc>:bnext<cr>')
--- map('n', '<S-Left>',  '<Esc>:bprevious<cr>')
-
 map('n', '<F1>', ':NvimTreeFindFileToggle<cr>')
 map('n', '<F2>', ':CocCommand explorer --root-strategies reveal<cr>')
 map('n', '<F3>', ':Vista!!<CR>')
-
--- map('n', '<C-j>', ':m .+1<cr>==')
--- map('n', '<C-k>', ':m .-2<cr>==')
--- map('i', '<C-j>', '<Esc>:m .+1<cr>==gi')
--- map('i', '<C-k>', '<Esc>:m .-2<cr>==gi')
--- map('v', '<C-j>', ":m  '>+1<cr>gv=gv")
--- map('v', '<C-k>', ":m  '<-2<cr>gv=gv")
+map('n', '<leader>aa', ':AerialToggle<CR>')
+map('n', '<leader>m', '<Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>')
 
 map('n', '<leader>]', '$')
 map('n', '<leader>[', '0')
