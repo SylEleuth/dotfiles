@@ -242,9 +242,21 @@ keyset('n', '<leader>e', extension.file_browser.file_browser, { noremap = true, 
 keyset('n', '<leader>u', extension.undo.undo, { noremap = true, silent = true })
 keyset('n', '<leader>c', extension.coc.coc, { noremap = true, silent = true })
 keyset('n', '<leader>a', extension.aerial.aerial, { noremap = true, silent = true })
-keyset('n', '<leader>n', extension.notify.notify, { noremap = true, silent = true })
+keyset('n', '<leader>nn', extension.notify.notify, { noremap = true, silent = true })
 keyset('n', '<leader>\\', extension.recent_files.pick, { noremap = true, silent = true })
 keyset('n', "<leader>'", extension.smart_open.smart_open, { noremap = true, silent = true })
 
 keyset("n", "<leader>/", "<Cmd>UrlView<CR>", { desc = "view buffer URLs" })
 keyset("n", "<leader>//", "<Cmd>UrlView packer<CR>", { desc = "view plugin URLs" })
+
+
+keyset("n", "<leader>z", "<cmd>Telekasten panel<CR>")
+keyset("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
+keyset("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
+keyset("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>")
+keyset("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>")
+keyset("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
+keyset("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>")
+keyset("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
+keyset("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
+keyset("i", "[[", "<cmd>Telekasten insert_link<CR>")
