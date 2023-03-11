@@ -3,6 +3,7 @@
 -----------------------------------------------------------
 
 -- Automatically install packer
+
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
@@ -80,6 +81,10 @@ return packer.startup(function(use)
   use 'smartpde/telescope-recent-files'
   use 'danielfalk/smart-open.nvim'
   use 'nvim-telescope/telescope-ui-select.nvim'
+  use 'nvim-telescope/telescope-symbols.nvim'
+
+  use 'renerocksai/telekasten.nvim'
+  use 'renerocksai/calendar-vim'
 
   -- Viewing all the URLs in a buffer
   use 'axieax/urlview.nvim'
@@ -168,7 +173,7 @@ return packer.startup(function(use)
   use 'fedepujol/move.nvim'
 
   -- Dim inactive windows
-  use "levouh/tint.nvim"
+  -- use "levouh/tint.nvim"
 
   -- Highlight only the screen line of the cursor in the currently active window
   use 'tummetott/reticle.nvim'
