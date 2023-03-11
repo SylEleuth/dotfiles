@@ -86,6 +86,8 @@ vim.cmd [[
   " Kitty navigator
   let g:kitty_navigator_no_mappings = 1
 
+  " Calendar
+  let g:calendar_options = 'nornu'
 ]]
 
 
