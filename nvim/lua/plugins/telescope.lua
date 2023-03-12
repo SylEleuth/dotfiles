@@ -206,6 +206,10 @@ telescope.setup {
     ["ui-select"] = {
       require("telescope.themes").get_dropdown(dropdown_configs),
     },
+    media_files = {
+      filetypes = {"png", "webp", "jpg", "jpeg", "pdf", "gif"},
+      find_cmd = "rg"
+    }
   },
 }
 
@@ -248,15 +252,3 @@ keyset('n', "<leader>'", extension.smart_open.smart_open, { noremap = true, sile
 
 keyset("n", "<leader>/", "<Cmd>UrlView<CR>", { desc = "view buffer URLs" })
 keyset("n", "<leader>//", "<Cmd>UrlView packer<CR>", { desc = "view plugin URLs" })
-
-
-keyset("n", "<leader>z", "<cmd>Telekasten panel<CR>")
-keyset("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
-keyset("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
-keyset("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>")
-keyset("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>")
-keyset("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
-keyset("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>")
-keyset("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
-keyset("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
-keyset("i", "[[", "<cmd>Telekasten insert_link<CR>")
