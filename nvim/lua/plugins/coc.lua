@@ -1,3 +1,7 @@
+-----------------------------------------------------------
+-- CoC configuration file
+-----------------------------------------------------------
+
 -- Some servers have issues with backup files, see #649
 vim.opt.backup = false
 vim.opt.writebackup = false
@@ -187,13 +191,3 @@ local opts = { silent = true, nowait = true }
 -- keyset("n", "<leader>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list
 -- keyset("n", "<leader>p", ":<C-u>CocListResume<cr>", opts)
-
-vim.keymap.set('n', '<leader>m', '<Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>')
-
-vim.cmd [[highlight CocSearch guifg=#fe8019 guibg=#282828]]
-vim.cmd [[highlight CocMenuSel guifg=#282828 guibg=#fe8019]]
-vim.cmd [[highlight CocFloating guifg=#ebdbb2 guibg=#1d2021]]
-vim.cmd [[highlight CocExplorerNormalFloat guibg=#32302f]]
-vim.cmd [[highlight CocExplorerNormalFloatBorder guifg=#504945]]
-vim.cmd [[highlight CocCursorRange guibg=#b16286 guifg=#ebdbb2]]
-vim.cmd [[highlight CocHintSign guifg=#504945]]
