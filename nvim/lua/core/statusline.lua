@@ -45,7 +45,13 @@ lualine.setup {
     }
   },
   sections = {
-    lualine_a = { 'mode' },
+    lualine_a = { { 'mode' },
+      {
+        require("noice").api.statusline.mode.get,
+        cond = require("noice").api.statusline.mode.has,
+        color = { fg = "#282828" },
+      },
+    },
     lualine_b = { 'branch',
       { 'diff',
         symbols = { added = ' ', modified = ' ', removed = ' ' },
@@ -62,13 +68,7 @@ lualine.setup {
         shorting_target = 20,
       }
     },
-    lualine_x = { { 'aerial' },
-      {
-        require("noice").api.statusline.mode.get,
-        cond = require("noice").api.statusline.mode.has,
-        color = { fg = "#fe8019" },
-      },
-    },
+    lualine_x = { 'aerial' },
     lualine_y = {
       { 'filetype',
         colored = false,
@@ -110,8 +110,6 @@ local grey = "#3c3836"
 local light = get_hex("Comment", "fg")
 local high = vim.g.terminal_color_7
 local mod = vim.g.terminal_color_12
-
-vim.cmd [[highlight TabLineFill guibg=#282828]] -- background of the top bar
 
 cokeline.setup(
   {
