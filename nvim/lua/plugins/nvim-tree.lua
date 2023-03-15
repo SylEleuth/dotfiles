@@ -223,5 +223,3 @@ nvim_tree.setup {
     },
   },
 }
-
-vim.cmd [[highlight NvimTreeNormal guibg=#1d2021]]

@@ -172,13 +172,3 @@ nvim_treesitter_context.setup {
   mode = 'cursor',
   separator = nil,
 }
-
-vim.cmd [[highlight TreesitterContext       guibg=#32302f]]
-vim.cmd [[highlight TreesitterContextBottom guibg=#1d2021]]
-vim.cmd [[highlight TSRainbowRed            guifg=#cc241d]]
-vim.cmd [[highlight TSRainbowYellow         guifg=#d79921]]
-vim.cmd [[highlight TSRainbowBlue           guifg=#458588]]
-vim.cmd [[highlight TSRainbowOrange         guifg=#fe8019]]
-vim.cmd [[highlight TSRainbowGreen          guifg=#98971a]]
-vim.cmd [[highlight TSRainbowViolet         guifg=#b16286]]
-vim.cmd [[highlight TSRainbowCyan           guifg=#689d6a]]

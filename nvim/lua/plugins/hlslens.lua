@@ -52,7 +52,3 @@ vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], 
 vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-
-vim.cmd [[highlight HlSearchNear guifg=#282828 guibg=#fe9019]]
-vim.cmd [[highlight HlSearchLens guifg=#ebdbb2 guibg=#1d2021]]
-vim.cmd [[highlight HlSearchLensNear guifg=#282828 guibg=#fe8019]]

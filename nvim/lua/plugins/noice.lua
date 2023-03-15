@@ -239,9 +239,3 @@ noice.setup({
   ---@type NoiceFormatOptions
   format = {}, --- @see section on formatting
 })
-
-vim.cmd [[highlight NoiceCmdLine guibg=#1d2021]]
-vim.cmd [[highlight NoicePopupmenuMatch guifg= #458588]]
-vim.cmd [[highlight NoicePopupmenuSelected guifg= #fe8019 guibg=#282828]]
-vim.cmd [[highlight NoiceScrollbar guibg= #282828]]
-vim.cmd [[highlight NoiceScrollbarThumb guibg= #3c3836]]

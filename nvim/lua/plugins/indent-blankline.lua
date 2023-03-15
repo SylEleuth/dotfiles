@@ -46,9 +46,3 @@ indent_blankline.setup {
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅")
 --vim.opt.listchars:append("eol:↴")
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#D65D0E gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guifg=#FABD2F gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent3 guifg=#8EC07C gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent4 guifg=#83A598 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent5 guifg=#458588 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent6 guifg=#B16286 gui=nocombine]]
