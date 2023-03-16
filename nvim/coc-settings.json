@@ -60,7 +60,7 @@
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "black",
     "python.formatting.blackArgs": [
-        "-l 80"
+        "-l 90"
     ],
     "python.linting.enabled": true,
     "python.linting.pyflakesEnabled": true,
