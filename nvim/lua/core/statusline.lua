@@ -45,13 +45,7 @@ lualine.setup {
     }
   },
   sections = {
-    lualine_a = { { 'mode' },
-      {
-        require("noice").api.statusline.mode.get,
-        cond = require("noice").api.statusline.mode.has,
-        color = { fg = "#282828" },
-      },
-    },
+    lualine_a = { 'mode' },
     lualine_b = { 'branch',
       { 'diff',
         symbols = { added = ' ', modified = ' ', removed = ' ' },
