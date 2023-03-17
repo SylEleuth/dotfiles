@@ -209,7 +209,7 @@ telescope.setup {
     media_files = {
       filetypes = {"png", "webp", "jpg", "jpeg", "pdf", "gif"},
       find_cmd = "rg"
-    }
+    },
   },
 }
 
