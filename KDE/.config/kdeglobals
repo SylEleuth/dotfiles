@@ -29,7 +29,7 @@ BackgroundNormal=40,40,40
 DecorationFocus=246,116,0
 DecorationHover=246,116,0
 ForegroundActive=142,192,124
-ForegroundInactive=55,115,117
+ForegroundInactive=168,153,132
 ForegroundLink=184,187,38
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
@@ -49,7 +49,7 @@ ForegroundNegative[$d]
 ForegroundNeutral[$d]
 ForegroundNormal=235,219,178
 ForegroundPositive=69,133,136
-ForegroundVisited=69,133,136
+ForegroundVisited=124,111,100
 
 [Colors:Header]
 BackgroundAlternate[$d]
@@ -57,7 +57,7 @@ BackgroundNormal[$d]
 DecorationFocus=254,128,25
 DecorationHover=254,128,25
 ForegroundActive[$d]
-ForegroundInactive=7,102,120
+ForegroundInactive=168,153,132
 ForegroundLink[$d]
 ForegroundNegative=204,36,29
 ForegroundNeutral[$d]
@@ -80,11 +80,11 @@ ForegroundPositive[$d]
 ForegroundVisited[$d]
 
 [Colors:Selection]
-BackgroundAlternate=254,128,25
+BackgroundAlternate=214,93,14
 BackgroundNormal=254,128,25
 DecorationFocus=66,123,88
 DecorationHover=142,192,124
-ForegroundActive=251,241,199
+ForegroundActive=235,219,178
 ForegroundInactive=213,196,161
 ForegroundLink=214,93,14
 ForegroundNegative=204,36,29
@@ -99,7 +99,7 @@ BackgroundNormal=40,40,40
 DecorationFocus=104,157,106
 DecorationHover=142,192,124
 ForegroundActive=184,187,38
-ForegroundInactive=55,115,117
+ForegroundInactive=168,153,132
 ForegroundLink=254,128,25
 ForegroundNegative=251,73,52
 ForegroundNeutral=7,102,120
@@ -113,7 +113,7 @@ BackgroundNormal=40,40,40
 DecorationFocus=254,128,25
 DecorationHover=254,128,25
 ForegroundActive=184,187,38
-ForegroundInactive=55,115,117
+ForegroundInactive=168,153,132
 ForegroundLink=142,192,124
 ForegroundNegative=251,73,52
 ForegroundNeutral=254,128,25
@@ -127,7 +127,7 @@ BackgroundNormal=40,40,40
 DecorationFocus=104,157,106
 DecorationHover=131,165,152
 ForegroundActive=184,187,38
-ForegroundInactive=55,115,117
+ForegroundInactive=168,153,132
 ForegroundLink=142,192,124
 ForegroundNegative=218,68,83
 ForegroundNeutral=214,93,14
@@ -136,14 +136,14 @@ ForegroundPositive=39,174,96
 ForegroundVisited=127,140,141
 
 [DirSelect Dialog]
-DirSelectDialog Size=980,588
-History Items[$e]=file:$HOME/Games2/battlenet/drive_c/Program Files (x86)/World of Warcraft/_retail_,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Games2,file:$HOME/Git/inkscape,file:$HOME/Games2,file:$HOME/Data/Videos/seriale/1883,file:$HOME/Data/Videos/seriale/Monster.The.Jeffrey.Dahmer.Story,file:$HOME/Data/Videos/seriale/Monster.The.Jeffrey.Dahmer.Story,file:$HOME/Data/Videos/seriale/I.Know.This.Much.is.True,file:$HOME/Data/Videos/seriale/From,file:$HOME/Data/Videos/seriale/Dark.Winds,file:$HOME/Data/Videos/seriale/Your.Honor,file:$HOME/Data/Videos/seriale/Your.Honor,file:$HOME/Data/Videos/seriale/Your.Honor,file:$HOME/Downloads,file:$HOME/Data/Videos/seriale/Your.Honor,file:$HOME/Data/Videos/seriale/The.Sinner,file:$HOME/Data/Videos/seriale/The.Reherseal,file:$HOME/Data/Videos/seriale/Maniac,file:$HOME/Data/Videos/seriale/Maniac,file:$HOME/Data/Videos/seriale/Outer.Range,file:$HOME/Data/Videos/seriale/Patriot,file:$HOME/Data/Videos/seriale/Patriot,file:$HOME/Data/Videos/seriale/Yellowjackets,file:$HOME/Data/Videos/seriale/Under.the.Banner.of.Heaven,file:$HOME/Data/Videos/seriale/This.Is.Us,file:$HOME/Data/Videos/seriale/This.Is.Us,file:$HOME/Data/Videos/seriale/For.All.Mankind,file:$HOME/Data/Videos/seriale/Dopesick,file:$HOME/Data/Videos/seriale/Dopesick,file:$HOME/Data/Videos/seriale/-Cobra.Kai,file:$HOME/Data/Videos/seriale/-Cobra.Kai,file:$HOME/Data/Videos/seriale/-Cobra.Kai,file:$HOME/Data/Videos/seriale/-Killing.Eve,file:$HOME/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft/_classic_,file:$HOME/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft/_retail_,file:$HOME/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft,file:$HOME/Games,file:$HOME/Games,file:$HOME/Games,file:$HOME/Games2,file:$HOME/Games,file:$HOME/Games2,file:$HOME/Data/Videos/seriale/-Stargate.SG1/7,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5
+DirSelectDialog Size=831,683
+History Items[$e]=file:$HOME/Git/vifm,file:$HOME/Games2/battlenet/drive_c/Program Files (x86)/World of Warcraft/_retail_,file:$HOME/Data/Videos/anime/Ghost in the Shell - SAC_2045,file:$HOME/Games2,file:$HOME/Git/inkscape,file:$HOME/Games2,file:$HOME/Data/Videos/seriale/1883,file:$HOME/Data/Videos/seriale/Monster.The.Jeffrey.Dahmer.Story,file:$HOME/Data/Videos/seriale/Monster.The.Jeffrey.Dahmer.Story,file:$HOME/Data/Videos/seriale/I.Know.This.Much.is.True,file:$HOME/Data/Videos/seriale/From,file:$HOME/Data/Videos/seriale/Dark.Winds,file:$HOME/Data/Videos/seriale/Your.Honor,file:$HOME/Data/Videos/seriale/Your.Honor,file:$HOME/Data/Videos/seriale/Your.Honor,file:$HOME/Downloads,file:$HOME/Data/Videos/seriale/Your.Honor,file:$HOME/Data/Videos/seriale/The.Sinner,file:$HOME/Data/Videos/seriale/The.Reherseal,file:$HOME/Data/Videos/seriale/Maniac,file:$HOME/Data/Videos/seriale/Maniac,file:$HOME/Data/Videos/seriale/Outer.Range,file:$HOME/Data/Videos/seriale/Patriot,file:$HOME/Data/Videos/seriale/Patriot,file:$HOME/Data/Videos/seriale/Yellowjackets,file:$HOME/Data/Videos/seriale/Under.the.Banner.of.Heaven,file:$HOME/Data/Videos/seriale/This.Is.Us,file:$HOME/Data/Videos/seriale/This.Is.Us,file:$HOME/Data/Videos/seriale/For.All.Mankind,file:$HOME/Data/Videos/seriale/Dopesick,file:$HOME/Data/Videos/seriale/Dopesick,file:$HOME/Data/Videos/seriale/-Cobra.Kai,file:$HOME/Data/Videos/seriale/-Cobra.Kai,file:$HOME/Data/Videos/seriale/-Cobra.Kai,file:$HOME/Data/Videos/seriale/-Killing.Eve,file:$HOME/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft/_classic_,file:$HOME/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft/_retail_,file:$HOME/Games/battlenet/drive_c/Program Files (x86)/World of Warcraft,file:$HOME/Games,file:$HOME/Games,file:$HOME/Games,file:$HOME/Games2,file:$HOME/Games,file:$HOME/Games2,file:$HOME/Data/Videos/seriale/-Stargate.SG1/7,file:$HOME/Data/Videos/seriale/-Stargate.SG1,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/6,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5,file:$HOME/Data/Videos/seriale/-Stargate.SG1/5
 
 [General]
-AllowKDEAppsToRememberWindowPositions=true
+AllowKDEAppsToRememberWindowPositions=false
 BrowserApplication=userapp-Firefox-RSEK80.desktop
-ColorScheme=GruvboxPlus
-ColorSchemeHash=cdf9f5b4e03449975de580e7d21a00d374078a7a
+ColorScheme=GruvboxPlusDark
+ColorSchemeHash=d097654c9ddab0ef2f83cf2d30f0a2e40bb1f1da
 Name[en_GB]=Breeze Dark
 Name=Breeze Dark
 TerminalApplication=kitty
@@ -163,7 +163,7 @@ toolBarFont=Ubuntu,9,-1,5,63,0,0,0,0,0,Medium
 Theme=gruvbox-plus-icon-pack
 
 [KDE]
-AnimationDurationFactor=0.125
+AnimationDurationFactor=0.25
 DoubleClickInterval=400
 LookAndFeelPackage=GruvboxPlus
 ShowDeleteCommand=true
@@ -238,4 +238,4 @@ activeFont=Ubuntu,9,-1,5,63,0,0,0,0,0,Medium
 activeForeground=235,219,178
 inactiveBackground=40,40,40
 inactiveBlend=60,56,54
-inactiveForeground=204,190,155
+inactiveForeground=213,196,161
