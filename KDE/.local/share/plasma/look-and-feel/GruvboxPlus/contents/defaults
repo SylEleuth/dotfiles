@@ -14,7 +14,7 @@ name=GruvboxPlus
 cursorTheme=breeze_cursors
 
 [kwinrc][WindowSwitcher]
-LayoutName=MediumRounded
+LayoutName=thumbnail_grid
 
 [kwinrc][DesktopSwitcher]
 LayoutName=
