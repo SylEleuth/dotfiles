@@ -1,10 +1,9 @@
 {
-    "editor.wordWrap": "on",
     "editor.formatOnPaste": true,
     "editor.snippetSuggestions": "top",
     "editor.fontWeight": "800",
-    "editor.lineHeight": 20,
-    "editor.fontSize": 18,
+    "editor.lineHeight": 24,
+    "editor.fontSize": 20,
     "editor.fontFamily": "FantasqueSansMono Nerd Font, JetBrainsMono Nerd Font, Iosevka, FuraCode Nerd Font, Hack Nerd Font, monospace",
     "terminal.integrated.fontFamily": "FantasqueSansMono Nerd Font, JetBrainsMono Nerd Font, FuraCode Nerd Font, Hack Nerd Font, FantasqueSansMono Nerd Font",
     "customizeUI.font.regular": "Ubuntu",
@@ -16,13 +15,12 @@
     },
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.external.linuxExec": "kitty",
-    "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 16,
-    "terminal.integrated.fontWeight": "800",
+    "terminal.integrated.fontWeight": "600",
     "editor.fontLigatures": true,
-    "workbench.iconTheme": "material-icon-theme",
     "editor.renderControlCharacters": true,
     "git.confirmSync": false,
+    "editor.wordWrap": "off",
     "editor.formatOnSave": true,
     "material-icon-theme.showUpdateMessage": false,
     "git.autofetch": true,
@@ -31,13 +29,12 @@
     "editor.renderWhitespace": "boundary",
     "editor.codeLens": false,
     "python.linting.pylintEnabled": false,
-    "python.pythonPath": "/usr/bin/python",
     "extensions.ignoreRecommendations": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Enabled": false,
     "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
     "keyboard.dispatch": "keyCode",
     "python.languageServer": "Pylance",
     "workbench.panel.defaultLocation": "right",
@@ -122,6 +119,7 @@
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
+    "vim.smartRelativeLine": true,
     "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
         {
@@ -149,16 +147,6 @@
             ],
             "after": [
                 ":"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "d"
-            ],
-            "after": [
-                "d",
-                "d"
             ]
         },
         {
@@ -192,17 +180,29 @@
             "commands": [
                 "redo"
             ]
-        }
-    ],
-    "vim.normalModeKeyBindings": [
+        },
         {
             "before": [
-                ":"
+                "o",
+                "o"
             ],
-            "commands": [
-                "workbench.action.showCommands"
+            "after": [
+                "o",
+                "<Esc>"
             ]
         },
+        {
+            "before": [
+                "O",
+                "O"
+            ],
+            "after": [
+                "O",
+                "<Esc>"
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindings": [
         {
             "before": [
                 "u"
@@ -224,7 +224,6 @@
     "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
     "python.analysis.completeFunctionParens": true,
     "workbench.sideBar.location": "right",
-    "editor.cursorBlinking": "phase",
     "python.showStartPage": false,
     "svg.preview.mode": "svg",
     "editor.minimap.maxColumn": 80,
@@ -233,9 +232,9 @@
     "editor.bracketPairColorization.enabled": true,
     "cSpell.language": "en,en-GB",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#3c3836",
-        "statusBar.noFolderBackground": "#3c3836",
-        "statusBar.debuggingBackground": "#3c3836",
+        "statusBar.background": "#D3869B",
+        "statusBar.noFolderBackground": "#D3869B",
+        "statusBar.debuggingBackground": "#D3869B",
         "statusBar.foreground": "#ebdbb2",
         "statusBar.debuggingForeground": "#ebdbb2"
     },
@@ -248,7 +247,27 @@
     "security.workspace.trust.emptyWindow": false,
     "security.workspace.trust.enabled": false,
     "security.workspace.trust.startupPrompt": "never",
-    "python.linting.mypyEnabled": false,
+    "python.linting.mypyEnabled": true,
     "python.formatting.provider": "black",
-    "window.zoomLevel": 1
+    "testMyCode.downloadOldSubmission": true,
+    "testMyCode.hideMetaFiles": true,
+    "testMyCode.updateExercisesAutomatically": true,
+    "testMyCode.insiderVersion": false,
+    "testMyCode.logLevel": "errors",
+    "editor.cursorBlinking": "solid",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "editor.inlayHints.fontSize": 15,
+    "workbench.iconTheme": "gruvbox-material-icon-theme",
+    "gruvboxMaterial.italicKeywords": true,
+    "editor.lineNumbers": "relative",
+    "zenMode.hideLineNumbers": false,
+    "python.analysis.typeCheckingMode": "basic",
+    "terminal.integrated.cursorBlinking": true,
+    "python.terminal.executeInFileDir": true,
+    "workbench.startupEditor": "none",
+    "[python]": {
+        "editor.formatOnType": true
+    }
 }

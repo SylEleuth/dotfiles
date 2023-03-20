@@ -9,11 +9,11 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+right",
+        "key": "shift+right",
         "command": "workbench.action.nextEditor"
     },
     {
-        "key": "ctrl+left",
+        "key": "shift+left",
         "command": "workbench.action.previousEditor"
     },
     {
