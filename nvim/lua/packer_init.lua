@@ -147,7 +147,7 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
 
   -- Bufferline
-  use 'noib3/nvim-cokeline'
+  use 'willothy/nvim-cokeline'
 
   -- File explorer
   use 'nvim-tree/nvim-tree.lua'
