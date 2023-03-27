@@ -29,8 +29,8 @@ opt.laststatus = 2          -- Set global statusline
 opt.cursorline = true
 opt.cursorcolumn = true
 opt.wrap = false            -- display lines as one long line
-opt.sidescrolloff = 8
-opt.scrolloff = 1
+opt.sidescrolloff = 10
+opt.scrolloff = 10
 opt.shada = "!,'300,<50,s10,h"
 
 -----------------------------------------------------------
@@ -49,6 +49,7 @@ opt.history = 100           -- Remember N lines in history
 opt.lazyredraw = false      -- Faster scrolling
 opt.synmaxcol = 240         -- Max column for syntax highlight
 opt.updatetime = 250        -- ms to wait for trigger an event
+opt.timeoutlen = 300        -- delay for whickkey panel
 
 opt.undolevels = 1000
 opt.undofile = true
@@ -72,16 +73,6 @@ vim.cmd [[
   let g:vista#renderer#ctags = 'kind'
   let g:vista_default_executive = 'ctags'
   let g:vista_close_on_jump = 0
-
-  highlight VistaParenthesis guifg=#d3869b
-  highlight VistaScope guifg=#b16286
-  highlight VistaTag guifg=#83a598
-  " highlight VistaKind guifg=#cc241d
-  " highlight VistaScopeKind guifg=#cc241d
-  highlight VistaLineNr guifg=#928374
-  highlight VistaColon guifg=#d5c4a1
-  highlight VistaIcon guifg=#fabd2f
-  " highlight VistaArgs guifg=#cc241d
 
   " Kitty navigator
   let g:kitty_navigator_no_mappings = 1
