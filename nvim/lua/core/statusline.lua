@@ -92,18 +92,8 @@ lualine.setup {
 
 local is_picking_focus = require("cokeline/mappings").is_picking_focus
 local is_picking_close = require("cokeline/mappings").is_picking_close
-local get_hex = require("cokeline/utils").get_hex
 
-
-local red = vim.g.terminal_color_1
-local yellow = vim.g.terminal_color_11
-local space = { text = " " }
-local dark = vim.g.terminal_color_0
-local text = get_hex("Comment", "fg")
-local grey = "#3c3836"
-local light = get_hex("Comment", "fg")
-local high = vim.g.terminal_color_7
-local mod = vim.g.terminal_color_12
+cockline_space = { text = " " }
 
 cokeline.setup(
   {
@@ -114,24 +104,24 @@ cokeline.setup(
     default_hl = {
       fg = function(buffer)
         if buffer.is_focused then
-          return dark
+          return cockline_dark
         end
 
         if buffer.is_modified then
-          return mod
+          return cockline_mod
         else
-          return light
+          return cockline_text
         end
 
-        return text
+        return cockline_text
       end,
       bg = function(buffer)
         if buffer.is_focused and buffer.is_modified then
-          return mod
+          return cockline_mod
         elseif buffer.is_focused then
-          return high
+          return cockline_high
         end
-        return grey
+        return cockline_grey
       end
     },
     components = {
@@ -144,15 +134,15 @@ cokeline.setup(
         end,
         bg = function(buffer)
           if buffer.is_focused and buffer.is_modified then
-            return mod
+            return cockline_mod
           elseif buffer.is_focused then
-            return high
+            return cockline_high
           end
-          return grey
+          return cockline_grey
         end,
-        fg = dark
+        fg = cockline_dark
       },
-      space,
+      cockline_space,
       {
         text = function(buffer)
           if is_picking_focus() or is_picking_close() then
@@ -162,16 +152,16 @@ cokeline.setup(
         end,
         fg = function(buffer)
           if is_picking_focus() then
-            return yellow
+            return cockline_yellow
           end
           if is_picking_close() then
-            return red
+            return cockline_red
           end
 
           if buffer.is_focused then
-            return dark
+            return cockline_dark
           else
-            return light
+            return cockline_text
           end
         end,
         style = function(_)
@@ -190,19 +180,14 @@ cokeline.setup(
         text = "",
         fg = function(buffer)
           if buffer.is_focused and buffer.is_modified then
-            return mod
+            return cockline_mod
           elseif buffer.is_focused then
-            return high
+            return cockline_high
           end
-          return grey
+          return cockline_grey
         end,
-        bg = dark
+        bg = cockline_dark
       }
     }
   }
 )
-
-vim.keymap.set('n', '<S-Left>', '<Plug>(cokeline-focus-prev)', {})
-vim.keymap.set('n', '<S-Right>', '<Plug>(cokeline-focus-next)', {})
-vim.keymap.set('n', '<C-,>', '<Plug>(cokeline-switch-prev)', {})
-vim.keymap.set('n', '<C-.>', '<Plug>(cokeline-switch-next)', {})
