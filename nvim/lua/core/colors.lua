@@ -40,78 +40,106 @@ color_scheme.setup({
 })
 vim.cmd("colorscheme gruvbox")
 
--- Markid config colors
-vim.api.nvim_set_hl(0, 'markid1',  { fg = '#d79921' })
-vim.api.nvim_set_hl(0, 'markid2',  { fg = '#98971a' })
-vim.api.nvim_set_hl(0, 'markid3',  { fg = '#458588' })
-vim.api.nvim_set_hl(0, 'markid4',  { fg = '#83a598' })
-vim.api.nvim_set_hl(0, 'markid5',  { fg = '#b8bb26' })
-vim.api.nvim_set_hl(0, 'markid6',  { fg = '#fabd2f' })
-vim.api.nvim_set_hl(0, 'markid7',  { fg = '#d3869b' })
-vim.api.nvim_set_hl(0, 'markid8',  { fg = '#427b58' })
-vim.api.nvim_set_hl(0, 'markid9',  { fg = '#689d6a' })
-vim.api.nvim_set_hl(0, 'markid10', { fg = '#8ec07c' })
+local hl = vim.api.nvim_set_hl
 
-vim.cmd [[highlight TabLineFill                  guibg=#282828]]
+hl(0, 'markid1',                      { fg = '#d79921' })
+hl(0, 'markid2',                      { fg = '#98971a' })
+hl(0, 'markid3',                      { fg = '#458588' })
+hl(0, 'markid4',                      { fg = '#83a598' })
+hl(0, 'markid5',                      { fg = '#b8bb26' })
+hl(0, 'markid6',                      { fg = '#fabd2f' })
+hl(0, 'markid7',                      { fg = '#d3869b' })
+hl(0, 'markid8',                      { fg = '#427b58' })
+hl(0, 'markid9',                      { fg = '#689d6a' })
+hl(0, 'markid10',                     { fg = '#8ec07c' })
 
-vim.cmd [[highlight NvimTreeNormal               guibg=#1d2021]]
+hl(0, '@string',                      { fg = '#d5c4a1' })
 
-vim.cmd [[highlight AerialClass                  guifg=#83a598]]
-vim.cmd [[highlight AerialFunction               guifg=#b8bb26]]
-vim.cmd [[highlight AerialGuide                  guifg=#b8bb26]]
-vim.cmd [[highlight AerialLine                   guibg=#fe8019]]
+hl(0, 'TabLineFill',                  { bg = '#282828' })
 
-vim.cmd [[highlight LeapLabelPrimary             guifg=#282828 guibg=#fe8019]]
-vim.cmd [[highlight LeapLabelSecondary           guifg=#282828 guibg=#d65d0e]]
-vim.cmd [[highlight LeapLabelSelected            guifg=#282828 guibg=#d3869b]]
+hl(0, 'NvimTreeNormal',               { bg = '#1d2021' })
 
-vim.cmd [[highlight HlSearchNear                 guifg=#282828 guibg=#fe9019]]
-vim.cmd [[highlight HlSearchLens                 guifg=#ebdbb2 guibg=#1d2021]]
-vim.cmd [[highlight HlSearchLensNear             guifg=#282828 guibg=#fe8019]]
+hl(0, 'AerialClass',                  { fg = '#83a598' })
+hl(0, 'AerialFunction',               { fg = '#b8bb26' })
+hl(0, 'AerialGuide',                  { fg = '#b8bb26' })
+hl(0, 'AerialLine',                   { bg = '#fe8019' })
 
-vim.cmd [[highlight CocSearch                    guifg=#fe8019 guibg=#282828]]
-vim.cmd [[highlight CocMenuSel                   guifg=#282828 guibg=#fe8019]]
-vim.cmd [[highlight CocFloating                  guifg=#ebdbb2 guibg=#1d2021]]
-vim.cmd [[highlight CocExplorerNormalFloat       guibg=#1d2021]]
-vim.cmd [[highlight CocExplorerNormalFloatBorder guifg=#504945]]
-vim.cmd [[highlight CocCursorRange               guifg=#ebdbb2 guibg=#b16286]]
-vim.cmd [[highlight CocHintSign                  guifg=#504945]]
+hl(0, 'LeapLabelPrimary',             { fg = '#282828', bg = '#fe8019' })
+hl(0, 'LeapLabelSecondary',           { fg = '#282828', bg = '#d65d0e' })
+hl(0, 'LeapLabelSelected',            { fg = '#282828', bg = '#d3869b' })
 
-vim.cmd [[highlight TreesitterContext            guibg=#32302f]]
-vim.cmd [[highlight TreesitterContextBottom      guibg=#1d2021]]
-vim.cmd [[highlight TSRainbowRed                 guifg=#cc241d]]
-vim.cmd [[highlight TSRainbowYellow              guifg=#d79921]]
-vim.cmd [[highlight TSRainbowBlue                guifg=#458588]]
-vim.cmd [[highlight TSRainbowOrange              guifg=#fe8019]]
-vim.cmd [[highlight TSRainbowGreen               guifg=#98971a]]
-vim.cmd [[highlight TSRainbowViolet              guifg=#b16286]]
-vim.cmd [[highlight TSRainbowCyan                guifg=#689d6a]]
+hl(0, 'HlSearchNear',                 { fg = '#282828', bg = '#fe8019' })
+hl(0, 'HlSearchLens',                 { fg = '#ebdbb2', bg = '#1d2021' })
+hl(0, 'HlSearchLensNear',             { fg = '#282828', bg = '#fe8019' })
 
-vim.cmd [[highlight NotifyERRORBorder            guifg=#cc241d]]
-vim.cmd [[highlight NotifyWARNBorder             guifg=#d65d0e]]
-vim.cmd [[highlight NotifyINFOBorder             guifg=#665c54]]
-vim.cmd [[highlight NotifyDEBUGBorder            guifg=#928374]]
-vim.cmd [[highlight NotifyTRACEBorder            guifg=#b16286]]
-vim.cmd [[highlight NotifyERRORIcon              guifg=#fb4934]]
-vim.cmd [[highlight NotifyWARNIcon               guifg=#d79921]]
-vim.cmd [[highlight NotifyINFOIcon               guifg=#8ec07c]]
-vim.cmd [[highlight NotifyDEBUGIcon              guifg=#928374]]
-vim.cmd [[highlight NotifyTRACEIcon              guifg=#d3869b]]
-vim.cmd [[highlight NotifyERRORTitle             guifg=#fb4934]]
-vim.cmd [[highlight NotifyWARNTitle              guifg=#d79921]]
-vim.cmd [[highlight NotifyINFOTitle              guifg=#8ec07c]]
-vim.cmd [[highlight NotifyDEBUGTitle             guifg=#8B8B8B]]
-vim.cmd [[highlight NotifyTRACETitle             guifg=#d3869b]]
+hl(0, 'CocSearch',                    { fg = '#fe8019', bg = '#282828' })
+hl(0, 'CocMenuSel',                   { fg = '#282828', bg = '#fe8019' })
+hl(0, 'CocFloating',                  { fg = '#ebdbb2', bg = '#1d2021' })
+hl(0, 'CocCursorRange',               { fg = '#ebdbb2', bg = '#b16286' })
+hl(0, 'CocExplorerNormalFloat',       { bg = '#1d2021' })
+hl(0, 'CocExplorerNormalFloatBorder', { fg = '#504945' })
+hl(0, 'CocHintSign',                  { fg = '#504945' })
 
-vim.cmd [[highlight NoiceCmdLine                 guibg=#1d2021]]
-vim.cmd [[highlight NoicePopupmenuMatch          guifg=#458588]]
-vim.cmd [[highlight NoicePopupmenuSelected       guifg=#fe8019 guibg=#282828]]
-vim.cmd [[highlight NoiceScrollbar               guibg=#282828]]
-vim.cmd [[highlight NoiceScrollbarThumb          guibg=#3c3836]]
+hl(0, 'TreesitterContext',            { bg = '#32302f' })
+hl(0, 'TreesitterContextBottom',      { bg = '#1d2021' })
+hl(0, 'TSRainbowRed',                 { fg = '#cc241d' })
+hl(0, 'TSRainbowYellow',              { fg = '#d79921' })
+hl(0, 'TSRainbowBlue',                { fg = '#458588' })
+hl(0, 'TSRainbowOrange',              { fg = '#fe8019' })
+hl(0, 'TSRainbowGreen',               { fg = '#98971a' })
+hl(0, 'TSRainbowViolet',              { fg = '#b16286' })
+hl(0, 'TSRainbowCyan',                { fg = '#689d6a' })
 
-vim.cmd [[highlight IndentBlanklineIndent1       guifg=#D65D0E gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2       guifg=#FABD2F gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent3       guifg=#8EC07C gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent4       guifg=#83A598 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent5       guifg=#458588 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent6       guifg=#B16286 gui=nocombine]]
+hl(0, 'NotifyERRORBorder',            { fg = '#cc241d' })
+hl(0, 'NotifyWARNBorder',             { fg = '#d65d0e' })
+hl(0, 'NotifyINFOBorder',             { fg = '#665c54' })
+hl(0, 'NotifyDEBUGBorder',            { fg = '#928374' })
+hl(0, 'NotifyTRACEBorder',            { fg = '#b16286' })
+hl(0, 'NotifyERRORIcon',              { fg = '#fb4934' })
+hl(0, 'NotifyWARNIcon',               { fg = '#d79921' })
+hl(0, 'NotifyINFOIcon',               { fg = '#8ec07c' })
+hl(0, 'NotifyDEBUGIcon',              { fg = '#928374' })
+hl(0, 'NotifyTRACEIcon',              { fg = '#d3869b' })
+hl(0, 'NotifyERRORTitle',             { fg = '#fb4934' })
+hl(0, 'NotifyWARNTitle',              { fg = '#d79921' })
+hl(0, 'NotifyINFOTitle',              { fg = '#8ec07c' })
+hl(0, 'NotifyDEBUGTitle',             { fg = '#928374' })
+hl(0, 'NotifyTRACETitle',             { fg = '#d3869b' })
+
+hl(0, 'NoiceCmdLine',                 { bg = '#1d2021' })
+hl(0, 'NoicePopupmenuMatch',          { fg = '#458588' })
+hl(0, 'NoicePopupmenuSelected',       { fg = '#fe8019', bg = '#282828' })
+hl(0, 'NoiceScrollbar',               { bg = '#282828' })
+hl(0, 'NoiceScrollbarThumb',          { bg = '#3c3836' })
+
+hl(0, 'IndentBlanklineIndent1',       { fg = '#d65d0e', nocombine = true })
+hl(0, 'IndentBlanklineIndent2',       { fg = '#fabd2f', nocombine = true })
+hl(0, 'IndentBlanklineIndent3',       { fg = '#8ec07c', nocombine = true })
+hl(0, 'IndentBlanklineIndent4',       { fg = '#83a598', nocombine = true })
+hl(0, 'IndentBlanklineIndent5',       { fg = '#458588', nocombine = true })
+hl(0, 'IndentBlanklineIndent6',       { fg = '#b16286', nocombine = true })
+
+hl(0, 'WhichKey',                     { bg = '#282828' })
+hl(0, 'WhichKeyGroup',                { fg = '#d3869b', bg = '#282828' })
+hl(0, 'WhichKeySeparator',            { fg = '#a89984', bg = '#282828' })
+hl(0, 'WhichKeyDesc',                 { fg = '#83a598', bg = '#282828' })
+hl(0, 'WhichKeyFloat',                { fg = '#ebdbb2', bg = '#282828' })
+hl(0, 'WhichKeyBorder',               { fg = '#1d2021', bg = '#282828' })
+hl(0, 'WhichKeyValue',                { bg = '#282828' })
+
+hl(0, 'VistaParenthesis',             { fg = '#d3869b' })
+hl(0, 'VistaScope',                   { fg = '#b16286' })
+hl(0, 'VistaTag',                     { fg = '#83a598' })
+hl(0, 'VistaLineNr',                  { fg = '#928374' })
+hl(0, 'VistaColon',                   { fg = '#d5c4a1' })
+hl(0, 'VistaIcon',                    { fg = '#fabd2f' })
+
+local get_hex = require("cokeline/utils").get_hex
+
+cockline_red = vim.g.terminal_color_1
+cockline_yellow = vim.g.terminal_color_11
+cockline_dark = vim.g.terminal_color_0
+cockline_text = get_hex("GruvboxFg2", "fg")
+cockline_grey = get_hex("GruvboxBg1", "fg")
+cockline_high = vim.g.terminal_color_7
+cockline_mod = vim.g.terminal_color_12
