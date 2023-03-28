@@ -84,6 +84,7 @@ return packer.startup(function(use)
   use 'nvim-telescope/telescope-symbols.nvim'
   use 'nvim-telescope/telescope-media-files.nvim'
 
+  -- Note making
   use 'renerocksai/telekasten.nvim'
   use 'renerocksai/calendar-vim'
 
@@ -181,6 +182,9 @@ return packer.startup(function(use)
 
   -- Motion plugin for moving around in the visible area
   use 'ggandor/leap.nvim'
+
+  -- Displays a popup with possible keybindings of the command you started typing
+  use 'folke/which-key.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
