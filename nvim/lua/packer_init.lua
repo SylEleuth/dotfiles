@@ -143,6 +143,7 @@ return packer.startup(function(use)
   -- Color schemes
   use "ellisonleao/gruvbox.nvim"
   -- use 'sainnhe/gruvbox-material'
+  use 'Mofiqul/dracula.nvim'
 
   -- Statusline
   use 'nvim-lualine/lualine.nvim'
