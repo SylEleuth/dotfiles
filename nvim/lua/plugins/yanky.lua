@@ -50,14 +50,3 @@ yanky.setup({
 		}
 	}
 })
-
-require("telescope").load_extension("yank_history")
-local extension = require "telescope".extensions
-
-vim.keymap.set('n', '<leader>yy', extension.yank_history.yank_history, {})
-vim.keymap.set({"n","x"}, "p", '"+<Plug>(YankyPutAfter)')
-vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
-vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
-vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
-vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleForward)")
-vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleBackward)")
