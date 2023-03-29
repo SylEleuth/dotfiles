@@ -103,4 +103,3 @@ wilder.set_option('renderer',  wilder.renderer_mux({
 --   })
 -- }))
 
-vim.keymap.set('n', '<leader>wd', ':call wilder#toggle()<cr>')
