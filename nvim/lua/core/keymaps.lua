@@ -10,10 +10,11 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- map('n', '<Space>', '', {})
+-- map('n', '<Space>', '')
 -- vim.g.mapleader = ' '
 
 map('n', ';', ':')
+map('n', 'o', 'o')
 map('n', 'oo', 'o<Esc>')
 map('n', 'OO', 'O<Esc>')
 map('n', 'k', 'gkzz')
@@ -22,18 +23,14 @@ map('v', 'k', 'gkzz')
 map('v', 'j', 'gjzz')
 map('n', 'E', 'ge')
 map('v', 'E', 'ge')
-map('n', '<Tab>', 'n')
-map('n', '<S-Tab>', 'N')
 map('n', '<Del>', ':nohlsearch<cr>')
 
 map('n', '<F1>', ':NvimTreeFindFileToggle<cr>')
 map('n', '<F2>', ':CocCommand explorer --root-strategies reveal<cr>')
 map('n', '<F3>', ':Vista!!<CR>')
-map('n', '<leader>aa', ':AerialToggle<CR>')
-map('n', '<leader>m', '<Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>')
 
-map('n', '<leader>]', '$')
-map('n', '<leader>[', '0')
+-- map('n', '<leader>]', '$')
+-- map('n', '<leader>[', '0')
 
 -- don't lose selection when shifting
 map("x", "<", "<gv")
@@ -42,11 +39,6 @@ map("x", ">", ">gv")
 -- disable ex mode
 map("n", "Q", "<nop>")
 map("n", "q:", "<nop>")
-
-map('n', '<leader>uu', ':PackerUpdate<cr>')
-
-map('n', '<leader>q', ':Bwipeout<cr>')
--- map('n', '<leader>q', ':bp<bar>sp<bar>bn<bar>bd<CR>')
 
 -- map('v', 'y', '"+y')
 -- map('v', 'p', '"_c<C-r><C-o>+<Esc>')
@@ -64,3 +56,28 @@ map('n', '<C-h>', ':MoveHChar(-1)<CR>')
 map('v', '<C-h>', ':MoveHBlock(-1)<CR>')
 map('n', '<C-l>', ':MoveHChar(1)<CR>')
 map('v', '<C-l>', ':MoveHBlock(1)<CR>')
+
+map('n', '<S-Left>', '<Plug>(cokeline-focus-prev)')
+map('n', '<S-Right>', '<Plug>(cokeline-focus-next)')
+map('n', '<C-,>', '<Plug>(cokeline-switch-prev)')
+map('n', '<C-.>', '<Plug>(cokeline-switch-next)')
+
+map("n", "p", '"+<Plug>(YankyPutAfter)')
+map("x", "p", '"+<Plug>(YankyPutAfter)')
+map("n", "P", "<Plug>(YankyPutBefore)")
+map("x", "P", "<Plug>(YankyPutBefore)")
+map("n", "gp", "<Plug>(YankyGPutAfter)")
+map("x", "gp", "<Plug>(YankyGPutAfter)")
+map("n", "gP", "<Plug>(YankyGPutBefore)")
+map("x", "gP", "<Plug>(YankyGPutBefore)")
+map("n", "<c-n>", "<Plug>(YankyCycleForward)")
+map("n", "<c-p>", "<Plug>(YankyCycleBackward)")
+
+map('n', 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>")
+map('n', '<Tab>', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>")
+map('n', 'N', "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>")
+map('n', '<S-Tab>', "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>")
+map('n', '*', "*<Cmd>lua require('hlslens').start()<CR>")
+map('n', '#', "#<Cmd>lua require('hlslens').start()<CR>")
+map('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>")
+map('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>")
