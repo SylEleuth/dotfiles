@@ -1,7 +1,6 @@
 -----------------------------------------------------------
 -- Configuration file for miscelanous plugins
 -----------------------------------------------------------
-
 -- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes
 
 local status_ok, noice = pcall(require, "noice")
