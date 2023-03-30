@@ -29,7 +29,7 @@ opt.laststatus = 2          -- Set global statusline
 opt.cursorline = true
 opt.cursorcolumn = true
 opt.wrap = false            -- display lines as one long line
-opt.sidescrolloff = 10
+opt.sidescrolloff = 20
 opt.scrolloff = 10
 opt.shada = "!,'300,<50,s10,h"
 
