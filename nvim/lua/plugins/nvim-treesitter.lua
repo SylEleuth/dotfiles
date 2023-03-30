@@ -10,6 +10,7 @@
 
 local status_ok, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
 local status_ok, nvim_treesitter_context = pcall(require, 'treesitter-context')
+local status_ok, tsrainbow = pcall(require, 'ts-rainbow')
 if not status_ok then
   return
 end
@@ -39,6 +40,7 @@ nvim_treesitter.setup {
     query = {
       'rainbow-parens'
     },
+    strategy = tsrainbow.strategy.global,
     hlgroups = {
       'TSRainbowOrange',
       'TSRainbowCyan',
@@ -99,76 +101,16 @@ nvim_treesitter.setup {
   },
 }
 
-nvim_treesitter_context.setup {
-  enable = true,
-  max_lines = 0,
-  trim_scope = 'outer',
-  min_window_height = 0,
-  patterns = {
-    default = {
-      'class',
-      'function',
-      'method',
-      'for',
-      'while',
-      'if',
-      'switch',
-      'case',
-      'interface',
-      'struct',
-      'enum',
-    },
-    tex = {
-      'chapter',
-      'section',
-      'subsection',
-      'subsubsection',
-    },
-    haskell = {
-      'adt'
-    },
-    rust = {
-      'impl_item',
-
-    },
-    terraform = {
-      'block',
-      'object_elem',
-      'attribute',
-    },
-    scala = {
-      'object_definition',
-    },
-    vhdl = {
-      'process_statement',
-      'architecture_body',
-      'entity_declaration',
-    },
-    markdown = {
-      'section',
-    },
-    elixir = {
-      'anonymous_function',
-      'arguments',
-      'block',
-      'do_block',
-      'list',
-      'map',
-      'tuple',
-      'quoted_content',
-    },
-    json = {
-      'pair',
-    },
-    typescript = {
-      'export_statement',
-    },
-    yaml = {
-      'block_mapping_pair',
-    },
-  },
-
-  zindex = 20,
-  mode = 'cursor',
+require'treesitter-context'.setup{
+  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+  min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+  line_numbers = true,
+  multiline_threshold = 20, -- Maximum number of lines to collapse for a single context line
+  trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+  -- Separator between context and content. Should be a single character string, like '-'.
+  -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
   separator = nil,
+  zindex = 20, -- The Z-index of the context window
 }
