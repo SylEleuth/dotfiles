@@ -152,7 +152,7 @@ whichkey.register({
     },
     u = {
       name = "Packer",
-      u = { "<cmd>packeupdate<cr>", "Packer update" },
+      u = { "<cmd>PackerUpdate<cr>", "Packer update" },
       r = { "<cmd>UrlView packer<cr>", "Packers URL" },
     },
     a = {
