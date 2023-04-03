@@ -10,6 +10,8 @@ local status_ok, boole = pcall(require, "boole")
 -- local status_ok, tint = pcall(require, "tint")
 local status_ok, reticle = pcall(require, "reticle")
 local status_ok, leap = pcall(require, "leap")
+local status_ok, bufresize = pcall(require, "bufresize")
+local status_ok, incline = pcall(require, "incline")
 if not status_ok then
   return
 end
@@ -31,15 +33,16 @@ no_neck_pain.setup({
   width = 100,
   mappings = {
     enabled = true,
-    toggle = "<Leader>np",
-    widthUp = "<Leader>n=",
-    widthDown = "<Leader>n-",
-    scratchPad = "<Leader>ns",
   },
   integrations = {
     NvimTree = {
       position = "left",
       reopen = true,
+    },
+  },
+  buffers = {
+    colors = {
+      background = "#1d2021",
     },
   },
 })
@@ -50,6 +53,10 @@ boole.setup({
     decrement = '<C-x>'
   },
 })
+
+bufresize.setup()
+
+incline.setup()
 
 -- tint.setup({
 --   tint = -5, -- Darken colors, use a positive value to brighten
