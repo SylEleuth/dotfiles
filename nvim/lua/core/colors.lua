@@ -112,12 +112,14 @@ hl(0, 'NoicePopupmenuSelected',       { fg = '#fe8019', bg = '#282828' })
 hl(0, 'NoiceScrollbar',               { bg = '#282828' })
 hl(0, 'NoiceScrollbarThumb',          { bg = '#3c3836' })
 
-hl(0, 'IndentBlanklineIndent1',       { fg = '#d65d0e', nocombine = true })
-hl(0, 'IndentBlanklineIndent2',       { fg = '#fabd2f', nocombine = true })
-hl(0, 'IndentBlanklineIndent3',       { fg = '#8ec07c', nocombine = true })
+hl(0, 'IndentBlanklineIndent1',       { fg = '#8ec07c', nocombine = true })
+hl(0, 'IndentBlanklineIndent2',       { fg = '#fe8019', nocombine = true })
+hl(0, 'IndentBlanklineIndent3',       { fg = '#b8bb26', nocombine = true })
 hl(0, 'IndentBlanklineIndent4',       { fg = '#83a598', nocombine = true })
-hl(0, 'IndentBlanklineIndent5',       { fg = '#458588', nocombine = true })
-hl(0, 'IndentBlanklineIndent6',       { fg = '#b16286', nocombine = true })
+hl(0, 'IndentBlanklineIndent5',       { fg = '#fabd2f', nocombine = true })
+hl(0, 'IndentBlanklineIndent6',       { fg = '#d3869b', nocombine = true })
+hl(0, 'IndentBlanklineContextChar',   { fg = '#cc241d', nocombine = true })
+hl(0, 'IndentBlanklineContextStart',  { sp = '#cc241d', underline = true,  nocombine = true })
 
 hl(0, 'WhichKey',                     { bg = '#282828' })
 hl(0, 'WhichKeyGroup',                { fg = '#d3869b', bg = '#282828' })
@@ -133,6 +135,9 @@ hl(0, 'VistaTag',                     { fg = '#83a598' })
 hl(0, 'VistaLineNr',                  { fg = '#928374' })
 hl(0, 'VistaColon',                   { fg = '#d5c4a1' })
 hl(0, 'VistaIcon',                    { fg = '#fabd2f' })
+
+hl(0, 'InclineNormal',                { fg = '#ebdbb2' })
+hl(0, 'InclineNormalNC',              { fg = '#928374' })
 
 local get_hex = require("cokeline/utils").get_hex
 
