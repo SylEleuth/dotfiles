@@ -137,6 +137,9 @@ return packer.startup(function(use)
   -- Delete Neovim buffers without losing window layout
   use 'famiu/bufdelete.nvim'
 
+  -- Keep buffer dimensions in proportion when terminal window is resized
+  use 'kwkarlwang/bufresize.nvim'
+
   -- Window separator
   -- use 'nvim-zh/colorful-winsep.nvim'
 
@@ -150,6 +153,9 @@ return packer.startup(function(use)
 
   -- Bufferline
   use 'willothy/nvim-cokeline'
+
+  -- Floating statuslines
+  use 'b0o/incline.nvim'
 
   -- File explorer
   use 'nvim-tree/nvim-tree.lua'
