@@ -151,9 +151,11 @@ whichkey.register({
       t = { builtin.treesitter, "Treesitter" },
     },
     u = {
-      name = "Packer",
+      name = "Updated",
       u = { "<cmd>PackerUpdate<cr>", "Packer update" },
       r = { "<cmd>UrlView packer<cr>", "Packers URL" },
+      c = { "<cmd>CocUpdate<cr>", "Coc update" },
+      t = { "<cmd>TSUpdate<cr>", "Treesitter update" },
     },
     a = {
       name = "Aerial",
