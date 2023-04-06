@@ -15,12 +15,13 @@ end
 
 map('n', ';', ':')
 map('n', 'o', 'o')
+map('n', 'O', 'O')
 map('n', 'oo', 'o<Esc>')
 map('n', 'OO', 'O<Esc>')
-map('n', 'k', 'gkzz')
-map('n', 'j', 'gjzz')
-map('v', 'k', 'gkzz')
-map('v', 'j', 'gjzz')
+-- map('n', 'k', 'gkzz')
+-- map('n', 'j', 'gjzz')
+-- map('v', 'k', 'gkzz')
+-- map('v', 'j', 'gjzz')
 map('n', 'E', 'ge')
 map('v', 'E', 'ge')
 map('n', '<Del>', ':nohlsearch<cr>')
@@ -38,7 +39,7 @@ map("x", ">", ">gv")
 
 -- disable ex mode
 map("n", "Q", "<nop>")
-map("n", "q:", "<nop>")
+map("n", "q", "<nop>")
 
 -- map('v', 'y', '"+y')
 -- map('v', 'p', '"_c<C-r><C-o>+<Esc>')
