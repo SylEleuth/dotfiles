@@ -28,16 +28,10 @@ color_scheme.setup({
   dim_inactive = false,
   transparent_mode = true,
   palette_overrides = {},
-  overrides = {
-    GruvboxRedSign = { fg = colors.red, bg = colors.dark0, reverse = false },
-    GruvboxGreenSign = { fg = colors.green, bg = colors.dark0, reverse = false },
-    GruvboxYellowSign = { fg = colors.yellow, bg = colors.dark0, reverse = false },
-    GruvboxBlueSign = { fg = colors.blue, bg = colors.dark0, reverse = false },
-    GruvboxPurpleSign = { fg = colors.purple, bg = colors.dark0, reverse = false },
-    GruvboxAquaSign = { fg = colors.aqua, bg = colors.dark0, reverse = false },
-    GruvboxOrangeSign = { fg = colors.orange, bg = colors.dark0, reverse = false },
-  }
+  overrides = {}
 })
+
+vim.o.background = "dark"
 vim.cmd("colorscheme gruvbox")
 
 local hl = vim.api.nvim_set_hl
@@ -90,21 +84,23 @@ hl(0, 'TSRainbowGreen',               { fg = '#98971a' })
 hl(0, 'TSRainbowViolet',              { fg = '#b16286' })
 hl(0, 'TSRainbowCyan',                { fg = '#689d6a' })
 
-hl(0, 'NotifyERRORBorder',            { fg = '#cc241d' })
-hl(0, 'NotifyWARNBorder',             { fg = '#d65d0e' })
-hl(0, 'NotifyINFOBorder',             { fg = '#665c54' })
-hl(0, 'NotifyDEBUGBorder',            { fg = '#928374' })
-hl(0, 'NotifyTRACEBorder',            { fg = '#b16286' })
-hl(0, 'NotifyERRORIcon',              { fg = '#fb4934' })
-hl(0, 'NotifyWARNIcon',               { fg = '#d79921' })
-hl(0, 'NotifyINFOIcon',               { fg = '#8ec07c' })
-hl(0, 'NotifyDEBUGIcon',              { fg = '#928374' })
-hl(0, 'NotifyTRACEIcon',              { fg = '#d3869b' })
-hl(0, 'NotifyERRORTitle',             { fg = '#fb4934' })
-hl(0, 'NotifyWARNTitle',              { fg = '#d79921' })
-hl(0, 'NotifyINFOTitle',              { fg = '#8ec07c' })
-hl(0, 'NotifyDEBUGTitle',             { fg = '#928374' })
-hl(0, 'NotifyTRACETitle',             { fg = '#d3869b' })
+hl(0, 'TelescopeMultiSelection',      { fg = '#fe8019' })
+
+-- hl(0, 'NotifyERRORBorder',            { fg = '#cc241d' })
+-- hl(0, 'NotifyWARNBorder',             { fg = '#d65d0e' })
+-- hl(0, 'NotifyINFOBorder',             { fg = '#665c54' })
+-- hl(0, 'NotifyDEBUGBorder',            { fg = '#928374' })
+-- hl(0, 'NotifyTRACEBorder',            { fg = '#b16286' })
+-- hl(0, 'NotifyERRORIcon',              { fg = '#fb4934' })
+-- hl(0, 'NotifyWARNIcon',               { fg = '#d79921' })
+-- hl(0, 'NotifyINFOIcon',               { fg = '#8ec07c' })
+-- hl(0, 'NotifyDEBUGIcon',              { fg = '#928374' })
+-- hl(0, 'NotifyTRACEIcon',              { fg = '#d3869b' })
+-- hl(0, 'NotifyERRORTitle',             { fg = '#fb4934' })
+-- hl(0, 'NotifyWARNTitle',              { fg = '#d79921' })
+-- hl(0, 'NotifyINFOTitle',              { fg = '#8ec07c' })
+-- hl(0, 'NotifyDEBUGTitle',             { fg = '#928374' })
+-- hl(0, 'NotifyTRACETitle',             { fg = '#d3869b' })
 
 hl(0, 'NoiceCmdLine',                 { bg = '#1d2021' })
 hl(0, 'NoicePopupmenuMatch',          { fg = '#458588' })
@@ -138,6 +134,11 @@ hl(0, 'VistaIcon',                    { fg = '#fabd2f' })
 
 hl(0, 'InclineNormal',                { fg = '#ebdbb2' })
 hl(0, 'InclineNormalNC',              { fg = '#928374' })
+
+
+custom_gruvbox = require 'lualine.themes.gruvbox'
+custom_gruvbox.normal.c.bg = '#282828'
+custom_gruvbox.normal.b.bg = '#3c3836'
 
 local get_hex = require("cokeline/utils").get_hex
 
