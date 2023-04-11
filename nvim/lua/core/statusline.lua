@@ -20,11 +20,6 @@ local function stats()
   return line
 end
 
-local custom_gruvbox = require 'lualine.themes.gruvbox'
-
-custom_gruvbox.normal.c.bg = '#282828'
-custom_gruvbox.normal.b.bg = '#3c3836'
-
 lualine.setup {
   options = {
     icons_enabled = true,
