@@ -36,6 +36,9 @@ vim.cmd("colorscheme gruvbox")
 
 local hl = vim.api.nvim_set_hl
 
+hl(0, 'CursorColumn',                 { bg = '#32302f' })
+hl(0, 'CursorLine',                   { bg = '#32302f' })
+
 hl(0, 'markid1',                      { fg = '#d79921' })
 hl(0, 'markid2',                      { fg = '#98971a' })
 hl(0, 'markid3',                      { fg = '#458588' })
