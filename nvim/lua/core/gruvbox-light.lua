@@ -38,6 +38,9 @@ vim.cmd("colorscheme gruvbox")
 
 local hl = vim.api.nvim_set_hl
 
+hl(0, 'CursorColumn',                 { bg = '#d5c4a1' })
+hl(0, 'CursorLine',                   { bg = '#d5c4a1' })
+
 hl(0, 'markid1',                      { fg = '#b57614' })
 hl(0, 'markid2',                      { fg = '#79740e' })
 hl(0, 'markid3',                      { fg = '#458588' })
@@ -139,8 +142,12 @@ hl(0, 'InclineNormalNC',              { fg = '#a89984' })
 
 
 custom_gruvbox = require 'lualine.themes.gruvbox'
-custom_gruvbox.normal.c.bg = '#ebdbb2'
+custom_gruvbox.normal.a.fg = '#ebdbb2'
+custom_gruvbox.normal.a.bg = '#665c54'
+custom_gruvbox.normal.b.fg = '#665c54'
 custom_gruvbox.normal.b.bg = '#d5c4a1'
+custom_gruvbox.normal.c.fg = '#665c54'
+custom_gruvbox.normal.c.bg = '#ebdbb2'
 
 local get_hex = require("cokeline/utils").get_hex
 
