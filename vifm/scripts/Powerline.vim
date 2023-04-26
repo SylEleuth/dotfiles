@@ -1,9 +1,9 @@
 " SEPARATORS "
 """""""""""""""
-let L_B=""
-let L_T=""
-let R_B=""
-let R_T=""
+let $L_B=""
+let $L_T=""
+let $R_B=""
+let $R_T=""
 
 " LEFT SEGMENT "
 """"""""""""""""
@@ -42,6 +42,8 @@ execute 'set' 'rulerformat="' . $RULER . '"'
 
 " SET TABLINE "
 """""""""""""""
+set tabprefix=""
+set tabsuffix=""
 let $PREFIX="%8*%[%5*%C%] %6*%[%5*%C%]%N: "
 let $SUFFIX="%4*%[%9*%C%]"
 let $TAB="%6*%[%5*%C%]%n "
