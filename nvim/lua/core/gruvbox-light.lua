@@ -143,10 +143,10 @@ hl(0, 'InclineNormalNC',              { fg = '#a89984' })
 
 custom_gruvbox = require 'lualine.themes.gruvbox'
 custom_gruvbox.normal.a.fg = '#ebdbb2'
-custom_gruvbox.normal.a.bg = '#665c54'
-custom_gruvbox.normal.b.fg = '#665c54'
+custom_gruvbox.normal.a.bg = '#504945'
+custom_gruvbox.normal.b.fg = '#504945'
 custom_gruvbox.normal.b.bg = '#d5c4a1'
-custom_gruvbox.normal.c.fg = '#665c54'
+custom_gruvbox.normal.c.fg = '#504945'
 custom_gruvbox.normal.c.bg = '#ebdbb2'
 
 local get_hex = require("cokeline/utils").get_hex
@@ -156,5 +156,5 @@ cockline_yellow = vim.g.terminal_color_11
 cockline_dark = vim.g.terminal_color_0
 cockline_text = get_hex("GruvboxFg2", "fg")
 cockline_grey = get_hex("GruvboxBg2", "fg")
-cockline_high = get_hex("GruvboxFg3", "fg")
+cockline_high = get_hex("GruvboxFg2", "fg")
 cockline_mod = vim.g.terminal_color_4
