@@ -1,0 +1,83 @@
+//META{"name":"GruvboxPlus","description":"Gruvbox theme for Discord","author":"SylEleuth","version":"1.1"}*//
+/**
+    Gruvbox - adapted for Discord
+*/
+
+code {
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+pre > code {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 400;
+}
+
+::placeholder, body, button, input, select, textarea {
+    font-family: 'Ubuntu';
+}
+
+.theme-dark {
+    --header-primary: #ebdbb2;
+    --header-secondary: #bdae93;
+    --header-spotify: #83a598;
+
+    --background-primary: #282828;
+    --background-secondary: #1d2021;
+    --background-tertiary: #282828;
+    --background-accent: #32302f;
+    --background-floating: #3c3836;
+    --background-modifier-hover: #282828;
+    --background-modifier-active: #fe8019;
+    --background-modifier-selected: #3c3836;
+    --background-modifier-accent: #fe9019;
+    --background-mentioned: #cc241d;
+    --border-mentioned: #cc241d;
+    --background-mentioned-hover: #9d0006;
+    --background-secondary-alt: #32302f;
+
+    --channeltextarea-background: var(--background-secondary);
+    --channeltextarea-background-hover: var(--background-tertiary);
+
+    --accent-color: #fe8019;
+    --text-normal: #ebdbb2;
+    --text-spotify: #d5c4a1;
+    --text-muted: #bdae93;
+    --text-link: #458588;
+
+    --interactive-normal: #ebdbb2;
+    --interactive-hover: #fe8019;
+    --interactive-active: #d6c4a1;
+}
+
+.theme-light {
+    --header-primary: #282828;
+    --header-secondary: #504945;
+    --header-spotify: #458588;
+
+    --background-primary: #ebdbb2;
+    --background-secondary: #f2e5bc;
+    --background-tertiary: #ebdbb2;
+    --background-accent: #fbf1c7;
+    --background-floating: #ebdbb2;
+    --background-modifier-hover: #d5c4a1;
+    --background-modifier-active: #fe8019;
+    --background-modifier-selected: #d5c4a1;
+    --background-modifier-accent: #fe9019;
+    --background-mentioned: #cc241d;
+    --border-mentioned: #cc241d;
+    --background-mentioned-hover: #9d0006;
+    --background-secondary-alt: #d5c4a1;
+
+    --channeltextarea-background: var(--background-secondary);
+    --channeltextarea-background-hover: var(--background-tertiary);
+
+    --accent-color: #fe8019;
+    --text-normal: #3c3836;
+    --text-spotify: #3c3836;
+    --text-muted: #665c64;
+    --text-link: #458588;
+
+    --interactive-normal: #282828;
+    --interactive-hover: #504945;
+    --interactive-active: #504945;
+}
