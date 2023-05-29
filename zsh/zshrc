@@ -83,8 +83,6 @@ export PATH="$PATH:$HOME/.cargo/bin"
 VISUAL="nvim"
 EDITOR="nvim"
 
-ZVM_VI_HIGHLIGHT_BACKGROUND=#504945
-
 # exa settings
 export EXA_ICON_SPACING=2
 source $HOME/.config/zsh/lscolors.sh
@@ -96,16 +94,16 @@ source $HOME/.config/zsh/lscolors.sh
 # [ -z $LS_COLORS ] && eval `dircolors -b ~/.gruvbox.dir_colors`
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-function nvim {
-  BACKGROUND=$(xtermcontrol --get-bg)
+# function nvim {
+#   BACKGROUND=$(xtermcontrol --get-bg)
 
-  # if [[ "$BACKGROUND" == "rgb:ebeb/dbdb/b2b2" ]]; then
-  if [[ "$BACKGROUND" == "rgb:2828/2828/2828" ]]; then
-    env nvim --cmd "let theme = 'gruvbox-dark'" $@
-  else
-    env nvim --cmd "let theme = 'gruvbox-light'" $@
-  fi
-}
+#   # if [[ "$BACKGROUND" == "rgb:ebeb/dbdb/b2b2" ]]; then
+#   if [[ "$BACKGROUND" == "rgb:2828/2828/2828" ]]; then
+#     nvim
+#   else
+#     nvim -u $HOME/.config/nvim/init-light.lua
+#   fi
+# }
 
 # Atuin settings
 export ATUIN_NOBIND="true"
@@ -123,19 +121,19 @@ export BAT_THEME="gruvbox-dark"
 
 # Pacman TUI function
 # credits to https://github.com/IBArbitrary/dotfiles/blob/master/.config/fish/config.fish#L72-L78
-#Search repos with 'fzf'
+# Search packages with 'fzf'
 function pacs {
     pacman -Slq | fzf --prompt 'pacman> ' \
         --header 'Install packages.
         <c-p>: pacman, <c-a>: aur' \
         --bind 'ctrl-p:change-prompt(pacman> )+reload(pacman -Slq)' \
         --bind 'ctrl-a:change-prompt(aur> )+reload(yay -Slq)' \
-        --multi --black --height=100% --preview 'yay -Si {1}' \
-        --preview-window right --layout=reverse | xargs -ro yay -S
+        --multi --height=100% --preview 'yay -Si {1}' \
+        --preview-window=right,65% --layout=reverse | xargs -ro yay -S
     pacman -Qqe >~/.config/pac-kages.txt
 }
 
-#Search and remove locally installed packages with 'fzf'
+# Search and remove locally installed packages with 'fzf'
 function pacr {
     pacman -Qq | fzf --prompt 'all> ' \
         --header='Remove packages.
@@ -143,16 +141,18 @@ function pacr {
         --bind 'ctrl-a:change-prompt(all> )+reload(pacman -Qq)' \
         --bind 'ctrl-e:change-prompt(exp> )+reload(pacman -Qe)' \
         --bind 'ctrl-y:change-prompt(aur> )+reload(pacman -Qm)' \
-        --multi --black --height=100% --preview 'yay -Si {1}' \
-        --preview-window right --layout=reverse | xargs -ro sudo pacman -Rsn
-    pacman -Qqe >~/.config/pac-kages.txt
+        --multi --height=100% --preview 'yay -Si {1}' \
+        --preview-window=right,65% --layout=reverse | xargs -ro sudo pacman -Rsn
+    pacman -Qqe >~/.config/packages.txt
 }
 
 # Aliases
 alias vi=nvim
 # alias vim=nvim
 alias vv="nvim --listen /tmp/nvimsocket"
+alias vvl="nvim --listen /tmp/nvimsocket -u $HOME/.config/nvim/init-light.lua"
 alias v="nvim"
+alias vl="nvim -u $HOME/.config/nvim/init-light.lua"
 
 alias ..='cd ..'
 alias ...='cd ../..'
