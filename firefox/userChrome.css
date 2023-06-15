@@ -1,0 +1,338 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*** Tighten up drop-down/context/popup menu spacing ***/
+
+menupopup > menuitem, menupopup > menu {
+  padding-block: 2px !important;
+}
+:root {
+  --arrowpanel-menuitem-padding: 2px 4px !important;
+}
+
+/* Hide toolbar */
+
+#navigator-toolbox {
+    position: relative;
+    z-index: 1;
+    height: 26px;
+    margin-top: -2px;
+    overflow: hidden;
+    transition-property: height;
+
+    transition-delay: 0s;
+    transition-duration: 0.1s;
+}
+
+#navigator-toolbox:hover {
+    height: 86px;
+    transition-property: height;
+    transition-delay: 1s;
+    transition-duration: 0.1s;
+}
+
+/* Only show close buttons on background tabs when hovering with the mouse */
+.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
+    display: none !important;
+}
+.titlebar-min {display:none!important;}
+.titlebar-max {display:none!important;}
+.titlebar-restore {display:none!important;}
+.titlebar-close {display:none!important;}
+
+/*** Remove items from image context menu ***/
+
+/* Email Image... */
+#context-sendimage, 
+{
+  display: none !important;
+}
+
+/* Set Image as Desktop Background... (and preceding separator) */
+#context-sep-setbackground, #context-setDesktopBackground,
+{
+  display: none !important;
+}
+
+/* Inspect Accessibility Properties */
+#context-inspect-a11y
+{
+  display: none !important;
+}
+
+/*** Proton Tabs Tweaks ***/
+
+/* Adjust tab corner shape, optionally remove space below tabs */
+
+#tabbrowser-tabs {
+    --user-tab-rounding: 4px;
+}
+
+.tab-background {
+    border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important;
+    margin-block: 1px 0 !important;
+}
+#scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
+}
+/* Container color bar visibility */
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+    margin: 0px max(calc(var(--user-tab-rounding) - 3px), 0px) !important;
+}
+
+/* Override Normal Density height to Compact Density height only for tabs */
+
+#TabsToolbar, #tabbrowser-tabs {
+    --tab-min-height: 29px !important;
+}
+    /* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
+#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar, 
+#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar #tabbrowser-tabs {
+    --tab-min-height: 30px !important;
+}
+#scrollbutton-up,
+#scrollbutton-down {
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+}
+
+    /* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
+#TabsToolbar, #TabsToolbar > hbox, #TabsToolbar-customization-target, #tabbrowser-arrowscrollbox  {
+    max-height: calc(var(--tab-min-height) + 1px) !important;
+}
+    /* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
+#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon, 
+#TabsToolbar-customization-target .toolbarbutton-text, 
+#TabsToolbar-customization-target .toolbarbutton-badge-stack,
+#scrollbutton-up,#scrollbutton-down {
+    padding-top: 7px !important;
+    padding-bottom: 6px !important;
+}
+
+/* Inactive tabs: Separator line style */
+
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 0px solid var(--lwt-background-tab-separator-color, rgba(60, 56, 54, 1)) !important;
+}
+/* For dark backgrounds */
+[brighttext="true"] .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 0px solid var(--lwt-background-tab-separator-color, var(--lwt-selected-tab-background-color, rgba(60, 56, 54, 1))) !important;
+}
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
+    border-radius: 0 !important;
+}
+/* Remove padding between tabs */
+.tabbrowser-tab {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/*** Photon-like Menu Colors (14 Jan 2022) ***/
+
+/* Bookmarks Toolbar folders */
+#PersonalToolbar menupopup,
+/* Right-click context menus */
+#mainPopupSet menupopup,
+/* Top menu bar on Windows (not sure about others) */
+#toolbar-menubar menupopup,
+/* Sidebar/Library bookmark/history context menus */
+#placesContext,
+/* Address bar context menu (2021-10-25) */
+#urlbar-input-container menupopup,
+/* Various toolbar drop-down panels (Fx96) */
+#back-button menupopup, #forward-button menupopup,
+#identity-popup, #appMenu-popup, #downloadsPanel, #BMB_bookmarksPopup {
+  /* Text color */
+  --menu-color: #ebdbb2 !important;
+  --arrowpanel-color: #ebdbb2 !important;
+  --panel-color: #ebdbb2 !important;
+  /* Background color */
+  --menu-background-color:  #282828 !important;
+  --arrowpanel-background: #282828 !important;
+  --panel-background: #282828 !important;
+  /* Border color (if any) */
+  --menu-border-color: threedshadow !important;
+  --arrowpanel-border-color: threedshadow !important;
+  --panel-border-color: threedshadow !important;
+  /* Hovered/expanded item background color */
+  --menuitem-hover-background-color: #282828 !important;
+  --button-hover-bgcolor: #282828 !important;
+  /* Disabled items text color and hovered background */
+  --menu-disabled-color: rgba(235, 219, 178, 0.4) !important;
+  --menuitem-disabled-hover-background-color: rgba(40, 40, 40, 0.4) !important;
+}
+
+/* /* This style makes tabs and related items non-rounded and connects tabs to toolbars like in previous Firefox versions. */
+
+/* :root[id]{*/
+/*   --proton-tab-block-margin: 0px !important;*/
+/*   --tab-block-margin: 0px !important;*/
+/*   --tabs-shadow-size: 1px !important;*/
+  
+/*   /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
+/*   /* --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; */ 
+/* }*/
+
+/* /* Uncomment next line to force specific color for tab top line */
+/* /* #tabbrowser-tabs{ --tab-line-color: blue !important; } */
+
+/* /* These next two rules set a color for border around tabs and between tabs & navigation toolbars. Set to transparent to remove the border.*/
+/* #nav-bar{*/
+/*   /* This overrides value in compact_proton.css */
+/*   box-shadow: 0 -1px 0 0 color-mix(in srgb, currentcolor 30%, transparent) !important;*/
+/* }*/
+/* .tab-background[selected]{*/
+/*   border-inline: 1px solid color-mix(in srgb, currentcolor 30%, transparent) !important;*/
+/* }*/
+
+/* #TabsToolbar{*/
+/*   --toolbarbutton-inner-padding: 7px !important;*/
+/* }*/
+/* #navigator-toolbox:not([movingtab]) > #titlebar > #TabsToolbar{*/
+/*   --toolbar-bgcolor: transparent;*/
+/* }*/
+
+/* #TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack,*/
+/* #TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon{ border-radius: 2px !important;  }*/
+
+/* #scrollbutton-up,*/
+/* #scrollbutton-down{ border-radius: 0 !important; border-width: 0 !important; padding-inline: 3px !important; }*/
+
+/* /* tab shaping */
+/* .tabbrowser-tab{ padding-inline: 0 !important; }*/
+
+/* :root[uidensity="compact"] #tabbrowser-tabs[positionpinnedtabs] .tabbrowser-tab[pinned]{ min-height: calc(var(--tab-min-height) + 2px) !important; }*/
+
+/* .tab-content[pinned]{ padding-inline: 11px !important; }*/
+
+/* .tab-background{*/
+/*   border-radius: 0 !important;*/
+/*   box-shadow: none !important;*/
+/* }*/
+
+/* /* Line to mark selected tab */
+/* .tab-background[selected]::before,*/
+/* .tabbrowser-tab:hover > stack > .tab-background::before{*/
+/*   display: -moz-box;*/
+/*   height: 2px;*/
+/*   content: "";*/
+/* }*/
+/* .tab-stack:hover > .tab-background::before{*/
+/*   background-color: inherit;*/
+/* }*/
+/* .tab-stack > .tab-background[selected]::before{*/
+/*   background-color: highlight;*/
+/*   background-image: linear-gradient(var(--tab-line-color),var(--tab-line-color));*/
+/* }*/
+/* /* Photon-like tab on hover animation for the top line */
+/* @keyframes tab-onhover-line-anim{ from{ margin-inline: 20px } to { margin-inline: 0 } }*/
+
+/* .tab-stack:hover > .tab-background::before{ animation: tab-onhover-line-anim 160ms }*/
+
+/* /* Disable animation for selected and pinned tabs */
+/* .tabbrowser-tab:is([pinned],[selected]) > .tab-stack > .tab-background::before{ animation: none }*/
+
+/* /* moves context-line to the bottom */
+/* .tab-context-line{ -moz-box-ordinal-group: 2; margin-inline: 10px !important; }*/
+
+/* /* Bring back tab separator lines that were removed in Proton */
+
+/* .tabbrowser-tab:not(:hover, [beforehovered], [selected], [last-visible-tab], [beforeselected-visible])::after {*/
+/*   content: "";*/
+/*   display: block;*/
+/*   border-left: 1px solid currentColor;*/
+/*   margin-block: 1px;*/
+/*   margin-left: -1px;*/
+/*   opacity: 0.3;*/
+/* }*/
+
+/* /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/inline_tab_audio_icons.css made available under Mozilla Public License v. 2.0*/
+/* See the above repository for updates as well as full license text. */
+
+/* /* Shows tab audio icons next to the tab icon, and by default removes the tab secondary line */
+
+/* .tabbrowser-tab:not([pinned]) .tab-icon-stack:is([muted],[soundplaying],[activemedia-blocked]){*/
+/*   grid-template-areas: "a s";*/
+/* }*/
+/* .tabbrowser-tab:not([pinned]) .tab-icon-overlay:is([muted],[soundplaying],[activemedia-blocked]){ grid-area: s; }*/
+/* .tab-icon-overlay,.tab-icon-image{ opacity: 1 !important; }*/
+
+/* /* secondary audio label ain't much use with this style, but feel free to remove the next line if you want to show it. */
+/* .tab-secondary-label{ display: none }*/
+
+/* /* show the secondary label when video is in PiP */
+/* .tab-secondary-label[pictureinpicture]{ display: -moz-box }*/
+
+
+/* .titlebar-color { */
+/*   color: rgba(60, 56, 54, 1); */
+/*   background-color: rgba(40, 40, 40, 1); */
+/* } */
+
+
+/* .tab-background { */
+/*   border-radius: 0px 0px !important; */
+/*   margin-bottom: 0px !important; */
+/* } */
+
+/* .tabbrowser-tab:not([selected="true"]):not([multiselected="true"]) .tab-background { */
+/*   background-color: color-mix(in srgb, currentColor 5%, transparent); */
+/* } */
+
+/* menupopup > menu, menupopup > menuitem { */
+/*   padding-block: 2px !important; */
+/* } */
+
+/* :root { */
+/*   --arrowpanel-menuitem-padding: 2px !important; */
+/* } */
+
+
+/* #tabbrowser-tabs { */
+/*     --user-tab-rounding: 4px; */
+/* } */
+/* @media (-moz-proton) { */
+/*     .tab-background { */
+/*         border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important; */
+/*         margin-block: 1px 0 !important; */
+/*     } */
+/* } */
+
+
+/*/* menu spaces */
+
+/*menupopup > menuitem, menupopup > menu {*/
+/*  padding-block: 4px !important;*/
+/*}*/
+/*:root {*/
+/*  --arrowpanel-menuitem-padding: 4px 8px !important;*/
+/*}*
+/** Contributor(s): DrPugsley*/
+
+/*#TabsToolbar { height: 28px !important; }*/
+
+/*/* [uidensity="compact"]:root { */
+/*/*   --tab-min-height: 42px !important; */
+/*/*   --newtab-margin: -3px 0 -3px -3px !important; */
+/*/* } */
+
+/*/* .tabbrowser-tab { */
+/*/*   max-height: var(--tab-min-height) !important; */
+/*/* } */
+
+/*/* .tabs-newtab-button{ */
+/*/*   margin: var(--newtab-margin) !important; */
+/*/* } */
+
+/*/**/
+/* * Remove "Send Page to Device", "Send Link to Device",*/ 
+/* * "Send Tab to Device" from context menu.*/
+/* **/
+/* * Contributor(s): PilzAdam*/
+/* */
+
+/*#context-sendpagetodevice, #context-sep-sendpagetodevice,*/
+/*#context-sendlinktodevice, #context-sep-sendlinktodevice,*/
+/*#context_sendTabToDevice, #context_sendTabToDevice_separator {*/
+/*  display: none !important;*/
+/*}*/
