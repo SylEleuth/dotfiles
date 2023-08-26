@@ -28,9 +28,10 @@ opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus = 3          -- Set global statusline
 opt.cursorline = true
 opt.cursorcolumn = true
-opt.wrap = false            -- display lines as one long line
+opt.wrap = true             -- display lines as one long line
+opt.textwidth = 90           -- hard wrap
 opt.sidescrolloff = 20
-opt.scrolloff = 10
+opt.scrolloff = 15
 opt.shada = "!,'300,<50,s10,h"
 
 -----------------------------------------------------------
@@ -47,7 +48,7 @@ opt.smartindent = true      -- Autoindent new lines
 opt.hidden = true           -- Enable background buffers
 opt.history = 100           -- Remember N lines in history
 opt.lazyredraw = false      -- Faster scrolling
-opt.synmaxcol = 240         -- Max column for syntax highlight
+opt.synmaxcol = 0         -- Max column for syntax highlight
 opt.updatetime = 250        -- ms to wait for trigger an event
 opt.timeoutlen = 300        -- delay for whickkey panel
 
