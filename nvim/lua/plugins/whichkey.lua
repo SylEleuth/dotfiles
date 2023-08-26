@@ -162,10 +162,6 @@ whichkey.register({
       a = { "<cmd>AerialToggle<cr>", "Aerial panel" },
       t = { extension.aerial.aerial, "Aerial telescope " },
     },
-    w = {
-      name = "Toggle",
-      d = { "<cmd>call wilder#toggle()<cr>", "Toggle wilder" },
-    },
     z = {
       name = "Telekasten",
       a = { "<cmd>lua require('telekasten').show_tags()<cr>", "Show tags" },
