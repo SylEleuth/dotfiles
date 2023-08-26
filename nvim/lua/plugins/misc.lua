@@ -40,11 +40,11 @@ no_neck_pain.setup({
       reopen = true,
     },
   },
-  buffers = {
-    colors = {
-      background = "#1d2021",
-    },
-  },
+  -- buffers = {
+  --   colors = {
+  --     background = "#1d2021",
+  --   },
+  -- },
 })
 
 boole.setup({
