@@ -26,13 +26,13 @@ pre > code {
     --background-tertiary: #282828;
     --background-accent: #32302f;
     --background-floating: #3c3836;
-    --background-modifier-hover: #282828;
+    --background-modifier-hover: #3c3836;
     --background-modifier-active: #fe8019;
     --background-modifier-selected: #3c3836;
     --background-modifier-accent: #fe9019;
-    --background-mentioned: #cc241d;
-    --border-mentioned: #cc241d;
-    --background-mentioned-hover: #9d0006;
+    --background-mentioned: #1d2021;
+    --border-mentioned: #1d2021;
+    --background-mentioned-hover: #3c3836;
     --background-secondary-alt: #32302f;
 
     --channeltextarea-background: var(--background-secondary);
@@ -46,7 +46,7 @@ pre > code {
 
     --interactive-normal: #ebdbb2;
     --interactive-hover: #fe8019;
-    --interactive-active: #d6c4a1;
+    --interactive-active: #d5c4a1;
 }
 
 .theme-light {
@@ -55,7 +55,7 @@ pre > code {
     --header-spotify: #458588;
 
     --background-primary: #ebdbb2;
-    --background-secondary: #f2e5bc;
+    --background-secondary: #fbf1c7;
     --background-tertiary: #ebdbb2;
     --background-accent: #fbf1c7;
     --background-floating: #ebdbb2;
@@ -63,10 +63,10 @@ pre > code {
     --background-modifier-active: #fe8019;
     --background-modifier-selected: #d5c4a1;
     --background-modifier-accent: #fe9019;
-    --background-mentioned: #cc241d;
-    --border-mentioned: #cc241d;
-    --background-mentioned-hover: #9d0006;
-    --background-secondary-alt: #d5c4a1;
+    --background-mentioned: #d5c4a1;
+    --border-mentioned: #d5c4a1;
+    --background-mentioned-hover: #fbf1c7;
+    --background-secondary-alt: #bdae93;
 
     --channeltextarea-background: var(--background-secondary);
     --channeltextarea-background-hover: var(--background-tertiary);
