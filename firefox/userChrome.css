@@ -14,7 +14,7 @@ menupopup > menuitem, menupopup > menu {
 #navigator-toolbox {
     position: relative;
     z-index: 1;
-    height: 26px;
+    height: 28px;
     margin-top: -2px;
     overflow: hidden;
     transition-property: height;
@@ -24,7 +24,7 @@ menupopup > menuitem, menupopup > menu {
 }
 
 #navigator-toolbox:hover {
-    height: 86px;
+    height: 80px;
     transition-property: height;
     transition-delay: 1s;
     transition-duration: 0.1s;
@@ -42,7 +42,7 @@ menupopup > menuitem, menupopup > menu {
 /*** Remove items from image context menu ***/
 
 /* Email Image... */
-#context-sendimage, 
+#context-sendimage,
 {
   display: none !important;
 }
@@ -86,7 +86,7 @@ menupopup > menuitem, menupopup > menu {
     --tab-min-height: 29px !important;
 }
     /* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
-#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar, 
+#main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar,
 #main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar #tabbrowser-tabs {
     --tab-min-height: 30px !important;
 }
@@ -101,8 +101,8 @@ menupopup > menuitem, menupopup > menu {
     max-height: calc(var(--tab-min-height) + 1px) !important;
 }
     /* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
-#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon, 
-#TabsToolbar-customization-target .toolbarbutton-text, 
+#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon,
+#TabsToolbar-customization-target .toolbarbutton-text,
 #TabsToolbar-customization-target .toolbarbutton-badge-stack,
 #scrollbutton-up,#scrollbutton-down {
     padding-top: 7px !important;
@@ -168,9 +168,9 @@ menupopup > menuitem, menupopup > menu {
 /*   --proton-tab-block-margin: 0px !important;*/
 /*   --tab-block-margin: 0px !important;*/
 /*   --tabs-shadow-size: 1px !important;*/
-  
+
 /*   /* Remove next line if you want selected tab to have color other than toolbar background - then it follows your theme color  */
-/*   /* --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; */ 
+/*   /* --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; */
 /* }*/
 
 /* /* Uncomment next line to force specific color for tab top line */
@@ -325,7 +325,7 @@ menupopup > menuitem, menupopup > menu {
 /*/* } */
 
 /*/**/
-/* * Remove "Send Page to Device", "Send Link to Device",*/ 
+/* * Remove "Send Page to Device", "Send Link to Device",*/
 /* * "Send Tab to Device" from context menu.*/
 /* **/
 /* * Contributor(s): PilzAdam*/
