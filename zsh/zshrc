@@ -178,6 +178,7 @@ alias upd='zplug update && omz update'
 alias matrix="cmatrix -b -u 8 -C cyan"
 alias colors='~/Git/dotfiles/scripts/colors/showcolors'
 alias st="speedtest --no-upload --single"
+alias bup="sh ~/Dropbox/backup.sh"
 # alias v="~/.config/vifm/scripts/vifmrun ."
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
