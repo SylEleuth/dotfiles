@@ -2,47 +2,72 @@
 -- Indent line configuration file
 -----------------------------------------------------------
 
-local status_ok, indent_blankline = pcall(require, 'indent_blankline')
+local status_ok, indent_blankline = pcall(require, 'ibl')
 if not status_ok then
   return
 end
 
+local highlight = {
+  "RainbowOlive",
+  "RainbowOrange",
+  "RainbowGreen",
+  "RainbowBlue",
+  "RainbowYellow",
+  "RainbowPurple",
+  "RainbowRed",
+}
+
+local hooks = require "ibl.hooks"
+
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+  vim.api.nvim_set_hl(0, 'RainbowOlive',  { fg = '#8ec07c', nocombine = true })
+  vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#fe8019', nocombine = true })
+  vim.api.nvim_set_hl(0, 'RainbowGreen',  { fg = '#b8bb26', nocombine = true })
+  vim.api.nvim_set_hl(0, 'RainbowBlue',   { fg = '#83a598', nocombine = true })
+  vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#fabd2f', nocombine = true })
+  vim.api.nvim_set_hl(0, 'RainbowPurple', { fg = '#d3869b', nocombine = true })
+  vim.api.nvim_set_hl(0, 'RainbowRed',    { fg = '#cc241d', nocombine = true })
+  vim.api.nvim_set_hl(0, 'RainbowRed',    { sp = '#cc241d', underline = true,  nocombine = true })
+end)
+
 indent_blankline.setup {
-  show_end_of_line = false,
-  space_char_blankline = " ",
-  show_current_context = true,
-  show_current_context_start = true,
-  show_first_indent_level = false,
-  use_treesitter = false,
-  char = "▎",
-  char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-    "IndentBlanklineIndent3",
-    "IndentBlanklineIndent4",
-    "IndentBlanklineIndent5",
-    "IndentBlanklineIndent6",
-    },
-  filetype_exclude = {
-    'lspinfo',
-    'packer',
-    'checkhealth',
-    'help',
-    'man',
-    'dashboard',
-    'git',
-    'markdown',
-    'text',
-    'terminal',
-    'NvimTree',
+  scope = {
+    show_start = true,
+    show_end = false,
+    highlight = highlight,
   },
-  buftype_exclude = {
-    'terminal',
-    'nofile',
-    'quickfix',
-    'prompt',
+    indent = {
+      char = "▎",
+      highlight = highlight,
+    },
+  exclude = {
+    filetypes = {
+      'lspinfo',
+      'packer',
+      'checkhealth',
+      'help',
+      'man',
+      'dashboard',
+      'git',
+      'markdown',
+      'text',
+      'terminal',
+      'NvimTree',
+    },
+    buftypes = {
+      'terminal',
+      'nofile',
+      'quickfix',
+      'prompt',
+    },
   },
 }
+
+local hooks = require "ibl.hooks"
+hooks.register(
+  hooks.type.WHITESPACE,
+  hooks.builtin.hide_first_space_indent_level
+)
 
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅")
