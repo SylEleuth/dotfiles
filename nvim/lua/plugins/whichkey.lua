@@ -141,10 +141,10 @@ whichkey.register({
       u = { extension.undo.undo, "Undo history" },
       y = { extension.yank_history.yank_history, "Yank history" },
     },
-    s = {
-      name = "Telescope spell",
-      s = { builtin.spell_suggest, "Spell suggest" },
-    },
+    -- s = {
+    --   name = "Telescope spell",
+    --   s = { builtin.spell_suggest, "Spell suggest" },
+    -- },
     v = {
       name = "Telescope treesitter",
       c = { extension.coc.coc, "Coc" },
