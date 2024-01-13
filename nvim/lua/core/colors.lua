@@ -3,10 +3,21 @@
 -----------------------------------------------------------
 
 local status_ok, color_scheme = pcall(require, 'gruvbox')
-local colors = require("gruvbox.palette")
+local colors = require("gruvbox")
 if not status_ok then
   return
 end
+
+indent_highlight = {
+  "IndentBlanklineIndent1",
+  "IndentBlanklineIndent2",
+  "IndentBlanklineIndent3",
+  "IndentBlanklineIndent4",
+  "IndentBlanklineIndent5",
+  "IndentBlanklineIndent6",
+  'IndentBlanklineContextChar',
+  'IndentBlanklineContextStart',
+}
 
 color_scheme.setup({
   undercurl = true,
@@ -143,12 +154,10 @@ custom_gruvbox = require 'lualine.themes.gruvbox'
 custom_gruvbox.normal.c.bg = '#282828'
 custom_gruvbox.normal.b.bg = '#3c3836'
 
-local get_hex = require("cokeline/utils").get_hex
-
 cockline_red = vim.g.terminal_color_1
 cockline_yellow = vim.g.terminal_color_11
 cockline_dark = vim.g.terminal_color_0
-cockline_text = get_hex("GruvboxFg2", "fg")
-cockline_grey = get_hex("GruvboxBg1", "fg")
+cockline_text = vim.g.terminal_color_15
+cockline_grey = '#3c3836'
 cockline_high = vim.g.terminal_color_7
 cockline_mod = vim.g.terminal_color_12
