@@ -3,7 +3,7 @@
 -----------------------------------------------------------
 
 local status_ok, color_scheme = pcall(require, 'gruvbox')
-local colors = require("gruvbox.palette")
+local colors = require("gruvbox")
 if not status_ok then
   return
 end
@@ -149,12 +149,10 @@ custom_gruvbox.normal.b.bg = '#d5c4a1'
 custom_gruvbox.normal.c.fg = '#504945'
 custom_gruvbox.normal.c.bg = '#ebdbb2'
 
-local get_hex = require("cokeline/utils").get_hex
-
 cockline_red = vim.g.terminal_color_1
 cockline_yellow = vim.g.terminal_color_11
 cockline_dark = vim.g.terminal_color_0
-cockline_text = get_hex("GruvboxFg2", "fg")
-cockline_grey = get_hex("GruvboxBg2", "fg")
-cockline_high = get_hex("GruvboxFg2", "fg")
+cockline_text = vim.g.terminal_color_15
+cockline_grey = '#d5c4a1'
+cockline_high = '#504945'
 cockline_mod = vim.g.terminal_color_4
