@@ -70,7 +70,7 @@ return packer.startup(function(use)
   use 'HiPhish/nvim-ts-rainbow2'
 
   -- Telescope
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.1' }
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.4' }
   use 'nvim-lua/plenary.nvim'
   use 'rcarriga/nvim-notify'
   use 'nvim-telescope/telescope-file-browser.nvim'
@@ -132,7 +132,7 @@ return packer.startup(function(use)
   use 'kevinhwang91/nvim-hlslens'
 
   -- Indent guides
-  use 'lukas-reineke/indent-blankline.nvim'
+  use{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 
   -- Delete Neovim buffers without losing window layout
   use 'famiu/bufdelete.nvim'
