@@ -121,5 +121,6 @@
     "explorer.file.showHiddenFiles": true,
     "explorer.quitOnOpen": true,
     "markdown-preview-enhanced.liveUpdate": true,
-    "markdown-preview-enhanced.previewTheme": "atom-light.css",
+    "markdown-preview-enhanced.previewTheme": "gothic.css",
+    "xml.format.enabled": false,
 }
