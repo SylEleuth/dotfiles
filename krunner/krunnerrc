@@ -2,7 +2,7 @@
 FreeFloating=true
 HistoryEnabled=true
 RetainPriorSearch=false
-font=Ubuntu,12,-1,5,57,0,0,0,0,0,Medium
+font=Ubuntu,14,-1,5,57,0,0,0,0,0,Medium
 
 [PlasmaRunnerManager]
 migrated=true
