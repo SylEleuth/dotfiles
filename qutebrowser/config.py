@@ -66,7 +66,7 @@ c.content.blocking.adblock.lists = [
     "https://www.i-dont-care-about-cookies.eu/abp/",
     "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
 ]
-c.content.javascript.can_access_clipboard = False
+# c.content.javascript.clipboard = none
 c.content.javascript.can_open_tabs_automatically = False
 c.content.javascript.enabled = True
 c.content.javascript.log = {
