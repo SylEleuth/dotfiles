@@ -22,7 +22,7 @@ map('n', 'k', 'gk')
 map('n', 'j', 'gj')
 map('n', 'E', 'ge')
 map('v', 'E', 'ge')
-map('n', '<Del>', ':nohlsearch<cr>')
+map('n', ',', ':nohlsearch<cr>')
 
 map('n', '<F1>', ':NvimTreeFindFileToggle<cr>')
 map('n', '<F2>', ':CocCommand explorer --root-strategies reveal<cr>')
