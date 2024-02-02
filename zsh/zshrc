@@ -105,6 +105,13 @@ source $HOME/.config/zsh/lscolors.sh
 #   fi
 # }
 
+# Forgit options
+export FORGIT_FZF_DEFAULT_OPTS="
+--cycle
+--reverse
+--height '96%'
+"
+
 # Atuin settings
 export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
