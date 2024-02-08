@@ -3,7 +3,7 @@ BasedOnStyle:                     LLVM
 Language:                         Cpp
 Standard:                         Latest
 
-BreakBeforeBraces:                Stroustrup
+BreakBeforeBraces:                Attach
 
 ExperimentalAutoDetectBinPacking: true
 ColumnLimit:                      132
@@ -20,4 +20,4 @@ AllowShortLambdasOnASingleLine:   Empty
 AlwaysBreakTemplateDeclarations:  true
 BreakConstructorInitializers:     BeforeComma
 IndentPPDirectives:               AfterHash
-PointerAlignment:                 Right
+PointerAlignment:                 Left
