@@ -14,19 +14,18 @@ menupopup > menuitem, menupopup > menu {
 #navigator-toolbox {
     position: relative;
     z-index: 1;
-    height: 28px;
+    height: 26px;
     margin-top: -2px;
     overflow: hidden;
-    transition-property: height;
-
-    transition-delay: 0s;
+    transition-property: height !important;
+    transition-delay: 0s !important;
     transition-duration: 0.1s;
 }
 
 #navigator-toolbox:hover {
-    height: 80px;
-    transition-property: height;
-    transition-delay: 1s;
+    height: 75px;
+    transition-property: height !important;
+    transition-delay: 1s !important;
     transition-duration: 0.1s;
 }
 
