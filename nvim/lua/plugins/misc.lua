@@ -12,11 +12,14 @@ local status_ok, reticle = pcall(require, "reticle")
 local status_ok, leap = pcall(require, "leap")
 local status_ok, bufresize = pcall(require, "bufresize")
 local status_ok, incline = pcall(require, "incline")
+local status_ok, move = pcall(require, "move")
 if not status_ok then
   return
 end
 
 comment.setup({ ignore = '^$' })
+
+move.setup()
 
 hlslens.setup()
 
