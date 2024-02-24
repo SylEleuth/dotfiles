@@ -58,9 +58,7 @@ def draw_right_status(draw_data: DrawData, screen: Screen) -> None:
     while True:
         if not cells:
             return
-        padding = (
-            screen.columns - screen.cursor.x - sum(len(c) + 3 for c in cells)
-        )
+        padding = screen.columns - screen.cursor.x - sum(len(c) + 3 for c in cells)
         if padding >= 0:
             break
         cells = cells[1:]
@@ -88,9 +86,9 @@ def draw_right_status(draw_data: DrawData, screen: Screen) -> None:
 def create_cells() -> list[str]:
     now = datetime.datetime.now()
     return [
-        currently_playing(),
+        # currently_playing(),
         now.strftime("%a %-d %b"),
-        now.strftime("%H:%M"),
+        now.strftime("%H:%M:%S"),
     ]
 
 
@@ -98,9 +96,7 @@ def currently_playing():
     bus = dbus.SessionBus()
     for service in bus.list_names():
         if service.startswith("org.mpris.MediaPlayer2."):
-            player = dbus.SessionBus().get_object(
-                service, "/org/mpris/MediaPlayer2"
-            )
+            player = dbus.SessionBus().get_object(service, "/org/mpris/MediaPlayer2")
             status = player.Get(
                 "org.mpris.MediaPlayer2.Player",
                 "PlaybackStatus",
