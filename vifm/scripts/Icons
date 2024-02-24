@@ -72,7 +72,7 @@ set classify+='  ::*.7z,,*.apk,,*.bz2,,*.cpio,,*.deb,,*.gz,,*.gzip,,*.gem,,*.
              \   ::*.cljs,,*.edn::,
              \   ::*.coffee::,
              \   ::*.cs::,
-             \   ::*.cxx,,*.c++,,*.cc,,*.cp,,*.cpp::,
+             \   ::*.cxx,,*.c++,,*.cc,,*.cp,,*.cpp,,*.hpp,,*.hh::,
              \   ::*.d::,
              \   ::*.dart::,
              \   ::*.db,,*.dump,,*.img,,*.iso,,*.sql::,
