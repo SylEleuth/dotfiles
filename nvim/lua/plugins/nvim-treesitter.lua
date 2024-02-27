@@ -6,11 +6,9 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter-refactor
 -- https://github.com/nvim-treesitter/nvim-treesitter-context
 -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
--- https://github.com/HiPhish/nvim-ts-rainbow2
 
 local status_ok, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
 local status_ok, nvim_treesitter_context = pcall(require, 'treesitter-context')
-local status_ok, tsrainbow = pcall(require, 'ts-rainbow')
 if not status_ok then
   return
 end
@@ -33,22 +31,6 @@ nvim_treesitter.setup {
       list_definitions_toc = "gO",
       goto_next_usage = "<a-*>",
       goto_previous_usage = "<a-#>",
-    },
-  },
-  rainbow = {
-    enable = true,
-    query = {
-      'rainbow-parens'
-    },
-    strategy = tsrainbow.strategy.global,
-    hlgroups = {
-      'TSRainbowOrange',
-      'TSRainbowCyan',
-      'TSRainbowRed',
-      'TSRainbowYellow',
-      'TSRainbowBlue',
-      'TSRainbowGreen',
-      'TSRainbowViolet',
     },
   },
   textobjects = {
