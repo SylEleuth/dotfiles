@@ -126,7 +126,12 @@ return packer.startup(function(use)
   })
 
   -- Comment
-  use 'numToStr/Comment.nvim'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
 
   -- Better searching
   use 'kevinhwang91/nvim-hlslens'
