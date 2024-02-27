@@ -213,7 +213,7 @@ telescope.setup {
 }
 
 require("notify").setup()
-require("urlview").setup()
+-- require("urlview").setup()
 
 -- require("telescope").load_extension("notify")
 -- require("telescope").load_extension("file_browser")
