@@ -89,7 +89,7 @@ return packer.startup(function(use)
   use 'renerocksai/calendar-vim'
 
   -- Viewing all the URLs in a buffer
-  use 'axieax/urlview.nvim'
+  -- use 'axieax/urlview.nvim'
 
   -- Highlight same-name identifiers with the same color
   use 'David-Kunz/markid'
