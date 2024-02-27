@@ -32,23 +32,23 @@ hlslens.setup()
 -- })
 
 
-no_neck_pain.setup({
-  width = 100,
-  mappings = {
-    enabled = true,
-  },
-  integrations = {
-    NvimTree = {
-      position = "left",
-      reopen = true,
-    },
-  },
-  -- buffers = {
-  --   colors = {
-  --     background = "#1d2021",
-  --   },
-  -- },
-})
+-- no_neck_pain.setup({
+--   width = 100,
+--   mappings = {
+--     enabled = true,
+--   },
+--   integrations = {
+--     NvimTree = {
+--       position = "left",
+--       reopen = true,
+--     },
+--   },
+--   -- buffers = {
+--   --   colors = {
+--   --     background = "#1d2021",
+--   --   },
+--   -- },
+-- })
 
 boole.setup({
   mappings = {
