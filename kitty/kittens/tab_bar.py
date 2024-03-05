@@ -32,6 +32,7 @@ def draw_tab(
     global timer_id
     global screen_width
     screen_width = screen.columns
+    max_title_length = 30
 
     if timer_id is None:
         timer_id = add_timer(_redraw_tab_bar, 2.0, True)
