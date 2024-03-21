@@ -149,6 +149,8 @@ hl(0, 'VistaIcon',                    { fg = '#fabd2f' })
 hl(0, 'InclineNormal',                { fg = '#ebdbb2' })
 hl(0, 'InclineNormalNC',              { fg = '#928374' })
 
+colorful_winsep_bg = '#282828'
+colorful_winsep_fg = '#928374'
 
 custom_gruvbox = require 'lualine.themes.gruvbox'
 custom_gruvbox.normal.c.bg = '#282828'
