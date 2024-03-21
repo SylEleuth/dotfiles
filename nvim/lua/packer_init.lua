@@ -146,7 +146,7 @@ return packer.startup(function(use)
   use 'kwkarlwang/bufresize.nvim'
 
   -- Window separator
-  -- use 'nvim-zh/colorful-winsep.nvim'
+  use 'nvim-zh/colorful-winsep.nvim'
 
   -- Color schemes
   use "ellisonleao/gruvbox.nvim"
