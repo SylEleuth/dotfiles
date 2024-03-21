@@ -8,6 +8,17 @@ if not status_ok then
   return
 end
 
+indent_highlight = {
+  "IndentBlanklineIndent1",
+  "IndentBlanklineIndent2",
+  "IndentBlanklineIndent3",
+  "IndentBlanklineIndent4",
+  "IndentBlanklineIndent5",
+  "IndentBlanklineIndent6",
+  'IndentBlanklineContextChar',
+  'IndentBlanklineContextStart',
+}
+
 color_scheme.setup({
   undercurl = true,
   underline = true,
@@ -140,6 +151,8 @@ hl(0, 'VistaIcon',                    { fg = '#d79921' })
 hl(0, 'InclineNormal',                { fg = '#504945' })
 hl(0, 'InclineNormalNC',              { fg = '#a89984' })
 
+colorful_winsep_bg = '#ebdbb2'
+colorful_winsep_fg = '#a89984'
 
 custom_gruvbox = require 'lualine.themes.gruvbox'
 custom_gruvbox.normal.a.fg = '#ebdbb2'
