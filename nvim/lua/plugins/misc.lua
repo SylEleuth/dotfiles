@@ -13,6 +13,7 @@ local status_ok, leap = pcall(require, "leap")
 local status_ok, bufresize = pcall(require, "bufresize")
 local status_ok, incline = pcall(require, "incline")
 local status_ok, move = pcall(require, "move")
+local status_ok, colorful_winsep = pcall(require, "colorful-winsep")
 if not status_ok then
   return
 end
@@ -23,14 +24,21 @@ move.setup()
 
 hlslens.setup()
 
--- require("colorful-winsep").setup({
---   highlight = {
---     bg = "#282828",
---     fg = "#504945",
---   },
---   no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
--- })
-
+colorful_winsep.setup({
+  -- highlight for Window separator
+  hi = {
+    bg = colorful_winsep_bg,
+    fg = colorful_winsep_fg,
+  },
+  -- This plugin will not be activated for filetype in the following table.
+  no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
+  anchor = {
+    left = { height = 0, x = -1, y = -1 },
+    right = { height = 0, x = -1, y = 0 },
+    up = { width = 0, x = -1, y = 0 },
+    bottom = { width = 0, x = 0, y = 0 },
+  },
+})
 
 -- no_neck_pain.setup({
 --   width = 100,
