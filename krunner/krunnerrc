@@ -1,6 +1,5 @@
 [General]
 FreeFloating=true
-HistoryEnabled=true
 RetainPriorSearch=false
 font=Ubuntu,14,-1,5,57,0,0,0,0,0,Medium
 
@@ -15,9 +14,9 @@ PIM Contacts Search RunnerEnabled=false
 PowerDevilEnabled=true
 Spell CheckerEnabled=true
 appstreamEnabled=false
-baloosearchEnabled=true
+baloosearchEnabled=false
 bookmarksEnabled=false
-browserhistoryEnabled=true
+browserhistoryEnabled=false
 browsertabsEnabled=true
 calculatorEnabled=true
 desktopsessionsEnabled=true
@@ -43,8 +42,12 @@ webshortcutsEnabled=true
 windowsEnabled=true
 
 [Runners][Dictionary]
-triggerWord=dict
+triggerWord=d
 
 [Runners][Spell Checker]
 requireTriggerWord=true
 trigger=sp
+
+[Runners][krunner_spellcheck]
+requireTriggerWord=true
+trigger=s
