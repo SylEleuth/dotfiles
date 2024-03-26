@@ -108,6 +108,7 @@ set classify+='  ::*.7z,,*.apk,,*.bz2,,*.cpio,,*.deb,,*.gz,,*.gzip,,*.gem,,*.
              \   ::*.scss::,
              \   ::*.sln,,*.suo::,
              \   ::*.styl::,
+             \ 󰕙  ::*.svg::,
              \   ::*.ts::,
              \   ::*.twig::,
              \   ::*.vim,,*.vimrc::,
