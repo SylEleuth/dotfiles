@@ -11,7 +11,7 @@ set sortnumbers
 set sort=iname
 set undolevels=1000
 set novimhelp
-set norunexec
+" set runexec
 set wildmenu
 set wildstyle=popup
 set ignorecase
@@ -26,8 +26,8 @@ set dotdirs=
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks,tabs
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 set milleroptions="lsize:15,csize:35,rsize:50,rpreview:all"
-set timefmt=%d/%m/%Y\ %H:%M
-set viewcolumns=-{name},6{}.
+set timefmt=%d\ %b\ %Y\ %H:%M:%S
+set viewcolumns=-{fileroot}.,7{fileext},7{size}
 
 colorscheme gruvbox
 
@@ -39,6 +39,8 @@ source ~/.config/vifm/scripts/Powerline.vim
 
 
 " -----------   FILE VIEWERS AND OPENERS   ----------
+
+fileviewer <text/*> bat %c
 
 " Pdf
 filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
@@ -150,23 +152,43 @@ fileviewer Makefile,Makefile.* highlight -O xterm256 -s dante --syntax make %c
 
 " ----------   COMMANDS DEFINITIONS   ----------
 
+" Toggle between color schemes
+" command! changetheme
+"       \ :if $COLORSCHEME == 'Default'
+"       \|     let $COLORSCHEME = 'Default-256'
+"       \|     colorscheme Default-256
+"       \| else
+"       \|     let $COLORSCHEME = 'Default'
+"       \|     colorscheme Default
+"       \| endif
+
 " fzf finder from https://github.com/vifm/vifm/issues/279#issuecomment-1001788619
 " -------------------------------------------------------------------------------
 command! fzfreadbmarks :exe "normal! :bmarks\r:write ~/.config/vifm/bookmarks\rq"
-" command! fdcddir :execute 'cd "'.term('fd -HE ''.git'' -t d . | fzf 2>/dev/tty').'"'
-command! fdcddir :set noquickview | :execute 'goto' fnameescape(term('fd . %a --hidden -E .git -E .stversions -t d | fzf 2> /dev/tty'))
-command! fdcdfile :set noquickview | :execute 'goto' fnameescape(term('fd . %a --hidden -E .git -E .stversions -t f | fzf 2> /dev/tty'))
-command! fzfbmark :execute 'bmark "' .system('echo "${PWD##*/}"').'"'
-command! fzfbmarks :set noquickview | :execute 'goto' fnameescape(term('cat ~/.config/vifm/bookmarks | fzf 2>/dev/tty | sed "s/:.*//" '))
-" command! fzfbmarks :execute 'cd "'.term('cat ~/.config/vifm/bookmarks | fzf 2>/dev/tty | sed "s/:.*//" ').'"'
-command! fzfmarks :fzfreadbmarks | fzfbmarks
+" command! fdcddir     :execute 'cd "'.term('fd -HE ''.git'' -t d . | fzf 2>/dev/tty').'"'
+command! fdcddir       :set noquickview | :execute 'goto' fnameescape(term('fd . %a --hidden -E .git -E .stversions -t d | fzf 2> /dev/tty'))
+command! fdcdfile      :set noquickview | :execute 'goto' fnameescape(term('fd . %a --hidden -E .git -E .stversions -t f | fzf 2> /dev/tty'))
+command! fzfbmark      :execute 'bmark "' .system('echo "${PWD##*/}"').'"'
+command! fzfbmarks     :set noquickview | :execute 'goto' fnameescape(term('cat ~/.config/vifm/bookmarks | fzf 2>/dev/tty | sed "s/:.*//" '))
+" command! fzfbmarks   :execute 'cd "'.term('cat ~/.config/vifm/bookmarks | fzf 2>/dev/tty | sed "s/:.*//" ').'"'
+command! fzfmarks      :fzfreadbmarks | fzfbmarks
+
+" flatten current directory, ie list all files in directory and its
+" subdirectories and directories of subdirectories etc
+command flatall   :execute '!find -not -path "*/\.*" 2>/dev/null %%U'
+
+" the same as flatten but display only files
+command! flatonly :execute '!find -type f -not -path "*/\.*" 2>/dev/null %%U'
+
+" the same as flatten but display only directories
+command! flatdir    :execute '!find -type d -not -path "*/\.*" %%U'
 
 command! togglefilesinfo
-    \ : if &viewcolumns == '-{name},6{}.'
-    \ |   set viewcolumns=*{name}.,10{size}.,12{perms},10{uname},-7{gname},18{mtime}
+    \ : if &viewcolumns == '-{fileroot}.,7{fileext},7{size}'
+    \ |   set viewcolumns=-{fileroot}.,7{fileext}.,12{perms},22{mtime},7{size}
     \ |   echo 'Files information: detailed'
     \ | else
-    \ |   set viewcolumns=-{name},6{}.
+    \ |   set viewcolumns=-{fileroot}.,7{fileext},7{size}
     \ |   echo 'Files information: brief'
     \ | endif
 
@@ -191,18 +213,17 @@ nnoremap \r :reload<cr>
 nnoremap p :put &<cr>
 
 nnoremap <f2> :rename<cr>
-nnoremap <f3> :!bat %f<cr>
-nnoremap <f4> :edit<cr>
+nnoremap <f3> :edit<cr>
 nnoremap <f5> :copy &<cr>
 nnoremap <f6> :move &<cr>
 nnoremap <f7> :mkdir<space>
-nnoremap <f8> :delete<cr>
+nnoremap <f8> :mkcd<space>
 
 " Display sorting dialog
 nnoremap S :sort<cr>
 
 " Toggle visibility of preview window
-nnoremap w :view<cr>
+nnoremap w :view<cr>gv
 vnoremap w :view<cr>gv
 
 " Open file in existing instance of neovim
@@ -242,19 +263,33 @@ nnoremap <C-a> ggvG<cr>
 
 nnoremap fd :fdcddir<cr>
 nnoremap ff :fdcdfile<cr>
-nnoremap fb :fzfmarks<cr>
-nnoremap bb :fzfbmark<cr>
 
-nnoremap qh :history d<cr>
+nnoremap fa :flatall<cr>
+nnoremap fo :flatonly<cr>
+nnoremap fi :flatdir<cr>
+
+nnoremap bb :fzfmarks<cr>
+nnoremap bm :fzfbmark<cr>
+
+nnoremap \h :history dir<cr>
+nnoremap \s :history search<cr>
+nnoremap \i :history input<cr>
 
 nnoremap A :histprev<cr>
 nnoremap D :histnext<cr>
 
-" copy directory path to clipboard
+" yank current directory path into the clipboard
 nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
-" copy filen path to clipboard
-nnoremap yf :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "name is yanked to clipboard"<cr>
-"paste directory path from clipboard
+
+" yank current file path into the clipboard
+nnoremap yf :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+
+" yank current filename without path into the clipboard
+nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+
+" yank root of current file's name into the clipboard
+nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
+
 nnoremap \p :cd %D<cr>
 
 nnoremap \m :set millerview<cr>:only<cr>
@@ -262,6 +297,8 @@ nnoremap \l :set millerview!<cr>:vsplit<cr>
 
 nnoremap \j :jobs<cr>
 
-nnoremap \t :togglefilesinfo<cr>
+nnoremap \w :togglefilesinfo<cr>
 
 nnoremap \d :mounts<cr>
+
+nnoremap \g :changetheme
