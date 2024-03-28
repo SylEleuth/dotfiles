@@ -19,7 +19,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 # zplug "zpm-zsh/ls"
 zplug "b4b4r07/enhancd", use:init.sh
-zplug "MichaelAquilina/zsh-auto-notify"
+# zplug "MichaelAquilina/zsh-auto-notify"
 zplug "junegunn/fzf"
 zplug "clvv/fasd"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -163,10 +163,9 @@ alias vl="nvim -u $HOME/.config/nvim/init-light.lua"
 
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ~='cd ~'
-alias l="exa --icons -lh --git --sort=type --time-style=long-iso"
-alias ll="exa --icons -lah --git --sort=type --time-style=long-iso"
-alias ls="exa --icons --git"
+alias l="exa --icons -lh --git --sort=type --time-style=long-iso --color=always"
+alias ll="exa --icons -lah --git --sort=type --time-style=long-iso --color=alywas"
+alias ls="exa --icons --git --color=always"
 alias rm="rm -i"
 alias dl="cd ~/Downloads"
 alias co="cd ~/Code"
@@ -186,6 +185,7 @@ alias matrix="cmatrix -b -u 8 -C cyan"
 alias colors='~/Git/dotfiles/scripts/colors/showcolors'
 alias st="speedtest --no-upload --single"
 alias bup="sh ~/Dropbox/backup.sh"
+alias grep='grep --color=auto'
 # alias v="~/.config/vifm/scripts/vifmrun ."
 
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
