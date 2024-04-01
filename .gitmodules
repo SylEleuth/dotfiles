@@ -1,0 +1,3 @@
+[submodule "config/awesome/lain"]
+	path = KDE
+	url = https://github.com/SylEleuth/gruvbox-plus-kde
