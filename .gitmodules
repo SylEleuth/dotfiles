@@ -1,0 +1,3 @@
+[submodule "KDE/gruvbox-plus-kde"]
+	path = KDE/gruvbox-plus-kde
+	url = https://github.com/SylEleuth/gruvbox-plus-kde
