@@ -20,7 +20,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 
-(setq doom-font (font-spec :family "Hack Nerd Font" :size 14 :weight 'bold)
+(setq doom-font (font-spec :family "JetBrains Mono Nerd Font" :size 14 :weight 'bold)
       doom-variable-pitch-font (font-spec :family "Ubuntu Nerd Font" :size 14)
       doom-big-font (font-spec :family "Hack Nerd Font" :size 24 :weight 'bold))
 

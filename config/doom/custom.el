@@ -17,9 +17,10 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
+ '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(objed-cursor-color "#ff6c6b")
  '(package-selected-packages
-   '(smart-mode-line powerline-evil powerline zzz-to-char vdiff readline-complete rainbow-mode move-text filladapt exwm doom-modeline diffview counsel buffer-expose ace-window))
+   '(gdscript-mode testcover-mark-line smart-mode-line powerline-evil powerline zzz-to-char vdiff readline-complete rainbow-mode move-text filladapt exwm doom-modeline diffview counsel buffer-expose ace-window))
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
@@ -50,4 +51,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(font-lock-comment-face ((t (:slant italic))))
+ '(font-lock-keyword-face ((t (:slant italic)))))
