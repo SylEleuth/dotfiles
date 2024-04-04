@@ -164,7 +164,7 @@ alias vl="nvim -u $HOME/.config/nvim/init-light.lua"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias l="exa --icons -lh --git --sort=type --time-style=long-iso --color=always"
-alias ll="exa --icons -lah --git --sort=type --time-style=long-iso --color=alywas"
+alias ll="exa --icons -lah --git --sort=type --time-style=long-iso --color=always"
 alias ls="exa --icons --git --color=always"
 alias rm="rm -i"
 alias dl="cd ~/Downloads"
@@ -184,7 +184,7 @@ alias upd='zplug update && omz update'
 alias matrix="cmatrix -b -u 8 -C cyan"
 alias colors='~/Git/dotfiles/scripts/colors/showcolors'
 alias st="speedtest --no-upload --single"
-alias bup="sh ~/Dropbox/backup.sh"
+alias bup="sh ~/Dropbox/scripts/backup.sh"
 alias grep='grep --color=auto'
 # alias v="~/.config/vifm/scripts/vifmrun ."
 
