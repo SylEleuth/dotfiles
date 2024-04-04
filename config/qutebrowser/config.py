@@ -5,14 +5,6 @@ config.load_autoconfig(False)
 config.source("gruvbox.py")
 config.source("bindings.py")
 
-# import dracula.draw
-# dracula.draw.blood(c, {
-#     'spacing': {
-#         'vertical': 6,
-#         'horizontal': 8
-#     }
-# })
-
 c.aliases = {
     "w": "session-save",
     "q": "quit",
