@@ -35,9 +35,8 @@ map('n', '<F3>', ':Vista!!<CR>')
 map("x", "<", "<gv")
 map("x", ">", ">gv")
 
--- disable ex mode
-map("n", "Q", "<nop>")
-map("n", "q", "<nop>")
+-- map("n", "Q", "qq")
+-- map("n", "q", "<nop>")
 
 -- map('v', 'y', '"+y')
 -- map('v', 'p', '"_c<C-r><C-o>+<Esc>')
