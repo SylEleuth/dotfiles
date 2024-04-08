@@ -38,6 +38,13 @@ menupopup > menuitem, menupopup > menu {
 .titlebar-restore {display:none!important;}
 .titlebar-close {display:none!important;}
 
+/* Tabs max width */
+
+.tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"])
+{
+    max-width: 200px !important;
+}
+
 /*** Remove items from image context menu ***/
 
 /* Email Image... */
@@ -84,7 +91,7 @@ menupopup > menuitem, menupopup > menu {
 #TabsToolbar, #tabbrowser-tabs {
     --tab-min-height: 29px !important;
 }
-    /* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
+/* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
 #main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar,
 #main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar #tabbrowser-tabs {
     --tab-min-height: 30px !important;
@@ -95,11 +102,11 @@ menupopup > menuitem, menupopup > menu {
     border-bottom-width: 0 !important;
 }
 
-    /* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
+/* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
 #TabsToolbar, #TabsToolbar > hbox, #TabsToolbar-customization-target, #tabbrowser-arrowscrollbox  {
     max-height: calc(var(--tab-min-height) + 1px) !important;
 }
-    /* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
+/* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
 #TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon,
 #TabsToolbar-customization-target .toolbarbutton-text,
 #TabsToolbar-customization-target .toolbarbutton-badge-stack,
