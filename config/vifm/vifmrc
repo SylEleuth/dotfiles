@@ -175,13 +175,13 @@ command! fzfmarks      :fzfreadbmarks | fzfbmarks
 
 " flatten current directory, ie list all files in directory and its
 " subdirectories and directories of subdirectories etc
-command flatall   :execute '!find -not -path "*/\.*" 2>/dev/null %%U'
+command flatall :execute '!find -not -path "*/\.*" 2>/dev/null %%U'
 
 " the same as flatten but display only files
 command! flatonly :execute '!find -type f -not -path "*/\.*" 2>/dev/null %%U'
 
 " the same as flatten but display only directories
-command! flatdir    :execute '!find -type d -not -path "*/\.*" %%U'
+command! flatdir :execute '!find -type d -not -path "*/\.*" %%U'
 
 command! togglefilesinfo
     \ : if &viewcolumns == '-{fileroot}.,7{fileext},7{size}'
@@ -205,6 +205,9 @@ command! reload :write | restart
 " show volumes
 command! mounts /bin/lsblk -no MOUNTPOINT %u
 
+"create a new file
+command newfile touch "%a"
+
 " ----------   KEY MAPPINGS   ----------
 
 nnoremap ; :
@@ -214,6 +217,7 @@ nnoremap p :put &<cr>
 
 nnoremap <f2> :rename<cr>
 nnoremap <f3> :edit<cr>
+nnoremap <f4> :newfile<space>
 nnoremap <f5> :copy &<cr>
 nnoremap <f6> :move &<cr>
 nnoremap <f7> :mkdir<space>
