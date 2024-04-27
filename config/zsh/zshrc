@@ -124,6 +124,7 @@ source $HOME/.config/zsh/lscolors.sh
 export FORGIT_FZF_DEFAULT_OPTS="
 --cycle
 --reverse
+--exact
 --height '96%'
 "
 
