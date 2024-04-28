@@ -31,7 +31,7 @@ opt.cursorcolumn = true
 opt.wrap = true             -- display lines as one long line
 opt.textwidth = 90           -- hard wrap
 opt.sidescrolloff = 20
-opt.scrolloff = 15
+opt.scrolloff = 10
 opt.shada = "!,'300,<50,s10,h"
 
 -----------------------------------------------------------
