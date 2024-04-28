@@ -32,7 +32,7 @@ zplug load
 
 source ~/.zplug/repos/b4b4r07/enhancd/init.sh
 ENHANCD_DIR=$HOME/.zplug/repos/b4b4r07/enhancd/
-ENHANCD_FILTER="fzf --height 60%:fzf"
+ENHANCD_FILTER="fzf --height 100%"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
