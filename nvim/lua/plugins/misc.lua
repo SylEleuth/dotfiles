@@ -33,10 +33,10 @@ colorful_winsep.setup({
   -- This plugin will not be activated for filetype in the following table.
   no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
   anchor = {
-    left = { height = 0, x = -1, y = -1 },
-    right = { height = 0, x = -1, y = 0 },
+    left = { height = 1, x = -1, y = -1 },
+    right = { height = 1, x = -1, y = 0 },
     up = { width = 0, x = -1, y = 0 },
-    bottom = { width = 0, x = 0, y = 0 },
+    bottom = { width = 0, x = 1, y = 0 },
   },
 })
 
