@@ -116,21 +116,22 @@ local extension = require "telescope".extensions
 whichkey.register({
   ["<Space>"] = { "<cmd>WhichKey<cr>", "" },
   ["<leader>"] = {
-    g = {
-      name = "Telescope grep",
-      g = { builtin.grep_string, "Grep string" },
-      r = { builtin.live_grep, "Live grep" },
+    a = {
+      name = "Aerial",
+      a = { "<cmd>AerialToggle<cr>", "Aerial panel" },
+      t = { extension.aerial.aerial, "Aerial telescope " },
     },
+    b = { builtin.buffers, "Buffers fuzzy finder" },
     e = {
       name = "Telescope files",
       e = { extension.file_browser.file_browser, "File browser" },
       f = { builtin.find_files, "Find files" },
       n = { "<cmd>enew<cr>", "New file" },
     },
-    b = {
-      name = "Telescope buffers",
-      h = { builtin.buffers, "Buffers fuzzy finder" },
-      f = { builtin.buffers, "Show buffers" },
+    g = {
+      name = "Telescope grep",
+      g = { builtin.grep_string, "Grep string" },
+      r = { builtin.live_grep, "Live grep" },
     },
     h = {
       name = "Telescope history",
@@ -141,6 +142,8 @@ whichkey.register({
       u = { extension.undo.undo, "Undo history" },
       y = { extension.yank_history.yank_history, "Yank history" },
     },
+    m = { "<Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>", "Markdown preview"},
+    q = { "<Cmd>Bwipeout<cr>", "Close buffer"},
     -- s = {
     --   name = "Telescope spell",
     --   s = { builtin.spell_suggest, "Spell suggest" },
@@ -156,11 +159,6 @@ whichkey.register({
       r = { "<cmd>UrlView packer<cr>", "Packers URL" },
       c = { "<cmd>CocUpdate<cr>", "Coc update" },
       t = { "<cmd>TSUpdate<cr>", "Treesitter update" },
-    },
-    a = {
-      name = "Aerial",
-      a = { "<cmd>AerialToggle<cr>", "Aerial panel" },
-      t = { extension.aerial.aerial, "Aerial telescope " },
     },
     z = {
       name = "Telekasten",
@@ -193,8 +191,6 @@ whichkey.register({
     },
     ["\\"] = { extension.recent_files.pick, "Recent files"},
     ["'"] = { extension.smart_open.smart_open, "Smart open"},
-    m = { "<Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>", "Markdown preview"},
-    q = { "<Cmd>Bwipeout<cr>", "Close buffer"},
   },
 })
 
