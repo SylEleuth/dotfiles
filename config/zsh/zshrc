@@ -32,7 +32,7 @@ zplug load
 
 source ~/.zplug/repos/b4b4r07/enhancd/init.sh
 ENHANCD_DIR=$HOME/.zplug/repos/b4b4r07/enhancd/
-ENHANCD_FILTER="fzf --height 100%"
+ENHANCD_FILTER="fzf --height 100% --reverse"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -183,7 +183,7 @@ alias ls="exa --icons --git --color=always"
 alias rm="rm -i"
 alias dl="cd ~/Downloads"
 alias co="cd ~/Code"
-alias rip="yt-dlp"
+alias rip='yt-dlp -f "bv*[height<=1080]+ba/b[height<=1080] / wv*+ba/w"'
 alias ripau="yt-dlp --progress --verbose --extract-audio --audio-format mp3"
 alias doom="~/.emacs.d/bin/doom"
 alias comp="setsid plasmashell --replace"
