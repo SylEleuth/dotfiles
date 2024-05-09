@@ -233,9 +233,9 @@
     "editor.bracketPairColorization.enabled": true,
     "cSpell.language": "en,en-GB",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#D3869B",
-        "statusBar.noFolderBackground": "#D3869B",
-        "statusBar.debuggingBackground": "#D3869B",
+        "statusBar.background": "#3c3836",
+        "statusBar.noFolderBackground": "#3c3836",
+        "statusBar.debuggingBackground": "#3c3836",
         "statusBar.foreground": "#ebdbb2",
         "statusBar.debuggingForeground": "#ebdbb2"
     },
