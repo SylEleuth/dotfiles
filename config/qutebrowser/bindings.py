@@ -1,7 +1,7 @@
 # pyright: reportUndefinedVariable=false
 # type: ignore
 
-config.bind(";", "set-cmd-text :")
+config.bind(";", "cmd-set-text :")
 # Bindings for normal mode
 # config.bind("P", 'spawn mpv {url}')
 # config.bind("P", 'hint links spawn mpv {hint-url}')
