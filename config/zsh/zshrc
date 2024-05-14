@@ -179,7 +179,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias l="exa --icons -lh --git --sort=type --time-style=long-iso --color=always"
 alias ll="exa --icons -lah --git --sort=type --time-style=long-iso --color=always"
-alias ls="exa --icons --git --color=always"
+alias ls="exa --group-directories-first --icons --git --color=always --color-scale"
+alias lt='exa --tree --level=2 --icons'
 alias rm="rm -i"
 alias dl="cd ~/Downloads"
 alias co="cd ~/Code"
