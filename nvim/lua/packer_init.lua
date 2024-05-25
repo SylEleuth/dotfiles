@@ -198,6 +198,12 @@ return packer.startup(function(use)
   -- Displays a popup with possible keybindings of the command you started typing
   use 'folke/which-key.nvim'
 
+  -- Markdown preview
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

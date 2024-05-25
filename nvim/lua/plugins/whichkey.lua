@@ -142,7 +142,7 @@ whichkey.register({
       u = { extension.undo.undo, "Undo history" },
       y = { extension.yank_history.yank_history, "Yank history" },
     },
-    m = { "<Cmd>CocCommand markdown-preview-enhanced.openPreview<cr>", "Markdown preview"},
+    m = { "<Cmd>MarkdownPreview<cr>", "Markdown preview"},
     q = { "<Cmd>Bwipeout<cr>", "Close buffer"},
     -- s = {
     --   name = "Telescope spell",
