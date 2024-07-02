@@ -79,7 +79,7 @@ set classify+='  ::*.7z,,*.apk,,*.bz2,,*.cpio,,*.deb,,*.gz,,*.gzip,,*.gem,,*.
              \   ::*.db,,*.dump,,*.img,,*.iso,,*.sql::,
              \   ::*.diff::,
              \   ::*.dll,,*.exe,,*.msi::,
-             \   ::*.doc,,*.docx,,*.epub,,*.mobi,,*.pdf,,*.rtf,,*.xls,,*.xlsx::,
+             \   ::*.doc,,*.azw3,,*.docx,,*.epub,,*.mobi,,*.pdf,,*.rtf,,*.xls,,*.xlsx::,
              \   ::*.ejs,,*.htm,,*.html,,*.slim,,*.xhtml,,*.xml::,
              \   ::*.elm::,
              \   ::*.erl,,*.hrl::,
