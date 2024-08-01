@@ -55,6 +55,7 @@ return packer.startup(function(use)
 
   -- Icons
   use 'nvim-tree/nvim-web-devicons'
+  use { 'echasnovski/mini.icons', version = false}
 
   -- Tag viewer
   use 'liuchengxu/vista.vim'
@@ -137,7 +138,7 @@ return packer.startup(function(use)
   use 'kevinhwang91/nvim-hlslens'
 
   -- Indent guides
-  use{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+  use { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 
   -- Delete Neovim buffers without losing window layout
   use 'famiu/bufdelete.nvim'
