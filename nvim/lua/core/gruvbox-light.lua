@@ -135,11 +135,14 @@ hl(0, 'IndentBlanklineContextStart',  { sp = '#9d0006', underline = true,  nocom
 
 hl(0, 'WhichKey',                     { bg = '#ebdbb2' })
 hl(0, 'WhichKeyGroup',                { fg = '#b16286', bg = '#ebdbb2' })
-hl(0, 'WhichKeySeparator',            { fg = '#504945', bg = '#ebdbb2' })
+hl(0, 'WhichKeySeparator',            { fg = '#7c6f64', bg = '#ebdbb2' })
 hl(0, 'WhichKeyDesc',                 { fg = '#458588', bg = '#ebdbb2' })
 hl(0, 'WhichKeyFloat',                { fg = '#282828', bg = '#ebdbb2' })
-hl(0, 'WhichKeyBorder',               { fg = '#d5c4a1', bg = '#ebdbb2' })
+hl(0, 'WhichKeyBorder',               { fg = '#bdae93', bg = '#ebdbb2' })
 hl(0, 'WhichKeyValue',                { bg = '#ebdbb2' })
+hl(0, 'WhichKeyIcon',                 { bg = '#ebdbb2' })
+hl(0, 'WhichKeyNormal',               { bg = '#ebdbb2' })
+hl(0, 'WhichKeyTitle',                { bg = '#ebdbb2' })
 
 hl(0, 'VistaParenthesis',             { fg = '#d3869b' })
 hl(0, 'VistaScope',                   { fg = '#b16286' })
