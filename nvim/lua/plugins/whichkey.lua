@@ -4,9 +4,12 @@
 -- https://github.com/folke/which-key.nvim
 
 local status_ok, whichkey = pcall(require, "which-key")
+local status_ok, miniicons = pcall(require, "mini.icons")
 if not status_ok then
   return
 end
+
+miniicons.setup()
 
 whichkey.setup({
   plugins = {
@@ -28,75 +31,125 @@ whichkey.setup({
       g = true, -- bindings for prefixed with g
     },
   },
-  -- add operators that will trigger motion and text object completion
-  -- to enable all native operators, set the preset / operators plugin above
-  operators = { gc = "Comments" },
-  key_labels = {
-    -- override the label used to display some keys. It doesn't effect WK in any other way.
-    -- For example:
-    -- ["<space>"] = "SPC",
-    -- ["<cr>"] = "RET",
-    -- ["<tab>"] = "TAB",
+  win = {
+    -- don't allow the popup to overlap with the cursor
+    no_overlap = true,
+    -- width = 1,
+    -- height = { min = 4, max = 25 },
+    -- col = 0,
+    -- row = math.huge,
+    border = "single",
+    padding = { 0, 0, 0, 0 }, -- extra window padding [top/bottom, right/left]
+    title = true,
+    title_pos = "center",
+    zindex = 1000,
+    -- Additional vim.wo and vim.bo options
+    bo = {},
+    wo = {
+      -- winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+    },
   },
-  motions = {
-    count = true,
+  layout = {
+    height = { min = 5, max = 20 },
+    width = { min = 20, max = 30 },
+    spacing = 2, -- spacing between columns
+  },
+  keys = {
+    scroll_down = "<c-d>", -- binding to scroll down inside the popup
+    scroll_up = "<c-u>", -- binding to scroll up inside the popup
+  },
+  ---@type (string|wk.Sorter)[]
+  --- Mappings are sorted using configured sorters and natural sort of the keys
+  --- Available sorters:
+  --- * local: buffer-local mappings first
+  --- * order: order of the items (Used by plugins like marks / registers)
+  --- * group: groups last
+  --- * alphanum: alpha-numerical first
+  --- * mod: special modifier keys last
+  --- * manual: the order the mappings were added
+  --- * case: lower-case first
+  sort = { "local", "order", "group", "alphanum", "mod" },
+  ---@type number|fun(node: wk.Node):boolean?
+  expand = 0, -- expand groups when <= n mappings
+  -- expand = function(node)
+  --   return not node.desc -- expand all nodes without a description
+  -- end,
+  -- Functions/Lua Patterns for formatting the labels
+  ---@type table<string, ({[1]:string, [2]:string}|fun(str:string):string)[]>
+  replace = {
+    key = {
+      function(key)
+        return require("which-key.view").format(key)
+      end,
+      -- { "<Space>", "SPC" },
+    },
+    desc = {
+      { "<Plug>%(?(.*)%)?", "%1" },
+      { "^%+", "" },
+      { "<[cC]md>", "" },
+      { "<[cC][rR]>", "" },
+      { "<[sS]ilent>", "" },
+      { "^lua%s+", "" },
+      { "^call%s+", "" },
+      { "^:%s*", "" },
+    },
   },
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
     separator = "➜", -- symbol used between a key and it's label
-    group = "+", -- symbol prepended to a group
+    group = " ", -- symbol prepended to a group
+    ellipsis = "…",
+    -- set to false to disable all mapping icons,
+    -- both those explicitely added in a mapping
+    -- and those from rules
+    mappings = true,
+    --- See `lua/which-key/icons.lua` for more details
+    --- Set to `false` to disable keymap icons from rules
+    ---@type wk.IconRule[]|false
+    rules = {},
+    -- use the highlights from mini.icons
+    -- When `false`, it will use `WhichKeyIcon` instead
+    colors = true,
+    -- used by key format
+    keys = {
+      Up = " ",
+      Down = " ",
+      Left = " ",
+      Right = " ",
+      C = "󰘴 ",
+      M = "󰘵 ",
+      D = " ",
+      S = "󰘶 ",
+      CR = "󰌑 ",
+      Esc = "󱊷 ",
+      ScrollWheelDown = "󱕐 ",
+      ScrollWheelUp = "󱕑 ",
+      NL = "󰌑 ",
+      BS = "󰁮 ",
+      Space = "󱁐 ",
+      Tab = "󰌒 ",
+      F1 = "󱊫 ",
+      F2 = "󱊬 ",
+      F3 = "󱊭 ",
+      F4 = "󱊮 ",
+      F5 = "󱊯 ",
+      F6 = "󱊰 ",
+      F7 = "󱊱 ",
+      F8 = "󱊲 ",
+      F9 = "󱊳 ",
+      F10 = "󱊴 ",
+      F11 = "󱊵 ",
+      F12 = "󱊶 ",
+    },
   },
-  popup_mappings = {
-    scroll_down = "<c-d>", -- binding to scroll down inside the popup
-    scroll_up = "<c-u>", -- binding to scroll up inside the popup
-  },
-  window = {
-    border = "single", -- none, single, double, shadow
-    position = "bottom", -- bottom, top
-    margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-    padding = { 0, 0, 0, 0 }, -- extra window padding [top, right, bottom, left]
-    winblend = 0, -- value between 0-100 0 for fully opaque and 100 for fully transparent
-  },
-  layout = {
-    height = { min = 5, max = 20 }, -- min and max height of the columns
-    width = { min = 20, max = 30 }, -- min and max width of the columns
-    spacing = 2, -- spacing between columns
-    align = "left", -- align columns left, center or right
-  },
-  ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "^:", "^ ", "^call ", "^lua " }, -- hide mapping boilerplate
   show_help = true, -- show a help message in the command line for using WhichKey
   show_keys = true, -- show the currently pressed key and its label as a message in the command line
-  triggers = "auto", -- automatically setup triggers
-  -- triggers = {"<leader>"} -- or specifiy a list manually
-  -- list of triggers, where WhichKey should not wait for timeoutlen and show immediately
-  triggers_nowait = {
-    -- marks
-    "`",
-    "'",
-    "g`",
-    "g'",
-    -- registers
-    '"',
-    "<c-r>",
-    -- spelling
-    "z=",
-  },
-  triggers_blacklist = {
-    -- list of mode / prefixes that should never be hooked by WhichKey
-    -- this is mostly relevant for keymaps that start with a native binding
-    i = { "j", "k" },
-    v = { "j", "k" },
-  },
-  -- disable the WhichKey popup for certain buf types and file types.
-  -- Disabled by deafult for Telescope
+  -- disable WhichKey for certain buf types and file types.
   disable = {
-    buftypes = {},
-    filetypes = {},
-  },
+    ft = {},
+    bt = {},
+  }
 })
-
--- local keyset = vim.keymap.set
 
 require("telescope").load_extension("notify")
 require("telescope").load_extension("file_browser")
@@ -111,86 +164,72 @@ require('telescope').load_extension('notify')
 require("telescope").load_extension("yank_history")
 
 local builtin = require('telescope.builtin')
-local extension = require "telescope".extensions
+local extension = require("telescope").extensions
+local telekasten = require('telekasten')
 
-whichkey.register({
-  ["<Space>"] = { "<cmd>WhichKey<cr>", "" },
-  ["<leader>"] = {
-    a = {
-      name = "Aerial",
-      a = { "<cmd>AerialToggle<cr>", "Aerial panel" },
-      t = { extension.aerial.aerial, "Aerial telescope " },
-    },
-    b = { builtin.buffers, "Buffers fuzzy finder" },
-    e = {
-      name = "Telescope files",
-      e = { extension.file_browser.file_browser, "File browser" },
-      f = { builtin.find_files, "Find files" },
-      n = { "<cmd>enew<cr>", "New file" },
-    },
-    g = {
-      name = "Telescope grep",
-      g = { builtin.grep_string, "Grep string" },
-      r = { builtin.live_grep, "Live grep" },
-    },
-    h = {
-      name = "Telescope history",
-      b = { builtin.builtin, "Telescope builtin" },
-      c = { builtin.command, "Command history" },
-      h = { builtin.search_history, "Search history" },
-      n = { extension.notify.notify, "Notify history" },
-      u = { extension.undo.undo, "Undo history" },
-      y = { extension.yank_history.yank_history, "Yank history" },
-    },
-    m = { "<Cmd>MarkdownPreview<cr>", "Markdown preview"},
-    q = { "<Cmd>Bwipeout<cr>", "Close buffer"},
-    -- s = {
-    --   name = "Telescope spell",
-    --   s = { builtin.spell_suggest, "Spell suggest" },
-    -- },
-    v = {
-      name = "Telescope treesitter",
-      c = { extension.coc.coc, "Coc" },
-      t = { builtin.treesitter, "Treesitter" },
-    },
-    u = {
-      name = "Updated",
-      u = { "<cmd>PackerUpdate<cr>", "Packer update" },
-      r = { "<cmd>UrlView packer<cr>", "Packers URL" },
-      c = { "<cmd>CocUpdate<cr>", "Coc update" },
-      t = { "<cmd>TSUpdate<cr>", "Treesitter update" },
-    },
-    z = {
-      name = "Telekasten",
-      a = { "<cmd>lua require('telekasten').show_tags()<cr>", "Show tags" },
-      b = { "<cmd>lua require('telekasten').show_backlinks()<cr>", "Show backlinks" },
-      c = { "<cmd>lua require('telekasten').show_calendar()<cr>", "Show calendar" },
-      C = { "<cmd>CalendarT<cr>", "Full window Calendar" },
-      d = { "<cmd>lua require('telekasten').find_daily_notes()<cr>", "Find daily notes" },
-      f = { "<cmd>lua require('telekasten').find_notes()<cr>", "Find notes" },
-      F = { "<cmd>lua require('telekasten').find_friends()<cr>", "Find friends" },
-      g = { "<cmd>lua require('telekasten').search_notes()<cr>", "Search notes" },
-      i = { "<cmd>lua require('telekasten').paste_img_and_link()<cr>", "Pate img and link" },
-      I = { "<cmd>lua require('telekasten').insert_img_link({ i=true })<cr>", "Insert img link" },
-      l = { "<cmd>lua require('telekasten').follow_link()<cr>", "Follow link" },
-      m = { "<cmd>lua require('telekasten').browse_media()<cr>", "Browse media" },
-      n = { "<cmd>lua require('telekasten').new_note()<cr>", "New note" },
-      N = { "<cmd>lua require('telekasten').new_templated_note()<cr>", "New templated note" },
-      p = { "<cmd>lua require('telekasten').preview_img()<cr>", "Preview img " },
-      r = { "<cmd>lua require('telekasten').rename_note()<cr>", "Rename note" },
-      t = { "<cmd>lua require('telekasten').toggle_todo()<cr>", "Toggle todo" },
-      T = { "<cmd>lua require('telekasten').goto_today()<cr>", "Goto today" },
-      w = { "<cmd>lua require('telekasten').find_weekly_notes()<cr>", "Find weekly notes" },
-      W = { "<cmd>lua require('telekasten').goto_thisweek()<cr>", "Goto this week" },
-      y = { "<cmd>lua require('telekasten').yank_notelink()<cr>", "Yank notelink" },
-      z = { "<cmd>lua require('telekasten').panel()<cr>", "Panel" },
-    },
-    ["/"] = {
-      name = "Urlview",
-      ["/"] = { "<cmd>UrlView<cr>", "View file URLs"},
-    },
-    ["\\"] = { extension.recent_files.pick, "Recent files"},
-    ["'"] = { extension.smart_open.smart_open, "Smart open"},
-  },
+
+whichkey.add({
+  { "<Space>", function() whichkey.show({ global = false }) end },
+  { "<leader>\\", extension.recent_files.pick, desc = "Recent files" },
+  { "<leader>'", extension.smart_open.smart_open, desc = "Smart open" },
+
+  { "<leader>a", group = "Aerial" },
+  { "<leader>aa", "<cmd>AerialToggle<cr>", desc = "Aerial panel" },
+  { "<leader>at", extension.aerial.aerial, desc = "Aerial telescope" },
+
+  { "<leader>b", builtin.buffers, desc = "Buffers fuzzy finder" },
+
+  { "<leader>e", group = "Files" },
+  { "<leader>ee", extension.file_browser.file_browser, desc = "File browser" },
+  { "<leader>ef", builtin.find_files, desc = "Find files" },
+  { "<leader>en", "<cmd>enew<cr>", desc = "New file" },
+
+  { "<leader>g", group = "Grep" },
+  { "<leader>gg", builtin.grep_string, desc = "Grep string" },
+  { "<leader>gr", builtin.live_grep, desc = "Live grep" },
+
+  { "<leader>h", group = "Telescope history" },
+  { "<leader>hb", builtin.builtin, desc = "Telescope builtin" },
+  { "<leader>hc", builtin.command, desc = "Command history" },
+  { "<leader>hh", builtin.search_history, desc = "Search history" },
+  { "<leader>hn", extension.notify.notify, desc = "Notify history" },
+  { "<leader>hu", extension.undo.undo, desc = "Undo history" },
+  { "<leader>hy", extension.yank_history.yank_history, desc = "Yank history" },
+
+  { "<leader>m", "<Cmd>MarkdownPreview<cr>", desc = "Markdown preview" },
+
+  { "<leader>q", "<Cmd>Bwipeout<cr>", desc = "Close buffer" },
+
+  { "<leader>v", group = "Telescope treesitter" },
+  { "<leader>vc", extension.coc.coc, desc = "Coc" },
+  { "<leader>vt", builtin.treesitter, desc = "Treesitter" },
+
+  { "<leader>u", group = "Update" },
+  { "<leader>uu", "<cmd>PackerUpdate<cr>", desc = "Packer update" },
+  { "<leader>uc", "<cmd>CocUpdate<cr>", desc = "Coc update" },
+  { "<leader>ut", "<cmd>TSUpdate<cr>", desc = "Treesitter update" },
+
+  { "<leader>z", group = "Telescope history" },
+  { "<leader>za", telekasten.show_tags, desc = "Show tags" },
+  { "<leader>zb", telekasten.show_backlinks, desc = "Show backlinks" },
+  { "<leader>zc", telekasten.show_calendar, desc = "Show calendar" },
+  { "<leader>zC", "<cmd>CalendarT<cr>", desc = "Full window Calendar" },
+  { "<leader>zd", telekasten.find_daily_notes, desc = "Find daily notes" },
+  { "<leader>zf", telekasten.find_notes, desc = "Find notes" },
+  { "<leader>zF", telekasten.find_friends, desc = "Find friends" },
+  { "<leader>zg", telekasten.search_notes, desc = "Search notes" },
+  { "<leader>zi", telekasten.paste_img_and_link, desc = "Pate img and link" },
+  { "<leader>zI", telekasten.insert_img_link, desc = "Insert img link" },
+  { "<leader>zl", telekasten.follow_link, desc = "Follow link" },
+  { "<leader>zm", telekasten.browse_media, desc = "Browse media" },
+  { "<leader>zn", telekasten.new_note, desc = "New note" },
+  { "<leader>zN", telekasten.new_templated_note, desc = "New templated note" },
+  { "<leader>zp", telekasten.preview_img, desc = "Preview img " },
+  { "<leader>zr", telekasten.rename_note, desc = "Rename note" },
+  { "<leader>zt", telekasten.toggle_todo, desc = "Toggle todo" },
+  { "<leader>zT", telekasten.goto_today, desc = "Goto today" },
+  { "<leader>zw", telekasten.find_weekly_notes, desc = "Find weekly notes" },
+  { "<leader>zW", telekasten.goto_thisweek, desc = "Goto this week" },
+  { "<leader>zy", telekasten.yank_notelink, desc = "Yank notelink" },
+  { "<leader>zz", telekasten.panel, desc = "Panel" }
 })
-
