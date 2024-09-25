@@ -123,4 +123,5 @@
     "markdown-preview-enhanced.liveUpdate": true,
     "markdown-preview-enhanced.previewTheme": "gothic.css",
     "xml.format.enabled": false,
+    "snippets.ultisnips.pythonPrompt": false,
 }
