@@ -233,9 +233,9 @@
     "editor.bracketPairColorization.enabled": true,
     "cSpell.language": "en,en-GB",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#D3869B",
-        "statusBar.noFolderBackground": "#D3869B",
-        "statusBar.debuggingBackground": "#D3869B",
+        "statusBar.background": "#3c3836",
+        "statusBar.noFolderBackground": "#3c3836",
+        "statusBar.debuggingBackground": "#3c3836",
         "statusBar.foreground": "#ebdbb2",
         "statusBar.debuggingForeground": "#ebdbb2"
     },
@@ -258,7 +258,7 @@
     "editor.cursorBlinking": "solid",
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
-    "workbench.colorTheme": "Gruvbox Light Soft",
+    "workbench.colorTheme": "Gruvbox Dark Soft",
     "editor.inlayHints.fontSize": 15,
     "workbench.iconTheme": "gruvbox-material-icon-theme",
     "gruvboxMaterial.italicKeywords": true,
@@ -272,5 +272,8 @@
         "editor.formatOnType": true
     },
     "C_Cpp.intelliSenseEngine": "disabled",
-    "clangd.path": "/home/eleuth/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd"
+    "clangd.path": "/home/eleuth/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
+    "telemetry.telemetryLevel": "off",
+    "workbench.activityBar.location": "top",
+    "window.customTitleBarVisibility": "auto"
 }
