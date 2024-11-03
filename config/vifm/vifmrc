@@ -211,6 +211,7 @@ nnoremap QQ :qall<cr>
 nnoremap \r :reload<cr>
 nnoremap p :put &<cr>
 
+nnoremap <f1> :sync<cr>
 nnoremap <f2> :rename<cr>
 nnoremap <f3> :edit<cr>
 nnoremap <f4> :newfile<space>
