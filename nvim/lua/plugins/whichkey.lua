@@ -179,6 +179,13 @@ whichkey.add({
 
   { "<leader>b", builtin.buffers, desc = "Buffers fuzzy finder" },
 
+  { "<leader>d", group = "Diffview" },
+  { "<leader>do", "<cmd>DiffviewOpen<cr>", desc = "Open" },
+  { "<leader>dc", "<cmd>DiffviewClose<cr>", desc = "Close" },
+  { "<leader>dr", "<cmd>DiffviewRefresh<cr>", desc = "Update view" },
+  { "<leader>dh", "<cmd>DiffviewFileHistory<cr>", desc = "History" },
+  { "<leader>dd", "<cmd>DiffviewToggleFiles<cr>", desc = "Toggle file panel" },
+
   { "<leader>e", group = "Files" },
   { "<leader>ee", extension.file_browser.file_browser, desc = "File browser" },
   { "<leader>ef", builtin.find_files, desc = "Find files" },
