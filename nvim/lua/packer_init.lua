@@ -70,6 +70,8 @@ return packer.startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'HiPhish/rainbow-delimiters.nvim'
 
+  use 'Wansmer/sibling-swap.nvim'
+
   -- Telescope
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.4' }
   use 'nvim-lua/plenary.nvim'
