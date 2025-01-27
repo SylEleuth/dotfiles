@@ -173,6 +173,9 @@ whichkey.add({
   { "<leader>\\", extension.recent_files.pick, desc = "Recent files" },
   { "<leader>'", extension.smart_open.smart_open, desc = "Smart open" },
 
+  { "<leader><", require('sibling-swap').swap_with_left, desc = "Swap left" },
+  { "<leader>>", require('sibling-swap').swap_with_right, desc = "Swap right" },
+
   { "<leader>a", group = "Aerial" },
   { "<leader>aa", "<cmd>AerialToggle<cr>", desc = "Aerial panel" },
   { "<leader>at", extension.aerial.aerial, desc = "Aerial telescope" },
