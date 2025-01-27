@@ -54,6 +54,9 @@ filextype *.djvu zathura %f &
 " Cbr
 filextype *.cbr,*.cbz zathura %c %i &
 
+" Epub
+filextype *.epub zathura %f &
+
 " Audio
 filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*aac mpv %f &
 fileviewer *.mp3 mp3info
@@ -75,7 +78,7 @@ filextype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*webp,*.xpm,*.svg,*.svgz nomacs %c %i &
+filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*webp,*.xpm,*.svg,*.svgz gwenview %c %i &
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.xpm,*.gif,*.webp}
     \ kitten icat --silent --transfer-mode=file --place=%pwx%ph@%pxx%py %c >/dev/tty </dev/tty %N
     \ %pc
@@ -273,8 +276,8 @@ nnoremap bb :fzfmarks<cr>
 nnoremap bm :fzfbmark<cr>
 
 nnoremap \h :history dir<cr>
-nnoremap \s :history search<cr>
 nnoremap \i :history input<cr>
+nnoremap \j :history search<cr>
 
 nnoremap A :histprev<cr>
 nnoremap D :histnext<cr>
@@ -302,4 +305,4 @@ nnoremap \w :togglefilesinfo<cr>
 
 nnoremap \d :mounts<cr>
 
-nnoremap \g :changetheme
+nnoremap \s :sync<cr>
