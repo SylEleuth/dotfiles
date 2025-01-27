@@ -14,6 +14,7 @@ local status_ok, bufresize = pcall(require, "bufresize")
 local status_ok, incline = pcall(require, "incline")
 local status_ok, move = pcall(require, "move")
 local status_ok, colorful_winsep = pcall(require, "colorful-winsep")
+local status_ok, sibling_swap = pcall(require, "sibling-swap")
 if not status_ok then
   return
 end
@@ -88,3 +89,5 @@ incline.setup()
 reticle.setup {}
 
 leap.add_default_mappings()
+
+sibling_swap.setup()
