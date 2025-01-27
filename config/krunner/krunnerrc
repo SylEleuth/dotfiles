@@ -24,6 +24,7 @@ katesessionsEnabled=false
 konsoleprofilesEnabled=false
 krunner_appmenuEnabled=true
 krunner_appstreamEnabled=true
+krunner_servicesEnabled=true
 krunner_spellcheckEnabled=true
 krunner_systemsettingsEnabled=true
 kwinEnabled=true
@@ -40,6 +41,9 @@ shellEnabled=true
 unitconverterEnabled=true
 webshortcutsEnabled=true
 windowsEnabled=true
+
+[Plugins][Favorites]
+plugins=krunner_services,krunner_systemsettings
 
 [Runners][Dictionary]
 triggerWord=d
