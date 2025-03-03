@@ -275,5 +275,6 @@
     "clangd.path": "/home/eleuth/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
     "telemetry.telemetryLevel": "off",
     "workbench.activityBar.location": "top",
-    "window.customTitleBarVisibility": "auto"
+    "window.customTitleBarVisibility": "auto",
+    "chat.commandCenter.enabled": false
 }
