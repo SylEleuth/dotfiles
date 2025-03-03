@@ -13,7 +13,7 @@ pre > code {
 }
 
 ::placeholder, body, button, input, select, textarea {
-    font-family: 'Ubuntu';
+    font-family: 'Roboto';
 }
 
 .theme-dark {
