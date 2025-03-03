@@ -8,7 +8,7 @@ menupopup > menuitem, menupopup > menu {
 
 #navigator-toolbox{
   --uc-bm-padding: 1px; /* Vertical padding to be applied to bookmarks */
-  --uc-bm-height: calc(20px + 2 * var(--uc-bm-padding)); /* Might need to adjust if the toolbar has other buttons */
+  --uc-bm-height: calc(23px + 2 * var(--uc-bm-padding)); /* Might need to adjust if the toolbar has other buttons */
   --uc-navbar-height: -40px; /* navbar is main toolbar. Use negative value */
   --uc-autohide-toolbar-delay: 200ms; /* The toolbar is hidden after 0.6s */
 }
@@ -76,7 +76,7 @@ menupopup > menuitem, menupopup > menu {
 #urlbar-container > #urlbar[popover]:is([focused],[open]){
   opacity: 1;
   pointer-events: auto;
-  transition-delay: 0ms;
+  transition-delay: 1000ms; /* delay of url bar (not the whole bar, including bookmarks) */
   transform: rotateX(0deg);
 }
 
@@ -122,7 +122,7 @@ menupopup > menuitem, menupopup > menu {
 
 /* Show when cursor is over the toolbar area */
 #navigator-toolbox:hover > .browser-toolbar{
-  transition-delay: 0ms !important;
+  transition-delay: 1000ms !important;
   transform: rotateX(0);
 }
 
@@ -160,26 +160,6 @@ menupopup > menuitem, menupopup > menu {
     pointer-events: none !important;
   }
 }
-
-/* Hide toolbar */
-
-/* #navigator-toolbox { */
-/*     position: relative; */
-/*     z-index: 1; */
-/*     height: 26px; */
-/*     margin-top: -2px; */
-/*     overflow: hidden; */
-/*     transition-property: height !important; */
-/*     transition-delay: 0s !important; */
-/*     transition-duration: 0.1s; */
-/* } */
-
-/* #navigator-toolbox:hover { */
-/*     height: 75px; */
-/*     transition-property: height !important; */
-/*     transition-delay: 1s !important; */
-/*     transition-duration: 0.1s; */
-/* } */
 
 /* Only show close buttons on background tabs when hovering with the mouse */
 .tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
