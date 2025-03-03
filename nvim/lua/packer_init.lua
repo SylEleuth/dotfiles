@@ -207,6 +207,25 @@ return packer.startup(function(use)
       run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  use({
+    'mikesmithgh/kitty-scrollback.nvim',
+    disable = false,
+    opt = true,
+    cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth', 'KittyScrollbackGenerateCommandLineEditing' },
+    event = { 'User KittyScrollbackLaunch' },
+    -- tag = '*', -- latest stable version, may have breaking changes if major version changed
+    -- tag = 'v6.0.0', -- pin specific tag
+    config = function()
+      require('kitty-scrollback').setup()
+    end,
+  })
+
+  use({
+    "fladson/vim-kitty",
+    ft = "kitty",
+    tag = "*"  -- You can select a tagged version
+  })
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
