@@ -5,7 +5,7 @@
 set classify='  :dir:/,  :exe:,  :reg:,  :link:,?  :?:,  ::../::'
 
 " Dirs
-set classify+='  ::.git/::/,
+set classify+='  ::.git/::/,
              \ 󰃨  ::.cache/::/,
              \   ::.config/::/,
              \   ::.java/::/,
