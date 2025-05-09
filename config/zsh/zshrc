@@ -74,6 +74,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # PAGER="nvim"
 VISUAL="nvim"
 EDITOR="nvim"
+export SUDO_EDITOR="nvim"
 
 # ZStyle settings
 # default fzf settings to apply globally
