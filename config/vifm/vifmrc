@@ -305,4 +305,5 @@ nnoremap \w :togglefilesinfo<cr>
 
 nnoremap \d :mounts<cr>
 
-nnoremap \s :sync<cr>
+nnoremap \s :!sudo vifm %d %D<cr>
+nnoremap \e :!sudoedit %f<cr>
